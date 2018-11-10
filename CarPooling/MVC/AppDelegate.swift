@@ -88,6 +88,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func logoutAlert(message:String) {
+        let alertController = UIAlertController(title: txt_AppName, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            
+            Utilities.resetDefaults()
+            
+//            let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
+//            let navigationController = UINavigationController(rootViewController: testController)
+//            self.window?.rootViewController = navigationController
+//            self.window?.makeKeyAndVisible()
+//            navigationController.popToRootViewController(animated: true)
+            
+            
+        }
+        
+        alertController.addAction(cancelAction)
+        self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+        
+    }
 
 }
 

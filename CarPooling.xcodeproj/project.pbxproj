@@ -7,15 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A71505C58669E5201BC994FC /* Pods_CarPooling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */; };
 		DCBA20D82196CAED00261817 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20D72196CAED00261817 /* AppDelegate.swift */; };
 		DCBA20DA2196CAED00261817 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20D92196CAED00261817 /* ViewController.swift */; };
 		DCBA20DD2196CAED00261817 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBA20DB2196CAED00261817 /* Main.storyboard */; };
 		DCBA20E02196CAED00261817 /* CarPooling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20DE2196CAED00261817 /* CarPooling.xcdatamodeld */; };
 		DCBA20E22196CAEF00261817 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCBA20E12196CAEF00261817 /* Assets.xcassets */; };
 		DCBA20E52196CAEF00261817 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBA20E32196CAEF00261817 /* LaunchScreen.storyboard */; };
+		DCBA20F32196DE2200261817 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20F22196DE2200261817 /* Reachability.m */; };
+		DCBA20FC2196DEA700261817 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20F42196DEA600261817 /* TPKeyboardAvoidingCollectionView.m */; };
+		DCBA20FD2196DEA700261817 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20F72196DEA600261817 /* TPKeyboardAvoidingScrollView.m */; };
+		DCBA20FE2196DEA700261817 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20F92196DEA600261817 /* TPKeyboardAvoidingTableView.m */; };
+		DCBA20FF2196DEA700261817 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20FA2196DEA600261817 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		DCBA21032196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21002196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		DCBA21042196DEEF00261817 /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21012196DEEF00261817 /* UITextField+fixCaretPosition.swift */; };
+		DCBA21052196DEEF00261817 /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21022196DEEF00261817 /* SkyFloatingLabelTextField.swift */; };
+		DCBA211B2196DF3500261817 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21072196DF3400261817 /* ActionSheetCustomPicker.m */; };
+		DCBA211C2196DF3500261817 /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA210A2196DF3400261817 /* ActionSheetLocalePicker.m */; };
+		DCBA211D2196DF3500261817 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA210B2196DF3400261817 /* ActionSheetStringPicker.m */; };
+		DCBA211E2196DF3500261817 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21132196DF3500261817 /* AbstractActionSheetPicker.m */; };
+		DCBA211F2196DF3500261817 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21152196DF3500261817 /* DistancePickerView.m */; };
+		DCBA21202196DF3500261817 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21162196DF3500261817 /* ActionSheetDistancePicker.m */; };
+		DCBA21212196DF3500261817 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21182196DF3500261817 /* SWActionSheet.m */; };
+		DCBA21222196DF3500261817 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21192196DF3500261817 /* ActionSheetDatePicker.m */; };
+		DCBA21232196DF3500261817 /* ActionSheetMultipleStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA211A2196DF3500261817 /* ActionSheetMultipleStringPicker.m */; };
+		DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21272196DF9E00261817 /* NTMonthYearPicker.m */; };
+		DCBA21332196DFED00261817 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA212B2196DFEC00261817 /* AppHelper.swift */; };
+		DCBA21342196DFED00261817 /* ServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA212C2196DFEC00261817 /* ServiceClass.swift */; };
+		DCBA21352196DFED00261817 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA212D2196DFEC00261817 /* Utilities.swift */; };
+		DCBA21362196DFED00261817 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA212E2196DFEC00261817 /* Extension.swift */; };
+		DCBA21372196DFED00261817 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA212F2196DFEC00261817 /* Defines.swift */; };
+		DCBA21382196DFED00261817 /* PagedHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21302196DFED00261817 /* PagedHorizontalView.swift */; };
+		DCBA21392196DFED00261817 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21312196DFED00261817 /* SwiftyJSON.swift */; };
+		DCBA213A2196DFED00261817 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21322196DFED00261817 /* Strings.swift */; };
+		DCBA213E2196E0C500261817 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA213D2196E0C500261817 /* BaseViewController.swift */; };
+		DCBA21412196E18F00261817 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA21402196E18F00261817 /* Models.swift */; };
+		DCBA215B2196E92A00261817 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21492196E92800261817 /* Montserrat-BoldItalic.ttf */; };
+		DCBA215C2196E92A00261817 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA214A2196E92800261817 /* Montserrat-SemiBold.ttf */; };
+		DCBA215D2196E92A00261817 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA214B2196E92800261817 /* Montserrat-Thin.ttf */; };
+		DCBA215E2196E92A00261817 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA214C2196E92800261817 /* Montserrat-ThinItalic.ttf */; };
+		DCBA215F2196E92A00261817 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA214D2196E92800261817 /* Montserrat-MediumItalic.ttf */; };
+		DCBA21602196E92A00261817 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA214E2196E92800261817 /* Montserrat-BlackItalic.ttf */; };
+		DCBA21612196E92A00261817 /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA214F2196E92900261817 /* Montserrat-ExtraBoldItalic.ttf */; };
+		DCBA21622196E92A00261817 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21502196E92900261817 /* Montserrat-Bold.ttf */; };
+		DCBA21632196E92A00261817 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21512196E92900261817 /* Montserrat-ExtraBold.ttf */; };
+		DCBA21642196E92A00261817 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21522196E92900261817 /* Montserrat-SemiBoldItalic.ttf */; };
+		DCBA21652196E92A00261817 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21532196E92900261817 /* Montserrat-Light.ttf */; };
+		DCBA21662196E92A00261817 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21542196E92900261817 /* Montserrat-Black.ttf */; };
+		DCBA21672196E92A00261817 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21552196E92900261817 /* Montserrat-ExtraLight.ttf */; };
+		DCBA21682196E92A00261817 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21562196E92900261817 /* Montserrat-ExtraLightItalic.ttf */; };
+		DCBA21692196E92A00261817 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21572196E92A00261817 /* Montserrat-LightItalic.ttf */; };
+		DCBA216A2196E92A00261817 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21582196E92A00261817 /* Montserrat-Italic.ttf */; };
+		DCBA216B2196E92A00261817 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21592196E92A00261817 /* Montserrat-Medium.ttf */; };
+		DCBA216C2196E92A00261817 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA215A2196E92A00261817 /* Montserrat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarPooling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41D634D39CB844F4B9BEF287 /* Pods-CarPooling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.debug.xcconfig"; sourceTree = "<group>"; };
+		BF73A11CB12C79E49BDA2650 /* Pods-CarPooling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.release.xcconfig"; sourceTree = "<group>"; };
 		DCBA20D42196CAED00261817 /* CarPooling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPooling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCBA20D72196CAED00261817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCBA20D92196CAED00261817 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +74,71 @@
 		DCBA20E12196CAEF00261817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCBA20E42196CAEF00261817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCBA20E62196CAEF00261817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCBA20F02196DE2100261817 /* CarPooling-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CarPooling-Bridging-Header.h"; sourceTree = "<group>"; };
+		DCBA20F12196DE2200261817 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DCBA20F22196DE2200261817 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DCBA20F42196DEA600261817 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		DCBA20F52196DEA600261817 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		DCBA20F62196DEA600261817 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		DCBA20F72196DEA600261817 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		DCBA20F82196DEA600261817 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		DCBA20F92196DEA600261817 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		DCBA20FA2196DEA600261817 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		DCBA20FB2196DEA700261817 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		DCBA21002196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		DCBA21012196DEEF00261817 /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
+		DCBA21022196DEEF00261817 /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
+		DCBA21072196DF3400261817 /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPicker.m; sourceTree = "<group>"; };
+		DCBA21082196DF3400261817 /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
+		DCBA21092196DF3400261817 /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
+		DCBA210A2196DF3400261817 /* ActionSheetLocalePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetLocalePicker.m; sourceTree = "<group>"; };
+		DCBA210B2196DF3400261817 /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		DCBA210C2196DF3400261817 /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDatePicker.h; sourceTree = "<group>"; };
+		DCBA210D2196DF3400261817 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		DCBA210E2196DF3400261817 /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDistancePicker.h; sourceTree = "<group>"; };
+		DCBA210F2196DF3400261817 /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
+		DCBA21102196DF3400261817 /* ActionSheetMultipleStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetMultipleStringPicker.h; sourceTree = "<group>"; };
+		DCBA21112196DF3500261817 /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		DCBA21122196DF3500261817 /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
+		DCBA21132196DF3500261817 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		DCBA21142196DF3500261817 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
+		DCBA21152196DF3500261817 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		DCBA21162196DF3500261817 /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDistancePicker.m; sourceTree = "<group>"; };
+		DCBA21172196DF3500261817 /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetLocalePicker.h; sourceTree = "<group>"; };
+		DCBA21182196DF3500261817 /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
+		DCBA21192196DF3500261817 /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
+		DCBA211A2196DF3500261817 /* ActionSheetMultipleStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetMultipleStringPicker.m; sourceTree = "<group>"; };
+		DCBA21262196DF9E00261817 /* NTMonthYearPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTMonthYearPicker.h; sourceTree = "<group>"; };
+		DCBA21272196DF9E00261817 /* NTMonthYearPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTMonthYearPicker.m; sourceTree = "<group>"; };
+		DCBA21282196DF9E00261817 /* NTMonthYearPicker-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NTMonthYearPicker-Prefix.pch"; sourceTree = "<group>"; };
+		DCBA212B2196DFEC00261817 /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		DCBA212C2196DFEC00261817 /* ServiceClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceClass.swift; sourceTree = "<group>"; };
+		DCBA212D2196DFEC00261817 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		DCBA212E2196DFEC00261817 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		DCBA212F2196DFEC00261817 /* Defines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
+		DCBA21302196DFED00261817 /* PagedHorizontalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedHorizontalView.swift; sourceTree = "<group>"; };
+		DCBA21312196DFED00261817 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		DCBA21322196DFED00261817 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		DCBA213D2196E0C500261817 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DCBA21402196E18F00261817 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		DCBA21492196E92800261817 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		DCBA214A2196E92800261817 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		DCBA214B2196E92800261817 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		DCBA214C2196E92800261817 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		DCBA214D2196E92800261817 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		DCBA214E2196E92800261817 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		DCBA214F2196E92900261817 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		DCBA21502196E92900261817 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		DCBA21512196E92900261817 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		DCBA21522196E92900261817 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		DCBA21532196E92900261817 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		DCBA21542196E92900261817 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		DCBA21552196E92900261817 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		DCBA21562196E92900261817 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		DCBA21572196E92A00261817 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		DCBA21582196E92A00261817 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		DCBA21592196E92A00261817 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		DCBA215A2196E92A00261817 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +146,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71505C58669E5201BC994FC /* Pods_CarPooling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		822FEEF5B62C7EABEB941517 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41D634D39CB844F4B9BEF287 /* Pods-CarPooling.debug.xcconfig */,
+				BF73A11CB12C79E49BDA2650 /* Pods-CarPooling.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B310143D575E25AA6F439FC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DCBA20CB2196CAED00261817 = {
 			isa = PBXGroup;
 			children = (
 				DCBA20D62196CAED00261817 /* CarPooling */,
 				DCBA20D52196CAED00261817 /* Products */,
+				822FEEF5B62C7EABEB941517 /* Pods */,
+				B310143D575E25AA6F439FC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +191,224 @@
 		DCBA20D62196CAED00261817 /* CarPooling */ = {
 			isa = PBXGroup;
 			children = (
-				DCBA20D72196CAED00261817 /* AppDelegate.swift */,
-				DCBA20D92196CAED00261817 /* ViewController.swift */,
-				DCBA20DB2196CAED00261817 /* Main.storyboard */,
+				DCBA20EC2196DD6F00261817 /* Third Party */,
+				DCBA20EE2196DDDA00261817 /* Library */,
+				DCBA212A2196DFC500261817 /* Utility */,
+				DCBA213B2196E03100261817 /* MVC */,
 				DCBA20E12196CAEF00261817 /* Assets.xcassets */,
-				DCBA20E32196CAEF00261817 /* LaunchScreen.storyboard */,
 				DCBA20E62196CAEF00261817 /* Info.plist */,
 				DCBA20DE2196CAED00261817 /* CarPooling.xcdatamodeld */,
 			);
 			path = CarPooling;
+			sourceTree = "<group>";
+		};
+		DCBA20EC2196DD6F00261817 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA21062196DF1400261817 /* Action Sheet */,
+				DCBA21022196DEEF00261817 /* SkyFloatingLabelTextField.swift */,
+				DCBA21002196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift */,
+				DCBA21012196DEEF00261817 /* UITextField+fixCaretPosition.swift */,
+				DCBA20ED2196DD9300261817 /* TPKeyBoardAvoiding */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		DCBA20ED2196DD9300261817 /* TPKeyBoardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA20F62196DEA600261817 /* TPKeyboardAvoidingCollectionView.h */,
+				DCBA20F42196DEA600261817 /* TPKeyboardAvoidingCollectionView.m */,
+				DCBA20F52196DEA600261817 /* TPKeyboardAvoidingScrollView.h */,
+				DCBA20F72196DEA600261817 /* TPKeyboardAvoidingScrollView.m */,
+				DCBA20FB2196DEA700261817 /* TPKeyboardAvoidingTableView.h */,
+				DCBA20F92196DEA600261817 /* TPKeyboardAvoidingTableView.m */,
+				DCBA20F82196DEA600261817 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				DCBA20FA2196DEA600261817 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyBoardAvoiding;
+			sourceTree = "<group>";
+		};
+		DCBA20EE2196DDDA00261817 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA21252196DF7100261817 /* NTMonthYearPicker */,
+				DCBA21242196DF5300261817 /* Fonts */,
+				DCBA20EF2196DDF000261817 /* Reachability */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		DCBA20EF2196DDF000261817 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA20F12196DE2200261817 /* Reachability.h */,
+				DCBA20F22196DE2200261817 /* Reachability.m */,
+				DCBA20F02196DE2100261817 /* CarPooling-Bridging-Header.h */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		DCBA21062196DF1400261817 /* Action Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA210D2196DF3400261817 /* AbstractActionSheetPicker.h */,
+				DCBA21132196DF3500261817 /* AbstractActionSheetPicker.m */,
+				DCBA21142196DF3500261817 /* ActionSheetCustomPicker.h */,
+				DCBA21072196DF3400261817 /* ActionSheetCustomPicker.m */,
+				DCBA210F2196DF3400261817 /* ActionSheetCustomPickerDelegate.h */,
+				DCBA210C2196DF3400261817 /* ActionSheetDatePicker.h */,
+				DCBA21192196DF3500261817 /* ActionSheetDatePicker.m */,
+				DCBA210E2196DF3400261817 /* ActionSheetDistancePicker.h */,
+				DCBA21162196DF3500261817 /* ActionSheetDistancePicker.m */,
+				DCBA21172196DF3500261817 /* ActionSheetLocalePicker.h */,
+				DCBA210A2196DF3400261817 /* ActionSheetLocalePicker.m */,
+				DCBA21102196DF3400261817 /* ActionSheetMultipleStringPicker.h */,
+				DCBA211A2196DF3500261817 /* ActionSheetMultipleStringPicker.m */,
+				DCBA21122196DF3500261817 /* ActionSheetPicker.h */,
+				DCBA21112196DF3500261817 /* ActionSheetStringPicker.h */,
+				DCBA210B2196DF3400261817 /* ActionSheetStringPicker.m */,
+				DCBA21082196DF3400261817 /* DistancePickerView.h */,
+				DCBA21152196DF3500261817 /* DistancePickerView.m */,
+				DCBA21092196DF3400261817 /* SWActionSheet.h */,
+				DCBA21182196DF3500261817 /* SWActionSheet.m */,
+			);
+			path = "Action Sheet";
+			sourceTree = "<group>";
+		};
+		DCBA21242196DF5300261817 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA21542196E92900261817 /* Montserrat-Black.ttf */,
+				DCBA214E2196E92800261817 /* Montserrat-BlackItalic.ttf */,
+				DCBA21502196E92900261817 /* Montserrat-Bold.ttf */,
+				DCBA21492196E92800261817 /* Montserrat-BoldItalic.ttf */,
+				DCBA21512196E92900261817 /* Montserrat-ExtraBold.ttf */,
+				DCBA214F2196E92900261817 /* Montserrat-ExtraBoldItalic.ttf */,
+				DCBA21552196E92900261817 /* Montserrat-ExtraLight.ttf */,
+				DCBA21562196E92900261817 /* Montserrat-ExtraLightItalic.ttf */,
+				DCBA21582196E92A00261817 /* Montserrat-Italic.ttf */,
+				DCBA21532196E92900261817 /* Montserrat-Light.ttf */,
+				DCBA21572196E92A00261817 /* Montserrat-LightItalic.ttf */,
+				DCBA21592196E92A00261817 /* Montserrat-Medium.ttf */,
+				DCBA214D2196E92800261817 /* Montserrat-MediumItalic.ttf */,
+				DCBA215A2196E92A00261817 /* Montserrat-Regular.ttf */,
+				DCBA214A2196E92800261817 /* Montserrat-SemiBold.ttf */,
+				DCBA21522196E92900261817 /* Montserrat-SemiBoldItalic.ttf */,
+				DCBA214B2196E92800261817 /* Montserrat-Thin.ttf */,
+				DCBA214C2196E92800261817 /* Montserrat-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DCBA21252196DF7100261817 /* NTMonthYearPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA21282196DF9E00261817 /* NTMonthYearPicker-Prefix.pch */,
+				DCBA21262196DF9E00261817 /* NTMonthYearPicker.h */,
+				DCBA21272196DF9E00261817 /* NTMonthYearPicker.m */,
+			);
+			path = NTMonthYearPicker;
+			sourceTree = "<group>";
+		};
+		DCBA212A2196DFC500261817 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA212B2196DFEC00261817 /* AppHelper.swift */,
+				DCBA212F2196DFEC00261817 /* Defines.swift */,
+				DCBA212E2196DFEC00261817 /* Extension.swift */,
+				DCBA21302196DFED00261817 /* PagedHorizontalView.swift */,
+				DCBA212C2196DFEC00261817 /* ServiceClass.swift */,
+				DCBA21322196DFED00261817 /* Strings.swift */,
+				DCBA21312196DFED00261817 /* SwiftyJSON.swift */,
+				DCBA212D2196DFEC00261817 /* Utilities.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		DCBA213B2196E03100261817 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA20D72196CAED00261817 /* AppDelegate.swift */,
+				DCBA213D2196E0C500261817 /* BaseViewController.swift */,
+				DCBA21422196E1D400261817 /* View */,
+				DCBA213F2196E17D00261817 /* Model */,
+				DCBA21462196E23200261817 /* Controller */,
+				DCBA213C2196E05300261817 /* Storyboard */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		DCBA213C2196E05300261817 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA20E32196CAEF00261817 /* LaunchScreen.storyboard */,
+				DCBA20DB2196CAED00261817 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DCBA213F2196E17D00261817 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA21402196E18F00261817 /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DCBA21422196E1D400261817 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA21452196E20900261817 /* UiView */,
+				DCBA21442196E1FA00261817 /* TableView */,
+				DCBA21432196E1EB00261817 /* CollectionView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCBA21432196E1EB00261817 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DCBA21442196E1FA00261817 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DCBA21452196E20900261817 /* UiView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UiView;
+			sourceTree = "<group>";
+		};
+		DCBA21462196E23200261817 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA21482196E26900261817 /* Login */,
+				DCBA21472196E25D00261817 /* Common */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DCBA21472196E25D00261817 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DCBA21482196E26900261817 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA20D92196CAED00261817 /* ViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +418,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCBA20E92196CAEF00261817 /* Build configuration list for PBXNativeTarget "CarPooling" */;
 			buildPhases = (
+				EFF3E8BBAF493FBCE111D6B5 /* [CP] Check Pods Manifest.lock */,
 				DCBA20D02196CAED00261817 /* Sources */,
 				DCBA20D12196CAED00261817 /* Frameworks */,
 				DCBA20D22196CAED00261817 /* Resources */,
+				3068A9F23FDFEF355AA955B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -99,6 +445,7 @@
 				TargetAttributes = {
 					DCBA20D32196CAED00261817 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -125,21 +472,120 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCBA21652196E92A00261817 /* Montserrat-Light.ttf in Resources */,
+				DCBA21602196E92A00261817 /* Montserrat-BlackItalic.ttf in Resources */,
+				DCBA21632196E92A00261817 /* Montserrat-ExtraBold.ttf in Resources */,
+				DCBA215B2196E92A00261817 /* Montserrat-BoldItalic.ttf in Resources */,
+				DCBA215E2196E92A00261817 /* Montserrat-ThinItalic.ttf in Resources */,
+				DCBA215F2196E92A00261817 /* Montserrat-MediumItalic.ttf in Resources */,
+				DCBA216B2196E92A00261817 /* Montserrat-Medium.ttf in Resources */,
+				DCBA216A2196E92A00261817 /* Montserrat-Italic.ttf in Resources */,
 				DCBA20E52196CAEF00261817 /* LaunchScreen.storyboard in Resources */,
+				DCBA216C2196E92A00261817 /* Montserrat-Regular.ttf in Resources */,
+				DCBA21642196E92A00261817 /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				DCBA21692196E92A00261817 /* Montserrat-LightItalic.ttf in Resources */,
 				DCBA20E22196CAEF00261817 /* Assets.xcassets in Resources */,
 				DCBA20DD2196CAED00261817 /* Main.storyboard in Resources */,
+				DCBA21612196E92A00261817 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				DCBA21662196E92A00261817 /* Montserrat-Black.ttf in Resources */,
+				DCBA215D2196E92A00261817 /* Montserrat-Thin.ttf in Resources */,
+				DCBA21672196E92A00261817 /* Montserrat-ExtraLight.ttf in Resources */,
+				DCBA21682196E92A00261817 /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				DCBA21622196E92A00261817 /* Montserrat-Bold.ttf in Resources */,
+				DCBA215C2196E92A00261817 /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3068A9F23FDFEF355AA955B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFF3E8BBAF493FBCE111D6B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarPooling-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DCBA20D02196CAED00261817 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCBA21042196DEEF00261817 /* UITextField+fixCaretPosition.swift in Sources */,
+				DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */,
+				DCBA21202196DF3500261817 /* ActionSheetDistancePicker.m in Sources */,
+				DCBA21052196DEEF00261817 /* SkyFloatingLabelTextField.swift in Sources */,
+				DCBA211C2196DF3500261817 /* ActionSheetLocalePicker.m in Sources */,
+				DCBA213E2196E0C500261817 /* BaseViewController.swift in Sources */,
+				DCBA21232196DF3500261817 /* ActionSheetMultipleStringPicker.m in Sources */,
+				DCBA21352196DFED00261817 /* Utilities.swift in Sources */,
+				DCBA211F2196DF3500261817 /* DistancePickerView.m in Sources */,
+				DCBA21212196DF3500261817 /* SWActionSheet.m in Sources */,
+				DCBA20FC2196DEA700261817 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				DCBA21362196DFED00261817 /* Extension.swift in Sources */,
+				DCBA21382196DFED00261817 /* PagedHorizontalView.swift in Sources */,
+				DCBA21332196DFED00261817 /* AppHelper.swift in Sources */,
+				DCBA211D2196DF3500261817 /* ActionSheetStringPicker.m in Sources */,
+				DCBA21222196DF3500261817 /* ActionSheetDatePicker.m in Sources */,
+				DCBA21032196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
+				DCBA21342196DFED00261817 /* ServiceClass.swift in Sources */,
+				DCBA211E2196DF3500261817 /* AbstractActionSheetPicker.m in Sources */,
 				DCBA20E02196CAED00261817 /* CarPooling.xcdatamodeld in Sources */,
+				DCBA21392196DFED00261817 /* SwiftyJSON.swift in Sources */,
+				DCBA20FE2196DEA700261817 /* TPKeyboardAvoidingTableView.m in Sources */,
 				DCBA20DA2196CAED00261817 /* ViewController.swift in Sources */,
+				DCBA213A2196DFED00261817 /* Strings.swift in Sources */,
+				DCBA21412196E18F00261817 /* Models.swift in Sources */,
+				DCBA20FD2196DEA700261817 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				DCBA211B2196DF3500261817 /* ActionSheetCustomPicker.m in Sources */,
+				DCBA21372196DFED00261817 /* Defines.swift in Sources */,
+				DCBA20FF2196DEA700261817 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				DCBA20F32196DE2200261817 /* Reachability.m in Sources */,
 				DCBA20D82196CAED00261817 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,16 +730,21 @@
 		};
 		DCBA20EA2196CAEF00261817 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41D634D39CB844F4B9BEF287 /* Pods-CarPooling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CarPooling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.carpooling.CarPooling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CarPooling/Library/Reachability/CarPooling-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,16 +752,20 @@
 		};
 		DCBA20EB2196CAEF00261817 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF73A11CB12C79E49BDA2650 /* Pods-CarPooling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CarPooling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.carpooling.CarPooling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CarPooling/Library/Reachability/CarPooling-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
