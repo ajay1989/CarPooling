@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A71505C58669E5201BC994FC /* Pods_CarPooling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */; };
+		D05C501621980A870032537E /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501521980A870032537E /* Registration1VC.swift */; };
+		D05C501821980ACB0032537E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501721980ACB0032537E /* LoginVC.swift */; };
 		DCBA20D82196CAED00261817 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20D72196CAED00261817 /* AppDelegate.swift */; };
-		DCBA20DA2196CAED00261817 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20D92196CAED00261817 /* ViewController.swift */; };
 		DCBA20DD2196CAED00261817 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBA20DB2196CAED00261817 /* Main.storyboard */; };
 		DCBA20E02196CAED00261817 /* CarPooling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCBA20DE2196CAED00261817 /* CarPooling.xcdatamodeld */; };
 		DCBA20E22196CAEF00261817 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCBA20E12196CAEF00261817 /* Assets.xcassets */; };
@@ -66,9 +67,10 @@
 		18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarPooling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D634D39CB844F4B9BEF287 /* Pods-CarPooling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.debug.xcconfig"; sourceTree = "<group>"; };
 		BF73A11CB12C79E49BDA2650 /* Pods-CarPooling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.release.xcconfig"; sourceTree = "<group>"; };
+		D05C501521980A870032537E /* Registration1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
+		D05C501721980ACB0032537E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DCBA20D42196CAED00261817 /* CarPooling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPooling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCBA20D72196CAED00261817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCBA20D92196CAED00261817 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DCBA20DC2196CAED00261817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCBA20DF2196CAED00261817 /* CarPooling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarPooling.xcdatamodel; sourceTree = "<group>"; };
 		DCBA20E12196CAEF00261817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +170,14 @@
 				18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D05C501421980A870032537E /* RegistrationVC */ = {
+			isa = PBXGroup;
+			children = (
+				D05C501521980A870032537E /* Registration1VC.swift */,
+			);
+			path = RegistrationVC;
 			sourceTree = "<group>";
 		};
 		DCBA20CB2196CAED00261817 = {
@@ -390,6 +400,7 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D05C501421980A870032537E /* RegistrationVC */,
 				DCBA21482196E26900261817 /* Login */,
 				DCBA21472196E25D00261817 /* Common */,
 			);
@@ -406,7 +417,7 @@
 		DCBA21482196E26900261817 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				DCBA20D92196CAED00261817 /* ViewController.swift */,
+				D05C501721980ACB0032537E /* LoginVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -577,11 +588,12 @@
 				DCBA211E2196DF3500261817 /* AbstractActionSheetPicker.m in Sources */,
 				DCBA20E02196CAED00261817 /* CarPooling.xcdatamodeld in Sources */,
 				DCBA21392196DFED00261817 /* SwiftyJSON.swift in Sources */,
+				D05C501621980A870032537E /* Registration1VC.swift in Sources */,
 				DCBA20FE2196DEA700261817 /* TPKeyboardAvoidingTableView.m in Sources */,
-				DCBA20DA2196CAED00261817 /* ViewController.swift in Sources */,
 				DCBA213A2196DFED00261817 /* Strings.swift in Sources */,
 				DCBA21412196E18F00261817 /* Models.swift in Sources */,
 				DCBA20FD2196DEA700261817 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				D05C501821980ACB0032537E /* LoginVC.swift in Sources */,
 				DCBA211B2196DF3500261817 /* ActionSheetCustomPicker.m in Sources */,
 				DCBA21372196DFED00261817 /* Defines.swift in Sources */,
 				DCBA20FF2196DEA700261817 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
