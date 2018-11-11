@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Registration1VC: UIViewController {
+class Registration1VC: BaseViewController {
     
     @IBOutlet weak var vw_number: UIView! {
         didSet {
@@ -32,5 +32,17 @@ class Registration1VC: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    override func viewWillAppear(_ animated: Bool) {
+        self.hideNavigationController()
+    }
     
+    @IBAction func btn_continue_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: Registration2VC = storyboard.instantiateViewController(withIdentifier: "registration2VC") as! Registration2VC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func btn_back_tap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

@@ -1,18 +1,29 @@
 //
-//  LoginVC.swift
+//  Registration2VC.swift
 //  CarPooling
 //
-//  Created by archit rai saxena on 11/11/18.
+//  Created by Ajay Vyas on 11/11/18.
 //  Copyright © 2018 Ajay Vyas. All rights reserved.
 //
 
 import UIKit
 
-class LoginVC: BaseViewController {
-
+class Registration2VC: BaseViewController {
+    @IBOutlet weak var scrollView:UIScrollView!
+    @IBOutlet weak var vw_number: UIView! {
+        didSet {
+            vw_number.layer.borderColor = UIColor.gray.cgColor
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.registerScrollView(scrollView)
+        if #available(iOS 11.0, *) {
+            scrollView.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -30,11 +41,13 @@ class LoginVC: BaseViewController {
         self.hideNavigationController()
     }
     
-    
     @IBAction func btn_continue_tap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc: Registration1VC = storyboard.instantiateViewController(withIdentifier: "registration1VC") as! Registration1VC
+        let vc: Registration3VC = storyboard.instantiateViewController(withIdentifier: "registration3VC") as! Registration3VC
         self.navigationController?.pushViewController(vc, animated: true)
-
+    }
+    
+    @IBAction func btn_back_tap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
