@@ -42,6 +42,9 @@ class Registration4VC: BaseViewController {
     }
     
     @IBAction func btn_continue_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: Registration5VC = storyboard.instantiateViewController(withIdentifier: "Registration5VC") as! Registration5VC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func btn_back_tap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

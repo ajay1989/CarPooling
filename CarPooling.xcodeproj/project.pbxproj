@@ -10,6 +10,8 @@
 		A71505C58669E5201BC994FC /* Pods_CarPooling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */; };
 		D05C501621980A870032537E /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501521980A870032537E /* Registration1VC.swift */; };
 		D05C501821980ACB0032537E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501721980ACB0032537E /* LoginVC.swift */; };
+		D05C501C2199F6D30032537E /* Registration5VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501B2199F6D30032537E /* Registration5VC.swift */; };
+		D05C501E2199F7040032537E /* Registration6VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501D2199F7040032537E /* Registration6VC.swift */; };
 		DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EAA1C21985D600099FE98 /* Registration2VC.swift */; };
 		DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EAA1E21986BEF0099FE98 /* Registration3VC.swift */; };
 		DC1EAA2121987ACB0099FE98 /* Registration4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EAA2021987ACB0099FE98 /* Registration4VC.swift */; };
@@ -72,6 +74,8 @@
 		BF73A11CB12C79E49BDA2650 /* Pods-CarPooling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.release.xcconfig"; sourceTree = "<group>"; };
 		D05C501521980A870032537E /* Registration1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
 		D05C501721980ACB0032537E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D05C501B2199F6D30032537E /* Registration5VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration5VC.swift; sourceTree = "<group>"; };
+		D05C501D2199F7040032537E /* Registration6VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration6VC.swift; sourceTree = "<group>"; };
 		DC1EAA1C21985D600099FE98 /* Registration2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration2VC.swift; sourceTree = "<group>"; };
 		DC1EAA1E21986BEF0099FE98 /* Registration3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration3VC.swift; sourceTree = "<group>"; };
 		DC1EAA2021987ACB0099FE98 /* Registration4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration4VC.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				DC1EAA1C21985D600099FE98 /* Registration2VC.swift */,
 				DC1EAA1E21986BEF0099FE98 /* Registration3VC.swift */,
 				DC1EAA2021987ACB0099FE98 /* Registration4VC.swift */,
+				D05C501B2199F6D30032537E /* Registration5VC.swift */,
+				D05C501D2199F7040032537E /* Registration6VC.swift */,
 			);
 			path = RegistrationVC;
 			sourceTree = "<group>";
@@ -592,6 +598,7 @@
 				DCBA21332196DFED00261817 /* AppHelper.swift in Sources */,
 				DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */,
 				DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */,
+				D05C501E2199F7040032537E /* Registration6VC.swift in Sources */,
 				DCBA211D2196DF3500261817 /* ActionSheetStringPicker.m in Sources */,
 				DCBA21222196DF3500261817 /* ActionSheetDatePicker.m in Sources */,
 				DCBA21032196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
@@ -609,6 +616,7 @@
 				DCBA211B2196DF3500261817 /* ActionSheetCustomPicker.m in Sources */,
 				DCBA21372196DFED00261817 /* Defines.swift in Sources */,
 				DCBA20FF2196DEA700261817 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				D05C501C2199F6D30032537E /* Registration5VC.swift in Sources */,
 				DCBA20F32196DE2200261817 /* Reachability.m in Sources */,
 				DCBA20D82196CAED00261817 /* AppDelegate.swift in Sources */,
 			);
