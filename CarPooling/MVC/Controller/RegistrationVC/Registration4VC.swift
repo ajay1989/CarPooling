@@ -12,7 +12,7 @@ class Registration4VC: BaseViewController {
     @IBOutlet weak var scrollView:UIScrollView!
     @IBOutlet weak var vw_email: UIView! {
         didSet {
-            vw_email.layer.borderColor = UIColor.gray.cgColor
+            vw_email.layer.borderColor =  UIColor(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0).cgColor
         }
         
     }

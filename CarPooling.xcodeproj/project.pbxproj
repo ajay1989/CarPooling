@@ -10,6 +10,8 @@
 		A71505C58669E5201BC994FC /* Pods_CarPooling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */; };
 		D0125428219B4D2E007E5D28 /* LoginEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0125427219B4D2E007E5D28 /* LoginEmailVC.swift */; };
 		D0141521219DE931006C2154 /* Registration7VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0141520219DE931006C2154 /* Registration7VC.swift */; };
+		D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019101F21A4789D00C8DF85 /* DashboardVC.swift */; };
+		D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */; };
 		D05C501621980A870032537E /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501521980A870032537E /* Registration1VC.swift */; };
 		D05C501821980ACB0032537E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501721980ACB0032537E /* LoginVC.swift */; };
 		D05C501C2199F6D30032537E /* Registration5VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501B2199F6D30032537E /* Registration5VC.swift */; };
@@ -76,6 +78,8 @@
 		BF73A11CB12C79E49BDA2650 /* Pods-CarPooling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.release.xcconfig"; sourceTree = "<group>"; };
 		D0125427219B4D2E007E5D28 /* LoginEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailVC.swift; sourceTree = "<group>"; };
 		D0141520219DE931006C2154 /* Registration7VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration7VC.swift; sourceTree = "<group>"; };
+		D019101F21A4789D00C8DF85 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		D05C501521980A870032537E /* Registration1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
 		D05C501721980ACB0032537E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D05C501B2199F6D30032537E /* Registration5VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration5VC.swift; sourceTree = "<group>"; };
@@ -184,6 +188,15 @@
 				18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D019101E21A4786B00C8DF85 /* DashboardVC */ = {
+			isa = PBXGroup;
+			children = (
+				D019101F21A4789D00C8DF85 /* DashboardVC.swift */,
+				D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */,
+			);
+			path = DashboardVC;
 			sourceTree = "<group>";
 		};
 		D05C501421980A870032537E /* RegistrationVC */ = {
@@ -420,6 +433,7 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D019101E21A4786B00C8DF85 /* DashboardVC */,
 				D05C501421980A870032537E /* RegistrationVC */,
 				DCBA21482196E26900261817 /* Login */,
 				DCBA21472196E25D00261817 /* Common */,
@@ -588,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */,
 				DCBA21042196DEEF00261817 /* UITextField+fixCaretPosition.swift in Sources */,
 				DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */,
 				DCBA21202196DF3500261817 /* ActionSheetDistancePicker.m in Sources */,
@@ -609,6 +624,7 @@
 				DCBA211D2196DF3500261817 /* ActionSheetStringPicker.m in Sources */,
 				DCBA21222196DF3500261817 /* ActionSheetDatePicker.m in Sources */,
 				DCBA21032196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
+				D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */,
 				DCBA21342196DFED00261817 /* ServiceClass.swift in Sources */,
 				DCBA211E2196DF3500261817 /* AbstractActionSheetPicker.m in Sources */,
 				DCBA20E02196CAED00261817 /* CarPooling.xcdatamodeld in Sources */,
