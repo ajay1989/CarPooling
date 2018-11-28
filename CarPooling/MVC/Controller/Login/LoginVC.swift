@@ -9,10 +9,14 @@
 import UIKit
 
 class LoginVC: BaseViewController {
-
+    
+    
+    @IBOutlet weak var lbl_bottomText: UILabel!
+    @IBOutlet weak var lbl_facebook: UILabel!
+    @IBOutlet weak var lbl_centerText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         // Do any additional setup after loading the view.
     }
     

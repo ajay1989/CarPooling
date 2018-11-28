@@ -10,6 +10,9 @@ import UIKit
 
 class Registration1VC: BaseViewController {
     
+    @IBOutlet weak var lbl_detail1: UILabel!
+    @IBOutlet weak var lbl_detail: UILabel!
+    @IBOutlet weak var lbl_heading: UILabel!
     @IBOutlet weak var vw_number: UIView! {
         didSet {
             vw_number.layer.borderColor = UIColor.gray.cgColor
@@ -18,7 +21,7 @@ class Registration1VC: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         // Do any additional setup after loading the view.
     }
     
