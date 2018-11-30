@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "girlX1.png",
+      "filename" : "green-cone.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "green-cone@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "green-cone@3x.png",
       "scale" : "3x"
     }
   ],

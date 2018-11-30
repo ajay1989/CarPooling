@@ -10,6 +10,9 @@
 		A71505C58669E5201BC994FC /* Pods_CarPooling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */; };
 		D0125428219B4D2E007E5D28 /* LoginEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0125427219B4D2E007E5D28 /* LoginEmailVC.swift */; };
 		D0141521219DE931006C2154 /* Registration7VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0141520219DE931006C2154 /* Registration7VC.swift */; };
+		D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9021B054C5005952B8 /* HomeVC.swift */; };
+		D0166C9521B05655005952B8 /* DriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9421B05655005952B8 /* DriverVC.swift */; };
+		D0166C9721B05664005952B8 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9621B05664005952B8 /* InfoVC.swift */; };
 		D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019101F21A4789D00C8DF85 /* DashboardVC.swift */; };
 		D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */; };
 		D05C501621980A870032537E /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501521980A870032537E /* Registration1VC.swift */; };
@@ -78,6 +81,9 @@
 		BF73A11CB12C79E49BDA2650 /* Pods-CarPooling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.release.xcconfig"; sourceTree = "<group>"; };
 		D0125427219B4D2E007E5D28 /* LoginEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailVC.swift; sourceTree = "<group>"; };
 		D0141520219DE931006C2154 /* Registration7VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration7VC.swift; sourceTree = "<group>"; };
+		D0166C9021B054C5005952B8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		D0166C9421B05655005952B8 /* DriverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverVC.swift; sourceTree = "<group>"; };
+		D0166C9621B05664005952B8 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		D019101F21A4789D00C8DF85 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		D05C501521980A870032537E /* Registration1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
@@ -188,6 +194,30 @@
 				18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0166C8F21B054A4005952B8 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0166C9021B054C5005952B8 /* HomeVC.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		D0166C9221B05609005952B8 /* DriverVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0166C9421B05655005952B8 /* DriverVC.swift */,
+			);
+			path = DriverVC;
+			sourceTree = "<group>";
+		};
+		D0166C9321B05641005952B8 /* InfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0166C9621B05664005952B8 /* InfoVC.swift */,
+			);
+			path = InfoVC;
 			sourceTree = "<group>";
 		};
 		D019101E21A4786B00C8DF85 /* DashboardVC */ = {
@@ -433,6 +463,9 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D0166C9321B05641005952B8 /* InfoVC */,
+				D0166C9221B05609005952B8 /* DriverVC */,
+				D0166C8F21B054A4005952B8 /* HomeVC */,
 				D019101E21A4786B00C8DF85 /* DashboardVC */,
 				D05C501421980A870032537E /* RegistrationVC */,
 				DCBA21482196E26900261817 /* Login */,
@@ -606,6 +639,8 @@
 				DCBA21042196DEEF00261817 /* UITextField+fixCaretPosition.swift in Sources */,
 				DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */,
 				DCBA21202196DF3500261817 /* ActionSheetDistancePicker.m in Sources */,
+				D0166C9721B05664005952B8 /* InfoVC.swift in Sources */,
+				D0166C9521B05655005952B8 /* DriverVC.swift in Sources */,
 				D0141521219DE931006C2154 /* Registration7VC.swift in Sources */,
 				DCBA21052196DEEF00261817 /* SkyFloatingLabelTextField.swift in Sources */,
 				DCBA211C2196DF3500261817 /* ActionSheetLocalePicker.m in Sources */,
@@ -617,6 +652,7 @@
 				DCBA20FC2196DEA700261817 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				DCBA21362196DFED00261817 /* Extension.swift in Sources */,
 				DCBA21382196DFED00261817 /* PagedHorizontalView.swift in Sources */,
+				D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */,
 				DCBA21332196DFED00261817 /* AppHelper.swift in Sources */,
 				DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */,
 				DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */,

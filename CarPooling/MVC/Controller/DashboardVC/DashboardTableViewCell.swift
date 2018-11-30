@@ -9,10 +9,13 @@
 import UIKit
 
 class DashboardTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var vw_base: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+      
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
