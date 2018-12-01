@@ -11,6 +11,7 @@ import UIKit
 class DashboardTableViewCell: UITableViewCell {
     @IBOutlet weak var vw_base: UIView!
     
+    @IBOutlet weak var vw_green: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

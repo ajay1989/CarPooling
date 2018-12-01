@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A71505C58669E5201BC994FC /* Pods_CarPooling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */; };
+		D011F34E21B280DE008F2814 /* DriverStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011F34D21B280DE008F2814 /* DriverStep1VC.swift */; };
+		D011F35021B280F5008F2814 /* DriverStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011F34F21B280F5008F2814 /* DriverStep2VC.swift */; };
+		D011F35221B2863A008F2814 /* DriverStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011F35121B2863A008F2814 /* DriverStep3VC.swift */; };
 		D0125428219B4D2E007E5D28 /* LoginEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0125427219B4D2E007E5D28 /* LoginEmailVC.swift */; };
 		D0141521219DE931006C2154 /* Registration7VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0141520219DE931006C2154 /* Registration7VC.swift */; };
 		D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9021B054C5005952B8 /* HomeVC.swift */; };
@@ -79,6 +82,9 @@
 		18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarPooling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D634D39CB844F4B9BEF287 /* Pods-CarPooling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.debug.xcconfig"; sourceTree = "<group>"; };
 		BF73A11CB12C79E49BDA2650 /* Pods-CarPooling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.release.xcconfig"; sourceTree = "<group>"; };
+		D011F34D21B280DE008F2814 /* DriverStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep1VC.swift; sourceTree = "<group>"; };
+		D011F34F21B280F5008F2814 /* DriverStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep2VC.swift; sourceTree = "<group>"; };
+		D011F35121B2863A008F2814 /* DriverStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep3VC.swift; sourceTree = "<group>"; };
 		D0125427219B4D2E007E5D28 /* LoginEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailVC.swift; sourceTree = "<group>"; };
 		D0141520219DE931006C2154 /* Registration7VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration7VC.swift; sourceTree = "<group>"; };
 		D0166C9021B054C5005952B8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -208,6 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				D0166C9421B05655005952B8 /* DriverVC.swift */,
+				D011F34D21B280DE008F2814 /* DriverStep1VC.swift */,
+				D011F34F21B280F5008F2814 /* DriverStep2VC.swift */,
+				D011F35121B2863A008F2814 /* DriverStep3VC.swift */,
 			);
 			path = DriverVC;
 			sourceTree = "<group>";
@@ -635,6 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D011F34E21B280DE008F2814 /* DriverStep1VC.swift in Sources */,
 				D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */,
 				DCBA21042196DEEF00261817 /* UITextField+fixCaretPosition.swift in Sources */,
 				DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */,
@@ -657,6 +667,7 @@
 				DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */,
 				DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */,
 				D05C501E2199F7040032537E /* Registration6VC.swift in Sources */,
+				D011F35221B2863A008F2814 /* DriverStep3VC.swift in Sources */,
 				DCBA211D2196DF3500261817 /* ActionSheetStringPicker.m in Sources */,
 				DCBA21222196DF3500261817 /* ActionSheetDatePicker.m in Sources */,
 				DCBA21032196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
@@ -671,6 +682,7 @@
 				DCBA213A2196DFED00261817 /* Strings.swift in Sources */,
 				DC1EAA2121987ACB0099FE98 /* Registration4VC.swift in Sources */,
 				DCBA21412196E18F00261817 /* Models.swift in Sources */,
+				D011F35021B280F5008F2814 /* DriverStep2VC.swift in Sources */,
 				DCBA20FD2196DEA700261817 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				D05C501821980ACB0032537E /* LoginVC.swift in Sources */,
 				DCBA211B2196DF3500261817 /* ActionSheetCustomPicker.m in Sources */,

@@ -45,8 +45,15 @@ class DashboardVC: UIViewController {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             // if placeArray.count > 0 {
             let cell = tblVw.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell
-             cell.vw_base.layer.cornerRadius = 10
+             cell.vw_base.layer.cornerRadius = 15
             cell.vw_base.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
+            cell.vw_green.clipsToBounds = true
+            cell.vw_green.layer.cornerRadius = 15
+            if #available(iOS 11.0, *) {
+                cell.vw_green.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+            } else {
+                // Fallback on earlier versions
+            }
             // border
 //             cell.vw_base.layer.borderWidth = 1.0
 //             cell.vw_base.layer.borderColor = UIColor.lightGray.cgColor
@@ -68,7 +75,7 @@ class DashboardVC: UIViewController {
             //p;return UITableViewCell()
         }
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 150
+            return 165
         }
         
 
@@ -76,14 +83,21 @@ class DashboardVC: UIViewController {
 extension UIView {
     
     func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
-        layer.masksToBounds = false
-        layer.shadowOffset = offset
-        layer.shadowColor = color.cgColor
-        layer.shadowRadius = radius
-        layer.shadowOpacity = opacity
+//        layer.masksToBounds = false
+//        layer.shadowOffset = offset
+//        layer.shadowColor = color.cgColor
+//        layer.shadowRadius = radius
+//        layer.shadowOpacity = opacity
+//
+//        let backgroundCGColor = backgroundColor?.cgColor
+//        backgroundColor = nil
+//        layer.backgroundColor =  backgroundCGColor
         
-        let backgroundCGColor = backgroundColor?.cgColor
-        backgroundColor = nil
-        layer.backgroundColor =  backgroundCGColor
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowOpacity = 0.7
+        layer.shadowRadius = 6.0
+        layer.masksToBounds = false
+         backgroundColor = UIColor.white
     }
 }
