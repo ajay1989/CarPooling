@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pcw-aZ-etf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -258,7 +258,10 @@ nous Otman 🎉</string>
                                                             <rect key="frame" x="33" y="3" width="302" height="40"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="19"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="b9i-nC-52s" id="r8K-Id-prr"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -362,9 +365,11 @@ nous Otman 🎉</string>
                         <viewLayoutGuide key="safeArea" id="49m-uw-r1S"/>
                     </view>
                     <connections>
+                        <outlet property="btn_continue" destination="rn6-rF-UIL" id="7GK-Db-bYU"/>
                         <outlet property="lbl_detail" destination="pNl-mo-HxM" id="Xtv-IR-DrR"/>
                         <outlet property="lbl_detail1" destination="Xkj-sJ-8eM" id="v14-Fx-J0a"/>
                         <outlet property="lbl_heading" destination="cmK-RK-erj" id="DyV-Xs-V7I"/>
+                        <outlet property="txt_phone" destination="smH-Ru-Tsw" id="y5V-Y5-K6O"/>
                         <outlet property="vw_number" destination="0f1-B0-GaT" id="adw-ak-gJg"/>
                     </connections>
                 </viewController>
@@ -387,7 +392,7 @@ nous Otman 🎉</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="756"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merci de saisir le code reçu par sms:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvg-Kc-bvT">
-                                                <rect key="frame" x="15" y="256.5" width="346" height="17.5"/>
+                                                <rect key="frame" x="15" y="257.5" width="346" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -400,6 +405,9 @@ nous Otman 🎉</string>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="22"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="xgg-Nt-fMs" id="ZWd-mM-DQb"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -509,6 +517,7 @@ nous Otman 🎉</string>
                         <viewLayoutGuide key="safeArea" id="Bqu-ye-0lZ"/>
                     </view>
                     <connections>
+                        <outlet property="btn_continue" destination="HOs-cB-ces" id="mco-9x-Ikg"/>
                         <outlet property="scrollView" destination="0AW-2o-HKn" id="x5R-fC-HK1"/>
                         <outlet property="txt_number" destination="M9s-Al-hb8" id="f60-ds-f6Q"/>
                         <outlet property="vw_number" destination="9Qx-sS-J0m" id="Uco-zb-xIU"/>
@@ -592,6 +601,9 @@ nous Otman 🎉</string>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="5Y0-b7-5n3" id="mO8-VO-Otd"/>
+                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -646,6 +658,9 @@ nous Otman 🎉</string>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="5Y0-b7-5n3" id="Vk8-jc-X7p"/>
+                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -771,7 +786,10 @@ nous Otman 🎉</string>
                         <viewLayoutGuide key="safeArea" id="lLR-ap-neS"/>
                     </view>
                     <connections>
+                        <outlet property="btn_continue" destination="nd8-nw-ftN" id="oc6-hS-8A2"/>
                         <outlet property="scrollView" destination="s6K-tb-SVP" id="Mtv-ZA-N1W"/>
+                        <outlet property="txt_firstName" destination="AT5-21-uY5" id="N6I-zh-em6"/>
+                        <outlet property="txt_lastName" destination="Cd5-Bh-Vcl" id="YM7-b8-hGh"/>
                         <outlet property="vw_fname" destination="aUb-mw-dmw" id="5ba-ab-KCQ"/>
                         <outlet property="vw_lname" destination="Q4A-aN-7sw" id="koA-Jw-BcB"/>
                     </connections>
@@ -831,6 +849,9 @@ nous Otman 🎉</string>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="TqQ-as-f3h" id="tS2-xE-Reb"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -922,7 +943,9 @@ nous Otman 🎉</string>
                         <viewLayoutGuide key="safeArea" id="ySn-vy-sGR"/>
                     </view>
                     <connections>
+                        <outlet property="btn_continue" destination="ZNu-Lt-KFm" id="Cf8-pl-Xyv"/>
                         <outlet property="scrollView" destination="A9b-de-Bcv" id="FGF-Mv-IuU"/>
+                        <outlet property="txt_email" destination="jV4-hR-Zke" id="der-E1-4gr"/>
                         <outlet property="vw_email" destination="2Q3-7h-7q8" id="j5P-hZ-Vz8"/>
                     </connections>
                 </viewController>

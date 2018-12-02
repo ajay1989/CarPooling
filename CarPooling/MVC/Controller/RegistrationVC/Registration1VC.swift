@@ -8,11 +8,12 @@
 
 import UIKit
 
-class Registration1VC: BaseViewController {
-    
+class Registration1VC: BaseViewController,UITextFieldDelegate {
+    @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var lbl_detail1: UILabel!
     @IBOutlet weak var lbl_detail: UILabel!
     @IBOutlet weak var lbl_heading: UILabel!
+    @IBOutlet weak var txt_phone: UITextField!
     @IBOutlet weak var vw_number: UIView! {
         didSet {
             vw_number.layer.borderColor = UIColor.gray.cgColor
@@ -37,9 +38,32 @@ class Registration1VC: BaseViewController {
      */
     override func viewWillAppear(_ animated: Bool) {
         self.hideNavigationController()
+        if (self.txt_phone.text?.isEmpty)! {
+            btn_continue.isEnabled = false
+            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
+        }
+        
     }
     
+    
+    
     @IBAction func btn_continue_tap(_ sender: Any) {
+//
+//        let params: [String : String] = ["mobile_number":self.txt_phone.text!]
+//        self.hudShow()
+//        ServiceClass.sharedInstance.hitServiceForCheckPhoneNumber(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+//            self.hudHide()
+//            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+//
+//
+//
+//            }
+//            else {
+//                self.makeToast(errorDict!["errMessage"] as! String)
+//            }
+//
+//        })
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: Registration2VC = storyboard.instantiateViewController(withIdentifier: "registration2VC") as! Registration2VC
         self.navigationController?.pushViewController(vc, animated: true)
@@ -48,4 +72,20 @@ class Registration1VC: BaseViewController {
     @IBAction func btn_back_tap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.text?.count == 9 {
+            btn_continue.isEnabled = true
+            btn_continue.setTitle("Continue👉", for: .normal)
+            btn_continue.setTitleColor(UIColor.black, for: .normal)
+        }
+        else {
+            btn_continue.isEnabled = false
+            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
+        }
+        return true
+    }
+    
 }

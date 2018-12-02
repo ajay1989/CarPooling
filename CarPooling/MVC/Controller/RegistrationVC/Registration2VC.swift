@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Registration2VC: BaseViewController {
+class Registration2VC: BaseViewController,UITextFieldDelegate {
     @IBOutlet weak var scrollView:UIScrollView!
-    
+    @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var txt_number: UITextField!
     @IBOutlet weak var vw_number: UIView! {
         didSet {
@@ -26,6 +26,13 @@ class Registration2VC: BaseViewController {
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
+        txt_number.text = ""
+        if (txt_number.text?.isEmpty)! {
+            btn_continue.isEnabled = false
+            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -51,5 +58,20 @@ class Registration2VC: BaseViewController {
     
     @IBAction func btn_back_tap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.text?.count == 3 {
+            btn_continue.isEnabled = true
+            btn_continue.setTitle("Continue👉", for: .normal)
+            btn_continue.setTitleColor(UIColor.black, for: .normal)
+        }
+        else {
+            btn_continue.isEnabled = false
+            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
+        }
+        return true
     }
 }

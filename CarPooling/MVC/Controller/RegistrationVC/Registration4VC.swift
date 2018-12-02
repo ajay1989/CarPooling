@@ -8,8 +8,10 @@
 
 import UIKit
 
-class Registration4VC: BaseViewController {
+class Registration4VC: BaseViewController,UITextFieldDelegate {
     @IBOutlet weak var scrollView:UIScrollView!
+    @IBOutlet weak var btn_continue: UIButton!
+    @IBOutlet weak var txt_email: UITextField!
     @IBOutlet weak var vw_email: UIView! {
         didSet {
             vw_email.layer.borderColor =  UIColor(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0).cgColor
@@ -23,6 +25,11 @@ class Registration4VC: BaseViewController {
             scrollView.contentInsetAdjustmentBehavior = .never
         } else {
             automaticallyAdjustsScrollViewInsets = false
+        }
+        if (txt_email.text?.isEmpty)! {
+            btn_continue.isEnabled = false
+            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
         }
         // Do any additional setup after loading the view.
     }
@@ -49,4 +56,28 @@ class Registration4VC: BaseViewController {
     @IBAction func btn_back_tap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if (textField.text?.count)! > 0 {
+            if (textField.text?.isEmail)! {
+                btn_continue.isEnabled = true
+                btn_continue.setTitle("Continue👉", for: .normal)
+                btn_continue.setTitleColor(UIColor.black, for: .normal)
+            }
+            else {
+                btn_continue.isEnabled = false
+                btn_continue.setTitle("Continue👉🏼", for: .normal)
+                btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
+            }
+            
+        }
+        else {
+            btn_continue.isEnabled = false
+            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
+        }
+        return true
+    }
+    
 }

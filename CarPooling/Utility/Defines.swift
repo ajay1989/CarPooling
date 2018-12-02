@@ -81,32 +81,13 @@ struct ServiceKeys{
 
 struct ServiceUrls
 {
-    static let baseUrl = "http://xsdemo.com/clinic/api/"
+    static let baseUrl = "http://echofounder.com/demo/carpoll/v1/api/"
 
 
-//    static let baseUrl = "http://xsdemo.com/metrocontents/api/"
 
-    static let enterregistrationcode = "patient/enter_registration_code"
-    static let createpassword = "patient/create_password"
-    static let forgot_password = "patient/forgot_password"
-    static let verifyaccount = "patient/verify_account"
-    static let login = "patient/login"
-    static let dashboard_data = "patient/dashboard_data"
-    static let clinics_list = "patient/clinics_list"
-    static let clinic_details = "patient/clinic_details"
-    static let logout = "patient/logout"
-    static let profile = "patient/profile"
-    static let update_profile_picture = "patient/update_profile_picture"
-    static let change_password = "patient/change_password"
-    static let update_profile = "patient/update_profile"
-    static let all_doctors = "patient/all_doctors"
-    static let book_appoinmanet = "patient/book_appoinmanet"
-    static let all_appoinmants = "patient/all_appoinmants"
-    static let confirm_appoinmants = "patient/confirm_appoinmants"
-    static let cancel_appoinmants = "patient/cancel_appoinmants"
-    static let members_list = "patient/members_list"
-    static let reshedule_appoinmants = "patient/reshedule_appoinmants"
-    static let notifications = "patient/notifications"
+
+    static let checknumber = "checknumber"
+    
 }
 struct ErrorCodes
 {
