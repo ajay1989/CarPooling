@@ -54,13 +54,16 @@ struct ServiceKeys{
     static let profile_image = "profile_image"
     static let keyContactNumber = "contact_number"
     static let keyProfileImage = "image_url"
-   
+   static let keyError = "error"
     static let keyErrorCode = "errorCode"
     static let keyErrorMessage = "errMessage"
     static let keyUserType = "user_type"
     
-   
+   static let keyFirstName = "first_name"
+    static let keyLastName = "last_name"
     static let keyEmail = "email"
+    static let keyDOB = "dob"
+    static let keyGender = "gender"
    static let KeyHealthID = "HealthID"
     static let keyContactEmail = "email"
     static let keyContactPhoneNumber = "phone_number"
@@ -87,6 +90,7 @@ struct ServiceUrls
 
 
     static let checknumber = "checknumber"
+    static let checkemail = "checkemail"
     
 }
 struct ErrorCodes

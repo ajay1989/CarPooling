@@ -56,6 +56,8 @@ class Registration3VC: BaseViewController,UITextFieldDelegate {
     }
     
     @IBAction func btn_continue_tap(_ sender: Any) {
+        AppHelper.setStringForKey(self.txt_firstName.text!, key: ServiceKeys.keyFirstName)
+        AppHelper.setStringForKey(self.txt_lastName.text!, key: ServiceKeys.keyLastName)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: Registration4VC = storyboard.instantiateViewController(withIdentifier: "registration4VC") as! Registration4VC
         self.navigationController?.pushViewController(vc, animated: true)

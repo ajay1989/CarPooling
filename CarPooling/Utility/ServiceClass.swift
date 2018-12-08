@@ -28,7 +28,7 @@ class ServiceClass: NSObject {
         {
             print(headers)
             
-            Alamofire.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers : headers)
+            Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.default, headers : headers)
                 .responseJSON { response in
                     
                     guard case .success(let rawJSON) = response.result else {
@@ -46,25 +46,16 @@ class ServiceClass: NSObject {
                         
                         let json = JSON(rawJSON)
                         print(json)
-                        if  json["status"] == "error1"{
+                        if  json["status"] == false{
                             var errorDict:[String:Any] = [String:Any]()
                             
 //                            errorDict[ServiceKeys.keyErrorCode] = ErrorCodes.errorCodeFailed
 //                            errorDict[ServiceKeys.keyErrorMessage] = json["error"].stringValue
-                            errorDict[ServiceKeys.keyErrorCode] = ErrorCodes.errorCodeFailed
-                            errorDict[ServiceKeys.keyErrorMessage] = json["message"].stringValue
-                            print(json["error_code"].stringValue)
                             
-                            
-                            if json["error_code"].stringValue == "delete_user"{
-                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                SVProgressHUD.dismiss()
-                                appDelegate.logoutAlert(message: json["message"].stringValue)
-                                
-                            }
-                            else {
+                            errorDict[ServiceKeys.keyErrorMessage] = json["error"].stringValue
+                           
                                 completion(ResponseType.kResponseTypeFail,nil,errorDict as AnyObject);
-                            }
+                            
                         }
                         else {
                             completion(ResponseType.kresponseTypeSuccess,json,nil)
@@ -231,9 +222,30 @@ class ServiceClass: NSObject {
     // For SignUp
     func hitServiceForCheckPhoneNumber(_ params:[String : Any], completion:@escaping completionBlockType)
     {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.checknumber)"
         print(baseUrl)
-           let headers: HTTPHeaders = [ "Content-Type" : "application/json"]
+           let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
+        print_debug(params)
+        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+    }
+    
+    func hitServiceForCheckEmail(_ params:[String : Any], completion:@escaping completionBlockType)
+    {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.checkemail)"
+        print(baseUrl)
+        let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }

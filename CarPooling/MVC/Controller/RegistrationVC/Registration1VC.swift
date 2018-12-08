@@ -49,24 +49,26 @@ class Registration1VC: BaseViewController,UITextFieldDelegate {
     
     
     @IBAction func btn_continue_tap(_ sender: Any) {
-//
-//        let params: [String : String] = ["mobile_number":self.txt_phone.text!]
-//        self.hudShow()
-//        ServiceClass.sharedInstance.hitServiceForCheckPhoneNumber(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
-//            self.hudHide()
-//            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-//
-//
-//
-//            }
-//            else {
-//                self.makeToast(errorDict!["errMessage"] as! String)
-//            }
-//
-//        })
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc: Registration2VC = storyboard.instantiateViewController(withIdentifier: "registration2VC") as! Registration2VC
-        self.navigationController?.pushViewController(vc, animated: true)
+
+        let params: [String : String] = ["mobile_number":self.txt_phone.text!]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForCheckPhoneNumber(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+
+                    print("sucess")
+                AppHelper.setStringForKey(self.txt_phone.text!, key: ServiceKeys.keyContactPhoneNumber)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc: Registration2VC = storyboard.instantiateViewController(withIdentifier: "registration2VC") as! Registration2VC
+                self.navigationController?.pushViewController(vc, animated: true)
+
+            }
+            else {
+                self.makeToast(errorDict!["errMessage"] as! String)
+            }
+
+        })
+        
     }
     
     @IBAction func btn_back_tap(_ sender: Any) {

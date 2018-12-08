@@ -18,6 +18,8 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
         }
         
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerScrollView(scrollView)
@@ -49,9 +51,25 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
     }
     
     @IBAction func btn_continue_tap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc: Registration5VC = storyboard.instantiateViewController(withIdentifier: "Registration5VC") as! Registration5VC
-        self.navigationController?.pushViewController(vc, animated: true)
+        let params: [String : String] = ["email":self.txt_email.text!]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForCheckEmail(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                
+                print("sucess")
+                AppHelper.setStringForKey(self.txt_email.text!, key: ServiceKeys.keyEmail)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc: Registration5VC = storyboard.instantiateViewController(withIdentifier: "Registration5VC") as! Registration5VC
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }
+            else {
+                self.makeToast(errorDict!["errMessage"] as! String)
+            }
+            
+        })
+        
     }
     @IBAction func btn_back_tap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
