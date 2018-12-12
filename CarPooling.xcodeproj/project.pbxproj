@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		A71505C58669E5201BC994FC /* Pods_CarPooling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */; };
+		D009A5F321BF8F4700764B60 /* DriverStep4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A5F221BF8F4700764B60 /* DriverStep4VC.swift */; };
+		D009A5F521BF8F5600764B60 /* DriverStep5VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A5F421BF8F5600764B60 /* DriverStep5VC.swift */; };
+		D009A5F721BF8F6600764B60 /* DriverStep6VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A5F621BF8F6600764B60 /* DriverStep6VC.swift */; };
+		D009A5F921BF8F7300764B60 /* DriverStep7VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A5F821BF8F7300764B60 /* DriverStep7VC.swift */; };
+		D009A5FB21BF8F8100764B60 /* DriverStep8VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A5FA21BF8F8100764B60 /* DriverStep8VC.swift */; };
+		D009A5FD21BF8F9500764B60 /* DriverStep9VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A5FC21BF8F9500764B60 /* DriverStep9VC.swift */; };
+		D009A5FF21BF8FA300764B60 /* DriverStep10VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A5FE21BF8FA300764B60 /* DriverStep10VC.swift */; };
+		D009A60121BF8FB300764B60 /* DriverStep11VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A60021BF8FB300764B60 /* DriverStep11VC.swift */; };
+		D009A60321BF8FE700764B60 /* DriverStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D009A60221BF8FE700764B60 /* DriverStoryboard.storyboard */; };
+		D009A61E21BFC39C00764B60 /* WWCalendarTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A61621BFC39C00764B60 /* WWCalendarTimeSelector.swift */; };
+		D009A61F21BFC39C00764B60 /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A61721BFC39C00764B60 /* NSDate+Timepiece.swift */; };
+		D009A62021BFC39C00764B60 /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A61821BFC39C00764B60 /* NSCalendar+Timepiece.swift */; };
+		D009A62121BFC39C00764B60 /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A61921BFC39C00764B60 /* String+Timepiece.swift */; };
+		D009A62221BFC39C00764B60 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A61A21BFC39C00764B60 /* Duration.swift */; };
+		D009A62321BFC39C00764B60 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A61B21BFC39C00764B60 /* Int+Timepiece.swift */; };
+		D009A62521BFC39C00764B60 /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A61D21BFC39C00764B60 /* NSDateComponents+Timepiece.swift */; };
+		D009A62721BFD36500764B60 /* WWCalendarTimeSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D009A62621BFD36500764B60 /* WWCalendarTimeSelector.storyboard */; };
 		D011F34E21B280DE008F2814 /* DriverStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011F34D21B280DE008F2814 /* DriverStep1VC.swift */; };
 		D011F35021B280F5008F2814 /* DriverStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011F34F21B280F5008F2814 /* DriverStep2VC.swift */; };
 		D011F35221B2863A008F2814 /* DriverStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011F35121B2863A008F2814 /* DriverStep3VC.swift */; };
@@ -82,6 +99,23 @@
 		18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarPooling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D634D39CB844F4B9BEF287 /* Pods-CarPooling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.debug.xcconfig"; sourceTree = "<group>"; };
 		BF73A11CB12C79E49BDA2650 /* Pods-CarPooling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.release.xcconfig"; sourceTree = "<group>"; };
+		D009A5F221BF8F4700764B60 /* DriverStep4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep4VC.swift; sourceTree = "<group>"; };
+		D009A5F421BF8F5600764B60 /* DriverStep5VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep5VC.swift; sourceTree = "<group>"; };
+		D009A5F621BF8F6600764B60 /* DriverStep6VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep6VC.swift; sourceTree = "<group>"; };
+		D009A5F821BF8F7300764B60 /* DriverStep7VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep7VC.swift; sourceTree = "<group>"; };
+		D009A5FA21BF8F8100764B60 /* DriverStep8VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep8VC.swift; sourceTree = "<group>"; };
+		D009A5FC21BF8F9500764B60 /* DriverStep9VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep9VC.swift; sourceTree = "<group>"; };
+		D009A5FE21BF8FA300764B60 /* DriverStep10VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep10VC.swift; sourceTree = "<group>"; };
+		D009A60021BF8FB300764B60 /* DriverStep11VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep11VC.swift; sourceTree = "<group>"; };
+		D009A60221BF8FE700764B60 /* DriverStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DriverStoryboard.storyboard; sourceTree = "<group>"; };
+		D009A61621BFC39C00764B60 /* WWCalendarTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWCalendarTimeSelector.swift; sourceTree = "<group>"; };
+		D009A61721BFC39C00764B60 /* NSDate+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timepiece.swift"; sourceTree = "<group>"; };
+		D009A61821BFC39C00764B60 /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
+		D009A61921BFC39C00764B60 /* String+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Timepiece.swift"; sourceTree = "<group>"; };
+		D009A61A21BFC39C00764B60 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		D009A61B21BFC39C00764B60 /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
+		D009A61D21BFC39C00764B60 /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
+		D009A62621BFD36500764B60 /* WWCalendarTimeSelector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WWCalendarTimeSelector.storyboard; sourceTree = "<group>"; };
 		D011F34D21B280DE008F2814 /* DriverStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep1VC.swift; sourceTree = "<group>"; };
 		D011F34F21B280F5008F2814 /* DriverStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep2VC.swift; sourceTree = "<group>"; };
 		D011F35121B2863A008F2814 /* DriverStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStep3VC.swift; sourceTree = "<group>"; };
@@ -202,6 +236,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D009A61521BFC37700764B60 /* CallenderTime */ = {
+			isa = PBXGroup;
+			children = (
+				D009A61A21BFC39C00764B60 /* Duration.swift */,
+				D009A61B21BFC39C00764B60 /* Int+Timepiece.swift */,
+				D009A61821BFC39C00764B60 /* NSCalendar+Timepiece.swift */,
+				D009A61721BFC39C00764B60 /* NSDate+Timepiece.swift */,
+				D009A61D21BFC39C00764B60 /* NSDateComponents+Timepiece.swift */,
+				D009A61921BFC39C00764B60 /* String+Timepiece.swift */,
+				D009A61621BFC39C00764B60 /* WWCalendarTimeSelector.swift */,
+			);
+			path = CallenderTime;
+			sourceTree = "<group>";
+		};
 		D0166C8F21B054A4005952B8 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +265,14 @@
 				D011F34D21B280DE008F2814 /* DriverStep1VC.swift */,
 				D011F34F21B280F5008F2814 /* DriverStep2VC.swift */,
 				D011F35121B2863A008F2814 /* DriverStep3VC.swift */,
+				D009A5F221BF8F4700764B60 /* DriverStep4VC.swift */,
+				D009A5F421BF8F5600764B60 /* DriverStep5VC.swift */,
+				D009A5F621BF8F6600764B60 /* DriverStep6VC.swift */,
+				D009A5F821BF8F7300764B60 /* DriverStep7VC.swift */,
+				D009A5FA21BF8F8100764B60 /* DriverStep8VC.swift */,
+				D009A5FC21BF8F9500764B60 /* DriverStep9VC.swift */,
+				D009A5FE21BF8FA300764B60 /* DriverStep10VC.swift */,
+				D009A60021BF8FB300764B60 /* DriverStep11VC.swift */,
 			);
 			path = DriverVC;
 			sourceTree = "<group>";
@@ -287,6 +343,7 @@
 		DCBA20EC2196DD6F00261817 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				D009A61521BFC37700764B60 /* CallenderTime */,
 				DCBA21062196DF1400261817 /* Action Sheet */,
 				DCBA21022196DEEF00261817 /* SkyFloatingLabelTextField.swift */,
 				DCBA21002196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift */,
@@ -426,6 +483,8 @@
 			children = (
 				DCBA20E32196CAEF00261817 /* LaunchScreen.storyboard */,
 				DCBA20DB2196CAED00261817 /* Main.storyboard */,
+				D009A60221BF8FE700764B60 /* DriverStoryboard.storyboard */,
+				D009A62621BFD36500764B60 /* WWCalendarTimeSelector.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -563,6 +622,7 @@
 				DCBA21652196E92A00261817 /* Montserrat-Light.ttf in Resources */,
 				DCBA21602196E92A00261817 /* Montserrat-BlackItalic.ttf in Resources */,
 				DCBA21632196E92A00261817 /* Montserrat-ExtraBold.ttf in Resources */,
+				D009A60321BF8FE700764B60 /* DriverStoryboard.storyboard in Resources */,
 				DCBA215B2196E92A00261817 /* Montserrat-BoldItalic.ttf in Resources */,
 				DCBA215E2196E92A00261817 /* Montserrat-ThinItalic.ttf in Resources */,
 				DCBA215F2196E92A00261817 /* Montserrat-MediumItalic.ttf in Resources */,
@@ -574,6 +634,7 @@
 				DCBA21692196E92A00261817 /* Montserrat-LightItalic.ttf in Resources */,
 				DCBA20E22196CAEF00261817 /* Assets.xcassets in Resources */,
 				DCBA20DD2196CAED00261817 /* Main.storyboard in Resources */,
+				D009A62721BFD36500764B60 /* WWCalendarTimeSelector.storyboard in Resources */,
 				DCBA21612196E92A00261817 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				DCBA21662196E92A00261817 /* Montserrat-Black.ttf in Resources */,
 				DCBA215D2196E92A00261817 /* Montserrat-Thin.ttf in Resources */,
@@ -649,20 +710,30 @@
 				DCBA21042196DEEF00261817 /* UITextField+fixCaretPosition.swift in Sources */,
 				DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */,
 				DCBA21202196DF3500261817 /* ActionSheetDistancePicker.m in Sources */,
+				D009A61F21BFC39C00764B60 /* NSDate+Timepiece.swift in Sources */,
+				D009A62521BFC39C00764B60 /* NSDateComponents+Timepiece.swift in Sources */,
 				D0166C9721B05664005952B8 /* InfoVC.swift in Sources */,
 				D0166C9521B05655005952B8 /* DriverVC.swift in Sources */,
+				D009A62021BFC39C00764B60 /* NSCalendar+Timepiece.swift in Sources */,
+				D009A5FB21BF8F8100764B60 /* DriverStep8VC.swift in Sources */,
 				D0141521219DE931006C2154 /* Registration7VC.swift in Sources */,
 				DCBA21052196DEEF00261817 /* SkyFloatingLabelTextField.swift in Sources */,
 				DCBA211C2196DF3500261817 /* ActionSheetLocalePicker.m in Sources */,
 				DCBA213E2196E0C500261817 /* BaseViewController.swift in Sources */,
 				DCBA21232196DF3500261817 /* ActionSheetMultipleStringPicker.m in Sources */,
+				D009A62221BFC39C00764B60 /* Duration.swift in Sources */,
 				DCBA21352196DFED00261817 /* Utilities.swift in Sources */,
 				DCBA211F2196DF3500261817 /* DistancePickerView.m in Sources */,
 				DCBA21212196DF3500261817 /* SWActionSheet.m in Sources */,
 				DCBA20FC2196DEA700261817 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				D009A5FF21BF8FA300764B60 /* DriverStep10VC.swift in Sources */,
 				DCBA21362196DFED00261817 /* Extension.swift in Sources */,
+				D009A5F721BF8F6600764B60 /* DriverStep6VC.swift in Sources */,
 				DCBA21382196DFED00261817 /* PagedHorizontalView.swift in Sources */,
 				D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */,
+				D009A62121BFC39C00764B60 /* String+Timepiece.swift in Sources */,
+				D009A5F321BF8F4700764B60 /* DriverStep4VC.swift in Sources */,
+				D009A61E21BFC39C00764B60 /* WWCalendarTimeSelector.swift in Sources */,
 				DCBA21332196DFED00261817 /* AppHelper.swift in Sources */,
 				DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */,
 				DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */,
@@ -670,6 +741,7 @@
 				D011F35221B2863A008F2814 /* DriverStep3VC.swift in Sources */,
 				DCBA211D2196DF3500261817 /* ActionSheetStringPicker.m in Sources */,
 				DCBA21222196DF3500261817 /* ActionSheetDatePicker.m in Sources */,
+				D009A60121BF8FB300764B60 /* DriverStep11VC.swift in Sources */,
 				DCBA21032196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */,
 				DCBA21342196DFED00261817 /* ServiceClass.swift in Sources */,
@@ -682,6 +754,8 @@
 				DCBA213A2196DFED00261817 /* Strings.swift in Sources */,
 				DC1EAA2121987ACB0099FE98 /* Registration4VC.swift in Sources */,
 				DCBA21412196E18F00261817 /* Models.swift in Sources */,
+				D009A62321BFC39C00764B60 /* Int+Timepiece.swift in Sources */,
+				D009A5F521BF8F5600764B60 /* DriverStep5VC.swift in Sources */,
 				D011F35021B280F5008F2814 /* DriverStep2VC.swift in Sources */,
 				DCBA20FD2196DEA700261817 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				D05C501821980ACB0032537E /* LoginVC.swift in Sources */,
@@ -691,6 +765,8 @@
 				D05C501C2199F6D30032537E /* Registration5VC.swift in Sources */,
 				DCBA20F32196DE2200261817 /* Reachability.m in Sources */,
 				DCBA20D82196CAED00261817 /* AppDelegate.swift in Sources */,
+				D009A5F921BF8F7300764B60 /* DriverStep7VC.swift in Sources */,
+				D009A5FD21BF8F9500764B60 /* DriverStep9VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,7 +916,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CarPooling/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -862,7 +938,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CarPooling/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

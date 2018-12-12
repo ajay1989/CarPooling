@@ -11,12 +11,13 @@ import UIKit
 class DriverStep1VC: UIViewController {
     @IBOutlet weak var vw_Search: UIView!{
         didSet{
-            vw_Search.layer.shadowColor = UIColor.gray.cgColor
-            vw_Search.layer.shadowOffset = CGSize(width: 0, height: 1)
-            vw_Search.layer.shadowOpacity = 0.7
-            vw_Search.layer.shadowRadius = 6.0
-            vw_Search.layer.masksToBounds = false
-            vw_Search.backgroundColor = UIColor.white
+            vw_Search.borderWithShadow(radius: 6.0)
+//            vw_Search.layer.shadowColor = UIColor.gray.cgColor
+//            vw_Search.layer.shadowOffset = CGSize(width: 0, height: 1)
+//            vw_Search.layer.shadowOpacity = 0.7
+//            vw_Search.layer.shadowRadius = 6.0
+//            vw_Search.layer.masksToBounds = false
+//            vw_Search.backgroundColor = UIColor.white
         }
     }
     override func viewDidLoad() {
@@ -37,3 +38,4 @@ class DriverStep1VC: UIViewController {
     */
 
 }
+

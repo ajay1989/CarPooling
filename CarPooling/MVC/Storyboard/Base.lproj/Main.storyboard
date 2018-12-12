@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -129,15 +128,14 @@ de covoiturage au Maroc.</string>
                                     <constraint firstAttribute="trailing" secondItem="klY-d6-cJK" secondAttribute="trailing" constant="4" id="pZ9-0a-4Ki"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Śinscrire ou se connecter par mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-3l-8FP">
-                                <rect key="frame" x="0.0" y="520" width="375" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Śinscrire ou se connecter par mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-3l-8FP">
+                                <rect key="frame" x="67" y="520.5" width="241" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                                 <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7DS-kw-XOs">
-                                <rect key="frame" x="42" y="462" width="291" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DS-kw-XOs">
+                                <rect key="frame" x="42" y="462.5" width="291" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dha-kn-Nqo">
                                         <rect key="frame" x="8" y="5" width="265" height="30"/>
@@ -167,6 +165,9 @@ de covoiturage au Maroc.</string>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.24705882352941178" green="0.396078431372549" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Woq-Io-lti"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -180,16 +181,20 @@ de covoiturage au Maroc.</string>
                             <constraint firstItem="5zB-1Q-suH" firstAttribute="top" secondItem="W80-rR-gzB" secondAttribute="bottom" constant="22" id="C6I-JH-TlX"/>
                             <constraint firstItem="MpX-O2-jZG" firstAttribute="leading" secondItem="g0i-d9-gKO" secondAttribute="leading" id="JwA-UC-16j"/>
                             <constraint firstItem="NyP-Cy-zWQ" firstAttribute="leading" secondItem="g0i-d9-gKO" secondAttribute="leading" id="K9f-Zp-WSz"/>
+                            <constraint firstItem="XNF-3l-8FP" firstAttribute="top" secondItem="7DS-kw-XOs" secondAttribute="bottom" constant="18" id="No9-uS-oWc"/>
+                            <constraint firstItem="7DS-kw-XOs" firstAttribute="leading" secondItem="g0i-d9-gKO" secondAttribute="leading" constant="42" id="Ps4-Jm-W6f"/>
                             <constraint firstItem="MpX-O2-jZG" firstAttribute="trailing" secondItem="g0i-d9-gKO" secondAttribute="trailing" id="Qgk-WH-5CZ"/>
                             <constraint firstItem="NyP-Cy-zWQ" firstAttribute="top" secondItem="XNF-3l-8FP" secondAttribute="bottom" constant="79" id="YtO-bb-qjR"/>
                             <constraint firstItem="MpX-O2-jZG" firstAttribute="top" secondItem="WUd-iV-ZbD" secondAttribute="top" id="Z73-mx-Jqt"/>
                             <constraint firstItem="5zB-1Q-suH" firstAttribute="trailing" secondItem="g0i-d9-gKO" secondAttribute="trailing" id="ZBJ-Lm-i4c"/>
+                            <constraint firstItem="g0i-d9-gKO" firstAttribute="trailing" secondItem="7DS-kw-XOs" secondAttribute="trailing" constant="42" id="a6F-xE-ntp"/>
                             <constraint firstItem="NyP-Cy-zWQ" firstAttribute="bottom" secondItem="g0i-d9-gKO" secondAttribute="bottom" id="bhz-w5-sxI"/>
                             <constraint firstItem="MpX-O2-jZG" firstAttribute="bottom" secondItem="g0i-d9-gKO" secondAttribute="bottom" id="bwy-p5-bvm"/>
                             <constraint firstItem="XNF-3l-8FP" firstAttribute="centerX" secondItem="WUd-iV-ZbD" secondAttribute="centerX" id="g56-Db-31c"/>
                             <constraint firstItem="NyP-Cy-zWQ" firstAttribute="trailing" secondItem="g0i-d9-gKO" secondAttribute="trailing" id="i8L-qb-hb0"/>
                             <constraint firstItem="W80-rR-gzB" firstAttribute="centerX" secondItem="WUd-iV-ZbD" secondAttribute="centerX" id="oa6-bU-02y"/>
                             <constraint firstItem="W80-rR-gzB" firstAttribute="top" secondItem="g0i-d9-gKO" secondAttribute="top" constant="83" id="pQz-GD-BcH"/>
+                            <constraint firstItem="7DS-kw-XOs" firstAttribute="centerX" secondItem="WUd-iV-ZbD" secondAttribute="centerX" id="ynl-SY-g9T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g0i-d9-gKO"/>
                     </view>
@@ -1233,12 +1238,12 @@ publier ton premier covoiturage via l'application.
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxE-D7-51M">
-                                                                                    <rect key="frame" x="50" y="13.5" width="106.5" height="17.5"/>
+                                                                                    <rect key="frame" x="50" y="13.5" width="102" height="17"/>
                                                                                     <attributedString key="attributedText">
                                                                                         <fragment content="Youness, 24ans">
                                                                                             <attributes>
                                                                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                                <font key="NSFont" size="14" name="Montserrat-Regular"/>
+                                                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                             </attributes>
                                                                                         </fragment>
@@ -2260,6 +2265,9 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                             <constraint firstAttribute="width" constant="25" id="brp-hv-bFI"/>
                                         </constraints>
                                         <state key="normal" image="add"/>
+                                        <connections>
+                                            <action selector="actionGoToStep1WithSender:" destination="mOH-vr-b1z" eventType="touchUpInside" id="Mtb-gw-5h3"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conducteur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdK-Ef-Xft">
                                         <rect key="frame" x="131.5" y="16.5" width="112" height="22"/>
@@ -2306,21 +2314,21 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
 </string>
                                                 <attributes>
                                                     <color key="NSColor" red="0.65150982141494751" green="0.65500468015670776" blue="0.65848630666732788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="18" name="Montserrat-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="18"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="À plusieurs ćest">
                                                 <attributes>
                                                     <color key="NSColor" red="0.65150982141494751" green="0.65500468015670776" blue="0.65848630666732788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="18" name="Montserrat-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="18"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content=" mieux!">
                                                 <attributes>
                                                     <color key="NSColor" red="0.97552710769999995" green="0.79052698610000005" blue="0.33566367629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="18" name="Montserrat-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="18"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -2338,20 +2346,20 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                                 <fragment content="+">
                                                     <attributes>
                                                         <color key="NSColor" red="0.3245927095413208" green="0.67474347352981567" blue="0.56352001428604126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="15" name="Montserrat-Regular"/>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment content=" Je publie un covoiturage">
                                                     <attributes>
-                                                        <font key="NSFont" size="15" name="Montserrat-Regular"/>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment content=" ">
                                                     <attributes>
                                                         <color key="NSColor" red="0.3245927095413208" green="0.67474347352981567" blue="0.56352001428604126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="15" name="Montserrat-Regular"/>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -2458,96 +2466,6 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
             </objects>
             <point key="canvasLocation" x="5920.8000000000002" y="993.55322338830592"/>
         </scene>
-        <!--Driver Step2VC-->
-        <scene sceneID="js6-jC-Ajv">
-            <objects>
-                <viewController id="XYc-tf-fVv" customClass="DriverStep2VC" customModule="CarPooling" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="VZa-ro-qe7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annuler" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jb2-Za-7a1">
-                                <rect key="frame" x="290.5" y="47" width="68.5" height="21"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville d'arrivée" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHQ-Xv-hkq">
-                                <rect key="frame" x="128.5" y="96" width="118" height="21"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
-                                <color key="textColor" red="0.32459270950000002" green="0.67474347349999997" blue="0.56352001429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxI-hf-SxF">
-                                <rect key="frame" x="266" y="557" width="101" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Gv6-QR-5k3"/>
-                                    <constraint firstAttribute="width" constant="101" id="eyv-Vp-bPe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
-                                <state key="normal" title="Continuer 👉🏻">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mA1-8d-Xvc">
-                                <rect key="frame" x="40" y="142" width="295" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qba-Y3-t1o" userLabel="ex:nam">
-                                        <rect key="frame" x="20" y="0.0" width="255" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="iGd-DK-Fdq"/>
-                                        </constraints>
-                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="  ex: Fès" image="magnifyDark">
-                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="Qba-Y3-t1o" firstAttribute="leading" secondItem="mA1-8d-Xvc" secondAttribute="leading" constant="20" id="AVq-io-Py9"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qba-Y3-t1o" secondAttribute="bottom" id="Cd7-7y-gNs"/>
-                                    <constraint firstItem="Qba-Y3-t1o" firstAttribute="top" secondItem="mA1-8d-Xvc" secondAttribute="top" id="jQP-o8-DAQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qba-Y3-t1o" secondAttribute="trailing" constant="20" id="m4X-TL-zfP"/>
-                                    <constraint firstAttribute="height" constant="50" id="m8L-xX-UHG"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="jb2-Za-7a1" firstAttribute="top" secondItem="UzB-bw-CqO" secondAttribute="top" constant="27" id="NVw-qI-TB8"/>
-                            <constraint firstItem="mA1-8d-Xvc" firstAttribute="leading" secondItem="UzB-bw-CqO" secondAttribute="leading" constant="40" id="b0y-Iq-e4V"/>
-                            <constraint firstItem="mA1-8d-Xvc" firstAttribute="top" secondItem="FHQ-Xv-hkq" secondAttribute="bottom" constant="25" id="bKi-tK-QAh"/>
-                            <constraint firstItem="UzB-bw-CqO" firstAttribute="bottom" secondItem="QxI-hf-SxF" secondAttribute="bottom" constant="80" id="e7p-ni-6ol"/>
-                            <constraint firstItem="UzB-bw-CqO" firstAttribute="trailing" secondItem="jb2-Za-7a1" secondAttribute="trailing" constant="16" id="evZ-Hp-s95"/>
-                            <constraint firstItem="UzB-bw-CqO" firstAttribute="trailing" secondItem="QxI-hf-SxF" secondAttribute="trailing" constant="8" id="iZ7-Sg-D7y"/>
-                            <constraint firstItem="UzB-bw-CqO" firstAttribute="trailing" secondItem="mA1-8d-Xvc" secondAttribute="trailing" constant="40" id="kMu-qt-p9H"/>
-                            <constraint firstItem="FHQ-Xv-hkq" firstAttribute="centerX" secondItem="VZa-ro-qe7" secondAttribute="centerX" id="re4-kN-n3k"/>
-                            <constraint firstItem="FHQ-Xv-hkq" firstAttribute="top" secondItem="UzB-bw-CqO" secondAttribute="top" constant="76" id="wq1-Vu-eq0"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="UzB-bw-CqO"/>
-                    </view>
-                    <connections>
-                        <outlet property="vw_Search" destination="mA1-8d-Xvc" id="QLx-W8-OHo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ess-nx-Qci" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6817" y="1659"/>
-        </scene>
         <!--InfoVC-->
         <scene sceneID="h9o-w0-kQK">
             <objects>
@@ -2563,205 +2481,6 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
             </objects>
             <point key="canvasLocation" x="6646" y="994"/>
         </scene>
-        <!--Driver Step1VC-->
-        <scene sceneID="aEd-hd-hOD">
-            <objects>
-                <viewController id="coa-4d-yuP" customClass="DriverStep1VC" customModule="CarPooling" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="3st-yo-oR1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annuler" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFO-et-3y1">
-                                <rect key="frame" x="290.5" y="47" width="68.5" height="21"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville de départ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXm-xL-fZe">
-                                <rect key="frame" x="123.5" y="96" width="128" height="21"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
-                                <color key="textColor" red="0.32459270950000002" green="0.67474347349999997" blue="0.56352001429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAs-V1-AG6">
-                                <rect key="frame" x="266" y="557" width="101" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="LGx-P5-Enx"/>
-                                    <constraint firstAttribute="width" constant="101" id="fVT-24-FtT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
-                                <state key="normal" title="Continuer 👉🏻">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3S-gL-nLh">
-                                <rect key="frame" x="40" y="142" width="295" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1m-Dm-yNE" userLabel="ex:nam">
-                                        <rect key="frame" x="20" y="0.0" width="255" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="oaT-OL-6QB"/>
-                                        </constraints>
-                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="  ex:nam" image="magnifyDark">
-                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="O1m-Dm-yNE" secondAttribute="trailing" constant="20" id="H4L-EA-rT3"/>
-                                    <constraint firstAttribute="height" constant="50" id="iwY-dE-Tn0"/>
-                                    <constraint firstItem="O1m-Dm-yNE" firstAttribute="top" secondItem="k3S-gL-nLh" secondAttribute="top" id="oRM-aV-6AP"/>
-                                    <constraint firstAttribute="bottom" secondItem="O1m-Dm-yNE" secondAttribute="bottom" id="pRC-nv-ef4"/>
-                                    <constraint firstItem="O1m-Dm-yNE" firstAttribute="leading" secondItem="k3S-gL-nLh" secondAttribute="leading" constant="20" id="pcm-3w-0bU"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="cXm-xL-fZe" firstAttribute="centerX" secondItem="3st-yo-oR1" secondAttribute="centerX" id="3ME-OT-xBa"/>
-                            <constraint firstItem="Z0M-1y-3GH" firstAttribute="trailing" secondItem="WAs-V1-AG6" secondAttribute="trailing" constant="8" id="IOZ-Yp-Bdo"/>
-                            <constraint firstItem="cXm-xL-fZe" firstAttribute="top" secondItem="Z0M-1y-3GH" secondAttribute="top" constant="76" id="Pag-2U-cwc"/>
-                            <constraint firstItem="kFO-et-3y1" firstAttribute="top" secondItem="Z0M-1y-3GH" secondAttribute="top" constant="27" id="aQy-mc-r9r"/>
-                            <constraint firstItem="k3S-gL-nLh" firstAttribute="leading" secondItem="Z0M-1y-3GH" secondAttribute="leading" constant="40" id="bc8-Zg-Vtv"/>
-                            <constraint firstItem="k3S-gL-nLh" firstAttribute="top" secondItem="cXm-xL-fZe" secondAttribute="bottom" constant="25" id="eZF-OU-OWQ"/>
-                            <constraint firstItem="Z0M-1y-3GH" firstAttribute="bottom" secondItem="WAs-V1-AG6" secondAttribute="bottom" constant="80" id="ozr-s2-GUy"/>
-                            <constraint firstItem="Z0M-1y-3GH" firstAttribute="trailing" secondItem="k3S-gL-nLh" secondAttribute="trailing" constant="40" id="vyI-DV-5K2"/>
-                            <constraint firstItem="Z0M-1y-3GH" firstAttribute="trailing" secondItem="kFO-et-3y1" secondAttribute="trailing" constant="16" id="wVG-Ha-RlE"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Z0M-1y-3GH"/>
-                    </view>
-                    <connections>
-                        <outlet property="vw_Search" destination="k3S-gL-nLh" id="IFc-Ao-A9g"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FTA-cG-jPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5920.8000000000002" y="1659.2203898050975"/>
-        </scene>
-        <!--Driver Step3VC-->
-        <scene sceneID="dOb-ra-B0S">
-            <objects>
-                <viewController id="FWY-22-rPG" customClass="DriverStep3VC" customModule="CarPooling" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="vaS-XY-BdF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annuler" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3u-86-yro">
-                                <rect key="frame" x="290.5" y="47" width="68.5" height="21"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresse de départ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2p-ps-TtQ">
-                                <rect key="frame" x="107.5" y="96" width="160.5" height="21"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
-                                <color key="textColor" red="0.32896783947944641" green="0.68199896812438965" blue="0.56351107358932495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGy-jh-oCd">
-                                <rect key="frame" x="266" y="557" width="101" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="Gqm-Qd-cKf"/>
-                                    <constraint firstAttribute="height" constant="30" id="vkP-0q-S6w"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
-                                <state key="normal" title="Continuer 👉🏻">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGS-Zg-YzT">
-                                <rect key="frame" x="40" y="142" width="295" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9k-7i-NmL" userLabel="ex:nam">
-                                        <rect key="frame" x="20" y="0.0" width="255" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="sLh-Br-VlQ"/>
-                                        </constraints>
-                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="ex:nam" image="magnifyDark">
-                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="3cS-UC-WRw"/>
-                                    <constraint firstItem="Q9k-7i-NmL" firstAttribute="top" secondItem="gGS-Zg-YzT" secondAttribute="top" id="6ps-Z2-uDT"/>
-                                    <constraint firstItem="Q9k-7i-NmL" firstAttribute="leading" secondItem="gGS-Zg-YzT" secondAttribute="leading" constant="20" id="K2o-gB-sSD"/>
-                                    <constraint firstAttribute="bottom" secondItem="Q9k-7i-NmL" secondAttribute="bottom" id="mXY-gS-05K"/>
-                                    <constraint firstAttribute="trailing" secondItem="Q9k-7i-NmL" secondAttribute="trailing" constant="20" id="xe4-KU-NCc"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Cha-OU-Fp2">
-                                <rect key="frame" x="0.0" y="253" width="375" height="290"/>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Merci de positionner la pip car sur votre lieu de départ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A3-nJ-Eo4">
-                                <rect key="frame" x="40" y="224" width="295" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="gg8-bt-YO1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="7A3-nJ-Eo4" firstAttribute="trailing" secondItem="gGS-Zg-YzT" secondAttribute="trailing" id="3TF-Sx-WSr"/>
-                            <constraint firstItem="ik9-6f-ibb" firstAttribute="trailing" secondItem="l3u-86-yro" secondAttribute="trailing" constant="16" id="7ZG-GP-tVM"/>
-                            <constraint firstItem="Cha-OU-Fp2" firstAttribute="leading" secondItem="ik9-6f-ibb" secondAttribute="leading" id="9Ro-E7-xea"/>
-                            <constraint firstItem="ik9-6f-ibb" firstAttribute="bottom" secondItem="PGy-jh-oCd" secondAttribute="bottom" constant="80" id="E1O-ZF-Wr7"/>
-                            <constraint firstItem="r2p-ps-TtQ" firstAttribute="top" secondItem="ik9-6f-ibb" secondAttribute="top" constant="76" id="Fkd-dW-83a"/>
-                            <constraint firstItem="ik9-6f-ibb" firstAttribute="trailing" secondItem="gGS-Zg-YzT" secondAttribute="trailing" constant="40" id="J1p-Kd-QFE"/>
-                            <constraint firstItem="PGy-jh-oCd" firstAttribute="top" secondItem="Cha-OU-Fp2" secondAttribute="bottom" constant="14" id="Kff-GW-sGw"/>
-                            <constraint firstItem="gGS-Zg-YzT" firstAttribute="leading" secondItem="ik9-6f-ibb" secondAttribute="leading" constant="40" id="SpU-DT-Ict"/>
-                            <constraint firstItem="gGS-Zg-YzT" firstAttribute="top" secondItem="r2p-ps-TtQ" secondAttribute="bottom" constant="25" id="aWx-LQ-NCJ"/>
-                            <constraint firstItem="l3u-86-yro" firstAttribute="top" secondItem="ik9-6f-ibb" secondAttribute="top" constant="27" id="dOd-ky-XzY"/>
-                            <constraint firstItem="Cha-OU-Fp2" firstAttribute="top" secondItem="7A3-nJ-Eo4" secondAttribute="bottom" constant="2" id="dfb-hf-Tl4"/>
-                            <constraint firstItem="Cha-OU-Fp2" firstAttribute="trailing" secondItem="ik9-6f-ibb" secondAttribute="trailing" id="ltW-qA-gDQ"/>
-                            <constraint firstItem="ik9-6f-ibb" firstAttribute="trailing" secondItem="PGy-jh-oCd" secondAttribute="trailing" constant="8" id="qn6-c2-Ebq"/>
-                            <constraint firstItem="Cha-OU-Fp2" firstAttribute="top" secondItem="Q9k-7i-NmL" secondAttribute="bottom" constant="61" id="xJf-mJ-qGW"/>
-                            <constraint firstItem="7A3-nJ-Eo4" firstAttribute="leading" secondItem="gGS-Zg-YzT" secondAttribute="leading" id="yHl-Lp-XXE"/>
-                            <constraint firstItem="r2p-ps-TtQ" firstAttribute="centerX" secondItem="vaS-XY-BdF" secondAttribute="centerX" id="zeb-pa-oOG"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ik9-6f-ibb"/>
-                    </view>
-                    <connections>
-                        <outlet property="vw_Search" destination="gGS-Zg-YzT" id="bYR-9e-Pfe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kDy-vA-36O" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7485.6000000000004" y="1658.3208395802101"/>
-        </scene>
     </scenes>
     <resources>
         <image name="add" width="409.60000610351562" height="409.60000610351562"/>
@@ -2775,7 +2494,6 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
         <image name="lock" width="65.279998779296875" height="87.120002746582031"/>
         <image name="loginBg" width="191.66400146484375" height="340.84799194335938"/>
         <image name="logo" width="86.400001525878906" height="68.639999389648438"/>
-        <image name="magnifyDark" width="18" height="18"/>
         <image name="magnifyWhite" width="27" height="27"/>
         <image name="man colored" width="7.1999998092651367" height="9.935999870300293"/>
         <image name="passenger" width="26.5" height="24"/>

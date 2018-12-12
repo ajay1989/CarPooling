@@ -104,7 +104,16 @@ extension UIView {
         gradient.endPoint = CGPoint(x :1.0, y: 0.5)
         self.layer.insertSublayer(gradient, at: 0)
     }
-    
+    func borderWithShadow(radius: CGFloat)
+    {
+        
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOpacity = 0.7
+        self.layer.shadowRadius = radius
+        self.layer.masksToBounds = false
+        self.backgroundColor = UIColor.white
+    }
 }
 
 extension UIImageView {
@@ -204,11 +213,11 @@ extension Date {
     var noon: Date {
         return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
     }
-    var month: Int {
+    var mnth: Int {
         return Calendar.current.component(.month,  from: self)
     }
     var isLastDayOfMonth: Bool {
-        return tomorrow.month != month
+        return tomorrow.month != mnth
     }
 }
 
