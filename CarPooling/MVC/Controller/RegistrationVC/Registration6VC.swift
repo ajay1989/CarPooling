@@ -84,6 +84,7 @@ class Registration6VC: BaseViewController,UIImagePickerControllerDelegate, UINav
      @IBAction func btn_continue_tap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: Registration7VC = storyboard.instantiateViewController(withIdentifier: "Registration7VC") as! Registration7VC
+        vc.image = self.img_profile.image!
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

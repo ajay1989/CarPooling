@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+import FacebookCore
+import FacebookLogin
+import FacebookShare
 class LoginVC: BaseViewController {
     
     
@@ -41,4 +43,49 @@ class LoginVC: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
 
     }
+    
+    @IBAction func btn_facebook_tap(_ sender: Any) {
+        if let accessToken = AccessToken.current {
+            self.getFBUserData()
+        }
+        else {
+            let loginManager = LoginManager()
+            loginManager.logIn(readPermissions: [.publicProfile,.email], viewController: self) { (LoginResult) in
+                switch LoginResult {
+                case .failed(let error):
+                    print(error)
+                case .cancelled:
+                    print("User cancelled login.")
+                case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                    self.getFBUserData()
+                }
+            }
+            
+    }
+    }
+    
+    func getFBUserData() {
+        let req = GraphRequest(graphPath: "me", parameters: ["fields": "email,first_name,last_name,gender,picture,id"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
+        req.start({ (connection, result) in
+            switch result {
+            case .failed(let error):
+                print(error)
+                
+            case .success(let graphResponse):
+                if let responseDictionary = graphResponse.dictionaryValue {
+                    print(responseDictionary)
+                    let firstNameFB = responseDictionary["first_name"] as? String
+                    let lastNameFB = responseDictionary["last_name"] as? String
+                    let socialIdFB = responseDictionary["id"] as? String
+                    let genderFB = responseDictionary["gender"] as? String
+                    let idFB = responseDictionary["id"] as? String
+                    let pictureUrlFB = responseDictionary["picture"] as? [String:Any]
+                    let photoData = pictureUrlFB!["data"] as? [String:Any]
+                    let photoUrl = photoData!["url"] as? String
+                    print(firstNameFB, lastNameFB, socialIdFB, genderFB, photoUrl)
+                }
+            }
+        })
+    }
+    
 }

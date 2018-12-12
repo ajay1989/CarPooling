@@ -8,11 +8,12 @@
 
 import UIKit
 
-class Registration7VC: UIViewController {
-
+class Registration7VC: BaseViewController {
+    var image = UIImage()
+    var imageData = Data()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imageData = image.pngData()!
         // Do any additional setup after loading the view.
     }
     
@@ -27,4 +28,29 @@ class Registration7VC: UIViewController {
     }
     */
 
+    @IBAction func btn_register_tap(_ sender: Any) {
+        let params: [String : Any] = ["first_name":AppHelper.getStringForKey(ServiceKeys.keyFirstName),
+                                         "last_name":AppHelper.getStringForKey(ServiceKeys.keyLastName),
+                                         "password":"",
+                                         "mobile_number":AppHelper.getStringForKey(ServiceKeys.keyContactPhoneNumber),
+                                         "gender":AppHelper.getStringForKey(ServiceKeys.keyGender),
+                                         "email":AppHelper.getStringForKey(ServiceKeys.keyEmail),
+                                         "dob":AppHelper.getStringForKey(ServiceKeys.keyDOB),
+                                         "profile_photo":self.imageData,
+                                         "fb_id":""]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForRegistration(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                
+                print("sucess")
+                
+                
+            }
+            else {
+                self.makeToast(errorDict!["errMessage"] as! String)
+            }
+            
+        })
+    }
 }

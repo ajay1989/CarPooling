@@ -91,7 +91,7 @@ struct ServiceUrls
 
     static let checknumber = "checknumber"
     static let checkemail = "checkemail"
-    
+    static let register = "register"
 }
 struct ErrorCodes
 {
