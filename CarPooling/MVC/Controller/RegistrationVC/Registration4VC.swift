@@ -28,7 +28,14 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
-        if (txt_email.text?.isEmpty)! {
+        
+        if !AppHelper.getStringForKey(ServiceKeys.keyEmail).isEqualToString(find: "") {
+            self.txt_email.text = AppHelper.getStringForKey(ServiceKeys.keyEmail)
+            btn_continue.isEnabled = true
+            btn_continue.setTitle("Continue👉", for: .normal)
+            btn_continue.setTitleColor(UIColor.black, for: .normal)
+        }
+        else {
             btn_continue.isEnabled = false
             btn_continue.setTitle("Continue👉🏼", for: .normal)
             btn_continue.setTitleColor(UIColor.lightGray, for: .normal)

@@ -33,9 +33,15 @@ class Registration3VC: BaseViewController,UITextFieldDelegate {
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
-        if (self.txt_firstName.text?.isEmpty)! {
+        if !AppHelper.getStringForKey(ServiceKeys.keyFirstName).isEqualToString(find: "") && !AppHelper.getStringForKey(ServiceKeys.keyLastName).isEqualToString(find: "") {
+            self.txt_firstName.text = AppHelper.getStringForKey(ServiceKeys.keyFirstName)
+            self.txt_lastName.text = AppHelper.getStringForKey(ServiceKeys.keyLastName)
+            self.continueEnable()
+        }
+        else {
             continueDisable()
         }
+        
         
         // Do any additional setup after loading the view.
     }

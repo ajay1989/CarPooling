@@ -54,6 +54,7 @@ struct ServiceKeys{
     static let profile_image = "profile_image"
     static let keyContactNumber = "contact_number"
     static let keyProfileImage = "image_url"
+    static let keyFacebookID = "fbid"
    static let keyError = "error"
     static let keyErrorCode = "errorCode"
     static let keyErrorMessage = "errMessage"

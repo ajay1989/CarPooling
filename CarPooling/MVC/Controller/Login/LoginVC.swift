@@ -65,7 +65,7 @@ class LoginVC: BaseViewController {
     }
     
     func getFBUserData() {
-        let req = GraphRequest(graphPath: "me", parameters: ["fields": "email,first_name,last_name,gender,picture,id"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
+        let req = GraphRequest(graphPath: "me", parameters: ["fields": "email,first_name,last_name,gender,picture.type(large),id"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
         req.start({ (connection, result) in
             switch result {
             case .failed(let error):
@@ -74,15 +74,23 @@ class LoginVC: BaseViewController {
             case .success(let graphResponse):
                 if let responseDictionary = graphResponse.dictionaryValue {
                     print(responseDictionary)
-                    let firstNameFB = responseDictionary["first_name"] as? String
-                    let lastNameFB = responseDictionary["last_name"] as? String
-                    let socialIdFB = responseDictionary["id"] as? String
-                    let genderFB = responseDictionary["gender"] as? String
-                    let idFB = responseDictionary["id"] as? String
-                    let pictureUrlFB = responseDictionary["picture"] as? [String:Any]
-                    let photoData = pictureUrlFB!["data"] as? [String:Any]
-                    let photoUrl = photoData!["url"] as? String
-                    print(firstNameFB, lastNameFB, socialIdFB, genderFB, photoUrl)
+                    let firstNameFB = responseDictionary["first_name"] as! String
+                    let lastNameFB = responseDictionary["last_name"] as! String
+                    let email = responseDictionary["email"] as! String
+                    let socialIdFB = responseDictionary["id"] as! String
+                    let idFB = responseDictionary["id"] as! String
+                    let pictureUrlFB = responseDictionary["picture"] as! [String:Any]
+                    let photoData = pictureUrlFB["data"] as! [String:Any]
+                    let photoUrl = photoData["url"] as! String
+                    print(firstNameFB, lastNameFB, socialIdFB, photoUrl)
+                    AppHelper.setStringForKey(firstNameFB, key: ServiceKeys.keyFirstName)
+                    AppHelper.setStringForKey(lastNameFB, key: ServiceKeys.keyLastName)
+                    AppHelper.setStringForKey(email, key: ServiceKeys.keyEmail)
+                    AppHelper.setStringForKey(photoUrl, key: ServiceKeys.keyProfileImage)
+                    AppHelper.setStringForKey(socialIdFB, key: ServiceKeys.keyFacebookID)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc: Registration1VC = storyboard.instantiateViewController(withIdentifier: "registration1VC") as! Registration1VC
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
         })

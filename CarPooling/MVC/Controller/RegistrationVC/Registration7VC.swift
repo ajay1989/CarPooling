@@ -37,7 +37,7 @@ class Registration7VC: BaseViewController {
                                          "email":AppHelper.getStringForKey(ServiceKeys.keyEmail),
                                          "dob":AppHelper.getStringForKey(ServiceKeys.keyDOB),
                                          "profile_photo":self.imageData,
-                                         "fb_id":""]
+                                         "fb_id":AppHelper.getStringForKey(ServiceKeys.keyFacebookID)]
         self.hudShow()
         ServiceClass.sharedInstance.hitServiceForRegistration(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
