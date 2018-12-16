@@ -13,7 +13,7 @@ class Registration7VC: BaseViewController {
     var imageData = Data()
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageData = image.pngData()!
+        imageData = image.jpeg(.low)!
         // Do any additional setup after loading the view.
     }
     
@@ -31,20 +31,24 @@ class Registration7VC: BaseViewController {
     @IBAction func btn_register_tap(_ sender: Any) {
         let params: [String : Any] = ["first_name":AppHelper.getStringForKey(ServiceKeys.keyFirstName),
                                          "last_name":AppHelper.getStringForKey(ServiceKeys.keyLastName),
-                                         "password":"",
+                                         "password":"123456",
                                          "mobile_number":AppHelper.getStringForKey(ServiceKeys.keyContactPhoneNumber),
                                          "gender":AppHelper.getStringForKey(ServiceKeys.keyGender),
                                          "email":AppHelper.getStringForKey(ServiceKeys.keyEmail),
                                          "dob":AppHelper.getStringForKey(ServiceKeys.keyDOB),
                                          "profile_photo":self.imageData,
-                                         "fb_id":AppHelper.getStringForKey(ServiceKeys.keyFacebookID)]
+                                         "fb_id":AppHelper.getStringForKey(ServiceKeys.keyFacebookID),
+                                         "device_type":"3",
+                                         "imei_number":""]
         self.hudShow()
         ServiceClass.sharedInstance.hitServiceForRegistration(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 
                 print("sucess")
-                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc: LoginEmailVC = storyboard.instantiateViewController(withIdentifier: "LoginEmailVC") as! LoginEmailVC
+                self.navigationController?.pushViewController(vc, animated: true)
                 
             }
             else {

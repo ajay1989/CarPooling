@@ -8,7 +8,10 @@
 
 import UIKit
 
-class LoginEmailVC: UIViewController {
+class LoginEmailVC: BaseViewController {
+    
+    @IBOutlet weak var txt_password: UITextField!
+    @IBOutlet weak var txt_email: UITextField!
     @IBOutlet weak var vw_email: UIView! {
         didSet {
             vw_email.layer.borderColor = UIColor.gray.cgColor
@@ -29,7 +32,7 @@ class LoginEmailVC: UIViewController {
     @IBAction func goToBack(sender: UIButton)
     {
         
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 
     /*
@@ -41,5 +44,26 @@ class LoginEmailVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func btn_login_tap(_ sender: Any) {
+        let params: [String : String] = ["email":self.txt_email.text!,
+                                         "password":self.txt_password.text!,
+                                         "imei_number":""]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForLogin(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+               let user = UserData.init(fromJson: parseData["data"])
+                AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc: DashboardVC = storyboard.instantiateViewController(withIdentifier: "DashboardVC") as! DashboardVC
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }
+            else {
+                self.makeToast(errorDict!["errMessage"] as! String)
+            }
+            
+        })
+    }
 }

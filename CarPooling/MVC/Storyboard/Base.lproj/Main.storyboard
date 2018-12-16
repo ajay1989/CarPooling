@@ -89,7 +89,7 @@ de covoiturage au Maroc.</string>
                                             <color key="titleColor" red="0.32752889390000001" green="0.67775732280000001" blue="0.55190372470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="RZs-eY-HoJ" kind="presentation" id="l52-6h-qok"/>
+                                            <action selector="btn_loginScreen_tap:" destination="X2P-4e-ixH" eventType="touchUpInside" id="R7F-eV-Qle"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="de Pip Pip Yalah" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbJ-Iq-u6A">
@@ -1935,6 +1935,9 @@ publier ton premier covoiturage via l'application.
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btn_login_tap:" destination="RZs-eY-HoJ" eventType="touchUpInside" id="zYW-Dg-CZZ"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wm-9Q-cDy">
                                                 <rect key="frame" x="122.5" y="478" width="130" height="1"/>
@@ -1992,6 +1995,8 @@ publier ton premier covoiturage via l'application.
                         <viewLayoutGuide key="safeArea" id="8CH-gJ-rtS"/>
                     </view>
                     <connections>
+                        <outlet property="txt_email" destination="ZcH-nN-rSa" id="bdY-4K-xsr"/>
+                        <outlet property="txt_password" destination="Mfo-MG-cDe" id="cq4-W6-hz6"/>
                         <outlet property="vw_email" destination="sqn-h0-PLc" id="wiP-ok-Czw"/>
                         <outlet property="vw_pass" destination="4wG-0W-pJB" id="1YC-jr-fKH"/>
                     </connections>

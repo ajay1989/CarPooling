@@ -26,6 +26,30 @@ func convertRating(_ rating:String) -> String {
 }
 
 
+class UserData {
+    var user_fname : String!
+    var user_lname : String!
+    var user_id : String!
+    var user_email : String!
+    var user_role_id : String!
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return
+        }
+        
+        user_fname = parseData!["user_fname"].stringValue
+        user_lname = parseData!["user_lname"].stringValue
+        
+        user_id = parseData!["user_id"].stringValue
+        user_email = parseData!["user_email"].stringValue
+        
+        user_role_id = parseData!["user_role_id"].stringValue
+        
+    }
+    
+}
+
+
 class Clinic {
     var id : String!
     var name : String!

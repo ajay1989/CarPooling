@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardVC: UIViewController {
+class DashboardVC: BaseViewController {
     @IBOutlet weak var tblVw: UITableView!
    
     
@@ -22,6 +22,24 @@ class DashboardVC: UIViewController {
         searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)        // Do any additional setup after loading the view.
         tblVw.delegate = self
         tblVw.dataSource = self
+        self.loadUserData()
+    }
+    
+    func loadUserData() {
+        let params: [String : String] = ["id":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForProfile(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                let user = UserData.init(fromJson: parseData["data"])
+                
+                
+            }
+            else {
+                self.makeToast(errorDict!["errMessage"] as! String)
+            }
+            
+        })
     }
     
 }

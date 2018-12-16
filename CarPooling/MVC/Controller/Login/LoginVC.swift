@@ -96,4 +96,11 @@ class LoginVC: BaseViewController {
         })
     }
     
+    
+    @IBAction func btn_loginScreen_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: LoginEmailVC = storyboard.instantiateViewController(withIdentifier: "LoginEmailVC") as! LoginEmailVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
