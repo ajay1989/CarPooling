@@ -1,11 +1,10 @@
 //
 //  Int+Timepiece.swift
-//  Timepiece
+//  CarPooling
 //
-//  Created by Naoto Kaneko on 2014/08/15.
-//  Copyright (c) 2014年 Naoto Kaneko. All rights reserved.
+//  Created by archit rai saxena on 29/11/18.
+//  Copyright © 2018 Ajay Vyas. All rights reserved.
 //
-
 import Foundation
 
 extension Int {

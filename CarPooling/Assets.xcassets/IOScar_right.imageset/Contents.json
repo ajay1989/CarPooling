@@ -2,12 +2,10 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "IOScar_rightX1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "IOScar_rightX2.png",
       "scale" : "2x"
     },
     {

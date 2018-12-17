@@ -6,11 +6,12 @@ target 'CarPooling' do
   use_frameworks!
 
   # Pods for CarPooling
-	pod 'Alamofire'
+  pod 'Alamofire'
   pod 'Toast', ‘~> 3.1.0’
   pod 'AlamofireImage', '~> 3.2'
   pod 'SVProgressHUD'
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
+  pod 'IGColorPicker'
 end

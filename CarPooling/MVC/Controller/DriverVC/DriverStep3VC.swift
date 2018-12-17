@@ -21,14 +21,16 @@ class DriverStep3VC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - CustomAction method
+    @IBAction func actionNext(sender: UIButton)
+    {
+        let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+        let vc: DriverStep4VC = storyboard.instantiateViewController(withIdentifier: "DriverStep4VC") as! DriverStep4VC
+        // self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
     }
-    */
+
 
 }

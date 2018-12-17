@@ -1,9 +1,10 @@
 //
 //  WWCalendarTimeSelector.swift
 //  WWCalendarTimeSelector
+//  CarPooling
 //
-//  Created by Weilson Wonder on 18/4/16.
-//  Copyright © 2016 Wonder. All rights reserved.
+//  Created by archit rai saxena on 29/11/18.
+//  Copyright © 2018 Ajay Vyas. All rights reserved.
 //
 
 import UIKit
@@ -283,6 +284,8 @@ import UIKit
     ///     - selector: The selector that is checking for selectablity of date.
     ///     - date: The date that user tapped, but have not yet given feedback to determine if should be selected.
     @objc optional func WWCalendarTimeSelectorShouldSelectDate(_ selector: WWCalendarTimeSelector, date: Date) -> Bool
+    //Archit
+    @objc optional func DateTimeVCdissmiss()
 }
 
 open class WWCalendarTimeSelector: UIViewController, UITableViewDelegate, UITableViewDataSource, WWCalendarRowProtocol, WWClockProtocol {
@@ -1060,6 +1063,7 @@ open class WWCalendarTimeSelector: UIViewController, UITableViewDelegate, UITabl
             del?.WWCalendarTimeSelectorDidDismiss?(picker)
         } else if presentingViewController != nil {
             dismiss(animated: true) {
+                
                 del?.WWCalendarTimeSelectorDidDismiss?(picker)
             }
         }

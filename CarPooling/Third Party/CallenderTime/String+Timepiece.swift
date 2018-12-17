@@ -1,9 +1,9 @@
 //
 //  String+Timepiece.swift
-//  Timepiece
+//  CarPooling
 //
-//  Created by Naoto Kaneko on 2015/03/01.
-//  Copyright (c) 2015年 Naoto Kaneko. All rights reserved.
+//  Created by archit rai saxena on 29/11/18.
+//  Copyright © 2018 Ajay Vyas. All rights reserved.
 //
 
 import Foundation

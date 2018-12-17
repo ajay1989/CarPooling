@@ -56,7 +56,7 @@ class LoginEmailVC: BaseViewController {
                let user = UserData.init(fromJson: parseData["data"])
                 AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc: DashboardVC = storyboard.instantiateViewController(withIdentifier: "DashboardVC") as! DashboardVC
+                let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }

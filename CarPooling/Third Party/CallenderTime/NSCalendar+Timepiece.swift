@@ -1,9 +1,9 @@
 //
 //  NSCalendar+Timepiece.swift
-//  Timepiece
+//  CarPooling
 //
-//  Created by Mattijs on 25/04/15.
-//  Copyright (c) 2015 Naoto Kaneko. All rights reserved.
+//  Created by archit rai saxena on 29/11/18.
+//  Copyright © 2018 Ajay Vyas. All rights reserved.
 //
 
 import Foundation

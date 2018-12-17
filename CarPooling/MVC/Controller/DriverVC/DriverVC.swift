@@ -46,7 +46,8 @@ class DriverVC: UIViewController {
     {
         let driverStoryboard: UIStoryboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
         let driverStep1: DriverStep1VC = driverStoryboard.instantiateViewController(withIdentifier: "DriverStep1VC") as! DriverStep1VC
-        self.present(driverStep1, animated: true, completion: nil)
+        self.navigationController?.pushViewController(driverStep1, animated: true)
+       // self.present(driverStep1, animated: true, completion: nil)
     }
     @objc func movingLabels()
 {

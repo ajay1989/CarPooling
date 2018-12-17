@@ -1,14 +1,14 @@
 //
-//  DriverStep11VC.swift
+//  CarModelSelectionVC.swift
 //  CarPooling
 //
-//  Created by Archit Rai Saxena on 11/12/18.
+//  Created by Archit Rai Saxena on 14/12/18.
 //  Copyright © 2018 Ajay Vyas. All rights reserved.
 //
 
 import UIKit
 
-class DriverStep11VC: UIViewController {
+class CarModelSelectionVC: UIViewController {
     @IBOutlet weak var vw_Search: UIView!{
         didSet{
             vw_Search.borderWithShadow(radius: 6.0)

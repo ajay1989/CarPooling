@@ -24,16 +24,17 @@ class DriverStep5VC: UIViewController, WWCalendarTimeSelectorProtocol {
     override func viewDidAppear(_ animated: Bool) {
         let selector = UIStoryboard(name: "WWCalendarTimeSelector", bundle: nil).instantiateViewController(withIdentifier: "WWCalendarTimeSelector") as! WWCalendarTimeSelector
         // let selector = UIStoryboard(name: "WWCalendarTimeSelector", bundle: nil).instantiateInitialViewController() as! WWCalendarTimeSelector
+        
         selector.delegate = self
         selector.optionCurrentDate = singleDate
         selector.optionCurrentDates = Set(multipleDates)
         selector.optionCurrentDateRange.setStartDate(multipleDates.first ?? singleDate)
         selector.optionCurrentDateRange.setEndDate(multipleDates.last ?? singleDate)
         // Do any additional setup after loading the view.
-//        selector.optionStyles.showDateMonth(true)
-//        selector.optionStyles.showMonth(false)
-//        selector.optionStyles.showYear(true)
-//        selector.optionStyles.showTime(false)
+        selector.optionStyles.showDateMonth(true)
+        selector.optionStyles.showMonth(false)
+        selector.optionStyles.showYear(true)
+        selector.optionStyles.showTime(false)
         
         self.present(selector, animated: true, completion: nil)
     }
@@ -60,6 +61,10 @@ class DriverStep5VC: UIViewController, WWCalendarTimeSelectorProtocol {
     func WWCalendarTimeSelectorDone(_ selector: WWCalendarTimeSelector, date: Date) {
         print("Selected \n\(date)\n---")
         singleDate = date
+        let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+        let vc: DriverStep6VC = storyboard.instantiateViewController(withIdentifier: "DriverStep6VC") as! DriverStep6VC
+        // self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
         //dateLabel.text = date.stringFromFormat("d' 'MMMM' 'yyyy', 'h':'mma")
     }
     
