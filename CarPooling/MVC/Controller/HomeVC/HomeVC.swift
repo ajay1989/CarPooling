@@ -34,7 +34,7 @@ class HomeVC: UIViewController {
         let Obj:UIViewController = getViewController()
         
         if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
-            Obj.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-90)
+            Obj.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-110)
         }
         else
         {
@@ -108,7 +108,7 @@ class HomeVC: UIViewController {
         if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
             //iPhone X
             
-            toViewController.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-90)
+            toViewController.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-110)
         }
         else
         {

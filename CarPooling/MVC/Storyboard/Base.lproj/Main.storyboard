@@ -982,7 +982,7 @@ nous Otman 🎉</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2B-zG-KhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="542" y="121"/>
+            <point key="canvasLocation" x="670" y="641"/>
         </scene>
         <!--Registration7VC-->
         <scene sceneID="uhq-cL-7yN">
@@ -1131,7 +1131,7 @@ publier ton premier covoiturage via l'application.
                                                         <state key="normal" image="magnifyWhite"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXr-Qm-Zro">
-                                                        <rect key="frame" x="150" y="17" width="75" height="21"/>
+                                                        <rect key="frame" x="144.5" y="16.5" width="86.5" height="22"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1211,13 +1211,13 @@ publier ton premier covoiturage via l'application.
                                         <rect key="frame" x="0.0" y="165" width="375" height="512"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Derniéres offres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVS-iW-pNV">
-                                                <rect key="frame" x="127.5" y="22" width="120" height="20"/>
+                                                <rect key="frame" x="115.5" y="22" width="144" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
                                                 <color key="textColor" red="0.97552710769999995" green="0.79052698610000005" blue="0.33566367629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5xK-SN-n1l">
-                                                <rect key="frame" x="0.0" y="47" width="375" height="465"/>
+                                                <rect key="frame" x="0.0" y="48" width="375" height="464"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DashboardTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DashboardTableViewCell" rowHeight="165" id="GWR-VR-Q9X" customClass="DashboardTableViewCell" customModule="CarPooling" customModuleProvider="target">
@@ -2281,6 +2281,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="40Z-f3-ZBa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Lu3-kf-3FZ"/>
                     <connections>
                         <outlet property="vw1" destination="vGf-08-Sa3" id="tZi-LD-Ytw"/>
                         <outletCollection property="arrButtons" destination="SAc-HX-fAl" collectionClass="NSMutableArray" id="oAV-Tk-l3h"/>
@@ -2530,7 +2531,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
     <resources>
         <image name="add" width="409.60000610351562" height="409.60000610351562"/>
         <image name="car-1" width="499.92001342773438" height="499.92001342773438"/>
-        <image name="car-seat-with-seatbelt" width="128" height="116"/>
+        <image name="car-seat-with-seatbelt" width="8.6400003433227539" height="12.095999717712402"/>
         <image name="contact" width="87.599998474121094" height="63.599998474121094"/>
         <image name="down-arrow" width="6.9120001792907715" height="5.9039998054504395"/>
         <image name="driver" width="24" height="24"/>
