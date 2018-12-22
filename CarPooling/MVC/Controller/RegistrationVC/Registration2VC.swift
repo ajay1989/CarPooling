@@ -53,6 +53,7 @@ class Registration2VC: BaseViewController,UITextFieldDelegate {
     @IBAction func btn_continue_tap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: Registration3VC = storyboard.instantiateViewController(withIdentifier: "registration3VC") as! Registration3VC
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

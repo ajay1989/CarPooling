@@ -14,9 +14,11 @@ class DriverStep4VC: UIViewController {
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
+    var ride:Ride!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(ride.from_city)
+        print(ride.to_city)
         // Do any additional setup after loading the view.
     }
     
@@ -30,5 +32,13 @@ class DriverStep4VC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func actionTest(sender: UIButton)
+    {
+        let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+        let vc: DriverStep4VC = storyboard.instantiateViewController(withIdentifier: "DriverStep4VC") as! DriverStep4VC
+        vc.ride = self.ride
+        // self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }

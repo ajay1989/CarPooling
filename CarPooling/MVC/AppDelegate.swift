@@ -21,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        if !AppHelper.getStringForKey(ServiceKeys.user_id).isEqualToString(find: "") {
+            let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DriverStep1VC") as! DriverStep1VC
+            let navigationController = UINavigationController(rootViewController: vc)
+            self.window?.rootViewController = navigationController
+            self.window?.makeKeyAndVisible()
+        }
         return true
     }
 

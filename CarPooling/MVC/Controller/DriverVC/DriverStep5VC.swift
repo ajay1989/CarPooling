@@ -17,6 +17,7 @@ class DriverStep5VC: UIViewController, WWCalendarTimeSelectorProtocol {
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
+    var ride:Ride!
     override func viewDidLoad() {
         super.viewDidLoad()
        

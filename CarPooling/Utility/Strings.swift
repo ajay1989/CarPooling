@@ -20,7 +20,7 @@ let txt_HowItWorks = "How it Works"
 let txt_About_Us = "About Us"
 let txt_TermsAndConditions = "Terms & Conditions"
 //Mark : Error Messages
-
+let txt_apiKey = "AIzaSyCQr-osxkKDbEvWGIh7sYgP2yApcWCe1Es"
 
 
 let txt_Map = "Map"

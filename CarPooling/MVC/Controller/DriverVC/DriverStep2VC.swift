@@ -14,9 +14,11 @@ class DriverStep2VC: UIViewController {
            vw_Search.borderWithShadow(radius: 6.0)
         }
     }
+    var ride:Ride!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(ride.from_city)
+        print(ride.from_city_lat)
         // Do any additional setup after loading the view.
     }
     
@@ -27,6 +29,7 @@ class DriverStep2VC: UIViewController {
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
         let vc: DriverStep3VC = storyboard.instantiateViewController(withIdentifier: "DriverStep3VC") as! DriverStep3VC
         // self.present(vc, animated: true, completion: nil)
+        vc.ride = self.ride
         self.navigationController?.pushViewController(vc, animated: true)
         
         
