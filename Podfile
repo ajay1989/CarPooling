@@ -14,4 +14,7 @@ target 'CarPooling' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   pod 'IGColorPicker'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
 end

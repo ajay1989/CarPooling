@@ -10,7 +10,7 @@
 
 import Foundation
 import UIKit
-
+import GoogleMaps
 
 //MARK:- Storyboard @IBInspectable set cornerRadius, borderWidth, borderColor
 
@@ -461,6 +461,33 @@ extension UITabBar {
     }
 }
 
+extension GMSMapView {
+    func addMarker(location : CLLocationCoordinate2D, address : String, shortAddress : String) {
+        let camera = GMSCameraPosition.camera(withLatitude: location.latitude,longitude: location.longitude, zoom: 13.0)
+        self.animate(to: camera)
+        
+        let marker = GMSMarker()
+        let markerImage = UIImage(named: "Start-pin-icon.png")!.withRenderingMode(.alwaysTemplate)
+        
+        //creating a marker view
+        let markerView = UIImageView(image: markerImage)
+        markerView.tintColor = UIColor.clear
+        
+        marker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        marker.title = address
+        marker.snippet = shortAddress
+       // marker.iconView = markerView
+        marker.map = self
+    }
+    
+    func showPath(polyStr :String) {
+        let path = GMSPath(fromEncodedPath: polyStr)
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeWidth = 3.0
+        polyline.strokeColor = kPolyLineStrokeColor
+        polyline.map = self
+    }
+}
 
 
 

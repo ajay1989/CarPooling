@@ -42,6 +42,11 @@
 		D08C536221C6D29E006A6729 /* DriverStep7VCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C535521C6D29E006A6729 /* DriverStep7VCTableViewCell.swift */; };
 		D08C536321C6D29E006A6729 /* DriverStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C535621C6D29E006A6729 /* DriverStep3VC.swift */; };
 		D08C536421C6D29E006A6729 /* DriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C535721C6D29E006A6729 /* DriverVC.swift */; };
+		D0FAA82E21D003C20075C875 /* CarMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA82C21D003C20075C875 /* CarMarker.swift */; };
+		D0FAA82F21D003C20075C875 /* GoogleApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA82D21D003C20075C875 /* GoogleApiManager.swift */; };
+		D0FAA83821D005100075C875 /* FilterVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA83521D0050F0075C875 /* FilterVCViewController.swift */; };
+		D0FAA83921D005100075C875 /* ResearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA83721D005100075C875 /* ResearchResultVC.swift */; };
+		D0FAA83B21D0058E0075C875 /* SearchGoogleMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA83A21D0058E0075C875 /* SearchGoogleMapVC.swift */; };
 		DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EAA1C21985D600099FE98 /* Registration2VC.swift */; };
 		DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EAA1E21986BEF0099FE98 /* Registration3VC.swift */; };
 		DC1EAA2121987ACB0099FE98 /* Registration4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EAA2021987ACB0099FE98 /* Registration4VC.swift */; };
@@ -136,6 +141,11 @@
 		D08C535521C6D29E006A6729 /* DriverStep7VCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStep7VCTableViewCell.swift; sourceTree = "<group>"; };
 		D08C535621C6D29E006A6729 /* DriverStep3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStep3VC.swift; sourceTree = "<group>"; };
 		D08C535721C6D29E006A6729 /* DriverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverVC.swift; sourceTree = "<group>"; };
+		D0FAA82C21D003C20075C875 /* CarMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarMarker.swift; sourceTree = "<group>"; };
+		D0FAA82D21D003C20075C875 /* GoogleApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiManager.swift; sourceTree = "<group>"; };
+		D0FAA83521D0050F0075C875 /* FilterVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterVCViewController.swift; sourceTree = "<group>"; };
+		D0FAA83721D005100075C875 /* ResearchResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResearchResultVC.swift; sourceTree = "<group>"; };
+		D0FAA83A21D0058E0075C875 /* SearchGoogleMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGoogleMapVC.swift; sourceTree = "<group>"; };
 		DC1EAA1C21985D600099FE98 /* Registration2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration2VC.swift; sourceTree = "<group>"; };
 		DC1EAA1E21986BEF0099FE98 /* Registration3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration3VC.swift; sourceTree = "<group>"; };
 		DC1EAA2021987ACB0099FE98 /* Registration4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration4VC.swift; sourceTree = "<group>"; };
@@ -330,6 +340,40 @@
 				D08C535521C6D29E006A6729 /* DriverStep7VCTableViewCell.swift */,
 			);
 			path = DriverStep7VC;
+			sourceTree = "<group>";
+		};
+		D0FAA82A21D003920075C875 /* SearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0FAA82B21D003A10075C875 /* Support */,
+				D0FAA83A21D0058E0075C875 /* SearchGoogleMapVC.swift */,
+			);
+			path = SearchVC;
+			sourceTree = "<group>";
+		};
+		D0FAA82B21D003A10075C875 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				D0FAA82C21D003C20075C875 /* CarMarker.swift */,
+				D0FAA82D21D003C20075C875 /* GoogleApiManager.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		D0FAA83421D0050F0075C875 /* FilterVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0FAA83521D0050F0075C875 /* FilterVCViewController.swift */,
+			);
+			path = FilterVC;
+			sourceTree = "<group>";
+		};
+		D0FAA83621D005100075C875 /* ResearchResultVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0FAA83721D005100075C875 /* ResearchResultVC.swift */,
+			);
+			path = ResearchResultVC;
 			sourceTree = "<group>";
 		};
 		DCBA20CB2196CAED00261817 = {
@@ -555,6 +599,9 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D0FAA83421D0050F0075C875 /* FilterVC */,
+				D0FAA83621D005100075C875 /* ResearchResultVC */,
+				D0FAA82A21D003920075C875 /* SearchVC */,
 				D08C534921C6D29E006A6729 /* DriverVC */,
 				D08C534421C6CCB5006A6729 /* AddNewCArVC */,
 				D0166C9321B05641005952B8 /* InfoVC */,
@@ -595,6 +642,7 @@
 				DCBA20D12196CAED00261817 /* Frameworks */,
 				DCBA20D22196CAED00261817 /* Resources */,
 				3068A9F23FDFEF355AA955B0 /* [CP] Embed Pods Frameworks */,
+				8207ACE09932552F4496D6CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -719,6 +767,30 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8207ACE09932552F4496D6CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EFF3E8BBAF493FBCE111D6B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -752,6 +824,7 @@
 				DCBA21042196DEEF00261817 /* UITextField+fixCaretPosition.swift in Sources */,
 				D08C536321C6D29E006A6729 /* DriverStep3VC.swift in Sources */,
 				DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */,
+				D0FAA83921D005100075C875 /* ResearchResultVC.swift in Sources */,
 				DCBA21202196DF3500261817 /* ActionSheetDistancePicker.m in Sources */,
 				D08C535D21C6D29E006A6729 /* DriverStep1VC.swift in Sources */,
 				D08C535B21C6D29E006A6729 /* DriverStep5VC.swift in Sources */,
@@ -761,6 +834,7 @@
 				D0166C9721B05664005952B8 /* InfoVC.swift in Sources */,
 				D009A62021BFC39C00764B60 /* NSCalendar+Timepiece.swift in Sources */,
 				D0141521219DE931006C2154 /* Registration7VC.swift in Sources */,
+				D0FAA83B21D0058E0075C875 /* SearchGoogleMapVC.swift in Sources */,
 				DCBA21052196DEEF00261817 /* SkyFloatingLabelTextField.swift in Sources */,
 				DCBA211C2196DF3500261817 /* ActionSheetLocalePicker.m in Sources */,
 				DCBA213E2196E0C500261817 /* BaseViewController.swift in Sources */,
@@ -773,6 +847,7 @@
 				DCBA20FC2196DEA700261817 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				DCBA21362196DFED00261817 /* Extension.swift in Sources */,
 				DCBA21382196DFED00261817 /* PagedHorizontalView.swift in Sources */,
+				D0FAA83821D005100075C875 /* FilterVCViewController.swift in Sources */,
 				D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */,
 				D009A62121BFC39C00764B60 /* String+Timepiece.swift in Sources */,
 				D009A61E21BFC39C00764B60 /* WWCalendarTimeSelector.swift in Sources */,
@@ -794,6 +869,7 @@
 				DCBA20FE2196DEA700261817 /* TPKeyboardAvoidingTableView.m in Sources */,
 				DCBA213A2196DFED00261817 /* Strings.swift in Sources */,
 				D08C535821C6D29E006A6729 /* DriverStep10VC.swift in Sources */,
+				D0FAA82F21D003C20075C875 /* GoogleApiManager.swift in Sources */,
 				D08C535E21C6D29E006A6729 /* DriverStep8VC.swift in Sources */,
 				DC1EAA2121987ACB0099FE98 /* Registration4VC.swift in Sources */,
 				DCBA21412196E18F00261817 /* Models.swift in Sources */,
@@ -810,6 +886,7 @@
 				DCBA20F32196DE2200261817 /* Reachability.m in Sources */,
 				D08C536421C6D29E006A6729 /* DriverVC.swift in Sources */,
 				D08C536121C6D29E006A6729 /* DriverStep7VC.swift in Sources */,
+				D0FAA82E21D003C20075C875 /* CarMarker.swift in Sources */,
 				DCBA20D82196CAED00261817 /* AppDelegate.swift in Sources */,
 				D08C535C21C6D29E006A6729 /* DriverStep4VC.swift in Sources */,
 				D08C534721C6CCB5006A6729 /* CarInfoVC.swift in Sources */,
@@ -967,7 +1044,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.carpooling.CarPooling;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shrikant.GoogleMapPolyline-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CarPooling/Library/Reachability/CarPooling-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -989,7 +1066,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.carpooling.CarPooling;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shrikant.GoogleMapPolyline-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CarPooling/Library/Reachability/CarPooling-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

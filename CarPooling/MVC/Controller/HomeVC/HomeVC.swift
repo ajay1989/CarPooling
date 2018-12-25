@@ -19,7 +19,7 @@ class HomeVC: UIViewController {
     var transitionInProgress: Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.isNavigationBarHidden = true  //Hide
         changeSelectionOfButton()
     }
     override func viewDidAppear(_ animated: Bool) {

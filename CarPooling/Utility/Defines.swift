@@ -24,7 +24,13 @@ let DateFormat_yyyy_mm_dd_hh_mm_ss_0000 = "yyyy-MM-dd HH:mm:ss +0000"
 let output_format_HH_mm_ss = "HH:mm:ss  MMM dd yyy"
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
+struct GoogleMap {
+    let key = "AIzaSyCQr-osxkKDbEvWGIh7sYgP2yApcWCe1Es"
+    let geoCodingKey = "AIzaSyCQr-osxkKDbEvWGIh7sYgP2yApcWCe1Es"
+}
 
+let kCarMarkerImage = UIImage(named: "MarkerCar")
+let kPolyLineStrokeColor = #colorLiteral(red: 0, green: 0.4392156863, blue: 0.9607843137, alpha: 0.7021885702)
 
 //MARK:- Service Keys
 
