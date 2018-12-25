@@ -14,6 +14,7 @@ class DriverStep7VC: UIViewController {
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
+    var ride:Ride!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,5 +31,11 @@ class DriverStep7VC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func btn_add_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+        let vc: CarModelSelectionVC = storyboard.instantiateViewController(withIdentifier: "CarModelSelectionVC") as! CarModelSelectionVC
+        // self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

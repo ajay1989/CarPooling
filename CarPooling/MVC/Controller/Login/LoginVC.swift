@@ -83,14 +83,34 @@ class LoginVC: BaseViewController {
                     let photoData = pictureUrlFB["data"] as! [String:Any]
                     let photoUrl = photoData["url"] as! String
                     print(firstNameFB, lastNameFB, socialIdFB, photoUrl)
-                    AppHelper.setStringForKey(firstNameFB, key: ServiceKeys.keyFirstName)
-                    AppHelper.setStringForKey(lastNameFB, key: ServiceKeys.keyLastName)
-                    AppHelper.setStringForKey(email, key: ServiceKeys.keyEmail)
-                    AppHelper.setStringForKey(photoUrl, key: ServiceKeys.keyProfileImage)
-                    AppHelper.setStringForKey(socialIdFB, key: ServiceKeys.keyFacebookID)
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc: Registration1VC = storyboard.instantiateViewController(withIdentifier: "registration1VC") as! Registration1VC
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                    let params: [String : String] = ["fb_id":idFB]
+                    self.hudShow()
+                    ServiceClass.sharedInstance.hitServiceForLoginFB(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+                        self.hudHide()
+                        if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+//                            let user = UserData.init(fromJson: parseData["data"])
+//                            AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
+//                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                            let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+//                            self.navigationController?.pushViewController(vc, animated: true)
+                            
+                        }
+                        else {
+                            AppHelper.setStringForKey(firstNameFB, key: ServiceKeys.keyFirstName)
+                            AppHelper.setStringForKey(lastNameFB, key: ServiceKeys.keyLastName)
+                            AppHelper.setStringForKey(email, key: ServiceKeys.keyEmail)
+                            AppHelper.setStringForKey(photoUrl, key: ServiceKeys.keyProfileImage)
+                            AppHelper.setStringForKey(socialIdFB, key: ServiceKeys.keyFacebookID)
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc: Registration1VC = storyboard.instantiateViewController(withIdentifier: "registration1VC") as! Registration1VC
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                        
+                    })
+
+                    
+                    
                 }
             }
         })

@@ -12,6 +12,7 @@ class DriverStep6VC: UIViewController ,WWCalendarTimeSelectorProtocol {
     fileprivate var singleDate: Date = Date()
     fileprivate var multipleDates: [Date] = []
     @IBOutlet weak var dateLabel: UILabel!
+    var ride:Ride!
     @IBOutlet weak var vw_Search: UIView!{
         didSet{
             vw_Search.borderWithShadow(radius: 6.0)
@@ -60,9 +61,13 @@ class DriverStep6VC: UIViewController ,WWCalendarTimeSelectorProtocol {
     func WWCalendarTimeSelectorDone(_ selector: WWCalendarTimeSelector, date: Date) {
         print("Selected \n\(date)\n---")
         singleDate = date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+        ride.departure_time = dateFormatter.string(from: date)
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
         let vc: DriverStep7VC = storyboard.instantiateViewController(withIdentifier: "DriverStep7VC") as! DriverStep7VC
         // self.present(vc, animated: true, completion: nil)
+        vc.ride = self.ride
         self.navigationController?.pushViewController(vc, animated: true)
         //dateLabel.text = date.stringFromFormat("d' 'MMMM' 'yyyy', 'h':'mma")
     }

@@ -101,6 +101,9 @@ struct ServiceUrls
     static let register = "register"
     static let login = "login"
     static let user = "user"
+    static let fblogin = "fblogin"
+    static let search_model = "search_model"
+    static let create_vehicle = "create_vehicle"
 }
 struct ErrorCodes
 {

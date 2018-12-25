@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,6 +74,9 @@ de covoiturage au Maroc.</string>
                                         <state key="normal" title="Conditions générales">
                                             <color key="titleColor" red="0.32752889390000001" green="0.67775732280000001" blue="0.55190372470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btn_continue_tap:" destination="X2P-4e-ixH" eventType="touchUpInside" id="mwi-4a-4x7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGh-CO-jic">
                                         <rect key="frame" x="89" y="13" width="120" height="20"/>
@@ -85,6 +88,9 @@ de covoiturage au Maroc.</string>
                                         <state key="normal" title="Politique de Confidentialité">
                                             <color key="titleColor" red="0.32752889390000001" green="0.67775732280000001" blue="0.55190372470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btn_loginScreen_tap:" destination="X2P-4e-ixH" eventType="touchUpInside" id="M2H-ek-Oww"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="de Pip Pip Yalah" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbJ-Iq-u6A">
                                         <rect key="frame" x="209" y="11" width="85" height="21"/>
@@ -2107,7 +2113,7 @@ publier ton premier covoiturage via l'application.
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gb9-JK-U9k">
-                                        <rect key="frame" x="16" y="170" width="359" height="147"/>
+                                        <rect key="frame" x="16" y="170" width="359" height="154"/>
                                         <string key="text">Les conducteurs sont plus rassurés lorsqu'ils voient les visages de leurs futurs passagers 🕵️‍♂️
 
 Multiplie les chances de faire valider ta demande en choisissant une photo sur laquelle on peut te reconnaître facilement.
@@ -2118,7 +2124,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="AsG-gj-hbJ">
-                                        <rect key="frame" x="145.5" y="334" width="100" height="100"/>
+                                        <rect key="frame" x="145.5" y="341" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="8cE-Gv-5SD"/>
                                             <constraint firstAttribute="height" constant="100" id="VpU-gf-ZRX"/>
@@ -2130,7 +2136,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jew-qO-vPg">
-                                        <rect key="frame" x="145.5" y="334" width="100" height="100"/>
+                                        <rect key="frame" x="145.5" y="341" width="100" height="100"/>
                                         <connections>
                                             <action selector="btn_profilePic_tap:" destination="9cl-bI-IDc" eventType="touchUpInside" id="tXP-p0-yo2"/>
                                         </connections>

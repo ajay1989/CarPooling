@@ -96,6 +96,34 @@ class Ride {
 }
 
 
+class Model {
+    var model_id : String!
+    var brand_id : String!
+    var model_name : String!
+    var created_date : String!
+    var update_date : String!
+    
+    var brand_name : String!
+   
+    
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return
+        }
+        
+        model_id = parseData!["model_id"].stringValue
+        brand_id = parseData!["brand_id"].stringValue
+        model_name = parseData!["model_name"].stringValue
+        created_date = parseData!["created_date"].stringValue
+        update_date = parseData!["update_date"].stringValue
+        brand_name = parseData!["brand_name"].stringValue
+       
+        
+    }
+    
+}
+
+
 class Clinic {
     var id : String!
     var name : String!

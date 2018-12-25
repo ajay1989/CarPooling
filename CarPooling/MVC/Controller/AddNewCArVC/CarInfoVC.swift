@@ -8,16 +8,19 @@
 
 import UIKit
 import IGColorPicker
-class CarInfoVC: UIViewController, ColorPickerViewDelegate, ColorPickerViewDelegateFlowLayout,UITextFieldDelegate {
+class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDelegateFlowLayout,UITextFieldDelegate {
     @IBOutlet weak var vw_Search: UIView!{
         didSet{
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
     @IBOutlet weak var txt_number1: UITextField!
-    
+     @IBOutlet weak var btn_brand: UIButton!
+    var txt_brandName = "Hyndai i10"
     @IBOutlet weak var txt_number2: UITextField!
     
+    @IBOutlet weak var lbl_brandName: UILabel!
+    var color:UIColor?
     @IBOutlet weak var txt_number3: UITextField!
     @IBOutlet weak var txt_date: UITextField!
     @IBOutlet weak var btn_continue: UIButton!
@@ -25,7 +28,7 @@ class CarInfoVC: UIViewController, ColorPickerViewDelegate, ColorPickerViewDeleg
      @IBOutlet weak var colorPickerView: ColorPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        lbl_brandName.text = self.txt_brandName
         // Do any additional setup after loading the view.
         colorPickerView.delegate = self
         colorPickerView.layoutDelegate = self
@@ -44,7 +47,7 @@ class CarInfoVC: UIViewController, ColorPickerViewDelegate, ColorPickerViewDeleg
     // MARK: - ColorPickerViewDelegate
     
     func colorPickerView(_ colorPickerView: ColorPickerView, didSelectItemAt indexPath: IndexPath) {
-        //self.view.backgroundColor = colorPickerView.colors[indexPath.item]
+        self.color  = colorPickerView.colors[indexPath.item]
     }
     
     
@@ -160,5 +163,28 @@ class CarInfoVC: UIViewController, ColorPickerViewDelegate, ColorPickerViewDeleg
         }
         return false
         
+    }
+    
+    
+    @IBAction func btn_continue_tap(_ sender: Any) {
+       
+        let params = ["user":AppHelper.getStringForKey(ServiceKeys.user_id),
+                      "vehicle_number_one":self.txt_number1.text!,
+                      "vehicle_number_two":self.txt_number2.text!,
+                      "vehicle_number_three":self.txt_number3.text!,
+                      "insurance_expire_date":self.txt_date.text!,
+                      "color":"#000000"]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForGetCreateCar(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                print("success")
+                
+            }
+            else {
+                
+            }
+            
+        })
     }
 }

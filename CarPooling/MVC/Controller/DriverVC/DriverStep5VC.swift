@@ -44,6 +44,7 @@ class DriverStep5VC: UIViewController, WWCalendarTimeSelectorProtocol {
     }
     @IBAction func actionTest(sender: UIButton)
     {
+        print(singleDate)
 //        let selector = UIStoryboard(name: "WWCalendarTimeSelector", bundle: nil).instantiateViewController(withIdentifier: "WWCalendarTimeSelector") as! WWCalendarTimeSelector
 //        // let selector = UIStoryboard(name: "WWCalendarTimeSelector", bundle: nil).instantiateInitialViewController() as! WWCalendarTimeSelector
 //        selector.delegate = self
@@ -62,8 +63,14 @@ class DriverStep5VC: UIViewController, WWCalendarTimeSelectorProtocol {
     func WWCalendarTimeSelectorDone(_ selector: WWCalendarTimeSelector, date: Date) {
         print("Selected \n\(date)\n---")
         singleDate = date
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        ride.departure_date = dateFormatter.string(from: date)
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
         let vc: DriverStep6VC = storyboard.instantiateViewController(withIdentifier: "DriverStep6VC") as! DriverStep6VC
+        vc.ride = self.ride
+        
         // self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
         //dateLabel.text = date.stringFromFormat("d' 'MMMM' 'yyyy', 'h':'mma")

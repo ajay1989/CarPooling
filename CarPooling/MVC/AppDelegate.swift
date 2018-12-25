@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(GoogleMap().key)
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         if !AppHelper.getStringForKey(ServiceKeys.user_id).isEqualToString(find: "") {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+            let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DriverStep7VC") as! DriverStep7VC
             let navigationController = UINavigationController(rootViewController: vc)
             self.window?.rootViewController = navigationController
             self.window?.makeKeyAndVisible()

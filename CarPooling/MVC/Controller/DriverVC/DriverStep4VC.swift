@@ -35,7 +35,7 @@ class DriverStep4VC: UIViewController {
     @IBAction func actionTest(sender: UIButton)
     {
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
-        let vc: DriverStep4VC = storyboard.instantiateViewController(withIdentifier: "DriverStep4VC") as! DriverStep4VC
+        let vc: DriverStep5VC = storyboard.instantiateViewController(withIdentifier: "DriverStep5VC") as! DriverStep5VC
         vc.ride = self.ride
         // self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
