@@ -17,6 +17,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
     @IBOutlet weak var txt_number1: UITextField!
      @IBOutlet weak var btn_brand: UIButton!
     var txt_brandName = "Hyndai i10"
+    var txt_modelID = ""
     @IBOutlet weak var txt_number2: UITextField!
     
     @IBOutlet weak var lbl_brandName: UILabel!
@@ -173,16 +174,22 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
                       "vehicle_number_two":self.txt_number2.text!,
                       "vehicle_number_three":self.txt_number3.text!,
                       "insurance_expire_date":self.txt_date.text!,
-                      "color":"#000000"]
+                      "color":"#000000",
+                      "model":self.txt_modelID]
         self.hudShow()
         ServiceClass.sharedInstance.hitServiceForGetCreateCar(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                print("success")
+                for controller in self.navigationController!.viewControllers as Array {
+                    if controller.isKind(of: DriverStep7VC.self) {
+                        self.navigationController!.popToViewController(controller, animated: true)
+                        break
+                    }
+                }
                 
             }
             else {
-                
+                self.makeToast("Failed")
             }
             
         })

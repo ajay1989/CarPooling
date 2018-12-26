@@ -123,6 +123,48 @@ class Model {
     
 }
 
+class Car {
+    var vehicle_id : String!
+    var brand_id : String!
+    var model_id : String!
+    var user_id : String!
+    var color : String!
+    
+    var vehicle_number_one : String!
+    var vehicle_number_two : String!
+    var vehicle_number_three : String!
+    var insurance_expire_date : String!
+    var created_date : String!
+    
+    var update_date : String!
+    var updated_user_id : String!
+    var brand_name : String!
+    var model_name : String!
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return
+        }
+        
+        vehicle_id = parseData!["vehicle_id"].stringValue
+        brand_id = parseData!["brand_id"].stringValue
+        model_id = parseData!["model_id"].stringValue
+        user_id = parseData!["user_id"].stringValue
+        color = parseData!["color"].stringValue
+        vehicle_number_one = parseData!["vehicle_number_one"].stringValue
+        
+        vehicle_number_two = parseData!["vehicle_number_two"].stringValue
+        vehicle_number_three = parseData!["vehicle_number_three"].stringValue
+        insurance_expire_date = parseData!["insurance_expire_date"].stringValue
+        created_date = parseData!["created_date"].stringValue
+        update_date = parseData!["update_date"].stringValue
+        updated_user_id = parseData!["updated_user_id"].stringValue
+        brand_name = parseData!["brand_name"].stringValue
+        model_name = parseData!["model_name"].stringValue
+        
+        
+    }
+}
+
 
 class Clinic {
     var id : String!

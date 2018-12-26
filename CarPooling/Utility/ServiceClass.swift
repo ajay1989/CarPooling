@@ -326,6 +326,22 @@ class ServiceClass: NSObject {
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
     }
     
+    func hitServiceForGetCars(_ params:[String : Any], completion:@escaping completionBlockType)
+    {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.user_vehicle)/\(params["keyword"]!)"
+        print(baseUrl)
+        let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
+        print_debug(params)
+        //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+        self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
+    }
+    
     func hitServiceForGetCreateCar(_ params:[String : Any], completion:@escaping completionBlockType)
     {
         let user = "admin"
@@ -334,6 +350,20 @@ class ServiceClass: NSObject {
         let base64Credentials = credentialData.base64EncodedString(options: [])
         
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.create_vehicle)"
+        print(baseUrl)
+        let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
+        print_debug(params)
+        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+    }
+    func hitServiceForGetCreateRide(_ params:[String : Any], completion:@escaping completionBlockType)
+    {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.create_ride)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
             "X-API-KEY":"CYLPIUnVia7UUl"]

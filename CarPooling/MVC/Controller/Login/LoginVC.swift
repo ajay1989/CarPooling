@@ -89,11 +89,11 @@ class LoginVC: BaseViewController {
                     ServiceClass.sharedInstance.hitServiceForLoginFB(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
                         self.hudHide()
                         if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-//                            let user = UserData.init(fromJson: parseData["data"])
-//                            AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
-//                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                            let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-//                            self.navigationController?.pushViewController(vc, animated: true)
+                            let user = UserData.init(fromJson: parseData["data"])
+                            AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                            self.navigationController?.pushViewController(vc, animated: true)
                             
                         }
                         else {

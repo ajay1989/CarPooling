@@ -134,6 +134,8 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
                                         let location = geometry["location"] as! NSDictionary
                                         DispatchQueue.main.async(execute: { () -> Void in
                                             let ride = Ride(fromJson: JSON.init(rawValue: ""))
+                                            ride.device_type = "3"
+                                            ride.user = AppHelper.getStringForKey(ServiceKeys.user_id)
                                             ride.from_city = data1["main_text"]!
                                             ride.from_city_lat = "\(location["lat"]!)"
                                             ride.from_city_lng = "\(location["lng"]!)"

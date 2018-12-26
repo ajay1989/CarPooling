@@ -15,9 +15,12 @@ class DriverStep8VC: UIViewController {
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
+    
+    @IBOutlet weak var btn_continue: UIButton!
+    var ride:Ride!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.continueEnable()
         // Do any additional setup after loading the view.
     }
     
@@ -53,6 +56,28 @@ class DriverStep8VC: UIViewController {
             }
             
         }
+    }
+    
+    @IBAction func btn_continue_tap(_ sender: Any) {
+        let arr = self.lblPassanger.text!.split(separator: " ")
+        self.ride.seats = String(arr[0])
+        let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+        let vc: DriverStep9VC = storyboard.instantiateViewController(withIdentifier: "DriverStep9VC") as! DriverStep9VC
+        vc.ride = self.ride
+        // self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func continueEnable() {
+        btn_continue.isEnabled = true
+        btn_continue.setTitle("Continue👉", for: .normal)
+        btn_continue.setTitleColor(UIColor.black, for: .normal)
+    }
+    
+    func continueDisable() {
+        btn_continue.isEnabled = false
+        btn_continue.setTitle("Continue👉🏼", for: .normal)
+        btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
     }
 
 }

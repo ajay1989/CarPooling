@@ -15,6 +15,9 @@ class DriverStep9VC: UIViewController {
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
+    
+    @IBOutlet weak var btn_continue: UIButton!
+    var ride:Ride!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,5 +59,15 @@ class DriverStep9VC: UIViewController {
         }
     }
 
-
+    
+    @IBAction func btn_continue_tap(_ sender: Any) {
+        let arr = self.lbl_Price.text!.split(separator: " ")
+        self.ride.price = String(arr[0])
+        let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+        let vc: DriverStep10VC = storyboard.instantiateViewController(withIdentifier: "DriverStep10VC") as! DriverStep10VC
+        vc.ride = self.ride
+        // self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

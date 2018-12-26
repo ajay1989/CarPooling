@@ -94,6 +94,7 @@ class CarModelSelectionVC: BaseViewController,UITableViewDelegate,UITableViewDat
         let vc: CarInfoVC = storyboard.instantiateViewController(withIdentifier: "CarInfoVC") as! CarInfoVC
         let data = self.arr_model[index]
         vc.txt_brandName = "\(data.brand_name!) - \(data.model_name!)"
+        vc.txt_modelID = data.model_id
         // self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }

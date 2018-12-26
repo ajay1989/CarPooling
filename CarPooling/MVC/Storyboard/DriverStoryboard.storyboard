@@ -616,7 +616,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="5b0-BG-0hW" kind="show" id="poQ-CY-glB"/>
+                                    <action selector="btn_continue_tap:" destination="bEY-K4-J5c" eventType="touchUpInside" id="Ap5-1I-iGu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annuler" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoV-u5-8wT">
@@ -690,6 +690,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bEY-K4-J5c" id="o6c-2Z-e8d"/>
+                                    <outlet property="delegate" destination="bEY-K4-J5c" id="A4i-aN-USi"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YN-DL-hCJ">
                                 <rect key="frame" x="16" y="294" width="343" height="60"/>
@@ -739,6 +743,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gmk-tj-13N"/>
                     </view>
+                    <connections>
+                        <outlet property="btn_continue" destination="qfh-5z-OAK" id="fRe-Ni-jDx"/>
+                        <outlet property="tableView" destination="SdC-Zc-3J2" id="Su4-GH-Mv9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xe0-Ss-oTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1196,7 +1204,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Dt1-sy-RL6" kind="show" id="cSZ-ea-HGT"/>
+                                    <action selector="btn_continue_tap:" destination="5b0-BG-0hW" eventType="touchUpInside" id="8st-t3-CY7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2U-fg-yHe">
@@ -1290,6 +1298,7 @@
                         <viewLayoutGuide key="safeArea" id="h7e-Sg-CAS"/>
                     </view>
                     <connections>
+                        <outlet property="btn_continue" destination="Rh1-vv-g0j" id="5Oc-Ld-7BM"/>
                         <outlet property="lblPassanger" destination="3GH-SF-6He" id="41K-Zx-mwA"/>
                     </connections>
                 </viewController>
@@ -1328,7 +1337,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UPK-Hh-yAT" kind="show" id="bra-X0-8mL"/>
+                                    <action selector="btn_continue_tap:" destination="Dt1-sy-RL6" eventType="touchUpInside" id="G8B-x1-UYp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elX-Xb-rEr">
@@ -1430,6 +1439,7 @@ Au delà de ce prix, ton offre risque de ne pas avoir beaucoup de succès.</stri
                         <viewLayoutGuide key="safeArea" id="yft-yO-1pZ"/>
                     </view>
                     <connections>
+                        <outlet property="btn_continue" destination="cE3-kf-fDA" id="xfl-SP-qb1"/>
                         <outlet property="lbl_Price" destination="HP0-AI-tPH" id="HFj-iT-psL"/>
                     </connections>
                 </viewController>
@@ -1468,7 +1478,7 @@ Au delà de ce prix, ton offre risque de ne pas avoir beaucoup de succès.</stri
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JKe-7L-YDM" kind="show" id="ze7-Tu-50y"/>
+                                    <action selector="btn_continue_tap:" destination="UPK-Hh-yAT" eventType="touchUpInside" id="tPg-0D-2A2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXW-vY-0EU">
@@ -1497,6 +1507,9 @@ Au delà de ce prix, ton offre risque de ne pas avoir beaucoup de succès.</stri
                                                 <color key="value" red="0.34314507249999998" green="0.71373671289999996" blue="0.61379140619999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btn_man_tap:" destination="UPK-Hh-yAT" eventType="touchUpInside" id="h9U-fL-QlN"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garcons seulement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIv-4S-jca">
                                         <rect key="frame" x="41.5" y="93" width="117" height="15"/>
@@ -1523,6 +1536,9 @@ Au delà de ce prix, ton offre risque de ne pas avoir beaucoup de succès.</stri
                                                 <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btn_both_tap:" destination="UPK-Hh-yAT" eventType="touchUpInside" id="BKv-YZ-Xic"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tout le monde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBg-MI-FgP">
                                         <rect key="frame" x="202" y="93" width="114" height="15"/>
@@ -1562,6 +1578,10 @@ Au delà de ce prix, ton offre risque de ne pas avoir beaucoup de succès.</stri
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vr3-zE-gcJ"/>
                     </view>
+                    <connections>
+                        <outlet property="btn_both" destination="cOB-W0-a0Z" id="t9S-ia-OIZ"/>
+                        <outlet property="btn_man" destination="kTP-9l-oRh" id="qgn-fP-Vvu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0d-g8-tQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1591,6 +1611,9 @@ Au delà de ce prix, ton offre risque de ne pas avoir beaucoup de succès.</stri
                                 <state key="normal" title="Continuer 👉🏻">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btn_continue_tap:" destination="JKe-7L-YDM" eventType="touchUpInside" id="orE-G3-lEg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHS-9a-Gqd">
                                 <rect key="frame" x="16" y="42" width="30" height="30"/>
