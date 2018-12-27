@@ -22,7 +22,9 @@ class DriverStep7VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
     var ride:Ride!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.separatorStyle = .none
+        
+        tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
         // Do any additional setup after loading the view.
     }
     
@@ -93,19 +95,26 @@ class DriverStep7VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
-        if( !(cell != nil))
-        {
-            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
+        let data = self.arr_cars[indexPath.row]
+        if index == indexPath.row {
+            cell.img_tick.isHidden = false
         }
-        let data = arr_cars[indexPath.row]
-        cell?.textLabel?.text = "\(data.brand_name!) \(data.model_name!) (\(data.vehicle_number_one!)-\(data.vehicle_number_two!)-\(data.vehicle_number_three!))"
-        return cell!
+        else {
+            cell.img_tick.isHidden = true
+        }
+        cell.img_icon.image = UIImage(named: "IOScar_right")
+        cell.selectionStyle = .none
+        cell.lbl_text.text = "\(data.brand_name!) \(data.model_name!) (\(data.vehicle_number_one!)-\(data.vehicle_number_two!)-\(data.vehicle_number_three!))"
+        return cell
+        
+        
     }
     
     func continueEnable() {
@@ -122,6 +131,7 @@ class DriverStep7VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.index = indexPath.row
+        self.tableView.reloadData()
         self.continueEnable()
     }
 }

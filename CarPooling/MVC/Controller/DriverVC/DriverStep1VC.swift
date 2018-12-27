@@ -29,10 +29,13 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         super.viewDidLoad()
         txt_search.returnKeyType = .search
         txt_search.addTarget(self, action: #selector(typingName), for: .editingChanged)
+        txt_search.autocorrectionType = .no
         self.tableView.isHidden = true
         self.continueDisable()
         // Do any additional setup after loading the view.
         self.hideNavigationController()
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
     }
     
     @objc func typingName(textField:UITextField){
@@ -167,23 +170,27 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        
-        if( !(cell != nil))
-        {
-            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
         let data = self.arr_city[indexPath.row]
-        cell!.textLabel?.text = data["main_text"]
-        return cell!
+        if index == indexPath.row {
+            cell.img_tick.isHidden = false
+        }
+        else {
+            cell.img_tick.isHidden = true
+        }
+        cell.img_icon.image = UIImage(named: "img_location")
+        cell.selectionStyle = .none
+        cell.lbl_text.text = data["main_text"]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.index = indexPath.row
+        self.tableView.reloadData()
         self.continueEnable()
     }
     

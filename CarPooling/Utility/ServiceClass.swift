@@ -117,7 +117,7 @@ class ServiceClass: NSObject {
                     
                     let json = JSON(rawJSON)
                     
-                    if  json["status"] == "error"{
+                    if  json["status"].bool == false{
                         var errorDict:[String:Any] = [String:Any]()
                         print(json)
                         

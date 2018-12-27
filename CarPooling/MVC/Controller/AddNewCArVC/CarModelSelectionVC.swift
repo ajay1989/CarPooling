@@ -24,6 +24,7 @@ class CarModelSelectionVC: BaseViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         txt_search.returnKeyType = .search
+        txt_search.autocorrectionType = .no
         txt_search.addTarget(self, action: #selector(typingName), for: .editingChanged)
         // Do any additional setup after loading the view.
         self.continueDisable()
@@ -31,7 +32,10 @@ class CarModelSelectionVC: BaseViewController,UITableViewDelegate,UITableViewDat
         self.hideNavigationController()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
         self.loadModel()
+        
     }
     // api model    /get
 
@@ -82,7 +86,8 @@ class CarModelSelectionVC: BaseViewController,UITableViewDelegate,UITableViewDat
                 }
             }
             else {
-                
+                self.arr_model.removeAll()
+                self.tableView.reloadData()
             }
             
         })
@@ -116,23 +121,29 @@ class CarModelSelectionVC: BaseViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
-        if( !(cell != nil))
-        {
-            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
         let data = self.arr_model[indexPath.row]
-        cell!.textLabel?.text = "\(data.brand_name!) - \(data.model_name!)"
-        return cell!
+        if index == indexPath.row {
+            cell.img_tick.isHidden = false
+        }
+        else {
+            cell.img_tick.isHidden = true
+        }
+        cell.img_icon.image = UIImage(named: "IOScar_right")
+        cell.selectionStyle = .none
+        cell.lbl_text.text = "\(data.brand_name!) - \(data.model_name!)"
+        return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.index = indexPath.row
+        self.tableView.reloadData()
         self.continueEnable()
     }
 }

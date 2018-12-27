@@ -47,6 +47,8 @@
 		D0FAA83821D005100075C875 /* FilterVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA83521D0050F0075C875 /* FilterVCViewController.swift */; };
 		D0FAA83921D005100075C875 /* ResearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA83721D005100075C875 /* ResearchResultVC.swift */; };
 		D0FAA83B21D0058E0075C875 /* SearchGoogleMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA83A21D0058E0075C875 /* SearchGoogleMapVC.swift */; };
+		DC02515B21D54545005B6038 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02515921D54545005B6038 /* ListTableViewCell.swift */; };
+		DC02515C21D54545005B6038 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC02515A21D54545005B6038 /* ListTableViewCell.xib */; };
 		DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EAA1C21985D600099FE98 /* Registration2VC.swift */; };
 		DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EAA1E21986BEF0099FE98 /* Registration3VC.swift */; };
 		DC1EAA2121987ACB0099FE98 /* Registration4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EAA2021987ACB0099FE98 /* Registration4VC.swift */; };
@@ -146,6 +148,8 @@
 		D0FAA83521D0050F0075C875 /* FilterVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterVCViewController.swift; sourceTree = "<group>"; };
 		D0FAA83721D005100075C875 /* ResearchResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResearchResultVC.swift; sourceTree = "<group>"; };
 		D0FAA83A21D0058E0075C875 /* SearchGoogleMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGoogleMapVC.swift; sourceTree = "<group>"; };
+		DC02515921D54545005B6038 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		DC02515A21D54545005B6038 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		DC1EAA1C21985D600099FE98 /* Registration2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration2VC.swift; sourceTree = "<group>"; };
 		DC1EAA1E21986BEF0099FE98 /* Registration3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration3VC.swift; sourceTree = "<group>"; };
 		DC1EAA2021987ACB0099FE98 /* Registration4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration4VC.swift; sourceTree = "<group>"; };
@@ -585,6 +589,8 @@
 		DCBA21442196E1FA00261817 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				DC02515921D54545005B6038 /* ListTableViewCell.swift */,
+				DC02515A21D54545005B6038 /* ListTableViewCell.xib */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -705,6 +711,7 @@
 				DCBA216C2196E92A00261817 /* Montserrat-Regular.ttf in Resources */,
 				DCBA21642196E92A00261817 /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				DCBA21692196E92A00261817 /* Montserrat-LightItalic.ttf in Resources */,
+				DC02515C21D54545005B6038 /* ListTableViewCell.xib in Resources */,
 				DCBA20E22196CAEF00261817 /* Assets.xcassets in Resources */,
 				DCBA20DD2196CAED00261817 /* Main.storyboard in Resources */,
 				D009A62721BFD36500764B60 /* WWCalendarTimeSelector.storyboard in Resources */,
@@ -872,6 +879,7 @@
 				D0FAA82F21D003C20075C875 /* GoogleApiManager.swift in Sources */,
 				D08C535E21C6D29E006A6729 /* DriverStep8VC.swift in Sources */,
 				DC1EAA2121987ACB0099FE98 /* Registration4VC.swift in Sources */,
+				DC02515B21D54545005B6038 /* ListTableViewCell.swift in Sources */,
 				DCBA21412196E18F00261817 /* Models.swift in Sources */,
 				D009A62321BFC39C00764B60 /* Int+Timepiece.swift in Sources */,
 				D08C536021C6D29E006A6729 /* DriverStep2VC.swift in Sources */,
