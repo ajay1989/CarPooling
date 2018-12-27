@@ -460,7 +460,16 @@ extension UITabBar {
         return sizeThatFits
     }
 }
-
+extension Dictionary {
+    var prettyPrintedJSON: String? {
+        do {
+            let data: Data = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+            return String(data: data, encoding: .utf8)
+        } catch _ {
+            return nil
+        }
+    }
+}
 extension GMSMapView {
     func addMarker(location : CLLocationCoordinate2D, address : String, shortAddress : String) {
         let camera = GMSCameraPosition.camera(withLatitude: location.latitude,longitude: location.longitude, zoom: 13.0)

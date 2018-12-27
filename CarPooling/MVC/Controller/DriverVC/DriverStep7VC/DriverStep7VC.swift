@@ -40,6 +40,8 @@ class DriverStep7VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
         ServiceClass.sharedInstance.hitServiceForGetCars(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                
+                if (parseData["message"] != "No result found" ) {
                 for data in parseData["data"]{
                     let model = Car.init(fromJson: data.1)
                     self.arr_cars.append(model)
@@ -47,9 +49,11 @@ class DriverStep7VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
                 if self.arr_cars.count>0 {
                     self.tableView.reloadData()
                 }
+                }
             }
             else {
-                
+                self.hudHide()
+
             }
             
         })

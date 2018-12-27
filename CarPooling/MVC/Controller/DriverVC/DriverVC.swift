@@ -31,8 +31,8 @@ class DriverVC: UIViewController {
     var  timer2: Timer = Timer()
     override func viewDidLoad() {
         super.viewDidLoad()
-         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(movingLabels), userInfo: nil, repeats: true)
-         timer2 = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(movingLabels2), userInfo: nil, repeats: true)
+         timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(movingLabels), userInfo: nil, repeats: true)
+         timer2 = Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(movingLabels2), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,7 +69,8 @@ extension UIView {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         animation.duration = 1.0
-        animation.values = [-20, 20, -20, 20, -10, 10, -5, 5, 0]
+        //[-20, 20, -20, 20, -10, 10, -5, 5, 0]
+        animation.values = [-8, 8, -10, 10, -15, 15, -5, 5, 0]
         layer.add(animation, forKey: "shake")
     }
    
