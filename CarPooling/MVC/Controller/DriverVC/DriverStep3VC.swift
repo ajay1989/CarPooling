@@ -107,7 +107,10 @@ class DriverStep3VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         searchTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(searchForKeyword(_:)), userInfo: textField.text!, repeats: false)
         
     }
-    
+    @IBAction func actionBack()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     @objc func searchForKeyword(_ timer: Timer) {
         self.arr_city.removeAll()
         self.tableView.isHidden = true
@@ -138,7 +141,7 @@ class DriverStep3VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
                                                 let structuredFormatting = dict["structured_formatting"] as! NSDictionary
                                                 let emptyDict = ["place_id" : dict["place_id"] as! String,
                                                                  "main_text" : structuredFormatting["main_text"] as! String,
-                                                                 "secondary_text" : structuredFormatting["secondary_text"] as! String,
+                                                                 //"secondary_text" : structuredFormatting["secondary_text"] as! String,
                                                                  "description" : dict["description"] as! String]
                                                 self.arr_city.append(emptyDict)
                                             }

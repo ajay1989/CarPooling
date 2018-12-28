@@ -1300,9 +1300,9 @@ publier ton premier covoiturage via l'application.
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ke-nF-GNQ">
-                                                                                            <rect key="frame" x="14" y="15" width="16" height="15"/>
+                                                                                            <rect key="frame" x="17" y="15" width="13" height="15"/>
                                                                                             <constraints>
-                                                                                                <constraint firstAttribute="width" constant="16" id="Sxw-4V-4WO"/>
+                                                                                                <constraint firstAttribute="width" constant="13" id="Sxw-4V-4WO"/>
                                                                                                 <constraint firstAttribute="height" constant="15" id="h9e-70-Roe"/>
                                                                                             </constraints>
                                                                                             <state key="normal" image="car-seat-with-seatbelt"/>
@@ -1451,6 +1451,14 @@ publier ton premier covoiturage via l'application.
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
+                                                            <outlet property="img_user" destination="BnK-cQ-t1U" id="ZrY-Dv-VUm"/>
+                                                            <outlet property="lbl_Price" destination="f5K-0W-OFk" id="jNm-Or-4Gd"/>
+                                                            <outlet property="lbl_ToDestination" destination="DTy-RM-D4O" id="y5X-RQ-Qy8"/>
+                                                            <outlet property="lbl_fromDestination" destination="3YF-yw-ygc" id="Xff-rZ-DPA"/>
+                                                            <outlet property="lbl_seats" destination="xx4-ru-hek" id="1VR-SW-gkT"/>
+                                                            <outlet property="lbl_timeFrom" destination="UfD-af-1dA" id="m9o-K3-ebu"/>
+                                                            <outlet property="lbl_userName" destination="XxE-D7-51M" id="gSL-zM-HdO"/>
+                                                            <outlet property="llbl_TimeTo" destination="W58-f6-VBy" id="3Lh-Qz-Rfm"/>
                                                             <outlet property="vw_base" destination="TTH-DR-aXO" id="V6K-GE-P22"/>
                                                             <outlet property="vw_green" destination="y5v-wM-Bfx" id="lOz-KO-c1T"/>
                                                         </connections>
@@ -2427,6 +2435,9 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                                 <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionGoToStep1WithSender:" destination="mOH-vr-b1z" eventType="touchUpInside" id="GOM-2O-rVi"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car-1" translatesAutoresizingMaskIntoConstraints="NO" id="TnX-3U-545">
                                         <rect key="frame" x="0.0" y="230" width="375" height="347"/>

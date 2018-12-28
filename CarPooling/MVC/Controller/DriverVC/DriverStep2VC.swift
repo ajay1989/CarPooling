@@ -45,7 +45,10 @@ class DriverStep2VC: BaseViewController,GMSMapViewDelegate,UITableViewDelegate,U
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
             }
-    
+    @IBAction func actionBack()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @objc func typingName(textField:UITextField){
         if searchTimer != nil {
@@ -88,7 +91,7 @@ class DriverStep2VC: BaseViewController,GMSMapViewDelegate,UITableViewDelegate,U
                                                 let structuredFormatting = dict["structured_formatting"] as! NSDictionary
                                                 let emptyDict = ["place_id" : dict["place_id"] as! String,
                                                                  "main_text" : structuredFormatting["main_text"] as! String,
-                                                                 "secondary_text" : structuredFormatting["secondary_text"] as! String,
+                                                                 //"secondary_text" : structuredFormatting["secondary_text"] as! String,
                                                                  "description" : dict["description"] as! String]
                                                 self.arr_city.append(emptyDict)
                                             }

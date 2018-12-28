@@ -50,6 +50,8 @@ class UserData {
 }
 
 class Ride {
+    
+    var ride_id : String!
     var device_type : String!
     var from_city : String!
     var from_city_lat : String!
@@ -66,31 +68,39 @@ class Ride {
     var departure_date : String!
     var departure_time : String!
     var vehicle : String!
-    var user : String!
-
+     var user : String!
+    var user_id : String!
+    var first_name : String!
+    var last_name : String!
+    var profile_photo : String!
+    var available_seats : String!
+     var created_date : String!
+    
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
         }
-        
-        device_type = parseData!["device_type"].stringValue
+        ride_id = parseData!["ride_id"].stringValue
         from_city = parseData!["from_city"].stringValue
         from_city_lat = parseData!["from_city_lat"].stringValue
         from_city_lng = parseData!["from_city_lng"].stringValue
         from_city_address = parseData!["from_city_address"].stringValue
-        
         to_city = parseData!["to_city"].stringValue
         to_city_lat = parseData!["to_city_lat"].stringValue
         to_city_lng = parseData!["to_city_lng"].stringValue
         gender = parseData!["gender"].stringValue
         price = parseData!["price"].stringValue
-        
         seats = parseData!["seats"].stringValue
         departure_date = parseData!["departure_date"].stringValue
         departure_time = parseData!["departure_time"].stringValue
         vehicle = parseData!["vehicle"].stringValue
+        user_id = parseData!["user_id"].stringValue
         user = parseData!["user"].stringValue
-        
+        first_name = parseData!["first_name"].stringValue
+        last_name = parseData!["last_name"].stringValue
+        profile_photo = parseData!["profile_photo"].stringValue
+        available_seats = parseData!["available_seats"].stringValue
+            created_date = parseData!["created_date"].stringValue
     }
     
 }

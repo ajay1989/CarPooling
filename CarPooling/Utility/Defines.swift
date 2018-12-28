@@ -106,6 +106,7 @@ struct ServiceUrls
     static let create_vehicle = "create_vehicle"
     static let user_vehicle = "user_vehicle"
     static let create_ride = "create_ride"
+    static let ride = "ride"
 }
 struct ErrorCodes
 {

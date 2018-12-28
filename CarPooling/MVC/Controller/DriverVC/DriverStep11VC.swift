@@ -32,7 +32,10 @@ class DriverStep11VC: BaseViewController {
     }
     */
     
-    
+    @IBAction func actionBack()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func btn_continue_tap(_ sender: Any) {
         let params = ["device_type":self.ride.device_type!,
                       "from_city":self.ride.from_city!,

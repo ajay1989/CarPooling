@@ -32,6 +32,10 @@ class DriverStep4VC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func actionBack()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func actionTest(sender: UIButton)
     {
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)

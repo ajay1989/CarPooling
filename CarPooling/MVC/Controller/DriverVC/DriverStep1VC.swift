@@ -37,7 +37,10 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
     }
-    
+    @IBAction func actionBack()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     @objc func typingName(textField:UITextField){
         if searchTimer != nil {
             searchTimer?.invalidate()
@@ -78,11 +81,10 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
                                             for dict in predictions as! [NSDictionary]{
                                                 let structuredFormatting = dict["structured_formatting"] as! NSDictionary
                                                 let emptyDict = ["place_id" : dict["place_id"] as! String,
-                                                                 "main_text" : structuredFormatting["main_text"] as! String,
-                                                                 "secondary_text" : structuredFormatting["secondary_text"] as! String,
-                                                                 "description" : dict["description"] as! String]
+                                                                 "main_text" : structuredFormatting["main_text"] as! String,      "description" : dict["description"] as! String]
                                                 self.arr_city.append(emptyDict)
                                             }
+                                          //"secondary_text" : structuredFormatting["secondary_text"] as! String,
                                             DispatchQueue.main.async(execute: { () -> Void in
                                                 if(self.arr_city.count > 0) {
                                                     print(self.arr_city)

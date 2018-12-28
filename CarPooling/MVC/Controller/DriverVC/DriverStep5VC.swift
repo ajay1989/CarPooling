@@ -42,6 +42,10 @@ class DriverStep5VC: UIViewController, WWCalendarTimeSelectorProtocol {
     override func viewWillAppear(_ animated: Bool) {
        
     }
+    @IBAction func actionBack()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func actionTest(sender: UIButton)
     {
         print(singleDate)

@@ -62,7 +62,10 @@ class DriverStep7VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
         
     }
     
-    
+    @IBAction func actionBack()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
 
     @IBAction func btn_continue_tap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)

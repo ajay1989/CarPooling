@@ -24,7 +24,10 @@ class DriverStep9VC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func actionBack()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func seat_btns(sender: AnyObject) {
         
         if sender.tag == 20 {

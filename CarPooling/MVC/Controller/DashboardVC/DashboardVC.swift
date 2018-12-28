@@ -9,11 +9,12 @@
 import UIKit
 
 class DashboardVC: BaseViewController {
+    
     @IBOutlet weak var tblVw: UITableView!
    
     
     @IBOutlet weak var searchBar: UISearchBar!
-    var arrData = NSMutableArray()
+    var arr_rides:Array = [Ride]()
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.barTintColor = UIColor.clear
@@ -26,22 +27,34 @@ class DashboardVC: BaseViewController {
     }
     
     func loadUserData() {
-        let params: [String : String] = ["id":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        self.arr_rides.removeAll()
+        //        self.tableView.reloadData()
+        
+        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
         self.hudShow()
-        ServiceClass.sharedInstance.hitServiceForProfile(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+        ServiceClass.sharedInstance.hitServiceForGetRides(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
+            print_debug(parseData)
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                let user = UserData.init(fromJson: parseData["data"])
                 
-                
+                if (parseData["message"] != "No result found" ) {
+                    for data in parseData["data"]{
+                        let model = Ride.init(fromJson: data.1)
+                        self.arr_rides.append(model)
+                    }
+                    if self.arr_rides.count>0 {
+                        self.tblVw.reloadData()
+                    }
+                }
             }
             else {
-                self.makeToast(errorDict!["errMessage"] as! String)
+                self.hudHide()
+                
             }
             
         })
+        
     }
-    
 }
     //MARK:- UIableView Data Source & Delegates Methods
     
@@ -52,8 +65,8 @@ class DashboardVC: BaseViewController {
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            if self.arrData.count>0 {
-                return self.arrData.count
+            if self.arr_rides.count>0 {
+                return self.arr_rides.count
             }
             else{
                 return 03}
@@ -72,21 +85,15 @@ class DashboardVC: BaseViewController {
             } else {
                 // Fallback on earlier versions
             }
-            // border
-//             cell.vw_base.layer.borderWidth = 1.0
-//             cell.vw_base.layer.borderColor = UIColor.lightGray.cgColor
-//            cell.vw_base.layer.shadowColor = UIColor.blue.cgColor
-//
-//            cell.vw_base.layer.shadowOffset = CGSize(width: 20, height: 10)
-//          //  cell.vw_base.layer.shadowOpacity = 0.7
-//            //cell.vw_base.layer.shadowRadius = 4.0
-//            //            let model: DataDetailsModel = self.arrData[indexPath.row] as! DataDetailsModel
-//
-//            //"all","running","stop","idle","pulling","all","all","all"
-          
-           
+           let data = self.arr_rides[indexPath.row]
+            cell.lbl_fromDestination.text = data.from_city
+            cell.lbl_ToDestination.text = data.to_city
+            cell.lbl_timeFrom.text = data.departure_time
+            cell.llbl_TimeTo.text = " "
+            cell.lbl_userName.text = data.first_name + data.last_name
+             cell.lbl_seats.text = data.available_seats
+            cell.lbl_Price.text = data.price
             
-           
             
             return cell
             // }

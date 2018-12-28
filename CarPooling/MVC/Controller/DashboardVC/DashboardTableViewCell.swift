@@ -12,6 +12,23 @@ class DashboardTableViewCell: UITableViewCell {
     @IBOutlet weak var vw_base: UIView!
     
     @IBOutlet weak var vw_green: UIView!
+    
+    @IBOutlet weak var lbl_fromDestination: UILabel!
+    
+    @IBOutlet weak var lbl_ToDestination: UILabel!
+    
+    @IBOutlet weak var lbl_timeFrom: UILabel!
+    
+    @IBOutlet weak var llbl_TimeTo: UILabel!
+    
+    @IBOutlet weak var lbl_userName: UILabel!
+    
+    @IBOutlet weak var lbl_seats: UILabel!
+    
+    @IBOutlet weak var lbl_Price: UILabel!
+    
+    @IBOutlet weak var img_user: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
