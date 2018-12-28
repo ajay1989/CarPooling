@@ -45,10 +45,19 @@ class Registration7VC: BaseViewController {
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 
-                print("sucess")
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc: LoginEmailVC = storyboard.instantiateViewController(withIdentifier: "LoginEmailVC") as! LoginEmailVC
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.makeToast("Success")
+                AppHelper.delay(1.0, closure: {
+                    if AppHelper.getStringForKey(ServiceKeys.keyFacebookID).isEqualToString(find: "") {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc: LoginEmailVC = storyboard.instantiateViewController(withIdentifier: "LoginEmailVC") as! LoginEmailVC
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    else {
+                       self.navigationController?.popToRootViewController(animated: true)
+                    }
+                    
+                })
+                
                 
             }
             else {

@@ -69,7 +69,9 @@ class DashboardVC: BaseViewController {
                 return self.arr_rides.count
             }
             else{
-                return 03}
+                return 0
+                
+            }
             //placeArray.count
         }
         
