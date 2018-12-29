@@ -4,6 +4,23 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>PipPipYalah
+
+
+PipPipYalah
+
+
+PipPipYalah
+
+
+PipPipYalah
+
+
+PipPipYalah
+
+
+</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -50,12 +67,12 @@
 			<string>YES</string>
 		</dict>
 	</dict>
-    <key>NSLocationUsageDescription</key>
-    <string>To display current location</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>To display current location</string>
 	<key>NSCameraUsageDescription</key>
 	<string>allow camera</string>
+	<key>NSLocationUsageDescription</key>
+	<string>To display current location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To display current location</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>allow photo library</string>
 	<key>UIAppFonts</key>

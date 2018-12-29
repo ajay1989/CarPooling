@@ -38,7 +38,7 @@ class DashboardVC: BaseViewController {
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 
                 if (parseData["message"] != "No result found" ) {
-                    for data in parseData["data"]{
+                    for data in parseData["data"]["ride"]{
                         let model = Ride.init(fromJson: data.1)
                         self.arr_rides.append(model)
                     }
@@ -91,7 +91,7 @@ class DashboardVC: BaseViewController {
             cell.lbl_fromDestination.text = data.from_city
             cell.lbl_ToDestination.text = data.to_city
             cell.lbl_timeFrom.text = data.departure_time
-            cell.llbl_TimeTo.text = " "
+            cell.llbl_TimeTo.text = data.arrival_time
             cell.lbl_userName.text = data.first_name + data.last_name
              cell.lbl_seats.text = data.available_seats
             cell.lbl_Price.text = data.price
@@ -105,7 +105,15 @@ class DashboardVC: BaseViewController {
             return 165
         }
         
-
+ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc:BookingDetailVC = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as! BookingDetailVC
+    // self.present(vc, animated: true, completion: nil)
+   
+    self.navigationController?.pushViewController(vc, animated: true)
+    
+    
+}
 }
 extension UIView {
     

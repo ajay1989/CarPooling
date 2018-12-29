@@ -53,6 +53,8 @@ class Registration5VC: BaseViewController,UITextFieldDelegate  {
         self.gender = "Male"
         self.btn_male.borderColor = selectedColor
         self.btn_female.borderColor = UIColor.darkGray
+         self.btn_female.isSelected = false
+        self.btn_male.isSelected = true
     }
     
     
@@ -68,6 +70,8 @@ class Registration5VC: BaseViewController,UITextFieldDelegate  {
         self.gender = "Female"
         self.btn_male.borderColor = UIColor.darkGray
         self.btn_female.borderColor = selectedColor
+        self.btn_female.isSelected = true
+        self.btn_male.isSelected = false
     }
     
     func showDatePicker(){

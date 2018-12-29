@@ -67,6 +67,7 @@ class Ride {
     var seats : String!
     var departure_date : String!
     var departure_time : String!
+    var arrival_time : String!
     var vehicle : String!
      var user : String!
     var user_id : String!
@@ -93,6 +94,7 @@ class Ride {
         seats = parseData!["seats"].stringValue
         departure_date = parseData!["departure_date"].stringValue
         departure_time = parseData!["departure_time"].stringValue
+        arrival_time = parseData!["arrival_time"].stringValue
         vehicle = parseData!["vehicle"].stringValue
         user_id = parseData!["user_id"].stringValue
         user = parseData!["user"].stringValue
