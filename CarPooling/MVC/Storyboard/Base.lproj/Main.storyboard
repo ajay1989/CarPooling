@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -867,7 +867,7 @@ nous Otman 🎉</string>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="TqQ-as-f3h" id="tS2-xE-Reb"/>
                                                         </connections>
@@ -921,20 +921,57 @@ nous Otman 🎉</string>
                                                     <action selector="btn_back_tap:" destination="TqQ-as-f3h" eventType="touchUpInside" id="1Qp-yP-tnM"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wY0-jd-HI3">
+                                                <rect key="frame" x="8" y="445" width="359" height="40"/>
+                                                <subviews>
+                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nCs-QB-ILl">
+                                                        <rect key="frame" x="8" y="0.0" width="343" height="40"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="TqQ-as-f3h" id="44G-XA-g82"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="nCs-QB-ILl" secondAttribute="trailing" constant="8" id="3sf-Ca-FG0"/>
+                                                    <constraint firstItem="nCs-QB-ILl" firstAttribute="top" secondItem="wY0-jd-HI3" secondAttribute="top" id="G3M-mL-l0a"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nCs-QB-ILl" secondAttribute="bottom" id="J14-KU-tD5"/>
+                                                    <constraint firstItem="nCs-QB-ILl" firstAttribute="leading" secondItem="wY0-jd-HI3" secondAttribute="leading" constant="8" id="N8P-9I-lMk"/>
+                                                    <constraint firstAttribute="height" constant="40" id="QH5-IW-mG5"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="wY0-jd-HI3" firstAttribute="top" secondItem="2Q3-7h-7q8" secondAttribute="bottom" constant="17" id="1YK-SG-a36"/>
                                             <constraint firstItem="2Q3-7h-7q8" firstAttribute="top" secondItem="lCy-yf-AB1" secondAttribute="bottom" constant="8" id="9Ps-Q5-afa"/>
                                             <constraint firstItem="2Q3-7h-7q8" firstAttribute="leading" secondItem="ezb-7P-rTy" secondAttribute="leading" constant="8" id="Bef-Ic-bVo"/>
                                             <constraint firstAttribute="trailing" secondItem="ZNu-Lt-KFm" secondAttribute="trailing" constant="8" id="C5C-TX-uRo"/>
                                             <constraint firstItem="8Qh-yj-BlT" firstAttribute="leading" secondItem="ezb-7P-rTy" secondAttribute="leading" constant="8" id="Jj8-yW-R3U"/>
                                             <constraint firstAttribute="trailing" secondItem="lCy-yf-AB1" secondAttribute="trailing" constant="8" id="Ogc-Sp-hV0"/>
+                                            <constraint firstAttribute="trailing" secondItem="wY0-jd-HI3" secondAttribute="trailing" constant="8" id="VUi-W0-Ucn"/>
                                             <constraint firstItem="8bD-xf-qXH" firstAttribute="leading" secondItem="ezb-7P-rTy" secondAttribute="leading" constant="8" id="Vsa-KV-Jqq"/>
                                             <constraint firstItem="8Qh-yj-BlT" firstAttribute="top" secondItem="Aox-YD-lNz" secondAttribute="bottom" constant="120" id="dJ3-sP-qf2"/>
                                             <constraint firstItem="8bD-xf-qXH" firstAttribute="centerY" secondItem="ZNu-Lt-KFm" secondAttribute="centerY" id="eW1-RL-U4A"/>
                                             <constraint firstItem="lCy-yf-AB1" firstAttribute="leading" secondItem="ezb-7P-rTy" secondAttribute="leading" constant="23" id="emB-pV-nSz"/>
                                             <constraint firstAttribute="trailing" secondItem="2Q3-7h-7q8" secondAttribute="trailing" constant="8" id="ffl-rI-OrP"/>
                                             <constraint firstItem="lCy-yf-AB1" firstAttribute="top" secondItem="8Qh-yj-BlT" secondAttribute="bottom" constant="20" id="nPZ-En-gjq"/>
+                                            <constraint firstItem="wY0-jd-HI3" firstAttribute="leading" secondItem="ezb-7P-rTy" secondAttribute="leading" constant="8" id="pr3-pv-9EE"/>
                                             <constraint firstAttribute="bottom" secondItem="ZNu-Lt-KFm" secondAttribute="bottom" constant="105" id="tit-QR-oLN"/>
                                             <constraint firstItem="Aox-YD-lNz" firstAttribute="top" secondItem="ezb-7P-rTy" secondAttribute="top" constant="50" id="vLS-ka-fiH"/>
                                             <constraint firstAttribute="trailing" secondItem="8Qh-yj-BlT" secondAttribute="trailing" constant="8" id="xUn-Ca-Fhv"/>
@@ -965,6 +1002,7 @@ nous Otman 🎉</string>
                         <outlet property="btn_continue" destination="ZNu-Lt-KFm" id="Cf8-pl-Xyv"/>
                         <outlet property="scrollView" destination="A9b-de-Bcv" id="FGF-Mv-IuU"/>
                         <outlet property="txt_email" destination="jV4-hR-Zke" id="der-E1-4gr"/>
+                        <outlet property="txt_password" destination="nCs-QB-ILl" id="XuS-xG-qgC"/>
                         <outlet property="vw_email" destination="2Q3-7h-7q8" id="j5P-hZ-Vz8"/>
                     </connections>
                 </viewController>
@@ -4388,7 +4426,7 @@ en 3h30</string>
         <image name="car-1" width="499.92001342773438" height="499.92001342773438"/>
         <image name="car-blu" width="22.464000701904297" height="16.416000366210938"/>
         <image name="car-seat-with-seatbelt" width="8.6400003433227539" height="12.095999717712402"/>
-        <image name="check" width="10.079999923706055" height="10.368000030517578"/>
+        <image name="check" width="16.128000259399414" height="16.416000366210938"/>
         <image name="contact" width="87.599998474121094" height="63.599998474121094"/>
         <image name="down-arrow" width="6.9120001792907715" height="5.9039998054504395"/>
         <image name="driver" width="24" height="24"/>

@@ -12,6 +12,8 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
     @IBOutlet weak var scrollView:UIScrollView!
     @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var txt_email: UITextField!
+    
+    @IBOutlet weak var txt_password: UITextField!
     @IBOutlet weak var vw_email: UIView! {
         didSet {
             vw_email.layer.borderColor =  UIColor(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0).cgColor
@@ -66,6 +68,7 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
                 
                 print("sucess")
                 AppHelper.setStringForKey(self.txt_email.text!, key: ServiceKeys.keyEmail)
+                AppHelper.setStringForKey(self.txt_password.text!, key: ServiceKeys.KeyPassword)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc: Registration5VC = storyboard.instantiateViewController(withIdentifier: "Registration5VC") as! Registration5VC
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -83,25 +86,39 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if (textField.text?.count)! > 0 {
+        var isEmailEnable = false
+        var isPasswordEnable = false
+        if (txt_email.text?.count)! > 0 {
             if (textField.text?.isEmail)! {
-                btn_continue.isEnabled = true
-                btn_continue.setTitle("Continue👉", for: .normal)
-                btn_continue.setTitleColor(UIColor.black, for: .normal)
+                isEmailEnable = true 
             }
             else {
-                btn_continue.isEnabled = false
-                btn_continue.setTitle("Continue👉🏼", for: .normal)
-                btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
+                isEmailEnable = false
             }
             
+        }
+        else {
+            isEmailEnable = false
+            
+        }
+        if (txt_password.text?.count)! > 5 {
+            isPasswordEnable = true
+        }
+        else {
+            isPasswordEnable = false
+        }
+        
+        if isEmailEnable && isPasswordEnable {
+            btn_continue.isEnabled = true
+            btn_continue.setTitle("Continue👉", for: .normal)
+            btn_continue.setTitleColor(UIColor.black, for: .normal)
         }
         else {
             btn_continue.isEnabled = false
             btn_continue.setTitle("Continue👉🏼", for: .normal)
             btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
         }
+        
         return true
     }
     

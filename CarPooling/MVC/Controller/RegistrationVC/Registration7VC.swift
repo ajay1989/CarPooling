@@ -31,7 +31,7 @@ class Registration7VC: BaseViewController {
     @IBAction func btn_register_tap(_ sender: Any) {
         let params: [String : Any] = ["first_name":AppHelper.getStringForKey(ServiceKeys.keyFirstName),
                                          "last_name":AppHelper.getStringForKey(ServiceKeys.keyLastName),
-                                         "password":"123456",
+                                         "password":AppHelper.getStringForKey(ServiceKeys.KeyPassword),
                                          "mobile_number":AppHelper.getStringForKey(ServiceKeys.keyContactPhoneNumber),
                                          "gender":AppHelper.getStringForKey(ServiceKeys.keyGender),
                                          "email":AppHelper.getStringForKey(ServiceKeys.keyEmail),
