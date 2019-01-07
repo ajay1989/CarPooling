@@ -27,6 +27,8 @@
 		D05C501821980ACB0032537E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501721980ACB0032537E /* LoginVC.swift */; };
 		D05C501C2199F6D30032537E /* Registration5VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501B2199F6D30032537E /* Registration5VC.swift */; };
 		D05C501E2199F7040032537E /* Registration6VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501D2199F7040032537E /* Registration6VC.swift */; };
+		D06C77C621E32D3C00FF3B8C /* PublicProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C77C421E32D3B00FF3B8C /* PublicProfileVC.swift */; };
+		D06C77C721E32D3C00FF3B8C /* ComentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C77C521E32D3B00FF3B8C /* ComentsTableViewCell.swift */; };
 		D08C534721C6CCB5006A6729 /* CarInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C534521C6CCB5006A6729 /* CarInfoVC.swift */; };
 		D08C534821C6CCB5006A6729 /* CarModelSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C534621C6CCB5006A6729 /* CarModelSelectionVC.swift */; };
 		D08C535821C6D29E006A6729 /* DriverStep10VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C534A21C6D29E006A6729 /* DriverStep10VC.swift */; };
@@ -129,6 +131,8 @@
 		D05C501721980ACB0032537E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D05C501B2199F6D30032537E /* Registration5VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration5VC.swift; sourceTree = "<group>"; };
 		D05C501D2199F7040032537E /* Registration6VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration6VC.swift; sourceTree = "<group>"; };
+		D06C77C421E32D3B00FF3B8C /* PublicProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfileVC.swift; sourceTree = "<group>"; };
+		D06C77C521E32D3B00FF3B8C /* ComentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComentsTableViewCell.swift; sourceTree = "<group>"; };
 		D08C534521C6CCB5006A6729 /* CarInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarInfoVC.swift; sourceTree = "<group>"; };
 		D08C534621C6CCB5006A6729 /* CarModelSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarModelSelectionVC.swift; sourceTree = "<group>"; };
 		D08C534A21C6D29E006A6729 /* DriverStep10VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStep10VC.swift; sourceTree = "<group>"; };
@@ -309,6 +313,15 @@
 				D0141520219DE931006C2154 /* Registration7VC.swift */,
 			);
 			path = RegistrationVC;
+			sourceTree = "<group>";
+		};
+		D06C77C321E32D3B00FF3B8C /* PublicProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				D06C77C421E32D3B00FF3B8C /* PublicProfileVC.swift */,
+				D06C77C521E32D3B00FF3B8C /* ComentsTableViewCell.swift */,
+			);
+			path = PublicProfileVC;
 			sourceTree = "<group>";
 		};
 		D08C534421C6CCB5006A6729 /* AddNewCArVC */ = {
@@ -615,6 +628,7 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D06C77C321E32D3B00FF3B8C /* PublicProfileVC */,
 				D0D1EE1E21D75DD700E3C18C /* BookingVC */,
 				D0FAA83421D0050F0075C875 /* FilterVC */,
 				D0FAA83621D005100075C875 /* ResearchResultVC */,
@@ -881,6 +895,7 @@
 				D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */,
 				DCBA21342196DFED00261817 /* ServiceClass.swift in Sources */,
 				DCBA211E2196DF3500261817 /* AbstractActionSheetPicker.m in Sources */,
+				D06C77C621E32D3C00FF3B8C /* PublicProfileVC.swift in Sources */,
 				DCBA20E02196CAED00261817 /* CarPooling.xcdatamodeld in Sources */,
 				DCBA21392196DFED00261817 /* SwiftyJSON.swift in Sources */,
 				D05C501621980A870032537E /* Registration1VC.swift in Sources */,
@@ -888,6 +903,7 @@
 				DCBA20FE2196DEA700261817 /* TPKeyboardAvoidingTableView.m in Sources */,
 				DCBA213A2196DFED00261817 /* Strings.swift in Sources */,
 				D08C535821C6D29E006A6729 /* DriverStep10VC.swift in Sources */,
+				D06C77C721E32D3C00FF3B8C /* ComentsTableViewCell.swift in Sources */,
 				D0FAA82F21D003C20075C875 /* GoogleApiManager.swift in Sources */,
 				D08C535E21C6D29E006A6729 /* DriverStep8VC.swift in Sources */,
 				DC1EAA2121987ACB0099FE98 /* Registration4VC.swift in Sources */,
