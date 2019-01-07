@@ -13,6 +13,7 @@ class DashboardVC: BaseViewController {
     @IBOutlet weak var tblVw: UITableView!
    
     
+    @IBOutlet weak var img_profilePic: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
     var arr_rides:Array = [Ride]()
     override func viewDidLoad() {
@@ -23,6 +24,11 @@ class DashboardVC: BaseViewController {
         searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)        // Do any additional setup after loading the view.
         tblVw.delegate = self
         tblVw.dataSource = self
+        
+        let url = URL(string: "https://i.stack.imgur.com/dWrvS.png")!
+        let placeholderImage = UIImage(named: "Male-driver")!
+        
+        img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
         self.loadUserData()
     }
     
@@ -55,6 +61,17 @@ class DashboardVC: BaseViewController {
         })
         
     }
+    
+    
+    @IBAction func btn_profilePic_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc:PublicProfileVC = storyboard.instantiateViewController(withIdentifier: "PublicProfileVC") as! PublicProfileVC
+        // self.present(vc, animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
     //MARK:- UIableView Data Source & Delegates Methods
     
@@ -96,6 +113,11 @@ class DashboardVC: BaseViewController {
              cell.lbl_seats.text = data.available_seats
             cell.lbl_Price.text = data.price
             
+            let url = URL(string: "https://i.stack.imgur.com/dWrvS.png")!
+            let placeholderImage = UIImage(named: "Male-driver")!
+            
+            cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
+           
             
             return cell
             // }

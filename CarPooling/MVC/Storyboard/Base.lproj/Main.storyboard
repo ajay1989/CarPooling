@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -256,7 +256,7 @@ de covoiturage au Maroc.</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNl-mo-HxM">
-                                            <rect key="frame" x="24.5" y="207" width="326.5" height="44"/>
+                                            <rect key="frame" x="43" y="205" width="289.5" height="42"/>
                                             <string key="text">Nous sommes ravis de te voir parmi
 nous Otman 🎉</string>
                                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
@@ -264,7 +264,7 @@ nous Otman 🎉</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjz-5E-e2B">
-                                            <rect key="frame" x="16" y="341" width="343" height="120"/>
+                                            <rect key="frame" x="16" y="337" width="343" height="120"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0f1-B0-GaT">
                                                     <rect key="frame" x="0.0" y="75" width="343" height="45"/>
@@ -339,7 +339,7 @@ nous Otman 🎉</string>
                                             <state key="normal" image="question"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rn6-rF-UIL">
-                                            <rect key="frame" x="258" y="511" width="101" height="31"/>
+                                            <rect key="frame" x="269" y="507" width="90" height="30"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
                                             <state key="normal" title="Continuer 👉🏻">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -349,7 +349,7 @@ nous Otman 🎉</string>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5w-jP-xFm">
-                                            <rect key="frame" x="16" y="511" width="30" height="30"/>
+                                            <rect key="frame" x="16" y="507" width="30" height="30"/>
                                             <state key="normal" title="👈🏻"/>
                                             <connections>
                                                 <action selector="btn_back_tap:" destination="b9i-nC-52s" eventType="touchUpInside" id="7A7-ZX-zP4"/>
@@ -1219,16 +1219,27 @@ publier ton premier covoiturage via l'application.
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yP-aM-yR8">
+                                                        <rect key="frame" x="20" y="7.5" width="40" height="40"/>
+                                                        <connections>
+                                                            <action selector="btn_profilePic_tap:" destination="pcw-aZ-etf" eventType="touchUpInside" id="rOD-if-rPy"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="0Vf-1R-vWe"/>
+                                                    <constraint firstItem="3yP-aM-yR8" firstAttribute="centerY" secondItem="HxA-el-N6w" secondAttribute="centerY" id="Ic5-fj-6gK"/>
                                                     <constraint firstItem="gXr-Qm-Zro" firstAttribute="centerY" secondItem="lQl-FO-FZI" secondAttribute="centerY" id="Oq0-Cv-KHI"/>
+                                                    <constraint firstItem="3yP-aM-yR8" firstAttribute="trailing" secondItem="HxA-el-N6w" secondAttribute="trailing" id="TIo-H3-6pV"/>
                                                     <constraint firstItem="HxA-el-N6w" firstAttribute="centerY" secondItem="lQl-FO-FZI" secondAttribute="centerY" id="Why-JG-0Xc"/>
+                                                    <constraint firstItem="3yP-aM-yR8" firstAttribute="leading" secondItem="HxA-el-N6w" secondAttribute="leading" id="ee3-Go-3gV"/>
                                                     <constraint firstAttribute="trailing" secondItem="InV-iH-wPa" secondAttribute="trailing" constant="20" id="jOt-mx-Dzo"/>
                                                     <constraint firstItem="InV-iH-wPa" firstAttribute="centerY" secondItem="lQl-FO-FZI" secondAttribute="centerY" id="lex-MI-kYD"/>
+                                                    <constraint firstItem="3yP-aM-yR8" firstAttribute="width" secondItem="HxA-el-N6w" secondAttribute="width" id="mfo-3j-3dp"/>
                                                     <constraint firstItem="HxA-el-N6w" firstAttribute="leading" secondItem="lQl-FO-FZI" secondAttribute="leading" constant="20" id="pkR-ex-69K"/>
                                                     <constraint firstItem="gXr-Qm-Zro" firstAttribute="centerX" secondItem="lQl-FO-FZI" secondAttribute="centerX" id="vyR-jB-29Y"/>
+                                                    <constraint firstItem="3yP-aM-yR8" firstAttribute="height" secondItem="HxA-el-N6w" secondAttribute="height" id="wrc-as-iex"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txb-Zx-NBu">
@@ -1586,6 +1597,7 @@ publier ton premier covoiturage via l'application.
                         <viewLayoutGuide key="safeArea" id="JSA-5D-WSd"/>
                     </view>
                     <connections>
+                        <outlet property="img_profilePic" destination="HxA-el-N6w" id="G7i-m0-1XK"/>
                         <outlet property="searchBar" destination="hpT-7O-4Nh" id="0lz-FC-f0J"/>
                         <outlet property="tblVw" destination="5xK-SN-n1l" id="6fV-mz-5q9"/>
                     </connections>
@@ -4226,6 +4238,9 @@ en 3h30</string>
                                             <constraint firstAttribute="height" constant="30" id="UN7-by-piu"/>
                                         </constraints>
                                         <state key="normal" title="👈🏻"/>
+                                        <connections>
+                                            <action selector="btn_back_tap:" destination="N5A-wv-r4E" eventType="touchUpInside" id="Msx-cW-Hxo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4544,6 +4559,13 @@ en 3h30</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zKp-Ld-3t2"/>
                     </view>
+                    <connections>
+                        <outlet property="img_profilePic" destination="qos-3j-bOE" id="6R0-zJ-OaM"/>
+                        <outlet property="lbl_dob" destination="54S-Wu-sEe" id="vUh-Sj-4A6"/>
+                        <outlet property="lbl_email" destination="Oko-Wt-zgr" id="3pg-JL-hsQ"/>
+                        <outlet property="lbl_name" destination="crM-MB-3KN" id="PG7-57-UEN"/>
+                        <outlet property="lbl_phone" destination="BxF-6i-fpL" id="IPN-9i-6pV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7z5-Ul-chv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4565,7 +4587,7 @@ en 3h30</string>
         <image name="car-blu" width="22.464000701904297" height="16.416000366210938"/>
         <image name="car-seat-with-seatbelt" width="8.6400003433227539" height="12.095999717712402"/>
         <image name="card" width="20.159999847412109" height="13.248000144958496"/>
-        <image name="check" width="16.128000259399414" height="16.416000366210938"/>
+        <image name="check" width="10.079999923706055" height="10.368000030517578"/>
         <image name="contact" width="87.599998474121094" height="63.599998474121094"/>
         <image name="cross" width="16.704000473022461" height="16.704000473022461"/>
         <image name="down-arrow" width="6.9120001792907715" height="5.9039998054504395"/>

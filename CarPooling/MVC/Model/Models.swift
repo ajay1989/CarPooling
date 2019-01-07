@@ -26,6 +26,46 @@ func convertRating(_ rating:String) -> String {
 }
 
 
+class User {
+    var user_id : String!
+    var user_email : String!
+    var mobile_number : String!
+    var first_name : String!
+    var last_name : String!
+    var gender : String!
+    
+    var profile_photo : String!
+    var dob : String!
+    var address : String!
+    var doc_id_number : String!
+    var doc_id_photo : String!
+    
+    var is_approved : String!
+    var created_date : String!
+    
+    
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return
+        }
+        user_id = parseData!["user_id"].stringValue
+        user_email = parseData!["user_email"].stringValue
+        mobile_number = parseData!["mobile_number"].stringValue
+        first_name = parseData!["first_name"].stringValue
+        last_name = parseData!["last_name"].stringValue
+        profile_photo = parseData!["profile_photo"].stringValue
+        dob = parseData!["dob"].stringValue
+        address = parseData!["address"].stringValue
+        gender = parseData!["gender"].stringValue
+        doc_id_number = parseData!["doc_id_number"].stringValue
+        doc_id_photo = parseData!["doc_id_photo"].stringValue
+        is_approved = parseData!["is_approved"].stringValue
+        created_date = parseData!["created_date"].stringValue
+        
+    }
+}
+
+
 class UserData {
     var user_fname : String!
     var user_lname : String!
@@ -406,39 +446,7 @@ class NotificationData{
     
 }
 
-class User{
-    
-    var user_id : String!
-    var name : String!
-    var email : String!
-    var contact_number : String!
-    var address : String!
-    var latitude : String!
-    var longitude : String!
-    var token : String!
-    var shipping_address : String!
-    var profile_image: String!
-    var password: String!
-    init(fromJson parseData: JSON!){
-        if parseData.isEmpty{
-            return
-        }
-        
-        let json = parseData["data"]
-        
-        user_id = json[ServiceKeys.user_id].stringValue
-        token = json[ServiceKeys.keyToken].stringValue
-        contact_number = json[ServiceKeys.keyContactNumber].stringValue
-        address = json[ServiceKeys.address].stringValue
-        email = json[ServiceKeys.keyEmail].stringValue
-        
-        name = json[ServiceKeys.name].stringValue
-        profile_image = json[ServiceKeys.profile_image].stringValue
-        
-    }
-    
-    
-}
+
 
 
 class CarImages {
