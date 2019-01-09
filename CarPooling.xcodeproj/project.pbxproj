@@ -21,6 +21,7 @@
 		D0141521219DE931006C2154 /* Registration7VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0141520219DE931006C2154 /* Registration7VC.swift */; };
 		D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9021B054C5005952B8 /* HomeVC.swift */; };
 		D0166C9721B05664005952B8 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9621B05664005952B8 /* InfoVC.swift */; };
+		D0182F6A21E5FD79008E7090 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0182F6921E5FD79008E7090 /* UserProfileVC.swift */; };
 		D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019101F21A4789D00C8DF85 /* DashboardVC.swift */; };
 		D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */; };
 		D05C501621980A870032537E /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501521980A870032537E /* Registration1VC.swift */; };
@@ -125,6 +126,7 @@
 		D0141520219DE931006C2154 /* Registration7VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration7VC.swift; sourceTree = "<group>"; };
 		D0166C9021B054C5005952B8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		D0166C9621B05664005952B8 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		D0182F6921E5FD79008E7090 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		D019101F21A4789D00C8DF85 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		D05C501521980A870032537E /* Registration1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
@@ -290,6 +292,14 @@
 				D0166C9621B05664005952B8 /* InfoVC.swift */,
 			);
 			path = InfoVC;
+			sourceTree = "<group>";
+		};
+		D0182F6621E5FD36008E7090 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				D0182F6921E5FD79008E7090 /* UserProfileVC.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 		D019101E21A4786B00C8DF85 /* DashboardVC */ = {
@@ -628,6 +638,7 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D0182F6621E5FD36008E7090 /* UserProfile */,
 				D06C77C321E32D3B00FF3B8C /* PublicProfileVC */,
 				D0D1EE1E21D75DD700E3C18C /* BookingVC */,
 				D0FAA83421D0050F0075C875 /* FilterVC */,
@@ -875,6 +886,7 @@
 				D08C536221C6D29E006A6729 /* DriverStep7VCTableViewCell.swift in Sources */,
 				DCBA21352196DFED00261817 /* Utilities.swift in Sources */,
 				DCBA211F2196DF3500261817 /* DistancePickerView.m in Sources */,
+				D0182F6A21E5FD79008E7090 /* UserProfileVC.swift in Sources */,
 				DCBA21212196DF3500261817 /* SWActionSheet.m in Sources */,
 				DCBA20FC2196DEA700261817 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				DCBA21362196DFED00261817 /* Extension.swift in Sources */,
