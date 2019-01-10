@@ -46,6 +46,7 @@
 		D08C536321C6D29E006A6729 /* DriverStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C535621C6D29E006A6729 /* DriverStep3VC.swift */; };
 		D08C536421C6D29E006A6729 /* DriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C535721C6D29E006A6729 /* DriverVC.swift */; };
 		D0D1EE2021D75DEF00E3C18C /* BookingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D1EE1F21D75DEF00E3C18C /* BookingDetailVC.swift */; };
+		D0DF134421E77788001C2754 /* EditUserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF134321E77788001C2754 /* EditUserProfileVC.swift */; };
 		D0FAA82E21D003C20075C875 /* CarMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA82C21D003C20075C875 /* CarMarker.swift */; };
 		D0FAA82F21D003C20075C875 /* GoogleApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA82D21D003C20075C875 /* GoogleApiManager.swift */; };
 		D0FAA83821D005100075C875 /* FilterVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA83521D0050F0075C875 /* FilterVCViewController.swift */; };
@@ -151,6 +152,7 @@
 		D08C535621C6D29E006A6729 /* DriverStep3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStep3VC.swift; sourceTree = "<group>"; };
 		D08C535721C6D29E006A6729 /* DriverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverVC.swift; sourceTree = "<group>"; };
 		D0D1EE1F21D75DEF00E3C18C /* BookingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailVC.swift; sourceTree = "<group>"; };
+		D0DF134321E77788001C2754 /* EditUserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileVC.swift; sourceTree = "<group>"; };
 		D0FAA82C21D003C20075C875 /* CarMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarMarker.swift; sourceTree = "<group>"; };
 		D0FAA82D21D003C20075C875 /* GoogleApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiManager.swift; sourceTree = "<group>"; };
 		D0FAA83521D0050F0075C875 /* FilterVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterVCViewController.swift; sourceTree = "<group>"; };
@@ -377,6 +379,14 @@
 				D0D1EE1F21D75DEF00E3C18C /* BookingDetailVC.swift */,
 			);
 			path = BookingVC;
+			sourceTree = "<group>";
+		};
+		D0DF134221E7776C001C2754 /* EditUserProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0DF134321E77788001C2754 /* EditUserProfileVC.swift */,
+			);
+			path = EditUserProfileVC;
 			sourceTree = "<group>";
 		};
 		D0FAA82A21D003920075C875 /* SearchVC */ = {
@@ -638,6 +648,7 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D0DF134221E7776C001C2754 /* EditUserProfileVC */,
 				D0182F6621E5FD36008E7090 /* UserProfile */,
 				D06C77C321E32D3B00FF3B8C /* PublicProfileVC */,
 				D0D1EE1E21D75DD700E3C18C /* BookingVC */,
@@ -868,6 +879,7 @@
 				D08C536321C6D29E006A6729 /* DriverStep3VC.swift in Sources */,
 				DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */,
 				D0FAA83921D005100075C875 /* ResearchResultVC.swift in Sources */,
+				D0DF134421E77788001C2754 /* EditUserProfileVC.swift in Sources */,
 				DCBA21202196DF3500261817 /* ActionSheetDistancePicker.m in Sources */,
 				D08C535D21C6D29E006A6729 /* DriverStep1VC.swift in Sources */,
 				D08C535B21C6D29E006A6729 /* DriverStep5VC.swift in Sources */,
