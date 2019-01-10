@@ -89,7 +89,7 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
         var isEmailEnable = false
         var isPasswordEnable = false
         if (txt_email.text?.count)! > 0 {
-            if (textField.text?.isEmail)! {
+            if (txt_email.text?.isEmail)! {
                 isEmailEnable = true 
             }
             else {

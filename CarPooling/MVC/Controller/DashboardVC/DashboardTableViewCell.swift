@@ -11,6 +11,8 @@ import UIKit
 class DashboardTableViewCell: UITableViewCell {
     @IBOutlet weak var vw_base: UIView!
     
+    @IBOutlet weak var btn_Profile: UIButton!
+    
     @IBOutlet weak var vw_green: UIView!
     
     @IBOutlet weak var lbl_fromDestination: UILabel!

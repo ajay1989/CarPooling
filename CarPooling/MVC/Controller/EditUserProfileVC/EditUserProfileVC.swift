@@ -10,12 +10,17 @@ import UIKit
 
 class EditUserProfileVC: UIViewController {
 
+    @IBOutlet weak var imgUser: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+imgUser.cornerRadius = 45 
         // Do any additional setup after loading the view.
     }
-    
+    @IBAction func goToBack(sender: UIButton)
+    {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
 
     /*
     // MARK: - Navigation

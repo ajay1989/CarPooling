@@ -65,13 +65,21 @@ class DashboardVC: BaseViewController {
     
     @IBAction func btn_profilePic_tap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc:PublicProfileVC = storyboard.instantiateViewController(withIdentifier: "PublicProfileVC") as! PublicProfileVC
+        let vc:UserProfileVC = storyboard.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileVC
         // self.present(vc, animated: true, completion: nil)
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
+    @objc  func actionProfileImage(_ sender: UIButton)
+    {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc:PublicProfileVC = storyboard.instantiateViewController(withIdentifier: "PublicProfileVC") as! PublicProfileVC
+        // self.present(vc, animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
     //MARK:- UIableView Data Source & Delegates Methods
     
@@ -118,7 +126,7 @@ class DashboardVC: BaseViewController {
             
             cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
            
-            
+            cell.btn_Profile.addTarget(self, action: #selector(self.actionProfileImage(_:)) , for: .touchUpInside)
             return cell
             // }
             //p;return UITableViewCell()
@@ -136,6 +144,7 @@ class DashboardVC: BaseViewController {
     
     
 }
+        
 }
 extension UIView {
     
