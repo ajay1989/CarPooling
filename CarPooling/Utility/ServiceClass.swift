@@ -373,6 +373,22 @@ class ServiceClass: NSObject {
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
     }
     
+    func hitServiceForUpdateUserDetail(_ params:[String : Any], completion:@escaping completionBlockType)
+    {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.update_profile)/\(AppHelper.getStringForKey(ServiceKeys.user_id))"
+        print(baseUrl)
+        let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
+        print_debug(headers)
+        //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+    }
+    
     func hitServiceForGetCreateCar(_ params:[String : Any], completion:@escaping completionBlockType)
     {
         let user = "admin"
