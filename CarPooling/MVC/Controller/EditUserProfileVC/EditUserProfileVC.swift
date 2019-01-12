@@ -4,12 +4,27 @@
 //
 //  Created by Archit Rai Saxena on 10/01/19.
 //  Copyright © 2019 Ajay Vyas. All rights reserved.
-//
+//ColorPickerViewDelegate, ColorPickerViewDelegateFlowLayout
 
 import UIKit
-
+import IGColorPicker
 class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var tblvw_CarDetail: UITableView!{
+        didSet{
+            tblvw_CarDetail.delegate = self
+            tblvw_CarDetail.dataSource = self
+        }
+        
+    }
+    
+    @IBOutlet weak var btnUserProfileView: UIButton!
+    
+    @IBOutlet weak var vw_UserInfo: UIView!
+    
+    @IBOutlet weak var vw_CarInfo: UIView!
+    
+    @IBOutlet weak var btnCarInfoView: UIButton!
     @IBOutlet weak var txt_email: UITextField!
     @IBOutlet weak var txt_mobile: UITextField!
     @IBOutlet weak var txt_dob: UITextField!
@@ -25,6 +40,18 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         imgUser.cornerRadius = 45
          showDatePicker()
+        btnUserProfileView.borderColor =  UIColor.init(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0)
+        btnUserProfileView.titleLabel?.textColor = UIColor.black
+        
+        btnCarInfoView.borderColor = UIColor.lightGray
+        btnCarInfoView.titleLabel?.textColor = UIColor.lightGray
+        
+        vw_CarInfo.isHidden = true
+        vw_UserInfo.isHidden = false
+        
+        
+        
+        
         self.loadUser()
         // Do any additional setup after loading the view.
     }
@@ -33,7 +60,33 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
         
         self.navigationController?.popViewController(animated: true)
     }
-
+    @IBAction func actionChangeView(sender: UIButton)
+    {
+        
+        if sender.tag == 1
+        {
+            btnUserProfileView.borderColor =  UIColor.init(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0)
+            btnUserProfileView.titleLabel?.textColor = UIColor.black
+            
+            btnCarInfoView.borderColor = UIColor.lightGray
+             btnCarInfoView.titleLabel?.textColor = UIColor.lightGray
+            
+            vw_CarInfo.isHidden = true
+            vw_UserInfo.isHidden = false
+            
+        }
+        else
+        {
+            btnCarInfoView.borderColor =  UIColor.init(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0)
+            btnCarInfoView.titleLabel?.textColor = UIColor.black
+            
+            btnUserProfileView.borderColor = UIColor.lightGray
+            btnUserProfileView.titleLabel?.textColor = UIColor.lightGray
+            
+            vw_UserInfo.isHidden = true
+            vw_CarInfo.isHidden = false
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -186,5 +239,68 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
         
+    }
+}
+extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate,ColorPickerViewDelegateFlowLayout {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if self.arr_rides.count>0 {
+//            return self.arr_rides.count
+//        }
+//        else{
+//            return 0
+//
+//        }
+       return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // if placeArray.count > 0 {
+        let cell = tblvw_CarDetail.dequeueReusableCell(withIdentifier: "CarDetailsTableViewCell", for: indexPath) as! CarDetailsTableViewCell
+      //  cell.carColorPickerView.delegate = self
+        cell.carColorPickerView.layoutDelegate = self
+        cell.carColorPickerView.isSelectedColorTappable = false
+        cell.carColorPickerView.style = .circle //.square
+        cell.carColorPickerView.selectionStyle = .check
+        cell.carColorPickerView.backgroundColor = .clear
+       cell.carColorPickerView.preselectedIndex = 3
+        return cell
+        // }
+        //p;return UITableViewCell()
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 258
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc:BookingDetailVC = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as! BookingDetailVC
+//        // self.present(vc, animated: true, completion: nil)
+//
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
+    // MARK: - ColorPickerViewDelegateFlowLayout
+    
+    func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 18, height: 18
+        )
+    }
+    
+    func colorPickerView(_ colorPickerView: ColorPickerView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 13
+    }
+    
+    func colorPickerView(_ colorPickerView: ColorPickerView, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
     }
 }

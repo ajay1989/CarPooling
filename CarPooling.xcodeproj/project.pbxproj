@@ -22,6 +22,7 @@
 		D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9021B054C5005952B8 /* HomeVC.swift */; };
 		D0166C9721B05664005952B8 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9621B05664005952B8 /* InfoVC.swift */; };
 		D0182F6A21E5FD79008E7090 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0182F6921E5FD79008E7090 /* UserProfileVC.swift */; };
+		D01865F921E9F8DF00D2117C /* CarDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */; };
 		D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019101F21A4789D00C8DF85 /* DashboardVC.swift */; };
 		D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */; };
 		D05C501621980A870032537E /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501521980A870032537E /* Registration1VC.swift */; };
@@ -128,6 +129,7 @@
 		D0166C9021B054C5005952B8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		D0166C9621B05664005952B8 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		D0182F6921E5FD79008E7090 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		D019101F21A4789D00C8DF85 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		D05C501521980A870032537E /* Registration1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				D0DF134321E77788001C2754 /* EditUserProfileVC.swift */,
+				D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */,
 			);
 			path = EditUserProfileVC;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				D0141521219DE931006C2154 /* Registration7VC.swift in Sources */,
 				D0FAA83B21D0058E0075C875 /* SearchGoogleMapVC.swift in Sources */,
 				DCBA21052196DEEF00261817 /* SkyFloatingLabelTextField.swift in Sources */,
+				D01865F921E9F8DF00D2117C /* CarDetailsTableViewCell.swift in Sources */,
 				DCBA211C2196DF3500261817 /* ActionSheetLocalePicker.m in Sources */,
 				DCBA213E2196E0C500261817 /* BaseViewController.swift in Sources */,
 				DCBA21232196DF3500261817 /* ActionSheetMultipleStringPicker.m in Sources */,
