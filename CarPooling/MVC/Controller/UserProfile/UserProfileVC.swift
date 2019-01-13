@@ -68,4 +68,18 @@ class UserProfileVC: BaseViewController {
             
         })
     }
+    
+    @IBAction func btn_settings_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: SettingsViewController = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func btn_alerts_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: AlertsViewController = storyboard.instantiateViewController(withIdentifier: "AlertsViewController") as! AlertsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
