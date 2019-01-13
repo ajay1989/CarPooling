@@ -14,7 +14,7 @@ class CarModelSelectionVC: BaseViewController,UITableViewDelegate,UITableViewDat
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
-    
+    var isFromEdit = false
     @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var txt_search: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -100,6 +100,7 @@ class CarModelSelectionVC: BaseViewController,UITableViewDelegate,UITableViewDat
         let data = self.arr_model[index]
         vc.txt_brandName = "\(data.brand_name!) - \(data.model_name!)"
         vc.txt_modelID = data.model_id
+        vc.isFromEdit = self.isFromEdit
         // self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }

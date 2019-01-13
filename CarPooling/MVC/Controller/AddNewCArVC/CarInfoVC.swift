@@ -14,6 +14,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
+    var isFromEdit = false
     @IBOutlet weak var txt_number1: UITextField!
      @IBOutlet weak var btn_brand: UIButton!
     var txt_brandName = "Hyndai i10"
@@ -180,12 +181,23 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
         ServiceClass.sharedInstance.hitServiceForGetCreateCar(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                for controller in self.navigationController!.viewControllers as Array {
-                    if controller.isKind(of: DriverStep7VC.self) {
-                        self.navigationController!.popToViewController(controller, animated: true)
-                        break
+                if self.isFromEdit {
+                    for controller in self.navigationController!.viewControllers as Array {
+                        if controller.isKind(of: EditUserProfileVC.self) {
+                            self.navigationController!.popToViewController(controller, animated: true)
+                            break
+                        }
                     }
                 }
+                else {
+                    for controller in self.navigationController!.viewControllers as Array {
+                        if controller.isKind(of: DriverStep7VC.self) {
+                            self.navigationController!.popToViewController(controller, animated: true)
+                            break
+                        }
+                    }
+                }
+                
                 
             }
             else {

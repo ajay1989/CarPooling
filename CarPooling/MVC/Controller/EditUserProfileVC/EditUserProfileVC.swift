@@ -50,12 +50,18 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
         vw_UserInfo.isHidden = false
         
         
-        
+    
         
         self.loadUser()
-        self.loadCars()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.loadCars()
+    }
+    
+    
     @IBAction func goToBack(sender: UIButton)
     {
         
@@ -206,6 +212,13 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
     }
     
     
+    @IBAction func btn_addcar_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+        let vc: CarModelSelectionVC = storyboard.instantiateViewController(withIdentifier: "CarModelSelectionVC") as! CarModelSelectionVC
+        // self.present(vc, animated: true, completion: nil)
+        vc.isFromEdit = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
             pickerController.delegate = self
@@ -314,6 +327,7 @@ extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate,ColorPi
         cell.txt_date.text = data.insurance_expire_date
         cell.btn_Delete.addTarget(self, action: #selector(btn_delete_tap(_:)), for: .touchUpInside)
         cell.btn_Delete.tag = indexPath.row
+        cell.selectionStyle = .none
         return cell
         // }
         //p;return UITableViewCell()
