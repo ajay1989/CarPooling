@@ -109,6 +109,10 @@
 		DCBA216A2196E92A00261817 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21582196E92A00261817 /* Montserrat-Italic.ttf */; };
 		DCBA216B2196E92A00261817 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA21592196E92A00261817 /* Montserrat-Medium.ttf */; };
 		DCBA216C2196E92A00261817 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA215A2196E92A00261817 /* Montserrat-Regular.ttf */; };
+		DCD1543721EB69270043E46F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1543521EB69260043E46F /* SettingsViewController.swift */; };
+		DCD1543821EB69270043E46F /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1543621EB69270043E46F /* AlertsViewController.swift */; };
+		DCD1543B21EB69400043E46F /* AlertsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1543921EB69400043E46F /* AlertsTableViewCell.swift */; };
+		DCD1543C21EB69400043E46F /* AlertsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD1543A21EB69400043E46F /* AlertsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -237,6 +241,10 @@
 		DCBA21582196E92A00261817 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		DCBA21592196E92A00261817 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		DCBA215A2196E92A00261817 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		DCD1543521EB69260043E46F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DCD1543621EB69270043E46F /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
+		DCD1543921EB69400043E46F /* AlertsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertsTableViewCell.swift; path = ../../../../../../../Downloads/CarPooling/CarPooling/MVC/View/TableView/AlertsTableViewCell.swift; sourceTree = "<group>"; };
+		DCD1543A21EB69400043E46F /* AlertsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlertsTableViewCell.xib; path = ../../../../../../../Downloads/CarPooling/CarPooling/MVC/View/TableView/AlertsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				D0182F6921E5FD79008E7090 /* UserProfileVC.swift */,
+				DCD1543621EB69270043E46F /* AlertsViewController.swift */,
+				DCD1543521EB69260043E46F /* SettingsViewController.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -637,6 +647,8 @@
 			children = (
 				DC02515921D54545005B6038 /* ListTableViewCell.swift */,
 				DC02515A21D54545005B6038 /* ListTableViewCell.xib */,
+				DCD1543921EB69400043E46F /* AlertsTableViewCell.swift */,
+				DCD1543A21EB69400043E46F /* AlertsTableViewCell.xib */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -750,6 +762,7 @@
 			files = (
 				DCBA21652196E92A00261817 /* Montserrat-Light.ttf in Resources */,
 				DCBA21602196E92A00261817 /* Montserrat-BlackItalic.ttf in Resources */,
+				DCD1543C21EB69400043E46F /* AlertsTableViewCell.xib in Resources */,
 				DCBA21632196E92A00261817 /* Montserrat-ExtraBold.ttf in Resources */,
 				D009A60321BF8FE700764B60 /* DriverStoryboard.storyboard in Resources */,
 				DCBA215B2196E92A00261817 /* Montserrat-BoldItalic.ttf in Resources */,
@@ -900,6 +913,7 @@
 				DCBA21232196DF3500261817 /* ActionSheetMultipleStringPicker.m in Sources */,
 				D009A62221BFC39C00764B60 /* Duration.swift in Sources */,
 				D08C536221C6D29E006A6729 /* DriverStep7VCTableViewCell.swift in Sources */,
+				DCD1543721EB69270043E46F /* SettingsViewController.swift in Sources */,
 				DCBA21352196DFED00261817 /* Utilities.swift in Sources */,
 				DCBA211F2196DF3500261817 /* DistancePickerView.m in Sources */,
 				D0182F6A21E5FD79008E7090 /* UserProfileVC.swift in Sources */,
@@ -910,6 +924,7 @@
 				D0FAA83821D005100075C875 /* FilterVCViewController.swift in Sources */,
 				D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */,
 				D009A62121BFC39C00764B60 /* String+Timepiece.swift in Sources */,
+				DCD1543B21EB69400043E46F /* AlertsTableViewCell.swift in Sources */,
 				D009A61E21BFC39C00764B60 /* WWCalendarTimeSelector.swift in Sources */,
 				DCBA21332196DFED00261817 /* AppHelper.swift in Sources */,
 				DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */,
@@ -921,6 +936,7 @@
 				D08C535A21C6D29E006A6729 /* DriverStep11VC.swift in Sources */,
 				DCBA21032196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */,
+				DCD1543821EB69270043E46F /* AlertsViewController.swift in Sources */,
 				DCBA21342196DFED00261817 /* ServiceClass.swift in Sources */,
 				DCBA211E2196DF3500261817 /* AbstractActionSheetPicker.m in Sources */,
 				D06C77C621E32D3C00FF3B8C /* PublicProfileVC.swift in Sources */,

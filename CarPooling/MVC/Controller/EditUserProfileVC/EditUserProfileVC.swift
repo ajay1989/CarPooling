@@ -17,7 +17,7 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
         }
         
     }
-    
+    var arr_cars:Array = [Car]()
     @IBOutlet weak var btnUserProfileView: UIButton!
     
     @IBOutlet weak var vw_UserInfo: UIView!
@@ -53,6 +53,7 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
         
         
         self.loadUser()
+        self.loadCars()
         // Do any additional setup after loading the view.
     }
     @IBAction func goToBack(sender: UIButton)
@@ -127,6 +128,35 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
             }
             
         })
+    }
+    
+    func loadCars() {
+        self.arr_cars.removeAll()
+        //        self.tableView.reloadData()
+       
+        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForGetCars(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                
+                if (parseData["message"] != "No result found" ) {
+                    for data in parseData["data"]{
+                        let model = Car.init(fromJson: data.1)
+                        self.arr_cars.append(model)
+                    }
+                    if self.arr_cars.count>0 {
+                        self.tblvw_CarDetail.reloadData()
+                    }
+                }
+            }
+            else {
+                self.hudHide()
+                
+            }
+            
+        })
+        
     }
     
     
@@ -240,6 +270,14 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
         self.view.endEditing(true)
         
     }
+    
+    @objc func btn_delete_tap(_ sender: UIButton) {
+        let id = sender.tag
+        
+        //        self.tableView.reloadData()
+        
+        
+    }
 }
 extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate,ColorPickerViewDelegateFlowLayout {
     
@@ -255,11 +293,12 @@ extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate,ColorPi
 //            return 0
 //
 //        }
-       return 3
+       return self.arr_cars.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // if placeArray.count > 0 {
+        let data = self.arr_cars[indexPath.row]
         let cell = tblvw_CarDetail.dequeueReusableCell(withIdentifier: "CarDetailsTableViewCell", for: indexPath) as! CarDetailsTableViewCell
       //  cell.carColorPickerView.delegate = self
         cell.carColorPickerView.layoutDelegate = self
@@ -268,6 +307,13 @@ extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate,ColorPi
         cell.carColorPickerView.selectionStyle = .check
         cell.carColorPickerView.backgroundColor = .clear
        cell.carColorPickerView.preselectedIndex = 3
+        cell.txt_number1.text = data.vehicle_number_one
+        cell.txt_number2.text = data.vehicle_number_two
+        cell.txt_number3.text = data.vehicle_number_three
+        cell.lbl_carName.text = "\(data.brand_name!) \(data.model_name!)"
+        cell.txt_date.text = data.insurance_expire_date
+        cell.btn_Delete.addTarget(self, action: #selector(btn_delete_tap(_:)), for: .touchUpInside)
+        cell.btn_Delete.tag = indexPath.row
         return cell
         // }
         //p;return UITableViewCell()
