@@ -17,6 +17,10 @@
 		D009A62321BFC39C00764B60 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A61B21BFC39C00764B60 /* Int+Timepiece.swift */; };
 		D009A62521BFC39C00764B60 /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A61D21BFC39C00764B60 /* NSDateComponents+Timepiece.swift */; };
 		D009A62721BFD36500764B60 /* WWCalendarTimeSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D009A62621BFD36500764B60 /* WWCalendarTimeSelector.storyboard */; };
+		D00D155F21EC90270005C37F /* PaymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D155E21EC90270005C37F /* PaymentMethodVC.swift */; };
+		D00D156221EC966C0005C37F /* BookingConfirmedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D156121EC966C0005C37F /* BookingConfirmedVC.swift */; };
+		D00D156421ECA2540005C37F /* AlertsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D156321ECA2540005C37F /* AlertsTableViewCell.swift */; };
+		D00D156621ECA25D0005C37F /* AlertsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00D156521ECA25D0005C37F /* AlertsTableViewCell.xib */; };
 		D0125428219B4D2E007E5D28 /* LoginEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0125427219B4D2E007E5D28 /* LoginEmailVC.swift */; };
 		D0141521219DE931006C2154 /* Registration7VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0141520219DE931006C2154 /* Registration7VC.swift */; };
 		D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9021B054C5005952B8 /* HomeVC.swift */; };
@@ -111,8 +115,6 @@
 		DCBA216C2196E92A00261817 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBA215A2196E92A00261817 /* Montserrat-Regular.ttf */; };
 		DCD1543721EB69270043E46F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1543521EB69260043E46F /* SettingsViewController.swift */; };
 		DCD1543821EB69270043E46F /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1543621EB69270043E46F /* AlertsViewController.swift */; };
-		DCD1543B21EB69400043E46F /* AlertsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1543921EB69400043E46F /* AlertsTableViewCell.swift */; };
-		DCD1543C21EB69400043E46F /* AlertsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD1543A21EB69400043E46F /* AlertsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +130,10 @@
 		D009A61B21BFC39C00764B60 /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
 		D009A61D21BFC39C00764B60 /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
 		D009A62621BFD36500764B60 /* WWCalendarTimeSelector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WWCalendarTimeSelector.storyboard; sourceTree = "<group>"; };
+		D00D155E21EC90270005C37F /* PaymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVC.swift; sourceTree = "<group>"; };
+		D00D156121EC966C0005C37F /* BookingConfirmedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConfirmedVC.swift; sourceTree = "<group>"; };
+		D00D156321ECA2540005C37F /* AlertsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsTableViewCell.swift; sourceTree = "<group>"; };
+		D00D156521ECA25D0005C37F /* AlertsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertsTableViewCell.xib; sourceTree = "<group>"; };
 		D0125427219B4D2E007E5D28 /* LoginEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailVC.swift; sourceTree = "<group>"; };
 		D0141520219DE931006C2154 /* Registration7VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration7VC.swift; sourceTree = "<group>"; };
 		D0166C9021B054C5005952B8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -243,8 +249,6 @@
 		DCBA215A2196E92A00261817 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		DCD1543521EB69260043E46F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DCD1543621EB69270043E46F /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
-		DCD1543921EB69400043E46F /* AlertsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertsTableViewCell.swift; path = ../../../../../../../Downloads/CarPooling/CarPooling/MVC/View/TableView/AlertsTableViewCell.swift; sourceTree = "<group>"; };
-		DCD1543A21EB69400043E46F /* AlertsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlertsTableViewCell.xib; path = ../../../../../../../Downloads/CarPooling/CarPooling/MVC/View/TableView/AlertsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +292,22 @@
 				D009A61621BFC39C00764B60 /* WWCalendarTimeSelector.swift */,
 			);
 			path = CallenderTime;
+			sourceTree = "<group>";
+		};
+		D00D155D21EC8FF50005C37F /* PaymentMethodVC */ = {
+			isa = PBXGroup;
+			children = (
+				D00D155E21EC90270005C37F /* PaymentMethodVC.swift */,
+			);
+			path = PaymentMethodVC;
+			sourceTree = "<group>";
+		};
+		D00D156021EC964F0005C37F /* BookingConfirmedVC */ = {
+			isa = PBXGroup;
+			children = (
+				D00D156121EC966C0005C37F /* BookingConfirmedVC.swift */,
+			);
+			path = BookingConfirmedVC;
 			sourceTree = "<group>";
 		};
 		D0166C8F21B054A4005952B8 /* HomeVC */ = {
@@ -645,10 +665,10 @@
 		DCBA21442196E1FA00261817 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				D00D156521ECA25D0005C37F /* AlertsTableViewCell.xib */,
+				D00D156321ECA2540005C37F /* AlertsTableViewCell.swift */,
 				DC02515921D54545005B6038 /* ListTableViewCell.swift */,
 				DC02515A21D54545005B6038 /* ListTableViewCell.xib */,
-				DCD1543921EB69400043E46F /* AlertsTableViewCell.swift */,
-				DCD1543A21EB69400043E46F /* AlertsTableViewCell.xib */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -663,6 +683,8 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D00D156021EC964F0005C37F /* BookingConfirmedVC */,
+				D00D155D21EC8FF50005C37F /* PaymentMethodVC */,
 				D0DF134221E7776C001C2754 /* EditUserProfileVC */,
 				D0182F6621E5FD36008E7090 /* UserProfile */,
 				D06C77C321E32D3B00FF3B8C /* PublicProfileVC */,
@@ -762,7 +784,6 @@
 			files = (
 				DCBA21652196E92A00261817 /* Montserrat-Light.ttf in Resources */,
 				DCBA21602196E92A00261817 /* Montserrat-BlackItalic.ttf in Resources */,
-				DCD1543C21EB69400043E46F /* AlertsTableViewCell.xib in Resources */,
 				DCBA21632196E92A00261817 /* Montserrat-ExtraBold.ttf in Resources */,
 				D009A60321BF8FE700764B60 /* DriverStoryboard.storyboard in Resources */,
 				DCBA215B2196E92A00261817 /* Montserrat-BoldItalic.ttf in Resources */,
@@ -782,6 +803,7 @@
 				DCBA21662196E92A00261817 /* Montserrat-Black.ttf in Resources */,
 				DCBA215D2196E92A00261817 /* Montserrat-Thin.ttf in Resources */,
 				DCBA21672196E92A00261817 /* Montserrat-ExtraLight.ttf in Resources */,
+				D00D156621ECA25D0005C37F /* AlertsTableViewCell.xib in Resources */,
 				DCBA21682196E92A00261817 /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				DCBA21622196E92A00261817 /* Montserrat-Bold.ttf in Resources */,
 				DCBA215C2196E92A00261817 /* Montserrat-SemiBold.ttf in Resources */,
@@ -892,6 +914,7 @@
 			files = (
 				D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */,
 				DCBA21042196DEEF00261817 /* UITextField+fixCaretPosition.swift in Sources */,
+				D00D156221EC966C0005C37F /* BookingConfirmedVC.swift in Sources */,
 				D08C536321C6D29E006A6729 /* DriverStep3VC.swift in Sources */,
 				DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */,
 				D0FAA83921D005100075C875 /* ResearchResultVC.swift in Sources */,
@@ -906,6 +929,7 @@
 				D009A62021BFC39C00764B60 /* NSCalendar+Timepiece.swift in Sources */,
 				D0141521219DE931006C2154 /* Registration7VC.swift in Sources */,
 				D0FAA83B21D0058E0075C875 /* SearchGoogleMapVC.swift in Sources */,
+				D00D155F21EC90270005C37F /* PaymentMethodVC.swift in Sources */,
 				DCBA21052196DEEF00261817 /* SkyFloatingLabelTextField.swift in Sources */,
 				D01865F921E9F8DF00D2117C /* CarDetailsTableViewCell.swift in Sources */,
 				DCBA211C2196DF3500261817 /* ActionSheetLocalePicker.m in Sources */,
@@ -924,13 +948,13 @@
 				D0FAA83821D005100075C875 /* FilterVCViewController.swift in Sources */,
 				D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */,
 				D009A62121BFC39C00764B60 /* String+Timepiece.swift in Sources */,
-				DCD1543B21EB69400043E46F /* AlertsTableViewCell.swift in Sources */,
 				D009A61E21BFC39C00764B60 /* WWCalendarTimeSelector.swift in Sources */,
 				DCBA21332196DFED00261817 /* AppHelper.swift in Sources */,
 				DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */,
 				DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */,
 				D05C501E2199F7040032537E /* Registration6VC.swift in Sources */,
 				DCBA211D2196DF3500261817 /* ActionSheetStringPicker.m in Sources */,
+				D00D156421ECA2540005C37F /* AlertsTableViewCell.swift in Sources */,
 				DCBA21222196DF3500261817 /* ActionSheetDatePicker.m in Sources */,
 				D0D1EE2021D75DEF00E3C18C /* BookingDetailVC.swift in Sources */,
 				D08C535A21C6D29E006A6729 /* DriverStep11VC.swift in Sources */,

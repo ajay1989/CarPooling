@@ -21,6 +21,8 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true  //Hide
         changeSelectionOfButton()
+        //add observer
+        NotificationCenter.default.addObserver(self, selector: #selector(switchToDashboard(notification:)), name:NSNotification.Name(rawValue: "fromBookingConfirm"), object: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -129,6 +131,7 @@ class HomeVC: UIViewController {
     }
     
     // MARK: Action method
+   
     @IBAction func tabButtonAction(sender: UIButton)
     {
         
@@ -163,5 +166,15 @@ class HomeVC: UIViewController {
             }
             
         }
+    }
+    //MARK: Observers Methods
+    @objc func switchToDashboard(notification:NSNotification)
+    {
+        selectedIndex = 0;
+        self.changeSelectionOfButton()
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let dashboardVC: DashboardVC = mainStoryboard.instantiateViewController(withIdentifier: "DashboardVC") as! DashboardVC
+        swipeFromViewController(fromViewController: self.currentViewController, toViewController: dashboardVC)
+        self.navigationController?.popToRootViewController(animated: false)
     }
 }
