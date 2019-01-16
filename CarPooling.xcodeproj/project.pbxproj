@@ -18,7 +18,6 @@
 		D009A62521BFC39C00764B60 /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009A61D21BFC39C00764B60 /* NSDateComponents+Timepiece.swift */; };
 		D009A62721BFD36500764B60 /* WWCalendarTimeSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D009A62621BFD36500764B60 /* WWCalendarTimeSelector.storyboard */; };
 		D00D155F21EC90270005C37F /* PaymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D155E21EC90270005C37F /* PaymentMethodVC.swift */; };
-		D00D156221EC966C0005C37F /* BookingConfirmedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D156121EC966C0005C37F /* BookingConfirmedVC.swift */; };
 		D00D156421ECA2540005C37F /* AlertsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D156321ECA2540005C37F /* AlertsTableViewCell.swift */; };
 		D00D156621ECA25D0005C37F /* AlertsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00D156521ECA25D0005C37F /* AlertsTableViewCell.xib */; };
 		D0125428219B4D2E007E5D28 /* LoginEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0125427219B4D2E007E5D28 /* LoginEmailVC.swift */; };
@@ -33,8 +32,10 @@
 		D05C501821980ACB0032537E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501721980ACB0032537E /* LoginVC.swift */; };
 		D05C501C2199F6D30032537E /* Registration5VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501B2199F6D30032537E /* Registration5VC.swift */; };
 		D05C501E2199F7040032537E /* Registration6VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501D2199F7040032537E /* Registration6VC.swift */; };
+		D06A1AC521EF39610017F75D /* DriverRequestDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A1AC421EF39610017F75D /* DriverRequestDetailsVC.swift */; };
 		D06C77C621E32D3C00FF3B8C /* PublicProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C77C421E32D3B00FF3B8C /* PublicProfileVC.swift */; };
 		D06C77C721E32D3C00FF3B8C /* ComentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C77C521E32D3B00FF3B8C /* ComentsTableViewCell.swift */; };
+		D07095C621EF3E7D00DA8A4A /* BookingStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07095C521EF3E7D00DA8A4A /* BookingStatusVC.swift */; };
 		D08C534721C6CCB5006A6729 /* CarInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C534521C6CCB5006A6729 /* CarInfoVC.swift */; };
 		D08C534821C6CCB5006A6729 /* CarModelSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C534621C6CCB5006A6729 /* CarModelSelectionVC.swift */; };
 		D08C535821C6D29E006A6729 /* DriverStep10VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C534A21C6D29E006A6729 /* DriverStep10VC.swift */; };
@@ -131,7 +132,6 @@
 		D009A61D21BFC39C00764B60 /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
 		D009A62621BFD36500764B60 /* WWCalendarTimeSelector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WWCalendarTimeSelector.storyboard; sourceTree = "<group>"; };
 		D00D155E21EC90270005C37F /* PaymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVC.swift; sourceTree = "<group>"; };
-		D00D156121EC966C0005C37F /* BookingConfirmedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConfirmedVC.swift; sourceTree = "<group>"; };
 		D00D156321ECA2540005C37F /* AlertsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsTableViewCell.swift; sourceTree = "<group>"; };
 		D00D156521ECA25D0005C37F /* AlertsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertsTableViewCell.xib; sourceTree = "<group>"; };
 		D0125427219B4D2E007E5D28 /* LoginEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailVC.swift; sourceTree = "<group>"; };
@@ -146,8 +146,10 @@
 		D05C501721980ACB0032537E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D05C501B2199F6D30032537E /* Registration5VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration5VC.swift; sourceTree = "<group>"; };
 		D05C501D2199F7040032537E /* Registration6VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration6VC.swift; sourceTree = "<group>"; };
+		D06A1AC421EF39610017F75D /* DriverRequestDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverRequestDetailsVC.swift; sourceTree = "<group>"; };
 		D06C77C421E32D3B00FF3B8C /* PublicProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfileVC.swift; sourceTree = "<group>"; };
 		D06C77C521E32D3B00FF3B8C /* ComentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComentsTableViewCell.swift; sourceTree = "<group>"; };
+		D07095C521EF3E7D00DA8A4A /* BookingStatusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingStatusVC.swift; sourceTree = "<group>"; };
 		D08C534521C6CCB5006A6729 /* CarInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarInfoVC.swift; sourceTree = "<group>"; };
 		D08C534621C6CCB5006A6729 /* CarModelSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarModelSelectionVC.swift; sourceTree = "<group>"; };
 		D08C534A21C6D29E006A6729 /* DriverStep10VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStep10VC.swift; sourceTree = "<group>"; };
@@ -302,12 +304,12 @@
 			path = PaymentMethodVC;
 			sourceTree = "<group>";
 		};
-		D00D156021EC964F0005C37F /* BookingConfirmedVC */ = {
+		D00D156021EC964F0005C37F /* BookingStatusVC */ = {
 			isa = PBXGroup;
 			children = (
-				D00D156121EC966C0005C37F /* BookingConfirmedVC.swift */,
+				D07095C521EF3E7D00DA8A4A /* BookingStatusVC.swift */,
 			);
-			path = BookingConfirmedVC;
+			path = BookingStatusVC;
 			sourceTree = "<group>";
 		};
 		D0166C8F21B054A4005952B8 /* HomeVC */ = {
@@ -357,6 +359,14 @@
 				D0141520219DE931006C2154 /* Registration7VC.swift */,
 			);
 			path = RegistrationVC;
+			sourceTree = "<group>";
+		};
+		D06A1AC321EF341F0017F75D /* DriverRequestDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				D06A1AC421EF39610017F75D /* DriverRequestDetailsVC.swift */,
+			);
+			path = DriverRequestDetailsVC;
 			sourceTree = "<group>";
 		};
 		D06C77C321E32D3B00FF3B8C /* PublicProfileVC */ = {
@@ -683,7 +693,8 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D00D156021EC964F0005C37F /* BookingConfirmedVC */,
+				D06A1AC321EF341F0017F75D /* DriverRequestDetailsVC */,
+				D00D156021EC964F0005C37F /* BookingStatusVC */,
 				D00D155D21EC8FF50005C37F /* PaymentMethodVC */,
 				D0DF134221E7776C001C2754 /* EditUserProfileVC */,
 				D0182F6621E5FD36008E7090 /* UserProfile */,
@@ -914,7 +925,7 @@
 			files = (
 				D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */,
 				DCBA21042196DEEF00261817 /* UITextField+fixCaretPosition.swift in Sources */,
-				D00D156221EC966C0005C37F /* BookingConfirmedVC.swift in Sources */,
+				D06A1AC521EF39610017F75D /* DriverRequestDetailsVC.swift in Sources */,
 				D08C536321C6D29E006A6729 /* DriverStep3VC.swift in Sources */,
 				DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */,
 				D0FAA83921D005100075C875 /* ResearchResultVC.swift in Sources */,
@@ -952,6 +963,7 @@
 				DCBA21332196DFED00261817 /* AppHelper.swift in Sources */,
 				DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */,
 				DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */,
+				D07095C621EF3E7D00DA8A4A /* BookingStatusVC.swift in Sources */,
 				D05C501E2199F7040032537E /* Registration6VC.swift in Sources */,
 				DCBA211D2196DF3500261817 /* ActionSheetStringPicker.m in Sources */,
 				D00D156421ECA2540005C37F /* AlertsTableViewCell.swift in Sources */,

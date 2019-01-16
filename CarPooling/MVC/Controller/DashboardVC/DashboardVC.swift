@@ -14,14 +14,14 @@ class DashboardVC: BaseViewController {
    
     
     @IBOutlet weak var img_profilePic: UIImageView!
-    @IBOutlet weak var searchBar: UISearchBar!
+   // @IBOutlet weak var searchBar: UISearchBar!
     var arr_rides:Array = [Ride]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.barTintColor = UIColor.clear
-        searchBar.backgroundColor = UIColor.clear
-        searchBar.isTranslucent = true
-        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)        // Do any additional setup after loading the view.
+//        searchBar.barTintColor = UIColor.clear
+//        searchBar.backgroundColor = UIColor.clear
+//        searchBar.isTranslucent = true
+//        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)        // Do any additional setup after loading the view.
         tblVw.delegate = self
         tblVw.dataSource = self
         
