@@ -28,6 +28,7 @@
 		D01865F921E9F8DF00D2117C /* CarDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */; };
 		D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019101F21A4789D00C8DF85 /* DashboardVC.swift */; };
 		D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */; };
+		D02B067621F08CCF00522A77 /* ManageMyOfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B067521F08CCF00522A77 /* ManageMyOfferVC.swift */; };
 		D05C501621980A870032537E /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501521980A870032537E /* Registration1VC.swift */; };
 		D05C501821980ACB0032537E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501721980ACB0032537E /* LoginVC.swift */; };
 		D05C501C2199F6D30032537E /* Registration5VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501B2199F6D30032537E /* Registration5VC.swift */; };
@@ -142,6 +143,7 @@
 		D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		D019101F21A4789D00C8DF85 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		D02B067521F08CCF00522A77 /* ManageMyOfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyOfferVC.swift; sourceTree = "<group>"; };
 		D05C501521980A870032537E /* Registration1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
 		D05C501721980ACB0032537E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D05C501B2199F6D30032537E /* Registration5VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration5VC.swift; sourceTree = "<group>"; };
@@ -345,6 +347,14 @@
 				D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */,
 			);
 			path = DashboardVC;
+			sourceTree = "<group>";
+		};
+		D02B067421F08CAA00522A77 /* ManageMyOfferVC */ = {
+			isa = PBXGroup;
+			children = (
+				D02B067521F08CCF00522A77 /* ManageMyOfferVC.swift */,
+			);
+			path = ManageMyOfferVC;
 			sourceTree = "<group>";
 		};
 		D05C501421980A870032537E /* RegistrationVC */ = {
@@ -693,6 +703,7 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D02B067421F08CAA00522A77 /* ManageMyOfferVC */,
 				D06A1AC321EF341F0017F75D /* DriverRequestDetailsVC */,
 				D00D156021EC964F0005C37F /* BookingStatusVC */,
 				D00D155D21EC8FF50005C37F /* PaymentMethodVC */,
@@ -969,6 +980,7 @@
 				D00D156421ECA2540005C37F /* AlertsTableViewCell.swift in Sources */,
 				DCBA21222196DF3500261817 /* ActionSheetDatePicker.m in Sources */,
 				D0D1EE2021D75DEF00E3C18C /* BookingDetailVC.swift in Sources */,
+				D02B067621F08CCF00522A77 /* ManageMyOfferVC.swift in Sources */,
 				D08C535A21C6D29E006A6729 /* DriverStep11VC.swift in Sources */,
 				DCBA21032196DEEF00261817 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */,
