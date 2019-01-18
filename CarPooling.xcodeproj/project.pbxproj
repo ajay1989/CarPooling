@@ -29,6 +29,17 @@
 		D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019101F21A4789D00C8DF85 /* DashboardVC.swift */; };
 		D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */; };
 		D02B067621F08CCF00522A77 /* ManageMyOfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B067521F08CCF00522A77 /* ManageMyOfferVC.swift */; };
+		D05B737521F1CF6000207067 /* RideRating.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05B737421F1CF6000207067 /* RideRating.storyboard */; };
+		D05B737921F1DD6500207067 /* DriverMode1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B737821F1DD6500207067 /* DriverMode1.swift */; };
+		D05B737B21F1DD7B00207067 /* DriverMode2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B737A21F1DD7B00207067 /* DriverMode2.swift */; };
+		D05B737D21F1DD9100207067 /* DriverMode3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B737C21F1DD9100207067 /* DriverMode3.swift */; };
+		D05B737F21F1DD9C00207067 /* DriverMode4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B737E21F1DD9C00207067 /* DriverMode4.swift */; };
+		D05B738121F1DDA700207067 /* DriverMode5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B738021F1DDA700207067 /* DriverMode5.swift */; };
+		D05B738421F1DE2500207067 /* PassengerMode1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B738321F1DE2500207067 /* PassengerMode1.swift */; };
+		D05B738621F1DE3500207067 /* PassengerMode2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B738521F1DE3500207067 /* PassengerMode2.swift */; };
+		D05B738821F1DE4200207067 /* PassengerMode3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B738721F1DE4200207067 /* PassengerMode3.swift */; };
+		D05B738A21F1DE4D00207067 /* PassengerMode4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B738921F1DE4D00207067 /* PassengerMode4.swift */; };
+		D05B738C21F1DE5600207067 /* PassengerMode5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B738B21F1DE5600207067 /* PassengerMode5.swift */; };
 		D05C501621980A870032537E /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501521980A870032537E /* Registration1VC.swift */; };
 		D05C501821980ACB0032537E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501721980ACB0032537E /* LoginVC.swift */; };
 		D05C501C2199F6D30032537E /* Registration5VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C501B2199F6D30032537E /* Registration5VC.swift */; };
@@ -144,6 +155,17 @@
 		D019101F21A4789D00C8DF85 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		D02B067521F08CCF00522A77 /* ManageMyOfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyOfferVC.swift; sourceTree = "<group>"; };
+		D05B737421F1CF6000207067 /* RideRating.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RideRating.storyboard; sourceTree = "<group>"; };
+		D05B737821F1DD6500207067 /* DriverMode1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMode1.swift; sourceTree = "<group>"; };
+		D05B737A21F1DD7B00207067 /* DriverMode2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMode2.swift; sourceTree = "<group>"; };
+		D05B737C21F1DD9100207067 /* DriverMode3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMode3.swift; sourceTree = "<group>"; };
+		D05B737E21F1DD9C00207067 /* DriverMode4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMode4.swift; sourceTree = "<group>"; };
+		D05B738021F1DDA700207067 /* DriverMode5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMode5.swift; sourceTree = "<group>"; };
+		D05B738321F1DE2500207067 /* PassengerMode1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerMode1.swift; sourceTree = "<group>"; };
+		D05B738521F1DE3500207067 /* PassengerMode2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerMode2.swift; sourceTree = "<group>"; };
+		D05B738721F1DE4200207067 /* PassengerMode3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerMode3.swift; sourceTree = "<group>"; };
+		D05B738921F1DE4D00207067 /* PassengerMode4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerMode4.swift; sourceTree = "<group>"; };
+		D05B738B21F1DE5600207067 /* PassengerMode5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerMode5.swift; sourceTree = "<group>"; };
 		D05C501521980A870032537E /* Registration1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
 		D05C501721980ACB0032537E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D05C501B2199F6D30032537E /* Registration5VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration5VC.swift; sourceTree = "<group>"; };
@@ -355,6 +377,39 @@
 				D02B067521F08CCF00522A77 /* ManageMyOfferVC.swift */,
 			);
 			path = ManageMyOfferVC;
+			sourceTree = "<group>";
+		};
+		D05B737621F1DD3E00207067 /* RateMyRideVC */ = {
+			isa = PBXGroup;
+			children = (
+				D05B738221F1DDC000207067 /* PassengerMode */,
+				D05B737721F1DD4C00207067 /* DriverMode */,
+			);
+			path = RateMyRideVC;
+			sourceTree = "<group>";
+		};
+		D05B737721F1DD4C00207067 /* DriverMode */ = {
+			isa = PBXGroup;
+			children = (
+				D05B737821F1DD6500207067 /* DriverMode1.swift */,
+				D05B737A21F1DD7B00207067 /* DriverMode2.swift */,
+				D05B737C21F1DD9100207067 /* DriverMode3.swift */,
+				D05B737E21F1DD9C00207067 /* DriverMode4.swift */,
+				D05B738021F1DDA700207067 /* DriverMode5.swift */,
+			);
+			path = DriverMode;
+			sourceTree = "<group>";
+		};
+		D05B738221F1DDC000207067 /* PassengerMode */ = {
+			isa = PBXGroup;
+			children = (
+				D05B738321F1DE2500207067 /* PassengerMode1.swift */,
+				D05B738521F1DE3500207067 /* PassengerMode2.swift */,
+				D05B738721F1DE4200207067 /* PassengerMode3.swift */,
+				D05B738921F1DE4D00207067 /* PassengerMode4.swift */,
+				D05B738B21F1DE5600207067 /* PassengerMode5.swift */,
+			);
+			path = PassengerMode;
 			sourceTree = "<group>";
 		};
 		D05C501421980A870032537E /* RegistrationVC */ = {
@@ -653,6 +708,7 @@
 				DCBA20DB2196CAED00261817 /* Main.storyboard */,
 				D009A60221BF8FE700764B60 /* DriverStoryboard.storyboard */,
 				D009A62621BFD36500764B60 /* WWCalendarTimeSelector.storyboard */,
+				D05B737421F1CF6000207067 /* RideRating.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -703,6 +759,7 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D05B737621F1DD3E00207067 /* RateMyRideVC */,
 				D02B067421F08CAA00522A77 /* ManageMyOfferVC */,
 				D06A1AC321EF341F0017F75D /* DriverRequestDetailsVC */,
 				D00D156021EC964F0005C37F /* BookingStatusVC */,
@@ -813,6 +870,7 @@
 				DCBA215F2196E92A00261817 /* Montserrat-MediumItalic.ttf in Resources */,
 				DCBA216B2196E92A00261817 /* Montserrat-Medium.ttf in Resources */,
 				DCBA216A2196E92A00261817 /* Montserrat-Italic.ttf in Resources */,
+				D05B737521F1CF6000207067 /* RideRating.storyboard in Resources */,
 				DCBA20E52196CAEF00261817 /* LaunchScreen.storyboard in Resources */,
 				DCBA216C2196E92A00261817 /* Montserrat-Regular.ttf in Resources */,
 				DCBA21642196E92A00261817 /* Montserrat-SemiBoldItalic.ttf in Resources */,
@@ -936,6 +994,7 @@
 			files = (
 				D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */,
 				DCBA21042196DEEF00261817 /* UITextField+fixCaretPosition.swift in Sources */,
+				D05B738A21F1DE4D00207067 /* PassengerMode4.swift in Sources */,
 				D06A1AC521EF39610017F75D /* DriverRequestDetailsVC.swift in Sources */,
 				D08C536321C6D29E006A6729 /* DriverStep3VC.swift in Sources */,
 				DCBA21292196DF9E00261817 /* NTMonthYearPicker.m in Sources */,
@@ -948,6 +1007,7 @@
 				D08C535921C6D29E006A6729 /* DriverStep6VC.swift in Sources */,
 				D009A62521BFC39C00764B60 /* NSDateComponents+Timepiece.swift in Sources */,
 				D0166C9721B05664005952B8 /* InfoVC.swift in Sources */,
+				D05B738C21F1DE5600207067 /* PassengerMode5.swift in Sources */,
 				D009A62021BFC39C00764B60 /* NSCalendar+Timepiece.swift in Sources */,
 				D0141521219DE931006C2154 /* Registration7VC.swift in Sources */,
 				D0FAA83B21D0058E0075C875 /* SearchGoogleMapVC.swift in Sources */,
@@ -959,13 +1019,16 @@
 				DCBA21232196DF3500261817 /* ActionSheetMultipleStringPicker.m in Sources */,
 				D009A62221BFC39C00764B60 /* Duration.swift in Sources */,
 				D08C536221C6D29E006A6729 /* DriverStep7VCTableViewCell.swift in Sources */,
+				D05B737F21F1DD9C00207067 /* DriverMode4.swift in Sources */,
 				DCD1543721EB69270043E46F /* SettingsViewController.swift in Sources */,
 				DCBA21352196DFED00261817 /* Utilities.swift in Sources */,
 				DCBA211F2196DF3500261817 /* DistancePickerView.m in Sources */,
+				D05B738421F1DE2500207067 /* PassengerMode1.swift in Sources */,
 				D0182F6A21E5FD79008E7090 /* UserProfileVC.swift in Sources */,
 				DCBA21212196DF3500261817 /* SWActionSheet.m in Sources */,
 				DCBA20FC2196DEA700261817 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				DCBA21362196DFED00261817 /* Extension.swift in Sources */,
+				D05B738621F1DE3500207067 /* PassengerMode2.swift in Sources */,
 				DCBA21382196DFED00261817 /* PagedHorizontalView.swift in Sources */,
 				D0FAA83821D005100075C875 /* FilterVCViewController.swift in Sources */,
 				D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */,
@@ -975,6 +1038,7 @@
 				DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */,
 				DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */,
 				D07095C621EF3E7D00DA8A4A /* BookingStatusVC.swift in Sources */,
+				D05B737921F1DD6500207067 /* DriverMode1.swift in Sources */,
 				D05C501E2199F7040032537E /* Registration6VC.swift in Sources */,
 				DCBA211D2196DF3500261817 /* ActionSheetStringPicker.m in Sources */,
 				D00D156421ECA2540005C37F /* AlertsTableViewCell.swift in Sources */,
@@ -986,12 +1050,14 @@
 				D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */,
 				DCD1543821EB69270043E46F /* AlertsViewController.swift in Sources */,
 				DCBA21342196DFED00261817 /* ServiceClass.swift in Sources */,
+				D05B737B21F1DD7B00207067 /* DriverMode2.swift in Sources */,
 				DCBA211E2196DF3500261817 /* AbstractActionSheetPicker.m in Sources */,
 				D06C77C621E32D3C00FF3B8C /* PublicProfileVC.swift in Sources */,
 				DCBA20E02196CAED00261817 /* CarPooling.xcdatamodeld in Sources */,
 				DCBA21392196DFED00261817 /* SwiftyJSON.swift in Sources */,
 				D05C501621980A870032537E /* Registration1VC.swift in Sources */,
 				D0125428219B4D2E007E5D28 /* LoginEmailVC.swift in Sources */,
+				D05B738821F1DE4200207067 /* PassengerMode3.swift in Sources */,
 				DCBA20FE2196DEA700261817 /* TPKeyboardAvoidingTableView.m in Sources */,
 				DCBA213A2196DFED00261817 /* Strings.swift in Sources */,
 				D08C535821C6D29E006A6729 /* DriverStep10VC.swift in Sources */,
@@ -1002,7 +1068,9 @@
 				DC02515B21D54545005B6038 /* ListTableViewCell.swift in Sources */,
 				DCBA21412196E18F00261817 /* Models.swift in Sources */,
 				D009A62321BFC39C00764B60 /* Int+Timepiece.swift in Sources */,
+				D05B737D21F1DD9100207067 /* DriverMode3.swift in Sources */,
 				D08C536021C6D29E006A6729 /* DriverStep2VC.swift in Sources */,
+				D05B738121F1DDA700207067 /* DriverMode5.swift in Sources */,
 				D08C535F21C6D29E006A6729 /* DriverStep9VC.swift in Sources */,
 				DCBA20FD2196DEA700261817 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				D05C501821980ACB0032537E /* LoginVC.swift in Sources */,

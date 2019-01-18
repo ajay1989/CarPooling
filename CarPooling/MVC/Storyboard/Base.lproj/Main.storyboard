@@ -3581,7 +3581,7 @@ en 3h30</string>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shelvina,32 ans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azm-Xb-UQz">
-                                                                    <rect key="frame" x="40" y="15" width="184" height="13.5"/>
+                                                                    <rect key="frame" x="40" y="15.5" width="184" height="13"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="184" id="HXX-9K-HJh"/>
                                                                     </constraints>
@@ -8599,7 +8599,7 @@ en 3h30</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bs-cy-BE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5386" y="2239"/>
+            <point key="canvasLocation" x="5420" y="2564"/>
         </scene>
     </scenes>
     <resources>
@@ -8637,7 +8637,7 @@ en 3h30</string>
         <image name="img_eye" width="51.200000762939453" height="51.200000762939453"/>
         <image name="img_logout" width="51.200000762939453" height="51.200000762939453"/>
         <image name="img_star" width="48" height="48"/>
-        <image name="like" width="16.416000366210938" height="17"/>
+        <image name="like" width="10.944000244140625" height="10.944000244140625"/>
         <image name="lock" width="65.279998779296875" height="87.120002746582031"/>
         <image name="loginBg" width="191.66400146484375" height="340.84799194335938"/>
         <image name="logo" width="86.400001525878906" height="68.639999389648438"/>
