@@ -28,6 +28,7 @@
 		D01865F921E9F8DF00D2117C /* CarDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */; };
 		D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019101F21A4789D00C8DF85 /* DashboardVC.swift */; };
 		D019102221A47A1800C8DF85 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */; };
+		D01A796921F37194003AB843 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01A796821F37194003AB843 /* NotificationsVC.swift */; };
 		D02B067621F08CCF00522A77 /* ManageMyOfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B067521F08CCF00522A77 /* ManageMyOfferVC.swift */; };
 		D05B737521F1CF6000207067 /* RideRating.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05B737421F1CF6000207067 /* RideRating.storyboard */; };
 		D05B737921F1DD6500207067 /* DriverMode1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B737821F1DD6500207067 /* DriverMode1.swift */; };
@@ -154,6 +155,7 @@
 		D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		D019101F21A4789D00C8DF85 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		D01A796821F37194003AB843 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		D02B067521F08CCF00522A77 /* ManageMyOfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyOfferVC.swift; sourceTree = "<group>"; };
 		D05B737421F1CF6000207067 /* RideRating.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RideRating.storyboard; sourceTree = "<group>"; };
 		D05B737821F1DD6500207067 /* DriverMode1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMode1.swift; sourceTree = "<group>"; };
@@ -369,6 +371,14 @@
 				D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */,
 			);
 			path = DashboardVC;
+			sourceTree = "<group>";
+		};
+		D01A796721F37153003AB843 /* NotificationsVC */ = {
+			isa = PBXGroup;
+			children = (
+				D01A796821F37194003AB843 /* NotificationsVC.swift */,
+			);
+			path = NotificationsVC;
 			sourceTree = "<group>";
 		};
 		D02B067421F08CAA00522A77 /* ManageMyOfferVC */ = {
@@ -759,6 +769,7 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D01A796721F37153003AB843 /* NotificationsVC */,
 				D05B737621F1DD3E00207067 /* RateMyRideVC */,
 				D02B067421F08CAA00522A77 /* ManageMyOfferVC */,
 				D06A1AC321EF341F0017F75D /* DriverRequestDetailsVC */,
@@ -1073,6 +1084,7 @@
 				D05B738121F1DDA700207067 /* DriverMode5.swift in Sources */,
 				D08C535F21C6D29E006A6729 /* DriverStep9VC.swift in Sources */,
 				DCBA20FD2196DEA700261817 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				D01A796921F37194003AB843 /* NotificationsVC.swift in Sources */,
 				D05C501821980ACB0032537E /* LoginVC.swift in Sources */,
 				DCBA211B2196DF3500261817 /* ActionSheetCustomPicker.m in Sources */,
 				DCBA21372196DFED00261817 /* Defines.swift in Sources */,

@@ -671,7 +671,7 @@ ca et que ton voyage śest passé à merveille !</string>
                                     <constraint firstItem="C5n-d8-aF0" firstAttribute="top" secondItem="1mK-Y0-PIH" secondAttribute="top" id="yqR-xX-kfH"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="mNK-UA-Wiy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="mNK-UA-Wiy">
                                 <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="o5n-3w-eTh"/>
@@ -1624,7 +1624,8 @@ ca et que ton voyage śest passé à merveille !</string>
     <resources>
         <image name="dislike" width="10.656000137329102" height="9.5039997100830078"/>
         <image name="hat" width="8.9280004501342773" height="9.5039997100830078"/>
-        <image name="like" width="10.944000244140625" height="10.944000244140625"/>
+        <image name="like" width="16.416000366210938" height="17"/>
         <image name="test" width="1080" height="1920"/>
+        <image name="user" width="13.248000144958496" height="15.552000045776367"/>
     </resources>
 </document>

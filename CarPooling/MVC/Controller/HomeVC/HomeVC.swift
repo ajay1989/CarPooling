@@ -85,6 +85,12 @@ class HomeVC: UIViewController {
             return driverVC
             
             break
+            
+        case 2:
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let notificationsVC: NotificationsVC = mainStoryboard.instantiateViewController(withIdentifier: "NotificationsVC") as! NotificationsVC
+            return notificationsVC
+            break
         case 3:
             
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -156,10 +162,15 @@ class HomeVC: UIViewController {
                 
             case 2:
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let notificationsVC: NotificationsVC = mainStoryboard.instantiateViewController(withIdentifier: "NotificationsVC") as! NotificationsVC
+                swipeFromViewController(fromViewController: self.currentViewController, toViewController: notificationsVC)
+                break
+                
+            case 3:
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let infoVC: InfoVC = mainStoryboard.instantiateViewController(withIdentifier: "InfoVC") as! InfoVC
                 swipeFromViewController(fromViewController: self.currentViewController, toViewController: infoVC)
                 break
-                
             default:
                 break
                 
