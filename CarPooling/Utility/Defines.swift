@@ -63,7 +63,7 @@ struct ServiceKeys{
     static let keyFacebookID = "fbid"
    static let keyError = "error"
     static let keyErrorCode = "errorCode"
-    static let keyErrorMessage = "errMessage"
+    static let keyErrorMessage = "message"
     static let keyUserType = "user_type"
     
    static let keyFirstName = "first_name"

@@ -52,7 +52,7 @@ class ServiceClass: NSObject {
 //                            errorDict[ServiceKeys.keyErrorCode] = ErrorCodes.errorCodeFailed
 //                            errorDict[ServiceKeys.keyErrorMessage] = json["error"].stringValue
                             
-                            errorDict[ServiceKeys.keyErrorMessage] = json["error"].stringValue
+                            errorDict[ServiceKeys.keyErrorMessage] = json["message"].stringValue
                            
                                 completion(ResponseType.kResponseTypeFail,nil,errorDict as AnyObject);
                             

@@ -156,6 +156,7 @@
 		D019101F21A4789D00C8DF85 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		D019102121A47A1800C8DF85 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		D01A796821F37194003AB843 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		D01A796A21F43AAA003AB843 /* CarPooling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarPooling.entitlements; sourceTree = "<group>"; };
 		D02B067521F08CCF00522A77 /* ManageMyOfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyOfferVC.swift; sourceTree = "<group>"; };
 		D05B737421F1CF6000207067 /* RideRating.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RideRating.storyboard; sourceTree = "<group>"; };
 		D05B737821F1DD6500207067 /* DriverMode1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMode1.swift; sourceTree = "<group>"; };
@@ -562,6 +563,7 @@
 		DCBA20D62196CAED00261817 /* CarPooling */ = {
 			isa = PBXGroup;
 			children = (
+				D01A796A21F43AAA003AB843 /* CarPooling.entitlements */,
 				DCBA20EC2196DD6F00261817 /* Third Party */,
 				DCBA20EE2196DDDA00261817 /* Library */,
 				DCBA212A2196DFC500261817 /* Utility */,
@@ -846,6 +848,11 @@
 					DCBA20D32196CAED00261817 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1247,6 +1254,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CarPooling/CarPooling.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8VR6N6MLZ6;
@@ -1272,6 +1280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CarPooling/CarPooling.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8VR6N6MLZ6;

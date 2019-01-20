@@ -32,7 +32,7 @@ class LoginEmailVC: BaseViewController {
     @IBAction func goToBack(sender: UIButton)
     {
         
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
     }
 
     /*
@@ -61,7 +61,7 @@ class LoginEmailVC: BaseViewController {
                 
             }
             else {
-                self.makeToast(errorDict!["errMessage"] as! String)
+                self.makeToast(errorDict!["message"] as! String)
             }
             
         })

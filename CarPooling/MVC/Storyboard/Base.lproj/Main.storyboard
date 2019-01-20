@@ -279,11 +279,11 @@ nous Otman 🎉</string>
                                                                 <constraint firstAttribute="width" constant="22" id="LI1-Ab-AL2"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0808097667" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smH-Ru-Tsw">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="06 00 00 00 00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smH-Ru-Tsw">
                                                             <rect key="frame" x="33" y="3" width="302" height="40"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="19"/>
-                                                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="b9i-nC-52s" id="r8K-Id-prr"/>
                                                             </connections>
@@ -425,11 +425,16 @@ nous Otman 🎉</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qx-sS-J0m">
                                                 <rect key="frame" x="112.5" y="304" width="150" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9s-Al-hb8">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345" placeholder="1234" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9s-Al-hb8">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="22"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <outlet property="delegate" destination="xgg-Nt-fMs" id="ZWd-mM-DQb"/>
                                                         </connections>
@@ -478,7 +483,7 @@ nous Otman 🎉</string>
                                                     <constraint firstAttribute="width" constant="172" id="rtH-49-86B"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
-                                                <state key="normal" title="👈🏻 Je ne l'ai pas recu*">
+                                                <state key="normal" title="👈🏻 Je ne l'ai pas reçu*">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -859,7 +864,7 @@ nous Otman 🎉</string>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="4zG-lN-zhH"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="19"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -932,14 +937,14 @@ nous Otman 🎉</string>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="egX-y3-mfN"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="19"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wY0-jd-HI3">
                                                 <rect key="frame" x="8" y="456" width="359" height="40"/>
                                                 <subviews>
-                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nCs-QB-ILl">
+                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="********" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nCs-QB-ILl">
                                                         <rect key="frame" x="8" y="0.0" width="343" height="40"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
@@ -1373,7 +1378,7 @@ publier ton premier covoiturage via l'application.
                                                             <segue destination="VCV-WN-Lto" kind="show" id="lux-Pw-npc"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="HxA-el-N6w">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="HxA-el-N6w">
                                                         <rect key="frame" x="20" y="7.5" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="uj7-iR-PWS"/>
@@ -1473,13 +1478,13 @@ publier ton premier covoiturage via l'application.
                                         <rect key="frame" x="0.0" y="165" width="375" height="512"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Derniéres offres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVS-iW-pNV">
-                                                <rect key="frame" x="127.5" y="22" width="120" height="20"/>
+                                                <rect key="frame" x="115.5" y="22" width="144" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
                                                 <color key="textColor" red="0.97552710769999995" green="0.79052698610000005" blue="0.33566367629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5xK-SN-n1l">
-                                                <rect key="frame" x="0.0" y="47" width="375" height="465"/>
+                                                <rect key="frame" x="0.0" y="48" width="375" height="464"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DashboardTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DashboardTableViewCell" rowHeight="165" id="GWR-VR-Q9X" customClass="DashboardTableViewCell" customModule="CarPooling" customModuleProvider="target">
@@ -2181,8 +2186,8 @@ publier ton premier covoiturage via l'application.
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="******" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-MG-cDe">
                                                                         <rect key="frame" x="39" y="3" width="312" height="35"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2406,7 +2411,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="AsG-gj-hbJ">
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="AsG-gj-hbJ">
                                         <rect key="frame" x="145.5" y="341" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="8cE-Gv-5SD"/>
@@ -2416,9 +2421,15 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="50"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jew-qO-vPg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jew-qO-vPg">
                                         <rect key="frame" x="145.5" y="341" width="100" height="100"/>
                                         <connections>
                                             <action selector="btn_profilePic_tap:" destination="9cl-bI-IDc" eventType="touchUpInside" id="tXP-p0-yo2"/>
@@ -2616,7 +2627,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unj-NY-zGV" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3869.5999999999999" y="993.55322338830592"/>
+            <point key="canvasLocation" x="4114" y="1218"/>
         </scene>
         <!--Driver Request DetailsVC-->
         <scene sceneID="xs3-Xy-4Hw">
@@ -2639,7 +2650,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes demandes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lS-ge-l9Z">
-                                <rect key="frame" x="125.5" y="44" width="124.5" height="21"/>
+                                <rect key="frame" x="117.5" y="44" width="140" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -3431,7 +3442,7 @@ en 3h30</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="MaD-uq-TOa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="MaD-uq-TOa">
                                 <rect key="frame" x="137.5" y="405" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4MN-xu-Sb2"/>
@@ -3440,6 +3451,12 @@ en 3h30</string>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -4025,7 +4042,7 @@ en 3h30</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="QeO-SB-roe">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="QeO-SB-roe">
                                         <rect key="frame" x="20" y="7.5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="bvT-Q0-Ijq"/>
@@ -4035,6 +4052,12 @@ en 3h30</string>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
@@ -4230,7 +4253,7 @@ en 3h30</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOA-yI-LuA">
                                 <rect key="frame" x="0.0" y="32" width="375" height="55"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="rMf-Fs-QZC">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="rMf-Fs-QZC">
                                         <rect key="frame" x="20" y="7.5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="bqV-zX-nGV"/>
@@ -4240,6 +4263,12 @@ en 3h30</string>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
@@ -4989,7 +5018,7 @@ en 3h30</string>
                                     <constraint firstAttribute="height" constant="40" id="pxX-p2-rFG"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="hmz-eE-NGB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="hmz-eE-NGB">
                                 <rect key="frame" x="137.5" y="386" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="sWM-Q1-Ayc"/>
@@ -4998,6 +5027,12 @@ en 3h30</string>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -6253,7 +6288,7 @@ en 3h30</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-Bg-ari">
                                         <rect key="frame" x="67.5" y="28" width="240" height="128"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="qos-3j-bOE">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="qos-3j-bOE">
                                                 <rect key="frame" x="0.0" y="29" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="AlE-mt-I7U"/>
@@ -6654,47 +6689,54 @@ en 3h30</string>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vR8-0g-GSK">
                                 <rect key="frame" x="0.0" y="608" width="375" height="59"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-6X-IWl">
-                                        <rect key="frame" x="142.5" y="4" width="90" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="Rgx-vR-LAd"/>
-                                            <constraint firstAttribute="height" constant="30" id="h4r-G8-b2e"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
-                                        <state key="normal" title="  Voir plus" image="plus-icons">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="SxJ-6X-IWl" firstAttribute="top" secondItem="vR8-0g-GSK" secondAttribute="top" constant="4" id="5TH-l6-6EF"/>
-                                    <constraint firstItem="SxJ-6X-IWl" firstAttribute="centerX" secondItem="vR8-0g-GSK" secondAttribute="centerX" id="FAp-ew-sVe"/>
                                     <constraint firstAttribute="height" constant="59" id="ltT-LT-9Ja"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgT-hR-md7">
+                                <rect key="frame" x="122.5" y="618" width="130" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="1S8-Q1-nc2"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZLD-DI-hzV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
+                                <state key="normal" title="        Voir plus">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus-icons" translatesAutoresizingMaskIntoConstraints="NO" id="pv4-7I-etH">
+                                <rect key="frame" x="142.5" y="625.5" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="VM1-uH-day"/>
+                                    <constraint firstAttribute="width" constant="15" id="yzN-zS-757"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Wgj-HE-Wsd" firstAttribute="leading" secondItem="zKp-Ld-3t2" secondAttribute="leading" id="96I-Rh-QRc"/>
                             <constraint firstItem="GSA-Fj-8qK" firstAttribute="trailing" secondItem="zKp-Ld-3t2" secondAttribute="trailing" id="Bmb-QV-jcd"/>
                             <constraint firstItem="zwL-a1-gvw" firstAttribute="leading" secondItem="zKp-Ld-3t2" secondAttribute="leading" id="DaP-of-Rya"/>
+                            <constraint firstItem="vgT-hR-md7" firstAttribute="leading" secondItem="pv4-7I-etH" secondAttribute="trailing" constant="-35" id="GAZ-Ks-O1I"/>
                             <constraint firstItem="vR8-0g-GSK" firstAttribute="trailing" secondItem="zKp-Ld-3t2" secondAttribute="trailing" id="JJp-C4-67X"/>
+                            <constraint firstItem="vgT-hR-md7" firstAttribute="centerX" secondItem="MDl-KC-RvI" secondAttribute="centerX" id="L0H-mo-Hpa"/>
                             <constraint firstItem="Wgj-HE-Wsd" firstAttribute="top" secondItem="Zgd-bm-NIp" secondAttribute="bottom" id="LJ8-Yv-L3n"/>
+                            <constraint firstItem="zKp-Ld-3t2" firstAttribute="bottom" secondItem="vgT-hR-md7" secondAttribute="bottom" constant="19" id="Lny-M5-cU1"/>
                             <constraint firstItem="zwL-a1-gvw" firstAttribute="trailing" secondItem="zKp-Ld-3t2" secondAttribute="trailing" id="OOO-Lz-hbt"/>
+                            <constraint firstItem="pv4-7I-etH" firstAttribute="centerY" secondItem="vgT-hR-md7" secondAttribute="centerY" id="QCU-GF-4fA"/>
                             <constraint firstItem="Zgd-bm-NIp" firstAttribute="top" secondItem="zwL-a1-gvw" secondAttribute="bottom" id="QLf-T6-TrL"/>
                             <constraint firstItem="zwL-a1-gvw" firstAttribute="top" secondItem="MDl-KC-RvI" secondAttribute="top" id="SxR-g1-C9s"/>
                             <constraint firstItem="Zgd-bm-NIp" firstAttribute="trailing" secondItem="zKp-Ld-3t2" secondAttribute="trailing" id="X9Z-co-v3G"/>
@@ -6745,7 +6787,7 @@ en 3h30</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ss-TU-X2y">
                                         <rect key="frame" x="67.5" y="28" width="240" height="128"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="hJg-cD-6ra">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="hJg-cD-6ra">
                                                 <rect key="frame" x="0.0" y="29" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="o0i-G1-BTv"/>
@@ -7337,14 +7379,14 @@ en 3h30</string>
                                 <rect key="frame" x="0.0" y="608" width="375" height="59"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twO-A7-CXO">
-                                        <rect key="frame" x="142.5" y="4" width="90" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="122.5" y="4" width="130" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="BTf-9i-iqM"/>
-                                            <constraint firstAttribute="width" constant="90" id="IQB-1G-Sbt"/>
+                                            <constraint firstAttribute="width" constant="130" id="IQB-1G-Sbt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
-                                        <state key="normal" title="  Voir plus" image="plus-icons">
+                                        <state key="normal" title="        Voir plus">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -7359,12 +7401,21 @@ en 3h30</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus-icons" translatesAutoresizingMaskIntoConstraints="NO" id="GAd-FX-a6S">
+                                        <rect key="frame" x="142.5" y="11.5" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="Fwa-Xy-4wl"/>
+                                            <constraint firstAttribute="height" constant="15" id="twR-CC-cd8"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="twO-A7-CXO" firstAttribute="leading" secondItem="GAd-FX-a6S" secondAttribute="trailing" constant="-35" id="6XI-4q-VZC"/>
                                     <constraint firstAttribute="height" constant="59" id="KfQ-XT-xgK"/>
                                     <constraint firstItem="twO-A7-CXO" firstAttribute="centerX" secondItem="Y3f-zD-bXl" secondAttribute="centerX" id="LGv-Pl-CVl"/>
                                     <constraint firstItem="twO-A7-CXO" firstAttribute="top" secondItem="Y3f-zD-bXl" secondAttribute="top" constant="4" id="r55-9z-Fd5"/>
+                                    <constraint firstItem="GAd-FX-a6S" firstAttribute="centerY" secondItem="twO-A7-CXO" secondAttribute="centerY" id="vvB-0J-JxF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -8985,7 +9036,7 @@ en 3h30</string>
         <image name="sports-car" width="19.583999633789062" height="14.399999618530273"/>
         <image name="stop" width="86.639999389648438" height="86.639999389648438"/>
         <image name="test" width="1080" height="1920"/>
-        <image name="user" width="13.248000144958496" height="15.552000045776367"/>
+        <image name="user" width="18.576000213623047" height="21.743999481201172"/>
         <image name="valise" width="15.263999938964844" height="20.736000061035156"/>
         <image name="whatapp" width="16.416000366210938" height="16.416000366210938"/>
         <image name="woman" width="50" height="64"/>

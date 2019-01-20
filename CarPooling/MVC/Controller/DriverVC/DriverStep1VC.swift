@@ -180,6 +180,7 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         let data = self.arr_city[indexPath.row]
         if index == indexPath.row {
             cell.img_tick.isHidden = false
+            txt_search.text = data["description"]
         }
         else {
             cell.img_tick.isHidden = true
@@ -198,13 +199,13 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
     
     func continueEnable() {
         btn_continue.isEnabled = true
-        btn_continue.setTitle("Continue👉", for: .normal)
+        btn_continue.setTitle("Continuer👉", for: .normal)
         btn_continue.setTitleColor(UIColor.black, for: .normal)
     }
     
     func continueDisable() {
         btn_continue.isEnabled = false
-        btn_continue.setTitle("Continue👉🏼", for: .normal)
+        btn_continue.setTitle("Continuer👉🏼", for: .normal)
         btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
     }
 

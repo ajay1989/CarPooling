@@ -29,7 +29,7 @@ class Registration2VC: BaseViewController,UITextFieldDelegate {
         txt_number.text = ""
         if (txt_number.text?.isEmpty)! {
             btn_continue.isEnabled = false
-            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitle("Continuer👉🏼", for: .normal)
             btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
         }
         
@@ -63,14 +63,14 @@ class Registration2VC: BaseViewController,UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if textField.text?.count == 3 {
+        if textField.text?.count ?? 0 >= 3 {
             btn_continue.isEnabled = true
-            btn_continue.setTitle("Continue👉", for: .normal)
+            btn_continue.setTitle("Continuer👉", for: .normal)
             btn_continue.setTitleColor(UIColor.black, for: .normal)
         }
         else {
             btn_continue.isEnabled = false
-            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitle("Continuer👉🏼", for: .normal)
             btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
         }
         return true

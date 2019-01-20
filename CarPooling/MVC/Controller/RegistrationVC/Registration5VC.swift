@@ -34,7 +34,11 @@ class Registration5VC: BaseViewController,UITextFieldDelegate  {
         if (txt_dob.text?.isEmpty)! {
            self.continueDisable()
         }
-        // Do any additional setup after loading the view.
+        self.gender = "Male"
+        self.btn_male.borderColor = selectedColor
+        self.btn_female.borderColor = UIColor.darkGray
+        self.btn_female.isSelected = false
+        self.btn_male.isSelected = true
     }
     
 
@@ -114,13 +118,13 @@ class Registration5VC: BaseViewController,UITextFieldDelegate  {
     
     func continueEnable() {
         btn_continue.isEnabled = true
-        btn_continue.setTitle("Continue👉", for: .normal)
+        btn_continue.setTitle("Continuer👉", for: .normal)
         btn_continue.setTitleColor(UIColor.black, for: .normal)
     }
     
     func continueDisable() {
         btn_continue.isEnabled = false
-        btn_continue.setTitle("Continue👉🏼", for: .normal)
+        btn_continue.setTitle("Continuer👉🏼", for: .normal)
         btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
     }
 }

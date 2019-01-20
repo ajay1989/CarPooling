@@ -61,7 +61,7 @@ class Registration7VC: BaseViewController {
                 
             }
             else {
-                self.makeToast(errorDict!["errMessage"] as! String)
+                self.makeToast(errorDict!["message"] as! String)
             }
             
         })

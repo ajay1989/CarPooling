@@ -34,12 +34,12 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
         if !AppHelper.getStringForKey(ServiceKeys.keyEmail).isEqualToString(find: "") {
             self.txt_email.text = AppHelper.getStringForKey(ServiceKeys.keyEmail)
             btn_continue.isEnabled = true
-            btn_continue.setTitle("Continue👉", for: .normal)
+            btn_continue.setTitle("Continuer👉", for: .normal)
             btn_continue.setTitleColor(UIColor.black, for: .normal)
         }
         else {
             btn_continue.isEnabled = false
-            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitle("Continuer👉🏼", for: .normal)
             btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
         }
         // Do any additional setup after loading the view.
@@ -75,7 +75,7 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
                 
             }
             else {
-                self.makeToast(errorDict!["errMessage"] as! String)
+                self.makeToast(errorDict!["message"] as! String)
             }
             
         })
@@ -110,12 +110,12 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
         
         if isEmailEnable && isPasswordEnable {
             btn_continue.isEnabled = true
-            btn_continue.setTitle("Continue👉", for: .normal)
+            btn_continue.setTitle("Continuer👉", for: .normal)
             btn_continue.setTitleColor(UIColor.black, for: .normal)
         }
         else {
             btn_continue.isEnabled = false
-            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitle("Continuer👉🏼", for: .normal)
             btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
         }
         

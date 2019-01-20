@@ -73,13 +73,13 @@ class DriverStep8VC: UIViewController {
     
     func continueEnable() {
         btn_continue.isEnabled = true
-        btn_continue.setTitle("Continue👉", for: .normal)
+        btn_continue.setTitle("Continuer👉", for: .normal)
         btn_continue.setTitleColor(UIColor.black, for: .normal)
     }
     
     func continueDisable() {
         btn_continue.isEnabled = false
-        btn_continue.setTitle("Continue👉🏼", for: .normal)
+        btn_continue.setTitle("Continuer👉🏼", for: .normal)
         btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
     }
 

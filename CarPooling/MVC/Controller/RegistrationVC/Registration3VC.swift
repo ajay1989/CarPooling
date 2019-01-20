@@ -70,7 +70,7 @@ class Registration3VC: BaseViewController,UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (self.txt_firstName.text?.count)!>2 && (self.txt_lastName.text?.count)!>2 {
+        if (self.txt_firstName.text?.count)!>2 && (self.txt_lastName.text?.count)!>1 {
                 self.continueEnable()
             
         }
@@ -82,13 +82,13 @@ class Registration3VC: BaseViewController,UITextFieldDelegate {
     
     func continueEnable() {
         btn_continue.isEnabled = true
-        btn_continue.setTitle("Continue👉", for: .normal)
+        btn_continue.setTitle("Continuer👉", for: .normal)
         btn_continue.setTitleColor(UIColor.black, for: .normal)
     }
     
     func continueDisable() {
         btn_continue.isEnabled = false
-        btn_continue.setTitle("Continue👉🏼", for: .normal)
+        btn_continue.setTitle("Continuer👉🏼", for: .normal)
         btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
     }
 

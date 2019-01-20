@@ -163,6 +163,8 @@ class DriverStep2VC: BaseViewController,GMSMapViewDelegate,UITableViewDelegate,U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data1 = self.arr_city[indexPath.row]
+        
+        txt_search.text = data1["description"]
         let urlString = "https://maps.googleapis.com/maps/api/place/details/json?key=\(txt_apiKey)&placeid=\(data1["place_id"]!)"
         print(urlString)
         let s = (CharacterSet.urlQueryAllowed as NSCharacterSet).mutableCopy() as! NSMutableCharacterSet
@@ -190,7 +192,10 @@ class DriverStep2VC: BaseViewController,GMSMapViewDelegate,UITableViewDelegate,U
                                         
                                         
                                         self.mapViewer.camera = self.camera
-                                        
+                                       
+                                        self.marker.icon = UIImage(named: "markerCar")!.withRenderingMode(.alwaysTemplate)
+                                        //creating a marker view
+                                       
                                         self.marker.position = CLLocationCoordinate2D(latitude: location["lat"]! as! CLLocationDegrees, longitude: location["lng"]! as! CLLocationDegrees)
                                         self.marker.title = data1["description"]!
                                         self.marker.map = self.mapViewer
@@ -220,13 +225,13 @@ class DriverStep2VC: BaseViewController,GMSMapViewDelegate,UITableViewDelegate,U
     
     func continueEnable() {
         btn_continue.isEnabled = true
-        btn_continue.setTitle("Continue👉", for: .normal)
+        btn_continue.setTitle("Continuer👉", for: .normal)
         btn_continue.setTitleColor(UIColor.black, for: .normal)
     }
     
     func continueDisable() {
         btn_continue.isEnabled = false
-        btn_continue.setTitle("Continue👉🏼", for: .normal)
+        btn_continue.setTitle("Continuer👉🏼", for: .normal)
         btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
     }
 }

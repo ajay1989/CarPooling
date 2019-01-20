@@ -40,7 +40,7 @@ class Registration1VC: BaseViewController,UITextFieldDelegate {
         self.hideNavigationController()
         if (self.txt_phone.text?.isEmpty)! {
             btn_continue.isEnabled = false
-            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitle("Continuer👉🏼", for: .normal)
             btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
         }
         
@@ -64,7 +64,7 @@ class Registration1VC: BaseViewController,UITextFieldDelegate {
 
             }
             else {
-                self.makeToast(errorDict!["errMessage"] as! String)
+                self.makeToast(errorDict!["message"] as! String)
             }
 
         })
@@ -75,16 +75,18 @@ class Registration1VC: BaseViewController,UITextFieldDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
+  
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if textField.text?.count == 9 {
             btn_continue.isEnabled = true
-            btn_continue.setTitle("Continue👉", for: .normal)
+            btn_continue.setTitle("Continuer👉", for: .normal)
             btn_continue.setTitleColor(UIColor.black, for: .normal)
         }
         else {
             btn_continue.isEnabled = false
-            btn_continue.setTitle("Continue👉🏼", for: .normal)
+            btn_continue.setTitle("Continuer👉🏼", for: .normal)
             btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
         }
         return true
