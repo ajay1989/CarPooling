@@ -68,7 +68,7 @@ class DriverStep3VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
                                             self.ride.to_city_lng = "\(location["lng"]!)"
                                             
                                             
-                                            
+                                            //Missing step 4
                                             let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
                                             let vc: DriverStep5VC = storyboard.instantiateViewController(withIdentifier: "DriverStep5VC") as! DriverStep5VC
                                             vc.ride = self.ride

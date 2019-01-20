@@ -11,6 +11,7 @@ import CoreData
 import FacebookCore
 import FacebookLogin
 import FacebookShare
+import FBSDKCoreKit
 import GoogleMaps
 import GooglePlaces
 @available(iOS 10.0, *)

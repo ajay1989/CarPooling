@@ -1598,17 +1598,127 @@ Au delà de ce prix, ton offre risque de ne pas avoir beaucoup de succès.</stri
                                     <constraint firstItem="CIv-4S-jca" firstAttribute="top" secondItem="kTP-9l-oRh" secondAttribute="bottom" constant="8" id="yuc-pg-H5O"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choix des passagers" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ni7-A3-Khy">
+                                <rect key="frame" x="98.5" y="350" width="178.5" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" red="0.32459270950000002" green="0.67474347349999997" blue="0.56352001429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhZ-uM-MqB">
+                                <rect key="frame" x="8" y="391" width="359" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-Mu-geF">
+                                        <rect key="frame" x="20" y="5" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="3yJ-kc-6Nf"/>
+                                            <constraint firstAttribute="width" constant="80" id="X1Q-Sw-fmJ"/>
+                                        </constraints>
+                                        <state key="normal" image="valise1"/>
+                                        <state key="selected" image="bag-color1"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.34314507249999998" green="0.71373671289999996" blue="0.61379140619999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmA-Ek-M8d">
+                                        <rect key="frame" x="39" y="93" width="36" height="15"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bG2-th-8f3">
+                                        <rect key="frame" x="259" y="5" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="4tr-ou-9hw"/>
+                                            <constraint firstAttribute="height" constant="80" id="xqO-Zn-wH9"/>
+                                        </constraints>
+                                        <state key="normal" image="valise3"/>
+                                        <state key="selected" image="bag-color3"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grande" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2J4-6G-6qc">
+                                        <rect key="frame" x="271.5" y="93" width="45" height="15"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGn-wA-5k5">
+                                        <rect key="frame" x="139.5" y="5" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="kM1-4f-SA4"/>
+                                            <constraint firstAttribute="height" constant="80" id="yF5-AA-Axc"/>
+                                        </constraints>
+                                        <state key="normal" image="valise2"/>
+                                        <state key="selected" image="bag-color2"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.34314507249999998" green="0.71373671289999996" blue="0.61379140619999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moyenne" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kds-p8-XOQ">
+                                        <rect key="frame" x="146.5" y="93" width="56" height="15"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="2J4-6G-6qc" firstAttribute="top" secondItem="bG2-th-8f3" secondAttribute="bottom" constant="8" id="2EL-NJ-5Ly"/>
+                                    <constraint firstItem="2J4-6G-6qc" firstAttribute="centerX" secondItem="bG2-th-8f3" secondAttribute="centerX" constant="-5" id="CdS-AF-KUd"/>
+                                    <constraint firstAttribute="trailing" secondItem="bG2-th-8f3" secondAttribute="trailing" constant="20" id="DwB-x0-MF8"/>
+                                    <constraint firstItem="4CK-Mu-geF" firstAttribute="leading" secondItem="HhZ-uM-MqB" secondAttribute="leading" constant="20" id="Eov-2T-wmh"/>
+                                    <constraint firstItem="PGn-wA-5k5" firstAttribute="centerX" secondItem="HhZ-uM-MqB" secondAttribute="centerX" id="G17-Y9-NSn"/>
+                                    <constraint firstItem="PGn-wA-5k5" firstAttribute="top" secondItem="4CK-Mu-geF" secondAttribute="top" id="MaS-dp-kUc"/>
+                                    <constraint firstItem="bG2-th-8f3" firstAttribute="top" secondItem="HhZ-uM-MqB" secondAttribute="top" constant="5" id="N94-jh-Qr9"/>
+                                    <constraint firstItem="Kds-p8-XOQ" firstAttribute="centerX" secondItem="PGn-wA-5k5" secondAttribute="centerX" constant="-5" id="NXi-ty-vQD"/>
+                                    <constraint firstItem="Kds-p8-XOQ" firstAttribute="top" secondItem="PGn-wA-5k5" secondAttribute="bottom" constant="8" id="Ndn-Od-eRM"/>
+                                    <constraint firstItem="kmA-Ek-M8d" firstAttribute="top" secondItem="4CK-Mu-geF" secondAttribute="bottom" constant="8" id="Z18-RL-4P7"/>
+                                    <constraint firstAttribute="height" constant="128" id="aY5-fS-39T"/>
+                                    <constraint firstItem="kmA-Ek-M8d" firstAttribute="centerX" secondItem="4CK-Mu-geF" secondAttribute="centerX" constant="-3" id="bcu-m0-7IE"/>
+                                    <constraint firstItem="4CK-Mu-geF" firstAttribute="top" secondItem="HhZ-uM-MqB" secondAttribute="top" constant="5" id="qr5-kn-NvN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qZY-az-LmS" firstAttribute="centerX" secondItem="7Dc-B3-6qe" secondAttribute="centerX" id="2bH-tJ-i44"/>
                             <constraint firstItem="AXW-vY-0EU" firstAttribute="top" secondItem="Vr3-zE-gcJ" secondAttribute="top" constant="22" id="GHO-nN-4cw"/>
                             <constraint firstItem="Vr3-zE-gcJ" firstAttribute="bottom" secondItem="pZk-Ph-wrg" secondAttribute="bottom" constant="80" id="OBb-9u-jfz"/>
+                            <constraint firstItem="HhZ-uM-MqB" firstAttribute="top" secondItem="Ni7-A3-Khy" secondAttribute="bottom" constant="20" id="RwZ-rg-PKz"/>
+                            <constraint firstItem="Vr3-zE-gcJ" firstAttribute="trailing" secondItem="HhZ-uM-MqB" secondAttribute="trailing" constant="8" id="Sl3-Wg-C4z"/>
                             <constraint firstItem="Vr3-zE-gcJ" firstAttribute="trailing" secondItem="S4i-5p-Ato" secondAttribute="trailing" constant="16" id="WM1-kF-04b"/>
                             <constraint firstItem="S4i-5p-Ato" firstAttribute="top" secondItem="Vr3-zE-gcJ" secondAttribute="top" constant="27" id="bZC-H2-8X0"/>
                             <constraint firstItem="Pkx-mc-YC2" firstAttribute="leading" secondItem="Vr3-zE-gcJ" secondAttribute="leading" constant="8" id="e3b-Fl-Tph"/>
+                            <constraint firstItem="Ni7-A3-Khy" firstAttribute="top" secondItem="Pkx-mc-YC2" secondAttribute="bottom" constant="35" id="gBt-Kk-jbl"/>
                             <constraint firstItem="Vr3-zE-gcJ" firstAttribute="trailing" secondItem="pZk-Ph-wrg" secondAttribute="trailing" constant="8" id="gF7-db-4iV"/>
+                            <constraint firstItem="Ni7-A3-Khy" firstAttribute="centerX" secondItem="7Dc-B3-6qe" secondAttribute="centerX" id="hrk-2s-e8f"/>
                             <constraint firstItem="AXW-vY-0EU" firstAttribute="leading" secondItem="Vr3-zE-gcJ" secondAttribute="leading" constant="16" id="iLQ-Lx-iwo"/>
+                            <constraint firstItem="HhZ-uM-MqB" firstAttribute="leading" secondItem="Vr3-zE-gcJ" secondAttribute="leading" constant="8" id="jDg-xv-rrd"/>
                             <constraint firstItem="Vr3-zE-gcJ" firstAttribute="trailing" secondItem="Pkx-mc-YC2" secondAttribute="trailing" constant="8" id="jJv-Ib-q6E"/>
                             <constraint firstItem="Pkx-mc-YC2" firstAttribute="top" secondItem="qZY-az-LmS" secondAttribute="bottom" constant="70" id="nSI-wx-x6t"/>
                             <constraint firstItem="qZY-az-LmS" firstAttribute="top" secondItem="Vr3-zE-gcJ" secondAttribute="top" constant="76" id="qRX-ll-Lfz"/>
@@ -1704,6 +1814,9 @@ publiée !</string>
         <image name="IOScar_right" width="19" height="19"/>
         <image name="add-green" width="19" height="19"/>
         <image name="addcpn" width="256" height="256"/>
+        <image name="bag-color1" width="18.86400032043457" height="23.903999328613281"/>
+        <image name="bag-color2" width="37.728000640869141" height="47.807998657226562"/>
+        <image name="bag-color3" width="56.591999053955078" height="71.711997985839844"/>
         <image name="both" width="74" height="56.5"/>
         <image name="both-colored" width="74" height="56.5"/>
         <image name="magnifyDark" width="18" height="18"/>
@@ -1714,5 +1827,8 @@ publiée !</string>
         <image name="question" width="87.360000610351562" height="87.360000610351562"/>
         <image name="stop" width="86.639999389648438" height="86.639999389648438"/>
         <image name="tick-green" width="17" height="17"/>
+        <image name="valise1" width="18.86400032043457" height="23.903999328613281"/>
+        <image name="valise2" width="37.728000640869141" height="47.807998657226562"/>
+        <image name="valise3" width="56.591999053955078" height="71.711997985839844"/>
     </resources>
 </document>
