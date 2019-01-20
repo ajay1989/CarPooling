@@ -14,13 +14,16 @@ class DriverStep10VC: UIViewController {
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
+    var int_selectedLuggage = 0
+    @IBOutlet weak var btn_largeBaggage: UIButton!
+    @IBOutlet weak var btn_mediumBaggae: UIButton!
+    @IBOutlet weak var btn_smallBaggage: UIButton!
     var ride:Ride!
     var isSelected = "man"
     @IBOutlet weak var btn_both: UIButton!
     @IBOutlet weak var btn_man: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -48,6 +51,15 @@ class DriverStep10VC: UIViewController {
         self.btn_both.setImage(UIImage(named: "both"), for: .normal)
     }
     
+    @IBAction func btn_baggage_tap(_ sender: Any) {
+        self.btn_smallBaggage.isSelected = false
+        self.btn_mediumBaggae.isSelected = false
+        self.btn_largeBaggage.isSelected = false
+        
+        self.int_selectedLuggage = (sender as AnyObject).tag
+        (sender as! UIButton).isSelected = true
+        
+    }
     
     @IBAction func btn_both_tap(_ sender: Any) {
         self.btn_man.borderColor = UIColor.darkGray
@@ -61,6 +73,7 @@ class DriverStep10VC: UIViewController {
     
     @IBAction func btn_continue_tap(_ sender: Any) {
         self.ride.gender = self.isSelected
+        self.ride.luggage = "\(self.int_selectedLuggage)"
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
         let vc: DriverStep11VC = storyboard.instantiateViewController(withIdentifier: "DriverStep11VC") as! DriverStep11VC
         vc.ride = self.ride

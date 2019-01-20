@@ -23,7 +23,7 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var vw_UserInfo: UIView!
     
     @IBOutlet weak var vw_CarInfo: UIView!
-    
+    var arr_comments = [Comment]()
     @IBOutlet weak var btnCarInfoView: UIButton!
     @IBOutlet weak var txt_email: UITextField!
     @IBOutlet weak var txt_mobile: UITextField!
@@ -110,10 +110,11 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
             self.hudHide()
             print_debug(parseData)
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                
-                for data in parseData["data"] {
-                    let user = User.init(fromJson: data.1)
-                    let url = URL(string: "https://i.stack.imgur.com/dWrvS.png")!
+                let basic = parseData["data"]["basic"].arrayValue
+                let comments = parseData["data"]["comment"].arrayValue
+                for data in basic {
+                    let user = User.init(fromJson: data)
+                    let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
                     let placeholderImage = UIImage(named: "Male-driver")!
                     
                     self.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
@@ -125,7 +126,10 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
                     self.txt_lname.text = user.last_name
                     self.gender = user.gender
                 }
-                
+                for comment in comments {
+                    let commentData = Comment.init(fromJson: comment)
+                    self.arr_comments.append(commentData)
+                }
                 
             }
             else {
@@ -291,6 +295,32 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
         
         
     }
+    
+    @objc func btn_edit_tap(_ sender: UIButton) {
+        
+        
+        
+        let id = sender.tag
+        
+        
+        
+        let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+        let vc: CarInfoVC = storyboard.instantiateViewController(withIdentifier: "CarInfoVC") as! CarInfoVC
+        let data = self.arr_cars[id]
+        vc.txt_brandName = "\(data.brand_name!) - \(data.model_name!)"
+        vc.txt_modelID = data.model_id
+        vc.isFromCarEdit = true
+        vc.arr_cars = data
+        vc.isFromEdit = true
+        // self.present(vc, animated: true, completion: nil)
+        self.present(vc, animated: true) {
+            
+        }
+        
+        //        self.tableView.reloadData()
+        
+        
+    }
 }
 extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate,ColorPickerViewDelegateFlowLayout {
     
@@ -327,6 +357,9 @@ extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate,ColorPi
         cell.txt_date.text = data.insurance_expire_date
         cell.btn_Delete.addTarget(self, action: #selector(btn_delete_tap(_:)), for: .touchUpInside)
         cell.btn_Delete.tag = indexPath.row
+        
+        cell.btn_edit.addTarget(self, action: #selector(btn_edit_tap(_:)), for: .touchUpInside)
+        cell.btn_edit.tag = indexPath.row
         cell.selectionStyle = .none
         return cell
         // }

@@ -15,12 +15,14 @@ class CarModelSelectionVC: BaseViewController,UITableViewDelegate,UITableViewDat
         }
     }
     var isFromEdit = false
+    var arr_cars:Car?
     @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var txt_search: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var arr_model:Array = [Model]()
     var index = -1
     var searchTimer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         txt_search.returnKeyType = .search

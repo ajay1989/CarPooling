@@ -49,7 +49,12 @@ class SettingsViewController: BaseViewController {
             //if AppHelper.getStringForKey(ServiceKeys.account_type) == AccountType.Artist.rawValue{
             //    LocationClass.sharedInstance.stopLocationManager()
             //}
-            self.callLogOutApi()
+            Utilities.resetDefaults()
+            let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            let navigationController = UINavigationController(rootViewController: testController)
+            appDelegate.window?.rootViewController = navigationController
+            appDelegate.window?.makeKeyAndVisible()
+//            self.callLogOutApi()
             
             
         }
@@ -68,7 +73,7 @@ class SettingsViewController: BaseViewController {
         self.hudShow()
         var params = [String : Any]()
         
-        
+        params = ["user":AppHelper.getStringForKey(ServiceKeys.user_id)]
         ServiceClass.sharedInstance.hitserviceforLogOut(params: params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             
             print_debug("response: \(parseData)")

@@ -116,7 +116,7 @@ class Ride {
     var profile_photo : String!
     var available_seats : String!
      var created_date : String!
-    
+    var luggage : String!
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -143,10 +143,42 @@ class Ride {
         profile_photo = parseData!["profile_photo"].stringValue
         available_seats = parseData!["available_seats"].stringValue
             created_date = parseData!["created_date"].stringValue
+        luggage = parseData!["luggage"].stringValue
     }
     
 }
 
+
+
+
+class Comment {
+    var created_date : String!
+    var comment_id : String!
+    var ride_id : String!
+    var profile_photo : String!
+    var last_name : String!
+    
+    var rate_number : String!
+    var comment : String!
+    var first_name : String!
+    
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return
+        }
+        
+        created_date = parseData!["created_date"].stringValue
+        comment_id = parseData!["comment_id"].stringValue
+        ride_id = parseData!["ride_id"].stringValue
+        profile_photo = parseData!["profile_photo"].stringValue
+        last_name = parseData!["last_name"].stringValue
+        rate_number = parseData!["rate_number"].stringValue
+        
+        comment = parseData!["comment"].stringValue
+        first_name = parseData!["first_name"].stringValue
+    }
+    
+}
 
 class Model {
     var model_id : String!

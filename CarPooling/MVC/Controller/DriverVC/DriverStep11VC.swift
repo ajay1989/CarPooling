@@ -51,7 +51,8 @@ class DriverStep11VC: BaseViewController {
                       "departure_date":self.ride.departure_date!,
                       "departure_time":self.ride.departure_time!,
                       "vehicle":self.ride.vehicle!,
-                      "user":self.ride.user!]
+                      "user":self.ride.user!,
+                      "luggage":self.ride.luggage!]
         self.hudShow()
         ServiceClass.sharedInstance.hitServiceForGetCreateRide(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()

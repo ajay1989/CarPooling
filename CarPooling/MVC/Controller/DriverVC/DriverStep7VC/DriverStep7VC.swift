@@ -10,7 +10,7 @@ import UIKit
 
 class DriverStep7VC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var arr_cars:Array = [Car]()
+    var arr_cars = [Car]()
     @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vw_Search: UIView!{

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,7 +32,7 @@
         <!--LoginVC-->
         <scene sceneID="H04-Tn-t4F">
             <objects>
-                <viewController storyboardIdentifier="loginVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X2P-4e-ixH" customClass="LoginVC" customModule="CarPooling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X2P-4e-ixH" customClass="LoginVC" customModule="CarPooling" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WUd-iV-ZbD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +109,7 @@ de covoiturage au Maroc.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="et" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VW-AG-IKp">
-                                        <rect key="frame" x="79.5" y="11" width="9.5" height="21"/>
+                                        <rect key="frame" x="81" y="11" width="8" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="udY-4b-48z"/>
                                         </constraints>
@@ -135,13 +135,13 @@ de covoiturage au Maroc.</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Śinscrire ou se connecter par mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-3l-8FP">
-                                <rect key="frame" x="67" y="508" width="241" height="30"/>
+                                <rect key="frame" x="81" y="508" width="213" height="30"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                                 <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Poq-qG-XNH">
-                                <rect key="frame" x="67" y="508" width="241" height="30"/>
+                                <rect key="frame" x="81" y="508" width="213" height="30"/>
                                 <connections>
                                     <segue destination="RZs-eY-HoJ" kind="show" id="FNr-wL-22W"/>
                                 </connections>
@@ -150,7 +150,7 @@ de covoiturage au Maroc.</string>
                                 <rect key="frame" x="42" y="450" width="291" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dha-kn-Nqo">
-                                        <rect key="frame" x="8" y="5" width="265" height="30"/>
+                                        <rect key="frame" x="8" y="5" width="244.5" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb icon" translatesAutoresizingMaskIntoConstraints="NO" id="JpR-Nm-inD">
@@ -161,7 +161,7 @@ de covoiturage au Maroc.</string>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se connecter avec facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6V-se-5r1">
-                                                <rect key="frame" x="27" y="0.0" width="238" height="30"/>
+                                                <rect key="frame" x="27" y="0.0" width="217.5" height="30"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -8262,14 +8262,25 @@ en 3h30</string>
                                                                             </constraints>
                                                                             <state key="normal" image="delete-button"/>
                                                                         </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwD-C5-l6l">
+                                                                            <rect key="frame" x="319" y="-1" width="20" height="25"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="20" id="4eb-oP-O2n"/>
+                                                                                <constraint firstAttribute="height" constant="25" id="Mrg-vQ-g90"/>
+                                                                            </constraints>
+                                                                            <state key="normal" image="Filter"/>
+                                                                        </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="ZwD-C5-l6l" secondAttribute="bottom" constant="11" id="5n3-5t-ZFh"/>
                                                                         <constraint firstItem="ix8-5L-CUR" firstAttribute="top" secondItem="gwJ-c9-Qbn" secondAttribute="top" id="8Vh-Vh-4Is"/>
                                                                         <constraint firstItem="ut8-Lx-yNE" firstAttribute="leading" secondItem="ix8-5L-CUR" secondAttribute="trailing" constant="-1" id="CpU-ba-7XG"/>
+                                                                        <constraint firstItem="ut8-Lx-yNE" firstAttribute="leading" secondItem="ZwD-C5-l6l" secondAttribute="trailing" constant="8" id="IJ3-kz-qcB"/>
                                                                         <constraint firstItem="gwJ-c9-Qbn" firstAttribute="leading" secondItem="mNj-lP-gSX" secondAttribute="leading" constant="8" id="Ij8-Nm-ljA"/>
                                                                         <constraint firstItem="ut8-Lx-yNE" firstAttribute="top" secondItem="mNj-lP-gSX" secondAttribute="top" id="LqK-AG-Ikn"/>
                                                                         <constraint firstAttribute="height" constant="35" id="i7p-4d-JzV"/>
+                                                                        <constraint firstItem="ZwD-C5-l6l" firstAttribute="top" secondItem="mNj-lP-gSX" secondAttribute="top" constant="-1" id="kSq-lq-8OL"/>
                                                                         <constraint firstAttribute="trailing" secondItem="ut8-Lx-yNE" secondAttribute="trailing" constant="8" id="p9S-4u-T8k"/>
                                                                         <constraint firstItem="gwJ-c9-Qbn" firstAttribute="top" secondItem="mNj-lP-gSX" secondAttribute="top" id="vnd-ak-au6"/>
                                                                         <constraint firstItem="ix8-5L-CUR" firstAttribute="leading" secondItem="gwJ-c9-Qbn" secondAttribute="trailing" constant="11" id="y0e-9Y-9LL"/>
@@ -8463,6 +8474,7 @@ en 3h30</string>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="btn_Delete" destination="ut8-Lx-yNE" id="EP1-mw-4XW"/>
+                                                    <outlet property="btn_edit" destination="ZwD-C5-l6l" id="3Ut-CV-5ps"/>
                                                     <outlet property="carColorPickerView" destination="Zwg-NL-ymx" id="sA4-bU-Tfc"/>
                                                     <outlet property="lbl_carName" destination="ix8-5L-CUR" id="HAz-6p-Pdt"/>
                                                     <outlet property="txt_date" destination="xZX-Lg-9HU" id="3vb-uW-ea0"/>
@@ -8551,7 +8563,7 @@ en 3h30</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3f-sO-vyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4041" y="2239"/>
+            <point key="canvasLocation" x="4050" y="2239"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="AAp-95-KuI">
@@ -9009,7 +9021,7 @@ en 3h30</string>
         <image name="img_eye" width="51.200000762939453" height="51.200000762939453"/>
         <image name="img_logout" width="51.200000762939453" height="51.200000762939453"/>
         <image name="img_star" width="48" height="48"/>
-        <image name="like" width="10.944000244140625" height="10.944000244140625"/>
+        <image name="like" width="16.416000366210938" height="17"/>
         <image name="lock" width="65.279998779296875" height="87.120002746582031"/>
         <image name="loginBg" width="191.66400146484375" height="340.84799194335938"/>
         <image name="logo" width="86.400001525878906" height="68.639999389648438"/>

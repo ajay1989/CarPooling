@@ -14,7 +14,9 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
+    var arr_cars:Car?
     var isFromEdit = false
+    var isFromCarEdit = false
     @IBOutlet weak var txt_number1: UITextField!
      @IBOutlet weak var btn_brand: UIButton!
     var txt_brandName = "Hyndai i10"
@@ -43,6 +45,17 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
         if (txt_date.text?.isEmpty)! {
             self.continueDisable()
         }
+        
+        if isFromCarEdit {
+            txt_number1.text = arr_cars?.vehicle_number_one!
+            txt_date.text = arr_cars?.insurance_expire_date!
+            txt_number2.text = arr_cars!.vehicle_number_two!
+            txt_number3.text = arr_cars!.vehicle_number_three!
+            lbl_brandName.text = arr_cars!.brand_name
+            self.continueEnable()
+            
+            
+        }
     }
     
 
@@ -52,6 +65,16 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
         self.color  = colorPickerView.colors[indexPath.item]
     }
     
+    @IBAction func btn_back_tap(_ sender: Any) {
+        if self.isFromCarEdit {
+            self.dismiss(animated: true) {
+                
+            }
+        }
+        else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
     
     // MARK: - ColorPickerViewDelegateFlowLayout
     
@@ -178,6 +201,34 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
                       "color":"#000000",
                       "model":self.txt_modelID]
         self.hudShow()
+        if self.isFromCarEdit {
+            self.updateCar(params: params)
+        }
+        else {
+             self.saveCar(params: params)
+        }
+       
+        
+    }
+    
+    func updateCar(params:[String:String]) {
+        ServiceClass.sharedInstance.hitServiceUpdateCar(params, id: (self.arr_cars?.vehicle_id!)!) { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                self.makeToast("success!")
+                AppHelper.delay(1.0, closure: {
+                    self.dismiss(animated: true, completion: {
+                        
+                    })
+                })
+            }
+             else {
+                self.makeToast("failed!")
+            }
+        }
+    }
+    
+    func saveCar(params:[String:String]) {
         ServiceClass.sharedInstance.hitServiceForGetCreateCar(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){

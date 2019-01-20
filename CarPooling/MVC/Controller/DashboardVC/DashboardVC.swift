@@ -30,6 +30,35 @@ class DashboardVC: BaseViewController {
         
         img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
         self.loadUserData()
+        self.loadUser()
+    }
+    
+    
+    func loadUser() {
+        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForGetUserDetail(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            print_debug(parseData)
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                let basic = parseData["data"]["basic"].arrayValue
+                for data in basic {
+                    let user = User.init(fromJson: data)
+                    let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
+                    let placeholderImage = UIImage(named: "Male-driver")!
+                    
+                    self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
+                    
+                    
+                }
+                
+            }
+            else {
+                self.hudHide()
+                
+            }
+            
+        })
     }
     
     func loadUserData() {
@@ -121,7 +150,7 @@ class DashboardVC: BaseViewController {
              cell.lbl_seats.text = data.available_seats
             cell.lbl_Price.text = data.price
             
-            let url = URL(string: "https://i.stack.imgur.com/dWrvS.png")!
+            let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
             let placeholderImage = UIImage(named: "Male-driver")!
             
             cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)

@@ -93,8 +93,8 @@ struct ServiceUrls
 {
     static let baseUrl = "http://echofounder.com/demo/carpoll/v1/api/"
 
-
-
+    static let profilePicURL = "http://echofounder.com/demo/carpoll/assets/images/users/"
+    static let profileDocURL = "http://echofounder.com/demo/carpoll/assets/images/user_docs/"
 
     static let checknumber = "checknumber"
     static let checkemail = "checkemail"
@@ -108,6 +108,7 @@ struct ServiceUrls
     static let create_ride = "create_ride"
     static let ride = "ride"
     static let update_profile = "update_profile"
+    static let logout = "logout"
 }
 struct ErrorCodes
 {

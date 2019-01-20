@@ -24,6 +24,7 @@ class CarDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var txt_date: UITextField!
     
     
+    @IBOutlet weak var btn_edit: UIButton!
     @IBOutlet weak var carColorPickerView: ColorPickerView!
     
     override func awakeFromNib() {

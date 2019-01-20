@@ -14,6 +14,7 @@ class UserProfileVC: BaseViewController {
     @IBOutlet weak var lbl_mobile: UILabel!
     @IBOutlet weak var lbl_name: UILabel!
     @IBOutlet weak var img_profile: UIImageView!
+    var arr_comments = [Comment]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,10 +47,11 @@ class UserProfileVC: BaseViewController {
             self.hudHide()
             print_debug(parseData)
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                
-                for data in parseData["data"] {
-                    let user = User.init(fromJson: data.1)
-                    let url = URL(string: "https://i.stack.imgur.com/dWrvS.png")!
+                let basic = parseData["data"]["basic"].arrayValue
+                let comments = parseData["data"]["comment"].arrayValue
+                for data in basic {
+                    let user = User.init(fromJson: data)
+                    let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
                     let placeholderImage = UIImage(named: "Male-driver")!
                     
                     self.img_profile.af_setImage(withURL: url, placeholderImage: placeholderImage)
@@ -58,7 +60,10 @@ class UserProfileVC: BaseViewController {
                     self.lbl_email.text = user.user_email
                     
                 }
-                
+                for comment in comments {
+                    let commentData = Comment.init(fromJson: comment)
+                    self.arr_comments.append(commentData)
+                }
                 
             }
             else {
