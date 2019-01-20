@@ -6599,7 +6599,7 @@ en 3h30</string>
                                 <rect key="frame" x="0.0" y="435" width="375" height="173"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ComentsTableViewCell" rowHeight="76" id="7X3-4Z-49G" customClass="ComentsTableViewCell" customModule="CarPooling" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ComentsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ComentsTableViewCell" rowHeight="76" id="7X3-4Z-49G" customClass="ComentsTableViewCell" customModule="CarPooling" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7X3-4Z-49G" id="Yhc-S9-I8O">
@@ -6686,6 +6686,10 @@ en 3h30</string>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="N5A-wv-r4E" id="3Lm-JF-RYh"/>
+                                    <outlet property="delegate" destination="N5A-wv-r4E" id="RH8-11-Jot"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vR8-0g-GSK">
                                 <rect key="frame" x="0.0" y="608" width="375" height="59"/>
@@ -6756,6 +6760,7 @@ en 3h30</string>
                         <outlet property="lbl_email" destination="Oko-Wt-zgr" id="3pg-JL-hsQ"/>
                         <outlet property="lbl_name" destination="crM-MB-3KN" id="PG7-57-UEN"/>
                         <outlet property="lbl_phone" destination="BxF-6i-fpL" id="IPN-9i-6pV"/>
+                        <outlet property="tableView" destination="GSA-Fj-8qK" id="wds-O3-GpG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7z5-Ul-chv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -7332,10 +7337,10 @@ en 3h30</string>
                                                             <fontDescription key="fontDescription" name="Montserrat-Italic" family="Montserrat" pointSize="10"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14/12/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNI-CD-W45">
-                                                            <rect key="frame" x="307" y="61" width="60" height="13"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14/12/2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNI-CD-W45">
+                                                            <rect key="frame" x="61" y="61" width="306" height="13"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="60" id="dpz-ZH-6Bl"/>
+                                                                <constraint firstAttribute="width" constant="306" id="dpz-ZH-6Bl"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                                             <nil key="textColor"/>
@@ -7374,6 +7379,10 @@ en 3h30</string>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rsx-pH-Hki" id="TdO-pR-Bu9"/>
+                                    <outlet property="delegate" destination="rsx-pH-Hki" id="CDA-2E-GCY"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3f-zD-bXl">
                                 <rect key="frame" x="0.0" y="608" width="375" height="59"/>
@@ -7445,6 +7454,7 @@ en 3h30</string>
                         <outlet property="lbl_email" destination="ka7-6y-dim" id="YuP-sg-f8a"/>
                         <outlet property="lbl_mobile" destination="9TC-5f-f0S" id="mA8-kS-kjb"/>
                         <outlet property="lbl_name" destination="aMW-Nk-lPS" id="zGa-13-pVM"/>
+                        <outlet property="tableView" destination="l1S-X5-fOt" id="iO9-HI-Ex8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ki2-2B-A3w" userLabel="First Responder" sceneMemberID="firstResponder"/>

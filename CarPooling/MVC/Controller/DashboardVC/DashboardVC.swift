@@ -102,11 +102,12 @@ class DashboardVC: BaseViewController {
     
     @objc  func actionProfileImage(_ sender: UIButton)
     {
+        var id = self.arr_rides[sender.tag].user_id
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc:PublicProfileVC = storyboard.instantiateViewController(withIdentifier: "PublicProfileVC") as! PublicProfileVC
         // self.present(vc, animated: true, completion: nil)
-        
+        vc.id = id!
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -156,6 +157,7 @@ class DashboardVC: BaseViewController {
             cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
            
             cell.btn_Profile.addTarget(self, action: #selector(self.actionProfileImage(_:)) , for: .touchUpInside)
+            cell.btn_Profile.tag = indexPath.row
             return cell
             // }
             //p;return UITableViewCell()

@@ -9,12 +9,14 @@
 import UIKit
 
 class PublicProfileVC: BaseViewController {
-    
+    var arr_comments = [Comment]()
     @IBOutlet weak var lbl_dob: UILabel!
     @IBOutlet weak var lbl_email: UILabel!
     @IBOutlet weak var lbl_phone: UILabel!
     @IBOutlet weak var lbl_name: UILabel!
     @IBOutlet weak var img_profilePic: UIImageView!
+    var id = ""
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadUser()
@@ -23,16 +25,17 @@ class PublicProfileVC: BaseViewController {
     
     
     func loadUser() {
-        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        let params = ["keyword":self.id]
         self.hudShow()
         ServiceClass.sharedInstance.hitServiceForGetUserDetail(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             print_debug(parseData)
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                
-                for data in parseData["data"] {
-                    let user = User.init(fromJson: data.1)
-                    let url = URL(string: "https://i.stack.imgur.com/dWrvS.png")!
+                let basic = parseData["data"]["basic"].arrayValue
+                let comments = parseData["data"]["comment"].arrayValue
+                for data in basic {
+                    let user = User.init(fromJson: data)
+                    let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
                     let placeholderImage = UIImage(named: "Male-driver")!
                     
                     self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
@@ -42,7 +45,14 @@ class PublicProfileVC: BaseViewController {
                     
                     self.lbl_dob.text = user.dob
                 }
+                for comment in comments {
+                    let commentData = Comment.init(fromJson: comment)
+                    self.arr_comments.append(commentData)
+                }
                 
+                if self.arr_comments.count > 0 {
+                    self.tableView.reloadData()
+                }
                 
             }
             else {
@@ -67,4 +77,57 @@ class PublicProfileVC: BaseViewController {
     }
     */
 
+}
+
+
+extension PublicProfileVC : UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //        if self.arr_rides.count>0 {
+        //            return self.arr_rides.count
+        //        }
+        //        else{
+        //            return 0
+        //
+        //        }
+        return self.arr_comments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // if placeArray.count > 0 {
+        let data = self.arr_comments[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ComentsTableViewCell", for: indexPath) as! ComentsTableViewCell
+        //  cell.carColorPickerView.delegate = self
+        cell.lblUserName.text = "\(data.first_name!) \(data.last_name!)"
+        cell.lblDate.text = data.created_date!
+        cell.txtDescription.text = data.comment!
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
+        let placeholderImage = UIImage(named: "Male-driver")!
+        
+        cell.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
+        cell.selectionStyle = .none
+        return cell
+        // }
+        //p;return UITableViewCell()
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 76
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let vc:BookingDetailVC = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as! BookingDetailVC
+        //        // self.present(vc, animated: true, completion: nil)
+        //
+        //        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
+    // MARK: - ColorPickerViewDelegateFlowLayout
+    
+    
 }
