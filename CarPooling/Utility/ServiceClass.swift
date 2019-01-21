@@ -397,6 +397,7 @@ class ServiceClass: NSObject {
         
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.update_profile)/\(AppHelper.getStringForKey(ServiceKeys.user_id))"
         print(baseUrl)
+        print(params)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
             "X-API-KEY":"CYLPIUnVia7UUl"]
         print_debug(headers)

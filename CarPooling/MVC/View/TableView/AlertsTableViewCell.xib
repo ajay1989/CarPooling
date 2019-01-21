@@ -130,7 +130,7 @@
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calender" translatesAutoresizingMaskIntoConstraints="NO" id="OXH-eW-7K9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="OXH-eW-7K9">
                                 <rect key="frame" x="17" y="115" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="ADu-P8-pRC"/>
@@ -187,6 +187,7 @@
     </objects>
     <resources>
         <image name="calender" width="11.232000350952148" height="11.232000350952148"/>
+        <image name="clock" width="11.520000457763672" height="11.520000457763672"/>
         <image name="down-arrow" width="6.9120001792907715" height="5.9039998054504395"/>
         <image name="green-cone" width="8.064000129699707" height="7.1999998092651367"/>
     </resources>

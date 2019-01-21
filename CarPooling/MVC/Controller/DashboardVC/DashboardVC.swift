@@ -25,41 +25,17 @@ class DashboardVC: BaseViewController {
         tblVw.delegate = self
         tblVw.dataSource = self
         
-        let url = URL(string: "https://i.stack.imgur.com/dWrvS.png")!
+        
+        self.loadUserData()
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
+        
         let placeholderImage = UIImage(named: "Male-driver")!
         
-        img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
-        self.loadUserData()
-        self.loadUser()
+        self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
     }
     
     
-    func loadUser() {
-        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
-        self.hudShow()
-        ServiceClass.sharedInstance.hitServiceForGetUserDetail(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
-            self.hudHide()
-            print_debug(parseData)
-            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                let basic = parseData["data"]["basic"].arrayValue
-                for data in basic {
-                    let user = User.init(fromJson: data)
-                    let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
-                    let placeholderImage = UIImage(named: "Male-driver")!
-                    
-                    self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
-                    
-                    
-                }
-                
-            }
-            else {
-                self.hudHide()
-                
-            }
-            
-        })
-    }
+    
     
     func loadUserData() {
         self.arr_rides.removeAll()

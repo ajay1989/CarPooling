@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -8651,7 +8651,7 @@ en 3h30</string>
                                     <constraint firstAttribute="height" constant="27" id="Ate-rn-8Sa"/>
                                 </constraints>
                                 <string key="text">Avant de dèsactiver les notifications, vèrifie que tu as bien renseignè un mail valide pour ne pas manquer tes alertes et I'actualitè sur tes voyages.</string>
-                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="8"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8674,7 +8674,7 @@ en 3h30</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_aide" translatesAutoresizingMaskIntoConstraints="NO" id="FRh-gR-byW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign" translatesAutoresizingMaskIntoConstraints="NO" id="FRh-gR-byW">
                                         <rect key="frame" x="318" y="13" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="BsV-Qe-edD"/>
@@ -9046,11 +9046,10 @@ en 3h30</string>
         <image name="green-cone" width="8.064000129699707" height="7.1999998092651367"/>
         <image name="hat" width="8.9280004501342773" height="9.5039997100830078"/>
         <image name="id-card" width="20.159999847412109" height="13.248000144958496"/>
-        <image name="img_aide" width="51.200000762939453" height="51.200000762939453"/>
         <image name="img_eye" width="51.200000762939453" height="51.200000762939453"/>
         <image name="img_logout" width="51.200000762939453" height="51.200000762939453"/>
         <image name="img_star" width="48" height="48"/>
-        <image name="like" width="16.416000366210938" height="17"/>
+        <image name="like" width="10.944000244140625" height="10.944000244140625"/>
         <image name="lock" width="65.279998779296875" height="87.120002746582031"/>
         <image name="loginBg" width="191.66400146484375" height="340.84799194335938"/>
         <image name="logo" width="86.400001525878906" height="68.639999389648438"/>

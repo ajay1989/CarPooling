@@ -72,6 +72,7 @@ class UserData {
     var user_id : String!
     var user_email : String!
     var user_role_id : String!
+    var profile_photo : String!
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -84,7 +85,7 @@ class UserData {
         user_email = parseData!["user_email"].stringValue
         
         user_role_id = parseData!["user_role_id"].stringValue
-        
+        profile_photo = parseData!["profile_photo"].stringValue
     }
     
 }
