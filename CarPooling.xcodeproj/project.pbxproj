@@ -66,6 +66,7 @@
 		D08C536421C6D29E006A6729 /* DriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C535721C6D29E006A6729 /* DriverVC.swift */; };
 		D0D1EE2021D75DEF00E3C18C /* BookingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D1EE1F21D75DEF00E3C18C /* BookingDetailVC.swift */; };
 		D0DF134421E77788001C2754 /* EditUserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF134321E77788001C2754 /* EditUserProfileVC.swift */; };
+		D0E4B2DF21F5C43000796D93 /* BookingConfirmedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4B2DE21F5C43000796D93 /* BookingConfirmedVC.swift */; };
 		D0FAA82E21D003C20075C875 /* CarMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA82C21D003C20075C875 /* CarMarker.swift */; };
 		D0FAA82F21D003C20075C875 /* GoogleApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA82D21D003C20075C875 /* GoogleApiManager.swift */; };
 		D0FAA83821D005100075C875 /* FilterVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA83521D0050F0075C875 /* FilterVCViewController.swift */; };
@@ -194,6 +195,7 @@
 		D08C535721C6D29E006A6729 /* DriverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverVC.swift; sourceTree = "<group>"; };
 		D0D1EE1F21D75DEF00E3C18C /* BookingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailVC.swift; sourceTree = "<group>"; };
 		D0DF134321E77788001C2754 /* EditUserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileVC.swift; sourceTree = "<group>"; };
+		D0E4B2DE21F5C43000796D93 /* BookingConfirmedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConfirmedVC.swift; sourceTree = "<group>"; };
 		D0FAA82C21D003C20075C875 /* CarMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarMarker.swift; sourceTree = "<group>"; };
 		D0FAA82D21D003C20075C875 /* GoogleApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiManager.swift; sourceTree = "<group>"; };
 		D0FAA83521D0050F0075C875 /* FilterVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterVCViewController.swift; sourceTree = "<group>"; };
@@ -508,6 +510,14 @@
 			path = EditUserProfileVC;
 			sourceTree = "<group>";
 		};
+		D0E4B2DD21F5C41100796D93 /* BookingConfirmed */ = {
+			isa = PBXGroup;
+			children = (
+				D0E4B2DE21F5C43000796D93 /* BookingConfirmedVC.swift */,
+			);
+			path = BookingConfirmed;
+			sourceTree = "<group>";
+		};
 		D0FAA82A21D003920075C875 /* SearchVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,6 +781,7 @@
 		DCBA21462196E23200261817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D0E4B2DD21F5C41100796D93 /* BookingConfirmed */,
 				D01A796721F37153003AB843 /* NotificationsVC */,
 				D05B737621F1DD3E00207067 /* RateMyRideVC */,
 				D02B067421F08CAA00522A77 /* ManageMyOfferVC */,
@@ -1054,6 +1065,7 @@
 				D009A61E21BFC39C00764B60 /* WWCalendarTimeSelector.swift in Sources */,
 				DCBA21332196DFED00261817 /* AppHelper.swift in Sources */,
 				DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */,
+				D0E4B2DF21F5C43000796D93 /* BookingConfirmedVC.swift in Sources */,
 				DC1EAA1F21986BEF0099FE98 /* Registration3VC.swift in Sources */,
 				D07095C621EF3E7D00DA8A4A /* BookingStatusVC.swift in Sources */,
 				D05B737921F1DD6500207067 /* DriverMode1.swift in Sources */,
@@ -1254,9 +1266,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8VR6N6MLZ6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarPooling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1265,7 +1277,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ideancy.pippipyalah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = distributionprofile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CarPooling/Library/Reachability/CarPooling-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1279,9 +1291,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8VR6N6MLZ6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarPooling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1290,7 +1302,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ideancy.pippipyalah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = distributionprofile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CarPooling/Library/Reachability/CarPooling-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

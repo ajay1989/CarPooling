@@ -170,7 +170,7 @@ class DashboardVC: BaseViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc:BookingDetailVC = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as! BookingDetailVC
     // self.present(vc, animated: true, completion: nil)
-   
+   vc.rideDetail = self.arr_rides[indexPath.row]
     self.navigationController?.pushViewController(vc, animated: true)
     
     

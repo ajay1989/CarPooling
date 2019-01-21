@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -109,7 +109,7 @@ de covoiturage au Maroc.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="et" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VW-AG-IKp">
-                                        <rect key="frame" x="81" y="11" width="8" height="21"/>
+                                        <rect key="frame" x="79.5" y="11" width="9.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="udY-4b-48z"/>
                                         </constraints>
@@ -135,22 +135,23 @@ de covoiturage au Maroc.</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Śinscrire ou se connecter par mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-3l-8FP">
-                                <rect key="frame" x="81" y="508" width="213" height="30"/>
+                                <rect key="frame" x="67" y="507" width="241" height="31"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                                 <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Poq-qG-XNH">
-                                <rect key="frame" x="81" y="508" width="213" height="30"/>
+                                <rect key="frame" x="67" y="507" width="241" height="31"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <connections>
                                     <segue destination="RZs-eY-HoJ" kind="show" id="FNr-wL-22W"/>
                                 </connections>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DS-kw-XOs">
-                                <rect key="frame" x="42" y="450" width="291" height="40"/>
+                                <rect key="frame" x="42" y="449" width="291" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dha-kn-Nqo">
-                                        <rect key="frame" x="8" y="5" width="244.5" height="30"/>
+                                        <rect key="frame" x="8" y="5" width="265" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb icon" translatesAutoresizingMaskIntoConstraints="NO" id="JpR-Nm-inD">
@@ -161,7 +162,7 @@ de covoiturage au Maroc.</string>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se connecter avec facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6V-se-5r1">
-                                                <rect key="frame" x="27" y="0.0" width="217.5" height="30"/>
+                                                <rect key="frame" x="27" y="0.0" width="238" height="30"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -174,6 +175,7 @@ de covoiturage au Maroc.</string>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wU8-DJ-Oph">
                                         <rect key="frame" x="0.0" y="5" width="291" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                         <connections>
                                             <action selector="btn_facebook_tap:" destination="X2P-4e-ixH" eventType="touchUpInside" id="Ysj-cP-GK8"/>
                                         </connections>
@@ -1084,7 +1086,7 @@ nous Otman 🎉</string>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GP-bf-iSY">
-                                        <rect key="frame" x="271.5" y="19" width="95.5" height="17.5"/>
+                                        <rect key="frame" x="288.5" y="19.5" width="78.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2125,7 +2127,7 @@ publier ton premier covoiturage via l'application.
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="abc@abc.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcH-nN-rSa">
                                                                         <rect key="frame" x="41" y="3" width="310" height="35"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                     </textField>
                                                                 </subviews>
@@ -2650,7 +2652,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes demandes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lS-ge-l9Z">
-                                <rect key="frame" x="117.5" y="44" width="140" height="22"/>
+                                <rect key="frame" x="125.5" y="44" width="124.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2997,7 +2999,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wos-xA-Wyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5572" y="1218"/>
+            <point key="canvasLocation" x="5607" y="1075"/>
         </scene>
         <!--Booking StatusVC-->
         <scene sceneID="OB3-4X-yJ6">
@@ -4295,7 +4297,7 @@ en 3h30</string>
                                         <rect key="frame" x="0.0" y="29" width="375" height="250"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacter le support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-85-zZe">
-                                                <rect key="frame" x="70" y="16" width="235" height="27"/>
+                                                <rect key="frame" x="70.5" y="16" width="234.5" height="27"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                                 <color key="textColor" red="0.9536476731300354" green="0.78015333414077759" blue="0.40774962306022644" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -5039,11 +5041,11 @@ en 3h30</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxD-Xo-jv4">
                                 <rect key="frame" x="67.5" y="511" width="240" height="36"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hat" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-di-7iF">
-                                        <rect key="frame" x="115" y="12" width="10" height="12"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hat" translatesAutoresizingMaskIntoConstraints="NO" id="iKC-we-hks">
+                                        <rect key="frame" x="75" y="12" width="10" height="12"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="12" id="4Hj-Qv-8Jp"/>
-                                            <constraint firstAttribute="width" constant="10" id="Gs2-sv-TRQ"/>
+                                            <constraint firstAttribute="width" constant="10" id="DSv-bR-VCB"/>
+                                            <constraint firstAttribute="height" constant="12" id="pFY-ox-izM"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hat" translatesAutoresizingMaskIntoConstraints="NO" id="OxI-UX-krk">
@@ -5051,6 +5053,13 @@ en 3h30</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="2VW-yZ-As6"/>
                                             <constraint firstAttribute="width" constant="10" id="wMs-Sv-pcs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hat" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-di-7iF">
+                                        <rect key="frame" x="115" y="12" width="10" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="4Hj-Qv-8Jp"/>
+                                            <constraint firstAttribute="width" constant="10" id="Gs2-sv-TRQ"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hat" translatesAutoresizingMaskIntoConstraints="NO" id="dKL-Eu-oh9">
@@ -5065,13 +5074,6 @@ en 3h30</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="WSr-RS-cCV"/>
                                             <constraint firstAttribute="width" constant="10" id="lur-K2-pFR"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hat" translatesAutoresizingMaskIntoConstraints="NO" id="iKC-we-hks">
-                                        <rect key="frame" x="75" y="12" width="10" height="12"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="10" id="DSv-bR-VCB"/>
-                                            <constraint firstAttribute="height" constant="12" id="pFY-ox-izM"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -5150,6 +5152,23 @@ en 3h30</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ks4-O7-cqQ"/>
                     </view>
+                    <connections>
+                        <outlet property="img_User" destination="hmz-eE-NGB" id="dNV-1T-7GQ"/>
+                        <outlet property="lbl_DateFrom" destination="VrZ-Ni-vQ2" id="jab-F5-xBV"/>
+                        <outlet property="lbl_DateTo" destination="Lt1-JO-usa" id="u1G-Zy-MXF"/>
+                        <outlet property="lbl_Distance" destination="NwL-0Z-ffc" id="ICj-YO-HLh"/>
+                        <outlet property="lbl_From" destination="yT7-0S-lf0" id="o9F-6K-dl9"/>
+                        <outlet property="lbl_Lugguage" destination="dRg-kn-11m" id="w2c-c9-1TP"/>
+                        <outlet property="lbl_Price" destination="Ewc-6b-Y3S" id="gbK-lt-X3O"/>
+                        <outlet property="lbl_To" destination="NEC-0x-hYZ" id="FFV-R6-PTP"/>
+                        <outlet property="lbl_seat" destination="Tme-ly-GRM" id="bH9-oV-nC0"/>
+                        <outlet property="lbl_tripName" destination="ITt-VY-Gfb" id="7kW-BC-iWa"/>
+                        <outlet property="lbl_userNAmeAge" destination="zsu-Fs-kxq" id="mx1-YJ-bpB"/>
+                        <outletCollection property="arrRank" destination="iKC-we-hks" collectionClass="NSMutableArray" id="7be-fT-mLl"/>
+                        <outletCollection property="arrRank" destination="OxI-UX-krk" collectionClass="NSMutableArray" id="hBy-UB-76P"/>
+                        <outletCollection property="arrRank" destination="dKL-Eu-oh9" collectionClass="NSMutableArray" id="lGr-tR-T8m"/>
+                        <outletCollection property="arrRank" destination="sN0-8b-18M" collectionClass="NSMutableArray" id="t11-37-fgo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xff-0M-C78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -6188,7 +6207,7 @@ en 3h30</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftI-dS-MYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4630" y="2904"/>
+            <point key="canvasLocation" x="4604" y="2974"/>
         </scene>
         <!--Booking ConfirmedVC-->
         <scene sceneID="A0c-k4-TBR">
@@ -6241,7 +6260,7 @@ en 3h30</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="actionDone" destination="dYW-WX-MHa" eventType="touchUpInside" id="chZ-Zj-jEe"/>
+                                    <action selector="actionConfirm" destination="dYW-WX-MHa" eventType="touchUpInside" id="4rK-mv-dSk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -6261,7 +6280,7 @@ en 3h30</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAc-oL-gvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6028" y="2946"/>
+            <point key="canvasLocation" x="5554" y="2973"/>
         </scene>
         <!--Public ProfileVC-->
         <scene sceneID="tTF-Uy-xL7">
@@ -8993,7 +9012,7 @@ en 3h30</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bs-cy-BE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5382" y="2946"/>
+            <point key="canvasLocation" x="6508" y="2818"/>
         </scene>
     </scenes>
     <resources>

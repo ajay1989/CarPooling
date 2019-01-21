@@ -11,7 +11,7 @@ target 'CarPooling' do
   pod 'AlamofireImage', '~> 3.2'
   pod 'SVProgressHUD'
   pod 'FacebookCore'
-  pod 'FacebookLogin'
+  pod 'FacebookLogin' 
   pod 'FacebookShare'
   pod 'IGColorPicker'
   pod 'GoogleMaps'
