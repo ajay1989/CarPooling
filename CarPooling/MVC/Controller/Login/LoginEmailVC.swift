@@ -44,7 +44,12 @@ class LoginEmailVC: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+    //MARK: Action method
+    @IBAction func actionBack()
+    {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func btn_login_tap(_ sender: Any) {
         let params: [String : String] = ["email":self.txt_email.text!,
                                          "password":self.txt_password.text!,

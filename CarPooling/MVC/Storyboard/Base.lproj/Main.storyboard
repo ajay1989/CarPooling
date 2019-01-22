@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -2309,13 +2309,22 @@ publier ton premier covoiturage via l'application.
                                             <constraint firstAttribute="bottom" secondItem="Re4-zy-UHh" secondAttribute="bottom" constant="70" id="tg0-7c-wVu"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OG7-rA-oFI">
+                                        <rect key="frame" x="10" y="30" width="30" height="30"/>
+                                        <state key="normal" title="👈🏻"/>
+                                        <connections>
+                                            <action selector="actionBack" destination="RZs-eY-HoJ" eventType="touchUpInside" id="cnV-Sz-ocf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="IFi-cG-NII" firstAttribute="top" secondItem="AHv-70-QR4" secondAttribute="top" id="AJT-7y-5AL"/>
                                     <constraint firstItem="IFi-cG-NII" firstAttribute="centerY" secondItem="AHv-70-QR4" secondAttribute="centerY" id="DL8-IN-b3q"/>
                                     <constraint firstAttribute="trailing" secondItem="IFi-cG-NII" secondAttribute="trailing" id="Pau-6H-lL6"/>
+                                    <constraint firstItem="OG7-rA-oFI" firstAttribute="top" secondItem="AHv-70-QR4" secondAttribute="top" constant="30" id="gZp-CI-fFs"/>
                                     <constraint firstItem="IFi-cG-NII" firstAttribute="leading" secondItem="AHv-70-QR4" secondAttribute="leading" id="nnD-cg-X3z"/>
                                     <constraint firstItem="IFi-cG-NII" firstAttribute="centerX" secondItem="AHv-70-QR4" secondAttribute="centerX" id="vDM-bC-j9d"/>
+                                    <constraint firstItem="OG7-rA-oFI" firstAttribute="leading" secondItem="AHv-70-QR4" secondAttribute="leading" constant="10" id="w04-oO-y3f"/>
                                     <constraint firstAttribute="bottom" secondItem="IFi-cG-NII" secondAttribute="bottom" id="zlJ-K2-EdK"/>
                                 </constraints>
                             </scrollView>
@@ -4028,22 +4037,14 @@ en 3h30</string>
                                 <rect key="frame" x="0.0" y="21" width="375" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzp-LQ-8Mt">
-                                        <rect key="frame" x="330" y="15" width="25" height="25"/>
+                                        <rect key="frame" x="255" y="15" width="100" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="A1l-L8-Be3"/>
-                                            <constraint firstAttribute="width" constant="25" id="brp-hv-bFI"/>
+                                            <constraint firstAttribute="width" constant="100" id="brp-hv-bFI"/>
                                         </constraints>
-                                        <state key="normal" image="add"/>
-                                        <connections>
-                                            <action selector="actionGoToStep1WithSender:" destination="mOH-vr-b1z" eventType="touchUpInside" id="Mtb-gw-5h3"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conducteur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdK-Ef-Xft">
-                                        <rect key="frame" x="131.5" y="16.5" width="112" height="22"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <state key="normal" title="Mes offres"/>
+                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="QeO-SB-roe">
                                         <rect key="frame" x="20" y="7.5" width="40" height="40"/>
                                         <constraints>
@@ -4063,12 +4064,18 @@ en 3h30</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conducteur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdK-Ef-Xft">
+                                        <rect key="frame" x="68" y="16.5" width="112" height="22"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="VdK-Ef-Xft" firstAttribute="centerY" secondItem="Yrv-tM-dNg" secondAttribute="centerY" id="2dZ-z3-KHC"/>
+                                    <constraint firstItem="VdK-Ef-Xft" firstAttribute="leading" secondItem="QeO-SB-roe" secondAttribute="trailing" constant="8" id="5dl-bA-6Bl"/>
                                     <constraint firstAttribute="height" constant="55" id="Ivf-0B-tBm"/>
-                                    <constraint firstItem="VdK-Ef-Xft" firstAttribute="centerX" secondItem="Yrv-tM-dNg" secondAttribute="centerX" id="Kji-36-Jwj"/>
                                     <constraint firstItem="Jzp-LQ-8Mt" firstAttribute="centerY" secondItem="Yrv-tM-dNg" secondAttribute="centerY" id="PC8-v7-Q7N"/>
                                     <constraint firstItem="QeO-SB-roe" firstAttribute="centerY" secondItem="Yrv-tM-dNg" secondAttribute="centerY" id="aE7-b8-J9Y"/>
                                     <constraint firstAttribute="trailing" secondItem="Jzp-LQ-8Mt" secondAttribute="trailing" constant="20" id="gl7-qf-ZEf"/>
@@ -4078,36 +4085,13 @@ en 3h30</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDS-hS-ge3">
                                 <rect key="frame" x="0.0" y="92" width="375" height="585"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmY-Fy-fV1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmY-Fy-fV1">
                                         <rect key="frame" x="35" y="33" width="305" height="139"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="139" id="U6C-H3-qse"/>
                                         </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">Otman, tu voyages quelque part?
-</string>
-                                                <attributes>
-                                                    <color key="NSColor" red="0.65150982141494751" green="0.65500468015670776" blue="0.65848630666732788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="18"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="À plusieurs ćest">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.65150982141494751" green="0.65500468015670776" blue="0.65848630666732788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="18"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" mieux!">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.97552710769999995" green="0.79052698610000005" blue="0.33566367629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="18"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZk-1X-bsa">
@@ -4121,20 +4105,21 @@ en 3h30</string>
                                                 <fragment content="+">
                                                     <attributes>
                                                         <color key="NSColor" red="0.3245927095413208" green="0.67474347352981567" blue="0.56352001428604126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <font key="NSFont" size="21" name=".SFNSText"/>
+                                                        <font key="NSOriginalFont" size="21" name=".SFNSText"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment content=" Je publie un covoiturage">
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <font key="NSFont" size="17" name=".SFNSText"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment content=" ">
                                                     <attributes>
                                                         <color key="NSColor" red="0.3245927095413208" green="0.67474347352981567" blue="0.56352001428604126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <font key="NSFont" size="17" name=".SFNSText"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -4234,6 +4219,8 @@ en 3h30</string>
                     </view>
                     <connections>
                         <outlet property="btnPublie" destination="QZk-1X-bsa" id="srh-Jx-DwY"/>
+                        <outlet property="img_User" destination="QeO-SB-roe" id="pia-kN-wPc"/>
+                        <outlet property="lblDes" destination="fmY-Fy-fV1" id="wMG-Z2-6cM"/>
                         <outlet property="lbl_animate1" destination="PMF-si-RES" id="EPA-4v-iTT"/>
                         <outlet property="lbl_animate2" destination="T6a-M8-XEh" id="i4o-OE-gOj"/>
                         <outlet property="lbl_animate3" destination="46c-ji-ojS" id="NJW-dq-ufZ"/>
@@ -9031,7 +9018,6 @@ en 3h30</string>
         <image name="Filter" width="10.079999923706055" height="10.368000030517578"/>
         <image name="Male-driver" width="104.25599670410156" height="90.720001220703125"/>
         <image name="Notification" width="10.944000244140625" height="13.248000144958496"/>
-        <image name="add" width="409.60000610351562" height="409.60000610351562"/>
         <image name="both" width="74" height="56.5"/>
         <image name="both-colored" width="74" height="56.5"/>
         <image name="car-1" width="499.92001342773438" height="499.92001342773438"/>
