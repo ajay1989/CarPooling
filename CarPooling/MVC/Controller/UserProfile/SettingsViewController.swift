@@ -49,12 +49,12 @@ class SettingsViewController: BaseViewController {
             //if AppHelper.getStringForKey(ServiceKeys.account_type) == AccountType.Artist.rawValue{
             //    LocationClass.sharedInstance.stopLocationManager()
             //}
-            Utilities.resetDefaults()
-            let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-            let navigationController = UINavigationController(rootViewController: testController)
-            appDelegate.window?.rootViewController = navigationController
-            appDelegate.window?.makeKeyAndVisible()
-//            self.callLogOutApi()
+//            Utilities.resetDefaults()
+//            let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//            let navigationController = UINavigationController(rootViewController: testController)
+//            appDelegate.window?.rootViewController = navigationController
+//            appDelegate.window?.makeKeyAndVisible()
+            self.callLogOutApi()
             
             
         }
