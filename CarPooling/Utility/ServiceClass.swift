@@ -250,20 +250,64 @@ class ServiceClass: NSObject {
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
     
-    func hitServiceForRegistration(_ params:[String : Any], completion:@escaping completionBlockType)
+    func hitServiceForRegistration(_ params:[String:Any],_ img: Data, completion:@escaping completionBlockType)
     {
         let user = "admin"
         let password = "1234"
         let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString(options: [])
         
-        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.register)"
-        print(baseUrl)
+        let baseUrlr = "\(ServiceUrls.baseUrl)\(ServiceUrls.register)"
+        print(baseUrlr)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
             "X-API-KEY":"CYLPIUnVia7UUl"]
         print_debug(params)
-        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+        self.hitServiceWithUrlString(urlString: baseUrlr, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+        
+//        Alamofire.upload(multipartFormData: { multipartFormData in
+//
+//            for (key, value) in params {
+//                multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
+//            }
+//
+//            multipartFormData.append(img, withName: "profile_photo", fileName: "profile_photo", mimeType: "image/jpeg")
+//        }, to: baseUrlr, encodingCompletion: { result in
+//            print("result  = \(result)")
+//            switch result {
+//            case .success(request: let request, streamingFromDisk: false, streamFileURL: nil):
+//                //Success code
+//                print("result  = \(request)")
+//               completion(ResponseType.kresponseTypeSuccess,nil,result as AnyObject);
+//
+//
+//
+//
+//                break
+//
+//            case .failure:
+//                print("failed api calling")
+//                break
+//
+//
+//            case .success(let request, true, _):
+//                //Code here
+//                break
+//
+//            case .success(let request, _, _):
+//                // Code here
+//                break
+//            }
+//        })
     }
+
+        
+        
+        
+        
+        
+        
+//        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+    
     
     
     func hitServiceForLogin(_ params:[String : Any], completion:@escaping completionBlockType)

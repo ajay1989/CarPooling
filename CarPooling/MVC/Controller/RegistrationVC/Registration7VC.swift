@@ -14,6 +14,9 @@ class Registration7VC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageData = image.jpeg(.low)!
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -29,6 +32,8 @@ class Registration7VC: BaseViewController {
     */
 
     @IBAction func btn_register_tap(_ sender: Any) {
+      
+        
         let params: [String : Any] = ["first_name":AppHelper.getStringForKey(ServiceKeys.keyFirstName),
                                          "last_name":AppHelper.getStringForKey(ServiceKeys.keyLastName),
                                          "password":AppHelper.getStringForKey(ServiceKeys.KeyPassword),
@@ -36,12 +41,15 @@ class Registration7VC: BaseViewController {
                                          "gender":AppHelper.getStringForKey(ServiceKeys.keyGender),
                                          "email":AppHelper.getStringForKey(ServiceKeys.keyEmail),
                                          "dob":AppHelper.getStringForKey(ServiceKeys.keyDOB),
-                                         "profile_photo":self.imageData,
+                                         
                                          "fb_id":AppHelper.getStringForKey(ServiceKeys.keyFacebookID),
                                          "device_type":"3",
                                          "imei_number":""]
+        
+        
+      //  "profile_photo":self.imageData,
         self.hudShow()
-        ServiceClass.sharedInstance.hitServiceForRegistration(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+        ServiceClass.sharedInstance.hitServiceForRegistration(params, self.imageData, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 
