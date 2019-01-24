@@ -9,6 +9,9 @@
 import UIKit
 
 class Registration3VC: BaseViewController,UITextFieldDelegate {
+    // fb Est-ce qu'on a bien écrit ton Nom et Prénom ? (curious icon)
+    // Merci de saisir ton Nom et Prénom pour que nous puissions t'accueillir comme il se doit (happy icon)
+    @IBOutlet weak var lbl_textDetail: UILabel!
     @IBOutlet weak var scrollView:UIScrollView!
     @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var txt_firstName: UITextField!
@@ -37,6 +40,8 @@ class Registration3VC: BaseViewController,UITextFieldDelegate {
             self.txt_firstName.text = AppHelper.getStringForKey(ServiceKeys.keyFirstName)
             self.txt_lastName.text = AppHelper.getStringForKey(ServiceKeys.keyLastName)
             self.continueEnable()
+            
+            lbl_textDetail.text = "Est-ce qu'on a bien écrit ton Nom et Prénom ? "
         }
         else {
             continueDisable()

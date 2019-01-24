@@ -9,6 +9,10 @@
 import UIKit
 
 class Registration4VC: BaseViewController,UITextFieldDelegate {
+    // Merci de nous indiquer le mail sur lequel tu souhaites recevoir toutes les informations pratiques concernant tes convoiturages 🚗
+    // Merci de saisir le mail qui te servira d'identifiant pour ta prochaine connexion. Tu y recevras égalements toutes les informations pratiques concernant tes covoiturages (car icon)
+    @IBOutlet weak var lbl_textDetail: UILabel!
+    
     @IBOutlet weak var scrollView:UIScrollView!
     @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var txt_email: UITextField!

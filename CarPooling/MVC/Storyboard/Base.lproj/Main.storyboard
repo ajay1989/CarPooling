@@ -819,6 +819,7 @@ nous Otman 🎉</string>
                     </view>
                     <connections>
                         <outlet property="btn_continue" destination="nd8-nw-ftN" id="oc6-hS-8A2"/>
+                        <outlet property="lbl_textDetail" destination="cX7-3N-Z1S" id="iEk-r6-NZv"/>
                         <outlet property="scrollView" destination="s6K-tb-SVP" id="Mtv-ZA-N1W"/>
                         <outlet property="txt_firstName" destination="AT5-21-uY5" id="N6I-zh-em6"/>
                         <outlet property="txt_lastName" destination="Cd5-Bh-Vcl" id="YM7-b8-hGh"/>
@@ -1034,6 +1035,7 @@ nous Otman 🎉</string>
                     </view>
                     <connections>
                         <outlet property="btn_continue" destination="ZNu-Lt-KFm" id="Cf8-pl-Xyv"/>
+                        <outlet property="lbl_textDetail" destination="8Qh-yj-BlT" id="gnG-pH-SRo"/>
                         <outlet property="scrollView" destination="A9b-de-Bcv" id="FGF-Mv-IuU"/>
                         <outlet property="txt_email" destination="jV4-hR-Zke" id="der-E1-4gr"/>
                         <outlet property="txt_password" destination="nCs-QB-ILl" id="XuS-xG-qgC"/>
@@ -1086,7 +1088,7 @@ nous Otman 🎉</string>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GP-bf-iSY">
-                                        <rect key="frame" x="288.5" y="19.5" width="78.5" height="16.5"/>
+                                        <rect key="frame" x="271.5" y="19" width="95.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2422,7 +2424,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="AsG-gj-hbJ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="AsG-gj-hbJ">
                                         <rect key="frame" x="145.5" y="341" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="8cE-Gv-5SD"/>
@@ -2487,6 +2489,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                     <connections>
                         <outlet property="btn_continue" destination="f6r-VM-cNd" id="3zf-Sr-yyC"/>
                         <outlet property="img_profile" destination="AsG-gj-hbJ" id="OFn-wl-q3m"/>
+                        <outlet property="lbl_detailText" destination="Gb9-JK-U9k" id="AtL-yM-p6C"/>
                         <outlet property="lbl_name" destination="9Yq-so-0Ok" id="AFq-0x-98k"/>
                     </connections>
                 </viewController>
@@ -2661,7 +2664,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes demandes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lS-ge-l9Z">
-                                <rect key="frame" x="125.5" y="44" width="124.5" height="21"/>
+                                <rect key="frame" x="117.5" y="44" width="140" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -9044,7 +9047,7 @@ en 3h30</string>
         <image name="img_eye" width="51.200000762939453" height="51.200000762939453"/>
         <image name="img_logout" width="51.200000762939453" height="51.200000762939453"/>
         <image name="img_star" width="48" height="48"/>
-        <image name="like" width="10.944000244140625" height="10.944000244140625"/>
+        <image name="like" width="16.416000366210938" height="17"/>
         <image name="lock" width="65.279998779296875" height="87.120002746582031"/>
         <image name="loginBg" width="191.66400146484375" height="340.84799194335938"/>
         <image name="logo" width="86.400001525878906" height="68.639999389648438"/>

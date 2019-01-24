@@ -10,6 +10,23 @@ import UIKit
 import AlamofireImage
 import Alamofire
 class Registration6VC: BaseViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    //fb Les conducteurs sont plus rassurés lorsqu'ils voient les visages de leurs futurs passagers 🕵️‍♂️
+    
+   // Multiplie les chances de faire valider ta demande en choisissant une photo sur laquelle on peut te reconnaître facilement.
+    
+   // Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons de la modifier.
+    
+    //.....
+    // Les conducteurs sont plus rassurés lorsqu'ils voient les visages de leurs futurs passagers 🕵️‍♂️
+    
+    // Multiplie les chances de faire valider ta demande en choisissant une photo sur laquelle on peut te reconnaître facilement 😎.
+    
+    
+
+    @IBOutlet weak var lbl_detailText: UILabel!
+    
+    
     @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var img_profile: UIImageView!
     @IBOutlet weak var lbl_name: UILabel!

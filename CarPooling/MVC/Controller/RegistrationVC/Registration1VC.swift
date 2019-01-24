@@ -9,6 +9,9 @@
 import UIKit
 
 class Registration1VC: BaseViewController,UITextFieldDelegate {
+    
+    // fb Nous sommes ravis de te voir parmi nous "Name" (fiesta icon)
+    // Nous sommes ravis de te voir parmi nous (fiesta icon)
     @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var lbl_detail1: UILabel!
     @IBOutlet weak var lbl_detail: UILabel!
@@ -22,7 +25,14 @@ class Registration1VC: BaseViewController,UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if !AppHelper.getStringForKey(ServiceKeys.keyFacebookID).isEqualToString(find: "") {
+            lbl_detail.text = "Nous sommes ravis de te voir parmi nous" + AppHelper.getStringForKey(ServiceKeys.keyFirstName) + "🎉"
+        }
+        else
+        {
+           lbl_detail.text = "Nous sommes ravis de te voir parmi nous 🎉"
+            
+        }
         // Do any additional setup after loading the view.
     }
     
