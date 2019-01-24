@@ -177,10 +177,9 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
                       "last_name":self.txt_lname.text!,
                       "mobile_number":self.txt_mobile.text!,
                       "gender":self.gender,
-                      "dob":self.txt_dob.text!,
-                      "profile_photo":imageData] as [String : Any]
+                      "dob":self.txt_dob.text!] as [String : String]
         self.hudShow()
-        ServiceClass.sharedInstance.hitServiceForUpdateUserDetail(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+        ServiceClass.sharedInstance.hitServiceForUpdateProfileImage(params, data: imageData, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             print_debug(parseData)
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
@@ -322,7 +321,7 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
         
     }
 }
-extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate,ColorPickerViewDelegateFlowLayout {
+extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -344,12 +343,19 @@ extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate,ColorPi
         let data = self.arr_cars[indexPath.row]
         let cell = tblvw_CarDetail.dequeueReusableCell(withIdentifier: "CarDetailsTableViewCell", for: indexPath) as! CarDetailsTableViewCell
       //  cell.carColorPickerView.delegate = self
-        cell.carColorPickerView.layoutDelegate = self
-        cell.carColorPickerView.isSelectedColorTappable = false
-        cell.carColorPickerView.style = .circle //.square
-        cell.carColorPickerView.selectionStyle = .check
-        cell.carColorPickerView.backgroundColor = .clear
-       cell.carColorPickerView.preselectedIndex = 3
+        var tempColor = [UIColor]()
+        
+     
+        
+        for i in 0..<appDelegate.arr_color.count {
+            let color1 = appDelegate.arr_color[i]
+            let col = hexStringToUIColor(hex: color1.color_name!)
+            tempColor.append(col)
+            if data.color! == color1.color_name! {
+                cell.carColorPickerView.preselectedIndex = i
+            }
+        }
+//        cell.carColorPickerView.colors = tempColor
         cell.txt_number1.text = data.vehicle_number_one
         cell.txt_number2.text = data.vehicle_number_two
         cell.txt_number3.text = data.vehicle_number_three
@@ -378,22 +384,5 @@ extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate,ColorPi
         
         
     }
-    // MARK: - ColorPickerViewDelegateFlowLayout
     
-    func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 18, height: 18
-        )
-    }
-    
-    func colorPickerView(_ colorPickerView: ColorPickerView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 13
-    }
-    
-    func colorPickerView(_ colorPickerView: ColorPickerView, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
-    }
 }

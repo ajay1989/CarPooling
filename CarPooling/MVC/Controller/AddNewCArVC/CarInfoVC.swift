@@ -22,7 +22,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
     var txt_brandName = "Hyndai i10"
     var txt_modelID = ""
     @IBOutlet weak var txt_number2: UITextField!
-    
+    var selectedColor = ""
     @IBOutlet weak var lbl_brandName: UILabel!
     var color:UIColor?
     @IBOutlet weak var txt_number3: UITextField!
@@ -40,6 +40,12 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
         colorPickerView.style = .circle //.square
         colorPickerView.selectionStyle = .check
         colorPickerView.backgroundColor = .clear
+        var tempColor = [UIColor]()
+        for data in appDelegate.arr_color {
+            let col = hexStringToUIColor(hex: data.color_name!)
+            tempColor.append(col)
+        }
+        colorPickerView.colors = tempColor
        // colorPickerView.layer.cornerRadius = 50
         showDatePicker()
         if (txt_date.text?.isEmpty)! {
@@ -62,6 +68,8 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
     // MARK: - ColorPickerViewDelegate
     
     func colorPickerView(_ colorPickerView: ColorPickerView, didSelectItemAt indexPath: IndexPath) {
+        let data = appDelegate.arr_color[indexPath.item]
+        self.selectedColor = data.color_name!
         self.color  = colorPickerView.colors[indexPath.item]
     }
     
@@ -198,7 +206,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
                       "vehicle_number_two":self.txt_number2.text!,
                       "vehicle_number_three":self.txt_number3.text!,
                       "insurance_expire_date":self.txt_date.text!,
-                      "color":"#000000",
+                      "color":self.selectedColor,
                       "model":self.txt_modelID]
         self.hudShow()
         if self.isFromCarEdit {

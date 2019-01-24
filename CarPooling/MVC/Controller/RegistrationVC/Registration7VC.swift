@@ -49,7 +49,7 @@ class Registration7VC: BaseViewController {
         
       //  "profile_photo":self.imageData,
         self.hudShow()
-        ServiceClass.sharedInstance.hitServiceForRegistration(params, self.imageData, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+        ServiceClass.sharedInstance.hitServiceForPostRegistrationImage(params, data: imageData, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 

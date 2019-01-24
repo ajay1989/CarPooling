@@ -60,6 +60,7 @@ class LoginEmailVC: BaseViewController {
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                let user = UserData.init(fromJson: parseData["data"])
                 AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
+                AppHelper.setStringForKey(user.profile_photo!, key: ServiceKeys.profile_image)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
                 self.navigationController?.pushViewController(vc, animated: true)

@@ -27,14 +27,22 @@ class DashboardVC: BaseViewController {
         
         
         self.loadUserData()
-//        let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
-//
-//        let placeholderImage = UIImage(named: "Male-driver")!
-//
-//        self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
-        self.img_profilePic.image = UIImage(named: "Male-driver")
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
+
+        let placeholderImage = UIImage(named: "Male-driver")!
+
+        self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
+        
+        let placeholderImage = UIImage(named: "Male-driver")!
+        
+        self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
+    }
     
     
     

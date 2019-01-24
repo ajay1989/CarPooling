@@ -19,7 +19,7 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var arr_color = [Color]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(GoogleMap().key)
         GMSPlacesClient.provideAPIKey(GoogleMap().key)
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        self.loadColor()
         if !AppHelper.getStringForKey(ServiceKeys.user_id).isEqualToString(find: "") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
@@ -35,6 +36,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         }
         return true
+    }
+    
+    
+    func loadColor() {
+        let params = ["":""]
+        ServiceClass.sharedInstance.hitServiceForGetColor(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                
+                if (parseData["message"] != "No result found" ) {
+                    for data in parseData["data"]{
+                        let color = Color.init(fromJson: data.1)
+                        self.arr_color.append(color)
+                    }
+                }
+            }
+            else {
+                
+            }
+            
+        })
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

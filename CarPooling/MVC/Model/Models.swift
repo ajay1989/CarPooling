@@ -66,6 +66,26 @@ class User {
 }
 
 
+
+class Color {
+    var color_id : String!
+    var color_name : String!
+    var color_code : String!
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return
+        }
+        
+        color_id = parseData!["color_id"].stringValue
+        color_name = parseData!["color_name"].stringValue
+        
+        color_code = parseData!["color_code"].stringValue
+       
+    }
+    
+}
+
+
 class UserData {
     var user_fname : String!
     var user_lname : String!

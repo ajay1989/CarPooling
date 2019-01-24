@@ -54,6 +54,7 @@ class UserProfileVC: BaseViewController {
                 for data in basic {
                     let user = User.init(fromJson: data)
                     let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
+                    AppHelper.setStringForKey(user.profile_photo!, key: ServiceKeys.profile_image)
                     let placeholderImage = UIImage(named: "Male-driver")!
                     
                     self.img_profile.af_setImage(withURL: url, placeholderImage: placeholderImage)
