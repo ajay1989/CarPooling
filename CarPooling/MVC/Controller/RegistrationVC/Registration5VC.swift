@@ -100,7 +100,7 @@ class Registration5VC: BaseViewController,UITextFieldDelegate  {
     @objc func donedatePicker(){
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.dateFormat = "MM-dd-yyyy"
         txt_dob.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
         self.continueEnable()

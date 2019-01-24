@@ -26,11 +26,11 @@ class Registration1VC: BaseViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if !AppHelper.getStringForKey(ServiceKeys.keyFacebookID).isEqualToString(find: "") {
-            lbl_detail.text = "Nous sommes ravis de te voir parmi nous" + AppHelper.getStringForKey(ServiceKeys.keyFirstName) + "🎉"
+            lbl_detail.text = "Nous sommes ravis de te voir parmi nous \n" + AppHelper.getStringForKey(ServiceKeys.keyFirstName) + "🎉"
         }
         else
         {
-           lbl_detail.text = "Nous sommes ravis de te voir parmi nous 🎉"
+           lbl_detail.text = "Nous sommes ravis de te voir parmi \n nous 🎉"
             
         }
         // Do any additional setup after loading the view.

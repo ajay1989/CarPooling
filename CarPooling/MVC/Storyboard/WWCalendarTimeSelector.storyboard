@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Montserrat-Regular.ttf">
-            <string>Montserrat-Regular</string>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
         </array>
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
@@ -502,23 +502,27 @@
                                 <color key="textColor" red="0.13906553387641907" green="0.63256245851516724" blue="0.52155864238739014" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annuler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3h-fg-73I">
-                                <rect key="frame" x="305.5" y="35" width="60.5" height="18.5"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnS-dv-SyA">
+                                <rect key="frame" x="305" y="20" width="62" height="31"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
+                                <state key="normal" title="Annuler">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel" destination="whx-lI-2Dk" eventType="touchUpInside" id="C1z-bd-VO4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EWZ-uM-23g" firstAttribute="top" secondItem="iiq-oq-7bM" secondAttribute="bottom" constant="31" id="3hA-ZX-wtw"/>
                             <constraint firstItem="EWZ-uM-23g" firstAttribute="centerX" secondItem="Am7-ea-AkO" secondAttribute="centerX" id="4A2-Jw-BBK"/>
-                            <constraint firstItem="CSK-SW-e6g" firstAttribute="trailing" secondItem="b3h-fg-73I" secondAttribute="trailing" constant="9" id="4Ll-4c-i3x"/>
-                            <constraint firstItem="b3h-fg-73I" firstAttribute="top" secondItem="iiq-oq-7bM" secondAttribute="bottom" constant="15" id="7Wy-an-Sf9"/>
                             <constraint firstItem="CSK-SW-e6g" firstAttribute="trailing" secondItem="TsT-3U-JEs" secondAttribute="trailing" id="K7r-ty-fT8"/>
                             <constraint firstItem="zOc-bX-E5p" firstAttribute="top" secondItem="TsT-3U-JEs" secondAttribute="bottom" id="Nlt-RU-WeF"/>
+                            <constraint firstItem="dnS-dv-SyA" firstAttribute="top" secondItem="iiq-oq-7bM" secondAttribute="bottom" id="T3E-ju-KRC"/>
                             <constraint firstItem="TsT-3U-JEs" firstAttribute="leading" secondItem="Am7-ea-AkO" secondAttribute="leading" id="TV6-Og-IIh"/>
                             <constraint firstItem="TsT-3U-JEs" firstAttribute="top" secondItem="iiq-oq-7bM" secondAttribute="bottom" constant="60" id="bId-LM-NEm"/>
+                            <constraint firstItem="CSK-SW-e6g" firstAttribute="trailing" secondItem="dnS-dv-SyA" secondAttribute="trailing" constant="8" id="gHd-j7-hfo"/>
                             <constraint firstItem="zOc-bX-E5p" firstAttribute="leading" secondItem="Am7-ea-AkO" secondAttribute="leading" id="jn1-Qi-ksy"/>
                             <constraint firstItem="twi-Sz-hnY" firstAttribute="top" secondItem="zOc-bX-E5p" secondAttribute="bottom" id="oPq-TO-VWg"/>
                             <constraint firstItem="CSK-SW-e6g" firstAttribute="trailing" secondItem="zOc-bX-E5p" secondAttribute="trailing" id="y6z-Lj-M66"/>
@@ -589,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eww-Zd-wrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-158" y="-3936"/>
+            <point key="canvasLocation" x="-28" y="-3939"/>
         </scene>
     </scenes>
 </document>

@@ -189,6 +189,7 @@ class DriverStep3VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         let data = self.arr_city[indexPath.row]
         if index == indexPath.row {
             cell.img_tick.isHidden = false
+            txt_search.text = data["description"]
         }
         else {
             cell.img_tick.isHidden = true

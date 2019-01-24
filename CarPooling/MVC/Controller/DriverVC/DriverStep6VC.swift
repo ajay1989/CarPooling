@@ -58,6 +58,9 @@ class DriverStep6VC: UIViewController ,WWCalendarTimeSelectorProtocol {
         self.present(selector, animated: true, completion: nil)
         
     }
+    func WWCalendarTimeSelectorCancel(_ selector: WWCalendarTimeSelector, date: Date) {
+        self.navigationController?.popViewController(animated: true)
+    }
     func WWCalendarTimeSelectorDone(_ selector: WWCalendarTimeSelector, date: Date) {
         print("Selected \n\(date)\n---")
         singleDate = date
