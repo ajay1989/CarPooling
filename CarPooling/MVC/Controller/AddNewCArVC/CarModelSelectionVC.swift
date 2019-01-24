@@ -95,7 +95,9 @@ class CarModelSelectionVC: BaseViewController,UITableViewDelegate,UITableViewDat
         })
     }
 
-    
+    @IBAction func btn_back_tap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func btn_continue_tap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
         let vc: CarInfoVC = storyboard.instantiateViewController(withIdentifier: "CarInfoVC") as! CarInfoVC
@@ -149,4 +151,5 @@ class CarModelSelectionVC: BaseViewController,UITableViewDelegate,UITableViewDat
         self.tableView.reloadData()
         self.continueEnable()
     }
+    
 }
