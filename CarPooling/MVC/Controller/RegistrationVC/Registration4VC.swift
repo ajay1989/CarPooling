@@ -40,11 +40,14 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
             btn_continue.isEnabled = true
             btn_continue.setTitle("Continuer👉", for: .normal)
             btn_continue.setTitleColor(UIColor.black, for: .normal)
+            lbl_textDetail.text = "Merci de nous indiquer le mail sur lequel tu souhaites recevoir toutes les informations pratiques concernant tes convoiturages 🚗"
+            
         }
         else {
             btn_continue.isEnabled = false
             btn_continue.setTitle("Continuer👉🏼", for: .normal)
             btn_continue.setTitleColor(UIColor.lightGray, for: .normal)
+            lbl_textDetail.text = "Merci de saisir le mail qui te servira d'identifiant pour ta prochaine connexion. Tu y recevras égalements toutes les informations pratiques concernant tes covoiturages 🚗"
         }
         // Do any additional setup after loading the view.
     }

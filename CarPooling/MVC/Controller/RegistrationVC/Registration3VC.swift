@@ -41,9 +41,11 @@ class Registration3VC: BaseViewController,UITextFieldDelegate {
             self.txt_lastName.text = AppHelper.getStringForKey(ServiceKeys.keyLastName)
             self.continueEnable()
             
-            lbl_textDetail.text = "Est-ce qu'on a bien écrit ton Nom et Prénom ? "
+            lbl_textDetail.text = "Est-ce qu'on a bien écrit ton Nom et Prénom ? 🤔"
         }
         else {
+            lbl_textDetail.text = "Merci de saisir ton Nom et Prénom pour que nous puissions t'accueillir comme il se doit 😊"
+           
             continueDisable()
         }
         
