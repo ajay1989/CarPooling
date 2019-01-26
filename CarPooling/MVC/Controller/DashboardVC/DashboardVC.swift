@@ -26,6 +26,7 @@ class DashboardVC: BaseViewController {
         tblVw.dataSource = self
         
         
+        
         self.loadUserData()
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
 

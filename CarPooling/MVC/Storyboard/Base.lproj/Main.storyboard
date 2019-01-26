@@ -2671,7 +2671,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xw9-uR-6fa">
                                 <rect key="frame" x="0.0" y="74" width="375" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0f-ZM-O2P">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0f-ZM-O2P">
                                         <rect key="frame" x="141" y="25" width="93" height="30"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                         <state key="normal" title="Refusé">
@@ -2685,8 +2685,11 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btn_segment_tap:" destination="VCV-WN-Lto" eventType="touchUpInside" id="h97-zG-aX6"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BU-kc-7mZ">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BU-kc-7mZ">
                                         <rect key="frame" x="266" y="25" width="93" height="30"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                         <state key="normal" title="Validé">
@@ -2700,8 +2703,11 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btn_segment_tap:" destination="VCV-WN-Lto" eventType="touchUpInside" id="HUN-2p-9ZG"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azp-Kl-eyz">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azp-Kl-eyz">
                                         <rect key="frame" x="10" y="25" width="93" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Jdr-jR-qj8"/>
@@ -2721,6 +2727,9 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                                 <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btn_segment_tap:" destination="VCV-WN-Lto" eventType="touchUpInside" id="Jt5-Ii-5ED"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2746,7 +2755,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="165" id="71K-1v-pHs">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DashboardTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DashboardTableViewCell" rowHeight="165" id="71K-1v-pHs" customClass="DashboardTableViewCell" customModule="CarPooling" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="165"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="71K-1v-pHs" id="q96-ix-EPl">
@@ -2976,8 +2985,25 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                                         <constraint firstItem="ZIt-ka-rTi" firstAttribute="top" secondItem="q96-ix-EPl" secondAttribute="topMargin" constant="15" id="k6M-hj-Dc7"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="btn_Profile" destination="6hs-li-nqw" id="XX2-R3-Pbw"/>
+                                                    <outlet property="img_user" destination="VTX-Gq-1rY" id="5NI-Bq-gCN"/>
+                                                    <outlet property="lbl_Price" destination="iqa-D1-0gs" id="Gj9-NK-nBP"/>
+                                                    <outlet property="lbl_ToDestination" destination="UXs-07-CIW" id="eju-H5-Pet"/>
+                                                    <outlet property="lbl_fromDestination" destination="aaC-nH-cQA" id="jv3-yY-NDL"/>
+                                                    <outlet property="lbl_seats" destination="uv8-vN-HGW" id="szl-4v-0tt"/>
+                                                    <outlet property="lbl_timeFrom" destination="ii3-gZ-9hB" id="sxb-gD-Xin"/>
+                                                    <outlet property="lbl_userName" destination="uvw-74-tXY" id="zUe-Z3-kMP"/>
+                                                    <outlet property="llbl_TimeTo" destination="vRO-p8-kiY" id="jcj-ty-Q0y"/>
+                                                    <outlet property="vw_base" destination="ZIt-ka-rTi" id="d9E-FY-eW5"/>
+                                                    <outlet property="vw_green" destination="5mh-f8-JiO" id="9dY-9u-C3r"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="VCV-WN-Lto" id="vV9-v7-ERs"/>
+                                            <outlet property="delegate" destination="VCV-WN-Lto" id="5mh-rz-ZwC"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3006,6 +3032,10 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                         <viewLayoutGuide key="safeArea" id="bMV-5g-zqb"/>
                     </view>
                     <connections>
+                        <outlet property="btn_completed" destination="4BU-kc-7mZ" id="OjA-TT-kox"/>
+                        <outlet property="btn_refused" destination="u0f-ZM-O2P" id="dx4-XT-XYN"/>
+                        <outlet property="btn_waitingApproval" destination="azp-Kl-eyz" id="Tq5-MC-fgo"/>
+                        <outlet property="tableView" destination="I6T-U0-Ngl" id="7c6-od-z5N"/>
                         <segue destination="5D6-iC-svg" kind="show" id="4L4-bc-5Rb"/>
                     </connections>
                 </viewController>
@@ -6296,7 +6326,7 @@ en 3h30</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deepika" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crM-MB-3KN">
-                                                <rect key="frame" x="96" y="29" width="67" height="20"/>
+                                                <rect key="frame" x="96" y="29" width="58.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -6357,7 +6387,7 @@ en 3h30</string>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4r-gg-SbT">
-                                                <rect key="frame" x="78" y="85" width="112" height="30"/>
+                                                <rect key="frame" x="78" y="84" width="112" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="112" id="6xp-Mp-YSQ"/>
                                                     <constraint firstAttribute="height" constant="30" id="oZg-IF-7mP"/>
@@ -6572,7 +6602,7 @@ en 3h30</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 avis reçus au total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ju-XN-8Zc">
-                                        <rect key="frame" x="245" y="15" width="117.5" height="15"/>
+                                        <rect key="frame" x="255" y="15.5" width="107.5" height="14"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6624,7 +6654,7 @@ en 3h30</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3j-Ac-Unu">
-                                                            <rect key="frame" x="25.5" y="54" width="30.5" height="13"/>
+                                                            <rect key="frame" x="27" y="54" width="27" height="13"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
