@@ -11,6 +11,8 @@ import GoogleMaps
 class SearchGoogleMapVC: BaseViewController {
  @IBOutlet weak var mapView : GMSMapView!
     // MARK: - IBOutlet and Variables
+    
+    @IBOutlet weak var btn_next: UIButton!
     @IBOutlet weak var bottomTablePlaces : NSLayoutConstraint!
     @IBOutlet weak var btnGo : UIButton!
     @IBOutlet weak var tablePlaces : UITableView!
@@ -25,7 +27,9 @@ class SearchGoogleMapVC: BaseViewController {
     var currentLatLong : CLLocationCoordinate2D!
     override func viewDidLoad() {
         super.viewDidLoad()
+        btn_next.isHidden = true
         tablePlaces.isHidden = true
+        btnGo.isEnabled = false
         self.locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -41,23 +45,27 @@ class SearchGoogleMapVC: BaseViewController {
             txtToPlace.becomeFirstResponder()
         }
     }
+    //MARK: Action method
     @IBAction func btnDoneAction() {
-        if fromLatLong != nil && toLatLong != nil {
-            //self.btnBackAction()
-            tablePlaces.isHidden = true
-            self.addMarkerAndDrawPloyline(from: fromLatLong, to: toLatLong)
-        }
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let researchResultVC: ResearchResultVC = storyboard.instantiateViewController(withIdentifier: "ResearchResultVC") as! ResearchResultVC
+        self.navigationController?.pushViewController(researchResultVC, animated: true)
+//        if fromLatLong != nil && toLatLong != nil {
+//            //self.btnBackAction()
+//            tablePlaces.isHidden = true
+//            self.addMarkerAndDrawPloyline(from: fromLatLong, to: toLatLong)
+//        }
        
     }
     @IBAction func actionClearMap()
     {
+        self.btn_next.isHidden = false
+        btnGo.isEnabled = false
         //ResearchResultVC
-//        mapView.clear()
-//        txtToPlace.text = ""
-//        txtFromPlace.text = ""
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let researchResultVC: ResearchResultVC = storyboard.instantiateViewController(withIdentifier: "ResearchResultVC") as! ResearchResultVC
-        self.navigationController?.pushViewController(researchResultVC, animated: true)
+        mapView.clear()
+        txtToPlace.text = ""
+        txtFromPlace.text = ""
+        self.btn_next.isHidden = true
     }
     @IBAction func actiongoBack()
     {
@@ -207,6 +215,14 @@ extension SearchGoogleMapVC : UITableViewDataSource, UITableViewDelegate {
                     self.toLatLong = latLong
                     self.txtToPlace.text = self.arrPlaces[indexPath.row].description
                     self.addToMarker(location: latLong, address: self.arrPlaces[indexPath.row].description, shortAddress: "")
+                    self.btn_next.isHidden = false
+                    self.btnGo.isEnabled = true
+                    self.view.endEditing(true)
+                    if self.fromLatLong != nil && self.toLatLong != nil {
+                        //self.btnBackAction()
+                        self.tablePlaces.isHidden = true
+                        self.addMarkerAndDrawPloyline(from: self.fromLatLong, to: self.toLatLong)
+                    }
                     break
                 }
             }

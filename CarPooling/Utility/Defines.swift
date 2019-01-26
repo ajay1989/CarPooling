@@ -29,7 +29,7 @@ struct GoogleMap {
     let geoCodingKey = "AIzaSyCQr-osxkKDbEvWGIh7sYgP2yApcWCe1Es"
 }
 
-let kCarMarkerImage = UIImage(named: "MarkerCar")
+let kCarMarkerImage = UIImage(named: "markerCar")
 let kPolyLineStrokeColor = #colorLiteral(red: 0, green: 0.4392156863, blue: 0.9607843137, alpha: 0.7021885702)
 
 //MARK:- Service Keys
