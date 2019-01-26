@@ -110,6 +110,8 @@ struct ServiceUrls
     static let update_profile = "update_profile"
     static let logout = "logout"
     static let color = "color"
+    static let alert = "user_alert"
+    static let search_Ride = "search_ride"
 }
 struct ErrorCodes
 {

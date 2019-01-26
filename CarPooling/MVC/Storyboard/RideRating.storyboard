@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AyD-HG-0FM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1059,6 +1059,9 @@ ca et que ton voyage śest passé à merveille !</string>
                                         <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="fat-ze-dLm" kind="show" id="QbI-nK-M1g"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znD-lB-u0i">
                                 <rect key="frame" x="0.0" y="30" width="50" height="34"/>
@@ -1155,6 +1158,9 @@ ca et que ton voyage śest passé à merveille !</string>
                                         <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="6ap-GN-9q6" kind="show" id="D2C-so-3fq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1i-IV-iJa">
                                 <rect key="frame" x="0.0" y="30" width="50" height="34"/>
@@ -1425,6 +1431,9 @@ ca et que ton voyage śest passé à merveille !</string>
                                         <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="QUB-Rb-Fop" kind="show" id="F4h-qW-ce2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1624,8 +1633,8 @@ ca et que ton voyage śest passé à merveille !</string>
     <resources>
         <image name="dislike" width="10.656000137329102" height="9.5039997100830078"/>
         <image name="hat" width="8.9280004501342773" height="9.5039997100830078"/>
-        <image name="like" width="16.416000366210938" height="17"/>
+        <image name="like" width="10.944000244140625" height="10.944000244140625"/>
         <image name="test" width="1080" height="1920"/>
-        <image name="user" width="13.248000144958496" height="15.552000045776367"/>
+        <image name="user" width="18.576000213623047" height="21.743999481201172"/>
     </resources>
 </document>

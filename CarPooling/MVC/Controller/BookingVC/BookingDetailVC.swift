@@ -32,19 +32,19 @@ class BookingDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        lbl_From.text = ""
-        
-        lbl_To.text = ""
-         lbl_DateFrom.text = ""
-        lbl_DateTo.text = ""
-         lbl_seat.text = ""
-        lbl_Lugguage.text = ""
-         lbl_Price.text = ""
-        
-      lbl_Distance.text = ""
-         lbl_tripName.text = ""
-        
-        img_User.image = UIImage.init(named: "")
+//        lbl_From.text = ""
+//        
+//        lbl_To.text = ""
+//         lbl_DateFrom.text = ""
+//        lbl_DateTo.text = ""
+//         lbl_seat.text = ""
+//        lbl_Lugguage.text = ""
+//         lbl_Price.text = ""
+//        
+//      lbl_Distance.text = ""
+//         lbl_tripName.text = ""
+//        
+//        img_User.image = UIImage.init(named: "")
         
        //  lbl_userNAmeAge: UILabel!
     }
