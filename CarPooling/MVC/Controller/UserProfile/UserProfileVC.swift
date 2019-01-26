@@ -58,7 +58,8 @@ class UserProfileVC: BaseViewController {
                     let placeholderImage = UIImage(named: "Male-driver")!
                     
                     self.img_profile.af_setImage(withURL: url, placeholderImage: placeholderImage)
-                    self.lbl_name.text = "\(user.first_name!) \(user.last_name!)"
+                    let age = self.getAge(dob: user.dob!)
+                    self.lbl_name.text = "\(user.first_name!) \(user.last_name!), \(age)"
                     self.lbl_mobile.text = user.mobile_number
                     self.lbl_email.text = user.user_email
                     
