@@ -8,8 +8,9 @@
 
 import UIKit
 
-class BookingConfirmedVC: UIViewController {
-
+class BookingConfirmedVC: BaseViewController {
+    var rideDetail: Ride!
+    var arr_station: [Station]!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,8 +20,25 @@ class BookingConfirmedVC: UIViewController {
 
    @IBAction func actionConfirm()
    {
-    //fromBookingConfirm
-    NotificationCenter.default.post(name: NSNotification.Name("fromBookingConfirm"), object: nil)
+    let params = ["from_station":self.arr_station[0].ride_station_id!,
+                  "to_station":self.arr_station[1].ride_station_id!,
+                  "ride":rideDetail.ride_id!,
+                  "user":AppHelper.getStringForKey(ServiceKeys.user_id)]
+    self.hudShow()
+    
+    ServiceClass.sharedInstance.hitServiceJoinRide(params as [String : Any], id:"") { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+        self.hudHide()
+        if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+            self.makeToast("success!")
+            AppHelper.delay(1.0, closure: {
+                NotificationCenter.default.post(name: NSNotification.Name("fromBookingConfirm"), object: nil)
+            })
+        }
+        else {
+            self.makeToast("failed!")
+        }
+    }
+    
     }
 
 }

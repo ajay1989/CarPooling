@@ -128,6 +128,7 @@ class Ride {
     var seats : String!
     var departure_date : String!
     var departure_time : String!
+    var arrival_date : String!
     var arrival_time : String!
     var vehicle : String!
      var user : String!
@@ -138,6 +139,7 @@ class Ride {
     var available_seats : String!
      var created_date : String!
     var luggage : String!
+    var dob : String!
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -165,6 +167,8 @@ class Ride {
         available_seats = parseData!["available_seats"].stringValue
             created_date = parseData!["created_date"].stringValue
         luggage = parseData!["luggage"].stringValue
+        arrival_date = parseData!["arrival_date"].stringValue
+        dob = parseData!["dob"].stringValue
     }
     
 }
@@ -197,6 +201,26 @@ class Comment {
         
         comment = parseData!["comment"].stringValue
         first_name = parseData!["first_name"].stringValue
+    }
+    
+}
+
+class Station {
+    var ride_station_id : String!
+    var station_name : String!
+    var station_order : String!
+    var station_lat : String!
+    var station_lng : String!
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return
+        }
+        
+        ride_station_id = parseData!["ride_station_id"].stringValue
+        station_name = parseData!["station_name"].stringValue
+        station_order = parseData!["station_order"].stringValue
+        station_lat = parseData!["station_lat"].stringValue
+        station_lng = parseData!["station_lng"].stringValue
     }
     
 }

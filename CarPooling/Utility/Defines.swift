@@ -112,6 +112,7 @@ struct ServiceUrls
     static let color = "color"
     static let alert = "user_alert"
     static let search_Ride = "search_ride"
+    static let create_passenger = "create_passenger"
 }
 struct ErrorCodes
 {

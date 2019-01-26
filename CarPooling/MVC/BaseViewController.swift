@@ -97,6 +97,17 @@ class BaseViewController: UIViewController {
         )
     }
     
+    func getAge(dob:String) -> Int {
+        let now = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let birthday: Date = dateFormatter.date(from:dob)!
+        let calendar = Calendar.current
+        
+        let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
+        return ageComponents.year!
+    }
+    
     @objc func backButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
