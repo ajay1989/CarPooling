@@ -231,7 +231,7 @@ ca et que ton voyage śest passé à merveille !</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbu-L8-Hrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781.60000000000002" y="-105.69715142428787"/>
+            <point key="canvasLocation" x="679" y="-90"/>
         </scene>
         <!--Driver Mode3-->
         <scene sceneID="NsD-BU-Svx">
@@ -591,7 +591,7 @@ ca et que ton voyage śest passé à merveille !</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4R6-U7-vEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480.8" y="-104.7976011994003"/>
+            <point key="canvasLocation" x="1458" y="81"/>
         </scene>
         <!--Driver Mode4-->
         <scene sceneID="Wse-Qv-etG">
@@ -1127,7 +1127,7 @@ ca et que ton voyage śest passé à merveille !</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acd-gP-Lxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="707"/>
+            <point key="canvasLocation" x="814" y="1084"/>
         </scene>
         <!--Passenger Mode3-->
         <scene sceneID="wUz-st-ITN">
@@ -1633,7 +1633,7 @@ ca et que ton voyage śest passé à merveille !</string>
     <resources>
         <image name="dislike" width="10.656000137329102" height="9.5039997100830078"/>
         <image name="hat" width="8.9280004501342773" height="9.5039997100830078"/>
-        <image name="like" width="10.944000244140625" height="10.944000244140625"/>
+        <image name="like" width="16.416000366210938" height="17"/>
         <image name="test" width="1080" height="1920"/>
         <image name="user" width="18.576000213623047" height="21.743999481201172"/>
     </resources>
