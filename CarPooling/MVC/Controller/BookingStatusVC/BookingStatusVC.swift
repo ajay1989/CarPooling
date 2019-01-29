@@ -5,7 +5,9 @@
 //  Created by Archit Rai Saxena on 16/01/19.
 //  Copyright © 2019 Ajay Vyas. All rights reserved.
 //
-
+/*
+ 0-wating,1-approve,2-cancel,3-start,4-
+ */
 import UIKit
 
 class BookingStatusVC: UIViewController {

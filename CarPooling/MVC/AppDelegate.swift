@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(GoogleMap().key)
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         self.loadColor()
+        self.loadCity()
         if !AppHelper.getStringForKey(ServiceKeys.user_id).isEqualToString(find: "") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
@@ -58,7 +59,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         
     }
+    
+    func loadCity() {
+        let params = ["":""]
+        ServiceClass.sharedInstance.hitServiceForGetCity(params, completion: { (type:ServiceClass.ResponseType, parseData:[String:Any], errorDict:AnyObject?) in
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                
+               
 
+               let path = Bundle.main.path(forResource: "city", ofType: "json")
+    // Write data to local file
+   
+        do {
+            let rawData = try JSONSerialization.data(withJSONObject: parseData, options: .prettyPrinted)
+            print(rawData)
+            
+            if let file = FileHandle(forWritingAtPath:path ?? "") {
+                file.write(rawData)
+            }
+            
+        } catch {
+            // Handle Error
+        }
+   // }
+
+
+
+                  //Read data from local file
+                let jsonData = try? NSData(contentsOfFile: path!, options: NSData.ReadingOptions.mappedIfSafe)
+                  let convertedString = String(data: jsonData! as Data, encoding: String.Encoding.utf8)
+                  print(convertedString ?? "")
+                  
+
+
+     
+     
+            }
+            else {
+                
+            }
+            
+        })
+        
+    }
+   
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

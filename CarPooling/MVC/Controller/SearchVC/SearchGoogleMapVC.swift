@@ -18,6 +18,13 @@ class SearchGoogleMapVC: BaseViewController {
     @IBOutlet weak var tablePlaces : UITableView!
     @IBOutlet weak var txtFromPlace : UITextField!
     @IBOutlet weak var txtToPlace : UITextField!
+    var cityArray :NSArray
+    
+    var filteredArray = [String]()
+    
+    var shouldShowSearchResults = false
+    
+    
     var isFromTxtActive : Bool = false
     var arrPlaces : [Places]!
     var fromLatLong : CLLocationCoordinate2D!
@@ -27,6 +34,37 @@ class SearchGoogleMapVC: BaseViewController {
     var currentLatLong : CLLocationCoordinate2D!
     override func viewDidLoad() {
         super.viewDidLoad()
+         let path = Bundle.main.path(forResource: "city", ofType: "json")
+        
+        let jsonData = try? NSData(contentsOfFile: path!, options: NSData.ReadingOptions.mappedIfSafe)
+        let convertedString = String(data: jsonData! as Data, encoding: String.Encoding.utf8)
+        print(convertedString ?? "")
+        
+        var dictonary:NSDictionary?
+        
+        if let data = jsonData {
+            
+            do {
+                dictonary = try JSONSerialization.jsonObject(with: data as Data, options: []) as? [String:AnyObject] as! NSDictionary
+                cityArray = dictonary?.value(forKey: "data") as! NSArray
+                cityArray = arr.flatMap { $0 ["city"] }
+  
+                if let myDictionary = dictonary
+                {
+                    
+                    print(" all cities: \(myDictionary["data"]!)")
+                }
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+        
+        
+        
+        
+        
+      
+        
         btn_next.isHidden = true
         tablePlaces.isHidden = true
         btnGo.isEnabled = false

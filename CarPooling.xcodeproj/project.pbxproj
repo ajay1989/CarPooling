@@ -25,6 +25,7 @@
 		D0141521219DE931006C2154 /* Registration7VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0141520219DE931006C2154 /* Registration7VC.swift */; };
 		D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9021B054C5005952B8 /* HomeVC.swift */; };
 		D0166C9721B05664005952B8 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9621B05664005952B8 /* InfoVC.swift */; };
+		D016D48822001A6400266EF3 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = D016D48722001A6400266EF3 /* city.json */; };
 		D0182F6A21E5FD79008E7090 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0182F6921E5FD79008E7090 /* UserProfileVC.swift */; };
 		D01865F921E9F8DF00D2117C /* CarDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */; };
 		D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019101F21A4789D00C8DF85 /* DashboardVC.swift */; };
@@ -155,6 +156,7 @@
 		D0141520219DE931006C2154 /* Registration7VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration7VC.swift; sourceTree = "<group>"; };
 		D0166C9021B054C5005952B8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		D0166C9621B05664005952B8 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		D016D48722001A6400266EF3 /* city.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		D0182F6921E5FD79008E7090 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		D019101F21A4789D00C8DF85 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
@@ -211,7 +213,7 @@
 		DC1EAA1E21986BEF0099FE98 /* Registration3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration3VC.swift; sourceTree = "<group>"; };
 		DC1EAA2021987ACB0099FE98 /* Registration4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration4VC.swift; sourceTree = "<group>"; };
 		DCBA20D42196CAED00261817 /* CarPooling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPooling.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCBA20D72196CAED00261817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCBA20D72196CAED00261817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		DCBA20DC2196CAED00261817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCBA20DF2196CAED00261817 /* CarPooling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarPooling.xcdatamodel; sourceTree = "<group>"; };
 		DCBA20E12196CAEF00261817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 		DCBA20CB2196CAED00261817 = {
 			isa = PBXGroup;
 			children = (
+				D016D48722001A6400266EF3 /* city.json */,
 				DCBA20D62196CAED00261817 /* CarPooling */,
 				DCBA20D52196CAED00261817 /* Products */,
 				822FEEF5B62C7EABEB941517 /* Pods */,
@@ -904,6 +907,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D016D48822001A6400266EF3 /* city.json in Resources */,
 				DCBA21652196E92A00261817 /* Montserrat-Light.ttf in Resources */,
 				DCBA21602196E92A00261817 /* Montserrat-BlackItalic.ttf in Resources */,
 				DCBA21632196E92A00261817 /* Montserrat-ExtraBold.ttf in Resources */,
