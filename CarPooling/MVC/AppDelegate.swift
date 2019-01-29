@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var arr_color = [Color]()
-
+    var arr_city = [City]()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
@@ -62,44 +62,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func loadCity() {
         let params = ["":""]
-        ServiceClass.sharedInstance.hitServiceForGetCity(params, completion: { (type:ServiceClass.ResponseType, parseData:[String:Any], errorDict:AnyObject?) in
+        ServiceClass.sharedInstance.hitServiceForGetCity(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 
-               
-
-               let path = Bundle.main.path(forResource: "city", ofType: "json")
-    // Write data to local file
-   
-        do {
-            let rawData = try JSONSerialization.data(withJSONObject: parseData, options: .prettyPrinted)
-            print(rawData)
-            
-            if let file = FileHandle(forWritingAtPath:path ?? "") {
-                file.write(rawData)
-            }
-            
-        } catch {
-            // Handle Error
-        }
-   // }
-
-
-
-                  //Read data from local file
-                let jsonData = try? NSData(contentsOfFile: path!, options: NSData.ReadingOptions.mappedIfSafe)
-                  let convertedString = String(data: jsonData! as Data, encoding: String.Encoding.utf8)
-                  print(convertedString ?? "")
-                  
-
-
-     
-     
+                if (parseData["message"] != "No result found" ) {
+                    for data in parseData["data"]{
+                        let city = City.init(fromJson: data.1)
+                        self.arr_city.append(city)
+                    }
+                }
             }
             else {
                 
             }
             
         })
+        
+        
         
     }
    

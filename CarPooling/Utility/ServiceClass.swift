@@ -541,7 +541,9 @@ class ServiceClass: NSObject {
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
     }
-    func hitServiceForGetCity(_ params:[String : Any], completion:@escaping completionBlockTypeData)
+    
+    
+    func hitServiceForGetCity(_ params:[String : Any], completion:@escaping completionBlockType)
     {
         let user = "admin"
         let password = "1234"
@@ -554,7 +556,7 @@ class ServiceClass: NSObject {
             "X-API-KEY":"CYLPIUnVia7UUl"]
         print_debug(params)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
-        self.hitGetServiceWithUrlStringGetData(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
+        self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
     }
     func hitServiceForGetRides(_ params:[String : Any], completion:@escaping completionBlockType)
     {

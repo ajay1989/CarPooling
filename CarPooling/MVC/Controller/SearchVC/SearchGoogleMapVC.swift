@@ -18,7 +18,7 @@ class SearchGoogleMapVC: BaseViewController {
     @IBOutlet weak var tablePlaces : UITableView!
     @IBOutlet weak var txtFromPlace : UITextField!
     @IBOutlet weak var txtToPlace : UITextField!
-    var cityArray :NSArray
+    var cityArray :NSArray = []
     
     var filteredArray = [String]()
     
@@ -47,7 +47,7 @@ class SearchGoogleMapVC: BaseViewController {
             do {
                 dictonary = try JSONSerialization.jsonObject(with: data as Data, options: []) as? [String:AnyObject] as! NSDictionary
                 cityArray = dictonary?.value(forKey: "data") as! NSArray
-                cityArray = arr.flatMap { $0 ["city"] }
+//                cityArray = err.flatMap { $0 ["city"] }
   
                 if let myDictionary = dictonary
                 {
