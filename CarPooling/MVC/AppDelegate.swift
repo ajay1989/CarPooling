@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var arr_color = [Color]()
-    var arr_city = [City]()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(GoogleMap().key)
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         self.loadColor()
-        self.loadCity()
         if !AppHelper.getStringForKey(ServiceKeys.user_id).isEqualToString(find: "") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
@@ -59,29 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         
     }
-    
-    func loadCity() {
-        let params = ["":""]
-        ServiceClass.sharedInstance.hitServiceForGetCity(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
-            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                
-                if (parseData["message"] != "No result found" ) {
-                    for data in parseData["data"]{
-                        let city = City.init(fromJson: data.1)
-                        self.arr_city.append(city)
-                    }
-                }
-            }
-            else {
-                
-            }
-            
-        })
-        
-        
-        
-    }
-   
+
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

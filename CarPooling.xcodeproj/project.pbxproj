@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C56534621FE099100B2D12A /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C56534521FE098E00B2D12A /* UIKitExtension.swift */; };
 		A71505C58669E5201BC994FC /* Pods_CarPooling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */; };
 		D006E5D521FA448900889DB0 /* MessOffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D006E5D421FA448900889DB0 /* MessOffersVC.swift */; };
 		D009A60321BF8FE700764B60 /* DriverStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D009A60221BF8FE700764B60 /* DriverStoryboard.storyboard */; };
@@ -25,7 +26,6 @@
 		D0141521219DE931006C2154 /* Registration7VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0141520219DE931006C2154 /* Registration7VC.swift */; };
 		D0166C9121B054C5005952B8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9021B054C5005952B8 /* HomeVC.swift */; };
 		D0166C9721B05664005952B8 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0166C9621B05664005952B8 /* InfoVC.swift */; };
-		D016D48822001A6400266EF3 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = D016D48722001A6400266EF3 /* city.json */; };
 		D0182F6A21E5FD79008E7090 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0182F6921E5FD79008E7090 /* UserProfileVC.swift */; };
 		D01865F921E9F8DF00D2117C /* CarDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */; };
 		D019102021A4789D00C8DF85 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019101F21A4789D00C8DF85 /* DashboardVC.swift */; };
@@ -138,6 +138,7 @@
 /* Begin PBXFileReference section */
 		18910EDC746D977B6E9946F4 /* Pods_CarPooling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarPooling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D634D39CB844F4B9BEF287 /* Pods-CarPooling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.debug.xcconfig"; sourceTree = "<group>"; };
+		8C56534521FE098E00B2D12A /* UIKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtension.swift; sourceTree = "<group>"; };
 		BF73A11CB12C79E49BDA2650 /* Pods-CarPooling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPooling.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPooling/Pods-CarPooling.release.xcconfig"; sourceTree = "<group>"; };
 		D006E5D421FA448900889DB0 /* MessOffersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessOffersVC.swift; sourceTree = "<group>"; };
 		D009A60221BF8FE700764B60 /* DriverStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DriverStoryboard.storyboard; sourceTree = "<group>"; };
@@ -156,7 +157,6 @@
 		D0141520219DE931006C2154 /* Registration7VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration7VC.swift; sourceTree = "<group>"; };
 		D0166C9021B054C5005952B8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		D0166C9621B05664005952B8 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
-		D016D48722001A6400266EF3 /* city.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		D0182F6921E5FD79008E7090 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		D01865F821E9F8DF00D2117C /* CarDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		D019101F21A4789D00C8DF85 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 		DC1EAA1E21986BEF0099FE98 /* Registration3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration3VC.swift; sourceTree = "<group>"; };
 		DC1EAA2021987ACB0099FE98 /* Registration4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration4VC.swift; sourceTree = "<group>"; };
 		DCBA20D42196CAED00261817 /* CarPooling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPooling.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCBA20D72196CAED00261817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		DCBA20D72196CAED00261817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCBA20DC2196CAED00261817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCBA20DF2196CAED00261817 /* CarPooling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarPooling.xcdatamodel; sourceTree = "<group>"; };
 		DCBA20E12196CAEF00261817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -570,7 +570,6 @@
 		DCBA20CB2196CAED00261817 = {
 			isa = PBXGroup;
 			children = (
-				D016D48722001A6400266EF3 /* city.json */,
 				DCBA20D62196CAED00261817 /* CarPooling */,
 				DCBA20D52196CAED00261817 /* Products */,
 				822FEEF5B62C7EABEB941517 /* Pods */,
@@ -714,6 +713,7 @@
 		DCBA212A2196DFC500261817 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				8C56534521FE098E00B2D12A /* UIKitExtension.swift */,
 				DCBA212B2196DFEC00261817 /* AppHelper.swift */,
 				DCBA212F2196DFEC00261817 /* Defines.swift */,
 				DCBA212E2196DFEC00261817 /* Extension.swift */,
@@ -907,7 +907,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D016D48822001A6400266EF3 /* city.json in Resources */,
 				DCBA21652196E92A00261817 /* Montserrat-Light.ttf in Resources */,
 				DCBA21602196E92A00261817 /* Montserrat-BlackItalic.ttf in Resources */,
 				DCBA21632196E92A00261817 /* Montserrat-ExtraBold.ttf in Resources */,
@@ -1048,6 +1047,7 @@
 				D0FAA83921D005100075C875 /* ResearchResultVC.swift in Sources */,
 				D0DF134421E77788001C2754 /* EditUserProfileVC.swift in Sources */,
 				DCBA21202196DF3500261817 /* ActionSheetDistancePicker.m in Sources */,
+				8C56534621FE099100B2D12A /* UIKitExtension.swift in Sources */,
 				D08C535D21C6D29E006A6729 /* DriverStep1VC.swift in Sources */,
 				D08C535B21C6D29E006A6729 /* DriverStep5VC.swift in Sources */,
 				D009A61F21BFC39C00764B60 /* NSDate+Timepiece.swift in Sources */,
@@ -1286,7 +1286,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8VR6N6MLZ6;
 				INFOPLIST_FILE = CarPooling/Info.plist;
@@ -1297,7 +1297,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ideancy.pippipyalah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = distributionprofile;
+				PROVISIONING_PROFILE_SPECIFIER = developerProfile24Jan;
 				SWIFT_OBJC_BRIDGING_HEADER = "CarPooling/Library/Reachability/CarPooling-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1311,7 +1311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8VR6N6MLZ6;
 				INFOPLIST_FILE = CarPooling/Info.plist;
@@ -1322,7 +1322,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ideancy.pippipyalah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = distributionprofile;
+				PROVISIONING_PROFILE_SPECIFIER = developerProfile24Jan;
 				SWIFT_OBJC_BRIDGING_HEADER = "CarPooling/Library/Reachability/CarPooling-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

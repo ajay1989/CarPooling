@@ -18,12 +18,9 @@ class DriverRequestDetailsVC: BaseViewController {
     var arr_tempRide = [Ride]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        btn_waitingApproval.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
-        btn_waitingApproval.titleLabel?.textColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
-        btn_refused.borderColor = UIColor.lightGray
-        btn_refused.titleLabel?.textColor = UIColor.lightGray
-        btn_completed.borderColor = UIColor.lightGray
-        btn_completed.titleLabel?.textColor = UIColor.lightGray
+        btn_waitingApproval.borderColor = .black
+        btn_refused.borderColor = .clear
+        btn_completed.borderColor = .clear
         self.loadRide()
         // Do any additional setup after loading the view.
     }
@@ -37,31 +34,20 @@ class DriverRequestDetailsVC: BaseViewController {
     
     @IBAction func btn_segment_tap(_ sender: Any) {
         self.arr_tempRide.removeAll()
-        btn_waitingApproval.borderColor = UIColor.lightGray
-        btn_waitingApproval.titleLabel?.textColor = UIColor.lightGray
-        btn_refused.borderColor = UIColor.lightGray
-        btn_refused.titleLabel?.textColor = UIColor.lightGray
-        btn_completed.borderColor = UIColor.lightGray
-        btn_completed.titleLabel?.textColor = UIColor.lightGray
-        
-        
-        
+        btn_waitingApproval.borderColor = .clear
+        btn_refused.borderColor = .clear
+        btn_completed.borderColor = .clear
         if (sender as AnyObject).tag == 1 {
             self.arr_tempRide = self.arr_allRide.filter({$0.status == "0" || $0.status == "1"})
-            btn_waitingApproval.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
-                        btn_waitingApproval.setTitleColor(UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), for: .normal)
-            
+            btn_waitingApproval.borderColor = .black
         }
         else if (sender as AnyObject).tag == 2 {
             self.arr_tempRide = self.arr_allRide.filter({$0.status == "2" || $0.status == "3"})
-            btn_refused.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
-            btn_refused.setTitleColor(UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), for: .normal)
-            
+            btn_refused.borderColor = .black
         }
         else {
             self.arr_tempRide = self.arr_allRide.filter({$0.status == "4"})
-            btn_completed.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
-            btn_completed.setTitleColor(UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), for: .normal)
+            btn_completed.borderColor = .black
         }
         self.tableView.reloadData()
         
@@ -165,9 +151,9 @@ extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc:BookingStatusVC = storyboard.instantiateViewController(withIdentifier: "BookingStatusVC") as! BookingStatusVC
+        let vc:BookingDetailVC = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as! BookingDetailVC
         // self.present(vc, animated: true, completion: nil)
-      //  vc.rideDetail = self.arr_tempRide[indexPath.row]
+        vc.rideDetail = self.arr_tempRide[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
         
         

@@ -60,6 +60,9 @@ class Registration5VC: BaseViewController,UITextFieldDelegate  {
          self.btn_female.isSelected = false
         self.btn_male.isSelected = true
     }
+    @IBAction func btn_back_tap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
     @IBAction func btn_continue_tap(_ sender: Any) {
