@@ -20,8 +20,8 @@ class BookingConfirmedVC: BaseViewController {
 
    @IBAction func actionConfirm()
    {
-    let params = ["from_station":self.arr_station[0].ride_station_id!,
-                  "to_station":self.arr_station[1].ride_station_id!,
+    let params = ["from_station":self.rideDetail.from_city!,
+                  "to_station":self.rideDetail.to_city!,
                   "ride":rideDetail.ride_id!,
                   "user":AppHelper.getStringForKey(ServiceKeys.user_id)]
     self.hudShow()
