@@ -24,6 +24,12 @@ class DriverStep10VC: UIViewController {
     @IBOutlet weak var btn_man: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.btn_man.borderColor = UIColor.init(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0)
+        self.isSelected = "1"
+        self.btn_man.setImage(UIImage(named: "man-colored"), for: .normal)
+        
+        self.btn_both.borderColor = UIColor.darkGray
+        self.btn_both.setImage(UIImage(named: "both"), for: .normal)
         // Do any additional setup after loading the view.
     }
     
