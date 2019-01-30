@@ -77,9 +77,9 @@ class BookingDetailVC: BaseViewController {
                 for ride in data["ride"]! {
                     self.arr_rides.append(Ride.init(fromJson: ride.1))
                 }
-                for station in data["station"]! {
-                    self.arr_station.append(Station.init(fromJson: station.1))
-                }
+//                for station in data["station"]! {
+//                    self.arr_station.append(Station.init(fromJson: station.1))
+//                }
                 
                 if self.arr_rides.count > 0 {
                     let ride = self.arr_rides[0]
