@@ -100,7 +100,7 @@ class DriverRequestDetailsVC: BaseViewController {
             }
             else {
                 self.hudHide()
-                
+                self.makeToast(errorDict!["message"] as! String)
             }
             
         })

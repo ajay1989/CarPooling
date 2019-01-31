@@ -43,7 +43,7 @@ class DriverStep3VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         
         if self.arr_city.count > 0 {
             let data = self.arr_city[self.index]
-            self.ride.to_city = data.city_name!
+            self.ride.to_city = data.city_id!
             self.ride.to_city_lat = data.city_lat!
             self.ride.to_city_lng = data.city_lng!
             

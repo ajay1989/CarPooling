@@ -25,7 +25,7 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     
     let selectedColor = UIColor.init(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0)
     var arr_rides:Array = [Ride]()
-    var gender = "Male"
+    var gender = "0"
     var from_City:String = ""
     var to_city:String = ""
     var departureDate:String = ""

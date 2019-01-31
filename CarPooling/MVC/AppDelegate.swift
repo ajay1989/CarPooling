@@ -23,12 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var arr_city = [City]()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        self.loadCity()
+        self.loadColor()
+      
         // Override point for customization after application launch.
         GMSServices.provideAPIKey(GoogleMap().key)
         GMSPlacesClient.provideAPIKey(GoogleMap().key)
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        self.loadColor()
-        self.loadCity()
+       
         if !AppHelper.getStringForKey(ServiceKeys.user_id).isEqualToString(find: "") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC

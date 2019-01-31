@@ -80,7 +80,7 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
             let ride = Ride(fromJson: JSON.init(rawValue: ""))
             ride.device_type = "3"
             ride.user = AppHelper.getStringForKey(ServiceKeys.user_id)
-            ride.from_city = data.city_name!
+            ride.from_city = data.city_id!
             ride.from_city_lat = data.city_lat!
             ride.from_city_lng = data.city_lng!
             ride.from_city_address = ""
