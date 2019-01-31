@@ -17,10 +17,11 @@ import GooglePlaces
 @available(iOS 10.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     var arr_color = [Color]()
     var arr_city = [City]()
+    var nav = UINavigationController()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         self.loadCity()
@@ -34,8 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !AppHelper.getStringForKey(ServiceKeys.user_id).isEqualToString(find: "") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-            let navigationController = UINavigationController(rootViewController: vc)
-            self.window?.rootViewController = navigationController
+            nav = UINavigationController(rootViewController: vc)
+            self.window?.rootViewController = nav
+            self.window?.makeKeyAndVisible()
+        }
+        else
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            nav = UINavigationController(rootViewController: vc)
+            self.window?.rootViewController = nav
             self.window?.makeKeyAndVisible()
         }
         return true
@@ -83,7 +92,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
     }
-   
+    func loginUser()
+    {
+        
+//   if !AppHelper.getStringForKey(ServiceKeys.user_id).isEqualToString(find: "")
+//        {
+    
+            
+//    if (!self.nav.topViewController.is(HomeVC.class
+//            )) {
+    
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                vc.selectedIndex = 0
+                self.nav.setViewControllers([vc], animated: true)
+              
+                
+            //}
+       // }
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
