@@ -9,7 +9,9 @@
 import UIKit
 
 class DriverRequestDetailsVC: BaseViewController {
+    var isFromDashboard = false
     
+    @IBOutlet weak var lbl_title: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btn_refused: UIButton!
     @IBOutlet weak var btn_completed: UIButton!
@@ -24,7 +26,15 @@ class DriverRequestDetailsVC: BaseViewController {
         btn_refused.titleLabel?.textColor = UIColor.lightGray
         btn_completed.borderColor = UIColor.lightGray
         btn_completed.titleLabel?.textColor = UIColor.lightGray
-        self.loadRide()
+        if self.isFromDashboard {
+            self.loadRide()
+            self.lbl_title.text = "Mes demandes"
+        }
+        else {
+            self.loadRideDriver()
+            self.lbl_title.text = "Mes demandes"
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -78,6 +88,33 @@ class DriverRequestDetailsVC: BaseViewController {
         // self.present(vc, animated: true, completion: nil)
         vc.id = id!
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func loadRideDriver() {
+        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForGetDriverRide(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                if (parseData["message"] != "No result found" ) {
+                    
+                    for data in parseData["data"]["ride"]{
+                        let model = Ride.init(fromJson: data.1)
+                        self.arr_allRide.append(model)
+                    }
+                    self.arr_tempRide = self.arr_allRide.filter({$0.status == "0" || $0.status == "1"})
+                    self.tableView.reloadData()
+                }
+                
+            }
+            else {
+                self.hudHide()
+                self.makeToast(errorDict!["message"] as! String)
+            }
+            
+        })
+        
     }
     
     

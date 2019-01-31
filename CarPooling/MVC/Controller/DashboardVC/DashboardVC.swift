@@ -89,6 +89,14 @@ class DashboardVC: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func btn_mesdemands_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc:DriverRequestDetailsVC = storyboard.instantiateViewController(withIdentifier: "DriverRequestDetailsVC") as! DriverRequestDetailsVC
+        // self.present(vc, animated: true, completion: nil)
+        vc.isFromDashboard = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     @objc  func actionProfileImage(_ sender: UIButton)
     {
         var id = self.arr_rides[sender.tag].user_id

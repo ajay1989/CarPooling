@@ -73,6 +73,16 @@ class DriverVC: UIViewController {
         self.navigationController?.pushViewController(driverStep1, animated: true)
        // self.present(driverStep1, animated: true, completion: nil)
     }
+    
+    @IBAction func ben_mesOffers_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc:DriverRequestDetailsVC = storyboard.instantiateViewController(withIdentifier: "DriverRequestDetailsVC") as! DriverRequestDetailsVC
+        // self.present(vc, animated: true, completion: nil)
+        vc.isFromDashboard = false
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     @objc func movingLabels()
 {
     lbl_animate1.shake()
