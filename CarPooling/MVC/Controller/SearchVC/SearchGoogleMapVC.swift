@@ -16,17 +16,42 @@ class SearchGoogleMapVC: BaseViewController {
     @IBOutlet weak var bottomTablePlaces : NSLayoutConstraint!
     @IBOutlet weak var btnGo : UIButton!
     @IBOutlet weak var tablePlaces : UITableView!
+     var arr_city:Array = [City]()
+    var index = -1
+    var searchTimer: Timer?
     @IBOutlet weak var txtFromPlace : UITextField!
     @IBOutlet weak var txtToPlace : UITextField!
+    var cityArray :NSArray = []
+    
+    var filteredArray = [String]()
+    
+    var shouldShowSearchResults = false
+    
+    
     var isFromTxtActive : Bool = false
-    var arrPlaces : [Places]!
+    //var arrPlaces : [Places]!
     var fromLatLong : CLLocationCoordinate2D!
     var toLatLong : CLLocationCoordinate2D!
     
     var locationManager = CLLocationManager()
     var currentLatLong : CLLocationCoordinate2D!
+    
+    
+    var toCity:String = ""
+    var frmCity:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        txtFromPlace.returnKeyType = .search
+        txtFromPlace.addTarget(self, action: #selector(typingName), for: .editingChanged)
+        txtFromPlace.autocorrectionType = .no
+        
+        txtToPlace.returnKeyType = .search
+        txtToPlace.addTarget(self, action: #selector(typingName), for: .editingChanged)
+        txtToPlace.autocorrectionType = .no
+        
+       
+        
         btn_next.isHidden = true
         tablePlaces.isHidden = true
         btnGo.isEnabled = false
@@ -45,10 +70,50 @@ class SearchGoogleMapVC: BaseViewController {
             txtToPlace.becomeFirstResponder()
         }
     }
+    @objc func typingName(textField:UITextField){
+        if searchTimer != nil {
+            searchTimer?.invalidate()
+            searchTimer = nil
+        }
+        
+        // reschedule the search: in 1.0 second, call the searchForKeyword method on the new textfield content
+        searchTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(searchForKeyword(_:)), userInfo: textField.text!, repeats: false)
+        
+    }
+    @objc func searchForKeyword(_ timer: Timer) {
+        self.arr_city.removeAll()
+        self.tablePlaces.isHidden = true
+        self.tablePlaces.reloadData()
+        var keyword:String = ""
+     if (txtFromPlace.isEditing)
+     {
+        keyword = txtFromPlace.text!
+     }
+        else
+     {
+        keyword = txtToPlace.text!
+        }
+
+        
+        if keyword.characters.count != 0 {
+            
+            self.arr_city = appDelegate.arr_city.filter({$0.city_name.lowercased().hasPrefix(keyword.lowercased())})
+            if(self.arr_city.count > 0) {
+                print(self.arr_city)
+                self.tablePlaces.isHidden = false
+                self.tablePlaces.reloadData()
+            }
+            
+        }
+    }
+    
+    
     //MARK: Action method
     @IBAction func btnDoneAction() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let researchResultVC: ResearchResultVC = storyboard.instantiateViewController(withIdentifier: "ResearchResultVC") as! ResearchResultVC
+      researchResultVC.to_city = self.toCity
+        researchResultVC.from_City = self.frmCity
         self.navigationController?.pushViewController(researchResultVC, animated: true)
 //        if fromLatLong != nil && toLatLong != nil {
 //            //self.btnBackAction()
@@ -72,9 +137,9 @@ class SearchGoogleMapVC: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     func resetTablePlaces() {
-        self.arrPlaces = nil
-        self.tablePlaces.reloadData()
-        tablePlaces.isHidden = true
+//        self.arrPlaces = nil
+//        self.tablePlaces.reloadData()
+//        tablePlaces.isHidden = true
     }
     func addFromMarker(location: CLLocationCoordinate2D, address: String, shortAddress: String) {
         mapView.clear()
@@ -151,27 +216,28 @@ extension SearchGoogleMapVC : UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        (textField == txtFromPlace) ? (isFromTxtActive=true) : (isFromTxtActive=false)
-        
-        var completeTextForSearch : String = textField.text!+string
-        let  char = string.cString(using: String.Encoding.utf8)!
-        let isBackSpace = strcmp(char, "\\b")
-        let minSearchCharRange = 3
-        if (isBackSpace == -92) {
-            if (completeTextForSearch.count>0) {
-                completeTextForSearch = completeTextForSearch.substring(to: completeTextForSearch.index(before: completeTextForSearch.endIndex))
-            }
-        }
-        
-        if completeTextForSearch.count > minSearchCharRange {
-            GoogleApiManager.placesOf(searchText: textField.text!) { (status, places) in
-                if status {
-                    self.arrPlaces = places
-                    self.tablePlaces.reloadData()
-                    self.tablePlaces.isHidden = false
-                }
-            }
-        }
+//        (textField == txtFromPlace) ? (isFromTxtActive=true) : (isFromTxtActive=false)
+//
+//        var completeTextForSearch : String = textField.text!+string
+//        let  char = string.cString(using: String.Encoding.utf8)!
+//        let isBackSpace = strcmp(char, "\\b")
+//        let minSearchCharRange = 3
+//        if (isBackSpace == -92) {
+//            if (completeTextForSearch.count>0) {
+//                completeTextForSearch = completeTextForSearch.substring(to: completeTextForSearch.index(before: completeTextForSearch.endIndex))
+//            }
+//        }
+//
+//        if completeTextForSearch.count > minSearchCharRange {
+//            GoogleApiManager.placesOf(searchText: textField.text!) { (status, places) in
+//                if status {
+//                    self.arrPlaces = places
+//                    self.tablePlaces.reloadData()
+//                    self.tablePlaces.isHidden = false
+//                }
+//            }
+//        }
+//        return true
         return true
     }
 }
@@ -183,30 +249,33 @@ extension SearchGoogleMapVC : UITableViewDataSource, UITableViewDelegate {
         return 80.0;//Choose your custom row height
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        if (arrPlaces != nil) {
-            return arrPlaces.count
+        if (self.arr_city.count != nil) {
+            return self.arr_city.count
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrPlaces.count
+        return self.arr_city.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell")!
         let lblPlace : UILabel = cell.viewWithTag(111) as! UILabel
-        lblPlace.text = arrPlaces[indexPath.row].description
+        let data = self.arr_city[indexPath.row]
+        lblPlace.text = data.city_name! //arrPlaces[indexPath.row].description
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        GoogleApiManager.latLongFrom(placeId: arrPlaces[indexPath.row].placeId) { (status, location) in
+        let data = self.arr_city[indexPath.row]
+        var status:Bool = true
+       // GoogleApiManager.latLongFrom(placeId: data.city_id) { (status, location) in
             if status {
-                let latLong = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-                switch self.isFromTxtActive {
-                case true:
+                let data = self.arr_city[indexPath.row]
+                let latLong = CLLocationCoordinate2D(latitude: Double(data.city_lat) ?? 0.0, longitude: Double(data.city_lng) ?? 0.0)
+                if (txtFromPlace.isEditing)
+                {
                     self.fromLatLong = latLong
                     self.txtFromPlace.text = self.arrPlaces[indexPath.row].description
                     self.addFromMarker(location: latLong, address: self.arrPlaces[indexPath.row].description, shortAddress: "")

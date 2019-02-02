@@ -68,6 +68,9 @@
 		D08C536221C6D29E006A6729 /* DriverStep7VCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C535521C6D29E006A6729 /* DriverStep7VCTableViewCell.swift */; };
 		D08C536321C6D29E006A6729 /* DriverStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C535621C6D29E006A6729 /* DriverStep3VC.swift */; };
 		D08C536421C6D29E006A6729 /* DriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C535721C6D29E006A6729 /* DriverVC.swift */; };
+		D0A8AEEF2204DC8B00DC6864 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8AEEE2204DC8B00DC6864 /* PassengerTableViewCell.swift */; };
+		D0A8AEF12204E20200DC6864 /* PassengerListRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8AEF02204E20200DC6864 /* PassengerListRequestVC.swift */; };
+		D0A8AEF32204E21D00DC6864 /* PassengerListTableViiewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8AEF22204E21D00DC6864 /* PassengerListTableViiewCell.swift */; };
 		D0D1EE2021D75DEF00E3C18C /* BookingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D1EE1F21D75DEF00E3C18C /* BookingDetailVC.swift */; };
 		D0DF134421E77788001C2754 /* EditUserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF134321E77788001C2754 /* EditUserProfileVC.swift */; };
 		D0E4B2DF21F5C43000796D93 /* BookingConfirmedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4B2DE21F5C43000796D93 /* BookingConfirmedVC.swift */; };
@@ -201,6 +204,9 @@
 		D08C535521C6D29E006A6729 /* DriverStep7VCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStep7VCTableViewCell.swift; sourceTree = "<group>"; };
 		D08C535621C6D29E006A6729 /* DriverStep3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStep3VC.swift; sourceTree = "<group>"; };
 		D08C535721C6D29E006A6729 /* DriverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverVC.swift; sourceTree = "<group>"; };
+		D0A8AEEE2204DC8B00DC6864 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
+		D0A8AEF02204E20200DC6864 /* PassengerListRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerListRequestVC.swift; sourceTree = "<group>"; };
+		D0A8AEF22204E21D00DC6864 /* PassengerListTableViiewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerListTableViiewCell.swift; sourceTree = "<group>"; };
 		D0D1EE1F21D75DEF00E3C18C /* BookingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailVC.swift; sourceTree = "<group>"; };
 		D0DF134321E77788001C2754 /* EditUserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileVC.swift; sourceTree = "<group>"; };
 		D0E4B2DE21F5C43000796D93 /* BookingConfirmedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConfirmedVC.swift; sourceTree = "<group>"; };
@@ -323,6 +329,9 @@
 			isa = PBXGroup;
 			children = (
 				D006E5D421FA448900889DB0 /* MessOffersVC.swift */,
+				D0A8AEEE2204DC8B00DC6864 /* PassengerTableViewCell.swift */,
+				D0A8AEF02204E20200DC6864 /* PassengerListRequestVC.swift */,
+				D0A8AEF22204E21D00DC6864 /* PassengerListTableViiewCell.swift */,
 			);
 			path = MessOffers;
 			sourceTree = "<group>";
@@ -1067,6 +1076,7 @@
 				DCBA211C2196DF3500261817 /* ActionSheetLocalePicker.m in Sources */,
 				DCBA213E2196E0C500261817 /* BaseViewController.swift in Sources */,
 				DCBA21232196DF3500261817 /* ActionSheetMultipleStringPicker.m in Sources */,
+				D0A8AEF12204E20200DC6864 /* PassengerListRequestVC.swift in Sources */,
 				D009A62221BFC39C00764B60 /* Duration.swift in Sources */,
 				D08C536221C6D29E006A6729 /* DriverStep7VCTableViewCell.swift in Sources */,
 				D05B737F21F1DD9C00207067 /* DriverMode4.swift in Sources */,
@@ -1116,6 +1126,7 @@
 				DCBA213A2196DFED00261817 /* Strings.swift in Sources */,
 				D08C535821C6D29E006A6729 /* DriverStep10VC.swift in Sources */,
 				D06C77C721E32D3C00FF3B8C /* ComentsTableViewCell.swift in Sources */,
+				D0A8AEF32204E21D00DC6864 /* PassengerListTableViiewCell.swift in Sources */,
 				D0FAA82F21D003C20075C875 /* GoogleApiManager.swift in Sources */,
 				D08C535E21C6D29E006A6729 /* DriverStep8VC.swift in Sources */,
 				DC1EAA2121987ACB0099FE98 /* Registration4VC.swift in Sources */,
@@ -1127,6 +1138,7 @@
 				D05B738121F1DDA700207067 /* DriverMode5.swift in Sources */,
 				D08C535F21C6D29E006A6729 /* DriverStep9VC.swift in Sources */,
 				DCBA20FD2196DEA700261817 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				D0A8AEEF2204DC8B00DC6864 /* PassengerTableViewCell.swift in Sources */,
 				D01A796921F37194003AB843 /* NotificationsVC.swift in Sources */,
 				D05C501821980ACB0032537E /* LoginVC.swift in Sources */,
 				DCBA211B2196DF3500261817 /* ActionSheetCustomPicker.m in Sources */,

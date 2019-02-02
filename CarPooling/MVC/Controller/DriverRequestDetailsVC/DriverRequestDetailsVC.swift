@@ -5,7 +5,7 @@
 //  Created by Archit Rai Saxena on 16/01/19.
 //  Copyright © 2019 Ajay Vyas. All rights reserved.
 //
-
+// means passenger Requests...............
 import UIKit
 
 class DriverRequestDetailsVC: BaseViewController {
@@ -18,10 +18,21 @@ class DriverRequestDetailsVC: BaseViewController {
     var arr_tempRide = [Ride]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        btn_waitingApproval.borderColor = .black
-        btn_refused.borderColor = .clear
-        btn_completed.borderColor = .clear
-        self.loadRide()
+        btn_waitingApproval.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
+        btn_waitingApproval.titleLabel?.textColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
+        btn_refused.borderColor = UIColor.lightGray
+        btn_refused.titleLabel?.textColor = UIColor.lightGray
+        btn_completed.borderColor = UIColor.lightGray
+        btn_completed.titleLabel?.textColor = UIColor.lightGray
+        if self.isFromDashboard {
+            self.loadRidePassenger()  //passenger
+            self.lbl_title.text = "Mes demandes"
+        }
+        else {
+            self.loadRideDriver() //Driver
+            self.lbl_title.text = "Mes offres"
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -67,10 +78,10 @@ class DriverRequestDetailsVC: BaseViewController {
     }
     
     
-    func loadRide() {
+    func loadRideDriver() {
         let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
         self.hudShow()
-        ServiceClass.sharedInstance.hitServiceForGetPassengerRide(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+        ServiceClass.sharedInstance.hitServiceForGetDriverRide(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 if (parseData["message"] != "No result found" ) {
@@ -79,22 +90,22 @@ class DriverRequestDetailsVC: BaseViewController {
                         let model = Ride.init(fromJson: data.1)
                         self.arr_allRide.append(model)
                     }
-                   self.arr_tempRide = self.arr_allRide.filter({$0.status == "0" || $0.status == "1"})
+                    self.arr_tempRide = self.arr_allRide.filter({$0.status == "0" || $0.status == "1"})
                     self.tableView.reloadData()
                 }
                 
             }
             else {
                 self.hudHide()
-                
+                self.makeToast(errorDict!["message"] as! String)
             }
             
         })
         
     }
     
-}
-
+    
+    func loadRidePassenger() {
 
 extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
     
@@ -150,11 +161,22 @@ extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isFromDashboard
+        {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc:BookingDetailVC = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as! BookingDetailVC
         // self.present(vc, animated: true, completion: nil)
         vc.rideDetail = self.arr_tempRide[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc:MessOffersVC = storyboard.instantiateViewController(withIdentifier: "MessOffersVC") as! MessOffersVC
+            // self.present(vc, animated: true, completion: nil)
+            vc.rideDetail = self.arr_tempRide[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
         
     }

@@ -415,7 +415,7 @@ class ServiceClass: NSObject {
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
     }
-    
+  
     
     func hitServiceForGetRideDetails(_ params:[String : Any], completion:@escaping completionBlockType)
     {
