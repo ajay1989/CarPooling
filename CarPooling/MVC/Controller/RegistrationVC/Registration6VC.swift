@@ -48,6 +48,12 @@ class Registration6VC: BaseViewController,UIImagePickerControllerDelegate, UINav
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func btn_back_tap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
 
     /*
     // MARK: - Navigation
