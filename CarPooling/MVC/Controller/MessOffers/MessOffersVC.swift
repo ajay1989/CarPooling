@@ -33,7 +33,7 @@ class MessOffersVC: BaseViewController {
      var rideDetail: Ride!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.loadRideDetails()
         // Do any additional setup after loading the view.
     }
     //MARK: view setup
