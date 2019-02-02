@@ -110,6 +110,29 @@ class UserData {
     
 }
 
+
+class City {
+    var city_id : String!
+    var country_id : String!
+    var city_name : String!
+    var city_lat : String!
+    var city_lng : String!
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return
+        }
+        
+        city_id = parseData!["city_id"].stringValue
+        country_id = parseData!["country_id"].stringValue
+        
+        city_name = parseData!["city_name"].stringValue
+        city_lat = parseData!["city_lat"].stringValue
+        
+        city_lng = parseData!["city_lng"].stringValue
+    }
+    
+}
+
 class Ride {
     
     var ride_id : String!

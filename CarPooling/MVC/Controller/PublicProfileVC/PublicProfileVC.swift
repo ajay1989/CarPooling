@@ -14,7 +14,8 @@ class PublicProfileVC: BaseViewController {
     @IBOutlet weak var lbl_email: UILabel!
     @IBOutlet weak var lbl_phone: UILabel!
     @IBOutlet weak var lbl_name: UILabel!
-     @IBOutlet weak var btn_memberSince: UIButton!
+   
+    @IBOutlet weak var btn_memberSince: UIButton!
     @IBOutlet weak var img_profilePic: UIImageView!
     @IBOutlet weak var RatingView: FloatRatingView!
     var id = ""
@@ -45,9 +46,9 @@ class PublicProfileVC: BaseViewController {
                     self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
                     let age = self.getAge(dob: user.dob!)
                     self.lbl_name.text = "\(user.first_name!), \(age) \("ans")"
-                    
                     self.lbl_phone.text = user.mobile_number
                     self.lbl_email.text = user.user_email
+                    
                     self.lbl_dob.text = user.dob
                     let dateformatter = DateFormatter()
                     dateformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -64,6 +65,7 @@ class PublicProfileVC: BaseViewController {
                     if(user.dob == ""){
                         self.lbl_dob.text = ""
                     }
+
                 }
                 for comment in comments {
                     let commentData = Comment.init(fromJson: comment)
@@ -122,8 +124,7 @@ extension PublicProfileVC : UITableViewDataSource, UITableViewDelegate {
         let data = self.arr_comments[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComentsTableViewCell", for: indexPath) as! ComentsTableViewCell
         //  cell.carColorPickerView.delegate = self
-//        cell.lblUserName.text = "\(data.first_name!) \(data.last_name!)"
-        
+       // cell.lblUserName.text = "\(data.first_name!) \(data.last_name!)"
         cell.lblDate.text = "\(data.first_name!) \(data.last_name!)  \(data.created_date!)"
         cell.txtDescription.text = data.comment!
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!

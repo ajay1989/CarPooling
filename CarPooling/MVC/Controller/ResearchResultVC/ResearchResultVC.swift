@@ -9,6 +9,12 @@
 import UIKit
 
 class ResearchResultVC: BaseViewController,UITextFieldDelegate {
+   
+    
+    @IBOutlet weak var lbl_fromCity: UILabel!
+    @IBOutlet weak var lbl_toCity: UILabel!
+    
+    
     @IBOutlet weak var view_Filter: UIView!
     @IBOutlet weak var ct_bottomVw: NSLayoutConstraint!
     @IBOutlet weak var tblVw: UITableView!
@@ -19,14 +25,18 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     
     let selectedColor = UIColor.init(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0)
     var arr_rides:Array = [Ride]()
-    var gender = "Male"
+    var gender = "0"
+    var from_City:String = ""
+    var to_city:String = ""
+    var departureDate:String = ""
+    
     var customDatePicker:ActionSheetStringPicker = ActionSheetStringPicker.init()
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
          showDatePicker()
-view_Filter.isHidden = true
+        view_Filter.isHidden = true
         tblVw.delegate = self
         tblVw.dataSource = self
         
@@ -35,6 +45,8 @@ view_Filter.isHidden = true
         self.btn_male.isSelected = true
         self.loadData()
         // Do any additional setup after loading the view.
+        lbl_toCity.text = self.to_city
+        lbl_fromCity.text = self.from_City
     }
     
     
@@ -129,12 +141,20 @@ view_Filter.isHidden = true
     //MARK: Web method
     func loadData()
     {
+        /*
+       gender, departure_date, from_city, to_city, user
+       */
         self.arr_rides.removeAll()
         //        self.tableView.reloadData()
         
-        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id), "gender":self.gender , "departure_date":self.txt_date.text ?? "" , "from_city":self.from_City , "to_city":self.to_city
+        
+            ] as [String : Any]
+        
+        
+        
         self.hudShow()
-        ServiceClass.sharedInstance.hitServiceForGetRides(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+        ServiceClass.sharedInstance.hitServiceForGetSearchRides(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             print_debug(parseData)
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
@@ -151,7 +171,7 @@ view_Filter.isHidden = true
             }
             else {
                 self.hudHide()
-                
+             self.makeToast(errorDict!["message"] as! String)
             }
             
         })

@@ -14,30 +14,39 @@ class LoginVC: BaseViewController {
     
     
     @IBOutlet weak var lbl_bottomText: UILabel!
+    @IBOutlet weak var lbl_facebook: UILabel!
     @IBOutlet weak var lbl_centerText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         lbl_bottomText.text = "En vous inscrivant par facebook ou par mail,vous acceptez les Conditions générales et Politique de Confidentialité de Pip Pip Yalah"
         let text = (lbl_bottomText.text)!
         let underlineAttString = NSMutableAttributedString(string: text)
         let rang = (text as NSString).range(of: "Conditions générales")
         let rang1 = (text as NSString).range(of: "Politique de Confidentialité")
-       underlineAttString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 114, green: 170, blue: 142), range: rang)
+        underlineAttString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 114, green: 170, blue: 142), range: rang)
         
-            underlineAttString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "Montserrat-Bold", size: 9.0) as Any, range: rang)
+        underlineAttString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "Montserrat-Bold", size: 9.0) as Any, range: rang)
         underlineAttString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 114, green: 170, blue: 142), range: rang1)
         
-            underlineAttString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "Montserrat-Bold", size: 9.0) as Any, range: rang1)
+        underlineAttString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "Montserrat-Bold", size: 9.0) as Any, range: rang1)
         
         lbl_bottomText.attributedText = underlineAttString
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapOnlabel))
         lbl_bottomText.isUserInteractionEnabled = true
         lbl_bottomText.addGestureRecognizer(tap)
-       
         // Do any additional setup after loading the view.
     }
+    
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
     override func viewWillAppear(_ animated: Bool) {
         self.hideNavigationController()
     }
@@ -69,20 +78,18 @@ class LoginVC: BaseViewController {
             
     }
     }
-    
     @objc func tapOnlabel(sender:UITapGestureRecognizer) {
         let text = (lbl_bottomText.text)!
         let condition = (text as NSString).range(of: "Conditions générales")
         let privacy = (text as NSString).range(of: "Politique de Confidentialité")
         if sender.didTapAttributedTextInLabel(label: lbl_bottomText, inRange: condition)  {
-    
+            
             
         }
         else if sender.didTapAttributedTextInLabel(label: lbl_bottomText, inRange: privacy){
             
         }
     }
-    
     func getFBUserData() {
         let req = GraphRequest(graphPath: "me", parameters: ["fields": "email,first_name,last_name,gender,picture.type(large),id"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
         req.start({ (connection, result) in
@@ -112,9 +119,10 @@ class LoginVC: BaseViewController {
                             AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
                             AppHelper.setStringForKey(user.profile_photo!, key: ServiceKeys.profile_image)
                             AppHelper.setStringForKey(user.user_fname!, key: ServiceKeys.keyFirstName)
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-                            self.navigationController?.pushViewController(vc, animated: true)
+                            appDelegate.loginUser()
+//                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                            let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+//                            self.navigationController?.pushViewController(vc, animated: true)
                             
                         }
                         else {

@@ -64,7 +64,6 @@ class Registration5VC: BaseViewController,UITextFieldDelegate  {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
     @IBAction func btn_continue_tap(_ sender: Any) {
         AppHelper.setStringForKey(self.txt_dob.text!, key: ServiceKeys.keyDOB)
         AppHelper.setStringForKey(self.gender, key: ServiceKeys.keyGender)

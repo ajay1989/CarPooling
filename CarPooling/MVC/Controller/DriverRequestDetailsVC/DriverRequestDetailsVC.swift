@@ -9,7 +9,9 @@
 import UIKit
 
 class DriverRequestDetailsVC: BaseViewController {
+    var isFromDashboard = false
     
+    @IBOutlet weak var lbl_title: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btn_refused: UIButton!
     @IBOutlet weak var btn_completed: UIButton!
@@ -45,20 +47,31 @@ class DriverRequestDetailsVC: BaseViewController {
     
     @IBAction func btn_segment_tap(_ sender: Any) {
         self.arr_tempRide.removeAll()
-        btn_waitingApproval.borderColor = .clear
-        btn_refused.borderColor = .clear
-        btn_completed.borderColor = .clear
+        btn_waitingApproval.borderColor = UIColor.lightGray
+        btn_waitingApproval.titleLabel?.textColor = UIColor.lightGray
+        btn_refused.borderColor = UIColor.lightGray
+        btn_refused.titleLabel?.textColor = UIColor.lightGray
+        btn_completed.borderColor = UIColor.lightGray
+        btn_completed.titleLabel?.textColor = UIColor.lightGray
+        
+        
+        
         if (sender as AnyObject).tag == 1 {
             self.arr_tempRide = self.arr_allRide.filter({$0.status == "0" || $0.status == "1"})
-            btn_waitingApproval.borderColor = .black
+            btn_waitingApproval.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
+                        btn_waitingApproval.setTitleColor(UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), for: .normal)
+            
         }
         else if (sender as AnyObject).tag == 2 {
             self.arr_tempRide = self.arr_allRide.filter({$0.status == "2" || $0.status == "3"})
-            btn_refused.borderColor = .black
+            btn_refused.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
+            btn_refused.setTitleColor(UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), for: .normal)
+            
         }
         else {
             self.arr_tempRide = self.arr_allRide.filter({$0.status == "4"})
-            btn_completed.borderColor = .black
+            btn_completed.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
+            btn_completed.setTitleColor(UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), for: .normal)
         }
         self.tableView.reloadData()
         
@@ -106,6 +119,33 @@ class DriverRequestDetailsVC: BaseViewController {
     
     
     func loadRidePassenger() {
+        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForGetPassengerRide(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                if (parseData["message"] != "No result found" ) {
+                    
+                    for data in parseData["data"]["ride"]{
+                        let model = Ride.init(fromJson: data.1)
+                        self.arr_allRide.append(model)
+                    }
+                   self.arr_tempRide = self.arr_allRide.filter({$0.status == "0" || $0.status == "1"})
+                    self.tableView.reloadData()
+                }
+                
+            }
+            else {
+                self.hudHide()
+                self.makeToast(errorDict!["message"] as! String)
+            }
+            
+        })
+        
+    }
+    
+}
+
 
 extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
     
@@ -164,7 +204,7 @@ extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
         if isFromDashboard
         {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc:BookingDetailVC = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as! BookingDetailVC
+        let vc:BookingStatusVC = storyboard.instantiateViewController(withIdentifier: "BookingStatusVC") as! BookingStatusVC
         // self.present(vc, animated: true, completion: nil)
         vc.rideDetail = self.arr_tempRide[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)

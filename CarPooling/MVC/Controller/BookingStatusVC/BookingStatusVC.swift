@@ -57,13 +57,41 @@ class BookingStatusVC: BaseViewController {
     } 
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  
+    // MARK: - ActionMethod
+    @IBAction func hideContactView()
+    {
+        hideView(view: vw_contact, hidden: true)
+    }
+    @IBAction func showContactView()
+    {
+        setView(view: vw_contact, hidden: false)
+    }
+    @IBAction func actionGoToBack()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    func setView(view: UIView, hidden: Bool) {
+        
+        vw_contact.isHidden = false
+        UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseIn],
+                       animations: {
+                        self.vw_contact.center.y -= self.vw_contact.bounds.height
+                        self.ct_vwContactBottom.constant = 0
+                        self.vw_contact.layoutIfNeeded()
+        }, completion: nil)
+        
+    }
+    func hideView(view: UIView, hidden: Bool) {
+        
+        
+        UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseIn],
+                       animations: {
+                        self.vw_contact.center.y += self.vw_contact.bounds.height
+                        self.ct_vwContactBottom.constant = -self.vw_contact.bounds.height
+                        self.vw_contact.layoutIfNeeded()
+        }, completion: nil)
+        
     }
     //MARK: set values
     func setValuesToView()

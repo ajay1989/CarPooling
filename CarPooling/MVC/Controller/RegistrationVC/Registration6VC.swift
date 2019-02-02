@@ -30,15 +30,10 @@ class Registration6VC: BaseViewController,UIImagePickerControllerDelegate, UINav
     @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var img_profile: UIImageView!
     @IBOutlet weak var lbl_name: UILabel!
-    
-    
      var pickerController = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        self.lbl_name.text = "\(AppHelper.getStringForKey(ServiceKeys.keyFirstName))"
+        self.lbl_name.text = "\(AppHelper.getStringForKey(ServiceKeys.keyFirstName)) \(AppHelper.getStringForKey(ServiceKeys.keyLastName))"
         if !AppHelper.getStringForKey(ServiceKeys.keyProfileImage).isEqualToString(find: "") {
             let url =  URL(string:AppHelper.getStringForKey(ServiceKeys.keyProfileImage))
             

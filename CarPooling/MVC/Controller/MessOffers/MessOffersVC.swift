@@ -8,16 +8,26 @@
 
 import UIKit
 
-class MessOffersVC: UIViewController {
-     @IBOutlet weak var tblVwPassenger: UITableView!
+class MessOffersVC: BaseViewController {
+    
   
     @IBOutlet weak var vw_contactPassenger: UIView!
        @IBOutlet weak var ct_vwContactBottom: NSLayoutConstraint!
     
-    
-    
-    
-    
+    @IBOutlet weak var lbl_fromcity: UILabel!
+    @IBOutlet weak var lbl_fromDate: UILabel!
+    @IBOutlet weak var lbl_toDate: UILabel!
+    @IBOutlet weak var lbl_toCity: UILabel!
+    @IBOutlet weak var lbl_address: UILabel!
+    @IBOutlet weak var lbl_luggage: UILabel!
+    @IBOutlet weak var lbl_price: UILabel!
+    @IBOutlet weak var lbl_seats: UILabel!
+    @IBOutlet weak var lbl_distace: UILabel!
+    @IBOutlet weak var lbl_tripname: UILabel!
+ @IBOutlet weak var tblVwPassenger: UITableView!
+    // user profile info
+    @IBOutlet weak var lbl_passegerName: UILabel!
+    @IBOutlet weak var img_pasenger: UIImageView!
     
       var arr_rides = [Ride]()
      var rideDetail: Ride!
@@ -26,7 +36,66 @@ class MessOffersVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    //MARK: Action method
+    //MARK: view setup
+    func setValuesToView()
+    {
+        let ride = self.arr_rides[0]
+        // img_status: UIImageView!
+        //   @IBOutlet weak var lbl_status: UILabel!
+        lbl_fromDate.text  = "\(ride.departure_date!) \(ride.departure_time!)"
+        lbl_toDate.text = "\(ride.arrival_date!) \(ride.arrival_time!)"
+        lbl_fromcity.text = ride.from_city!
+        lbl_toCity.text = ride.to_city!
+        lbl_address.text = ride.from_city_address
+        lbl_seats.text = "\(ride.available_seats!) place(s) restante(s)"
+        lbl_price.text = "\(ride.price!)DH per passager"
+        //status
+        //  0-wating,1-approve,2-cancel,3-completed
+        if ride.status == "0" {
+           
+        }
+        else if ride.status == "1" {
+            
+            //show both button   "contacter le conducteur"   "Annuler ma demande"
+        }
+        else if ride.status == "2" {
+            
+            // single btn show with fray bordr text "Nouvelle recherche "
+            
+        }
+        else if ride.status == "3" {
+           
+        }
+        else {
+           
+        }
+        //
+        if ride.luggage == "" || ride.luggage == "1" {
+            self.lbl_luggage.text = "Petite valise"
+        }
+        else if ride.luggage == "2" {
+            self.lbl_luggage.text = "Moyenne"
+        }
+        else {
+            self.lbl_luggage.text = "Grande valise"
+        }
+        lbl_distace.text = "Trajet de 300 kms\n en 3h30"
+        
+        // btn_demande.text = ""
+        
+        lbl_tripname.text = "yep yep yalah"
+      
+        
+        
+    }
+    func setPassengerContact(passenger:User)
+    {
+        
+       lbl_passegerName.text = passenger.first_name
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(passenger.profile_photo!)")!
+        let placeholderImage = UIImage(named: "Male-driver")!
+        img_pasenger.af_setImage(withURL: url, placeholderImage: placeholderImage)
+    }
     // MARK: - ActionMethod
     @IBAction func hideContactView()
     {
@@ -125,10 +194,12 @@ extension MessOffersVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // if placeArray.count > 0 {
         let cell = tblVwPassenger.dequeueReusableCell(withIdentifier: "PassengerTableViewCell", for: indexPath) as! PassengerTableViewCell
-       cell.btn_contact.addTarget(self, action: #selector(self.showContactView(_:)), for: .touchUpInside)
+       // self.setPassengerContact() .............
+        cell.btn_contact.addTarget(self, action: #selector(self.showContactView(_:)), for: .touchUpInside)
+        
+        
         return cell
-        // }
-        //p;return UITableViewCell()
+       
     }
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 165

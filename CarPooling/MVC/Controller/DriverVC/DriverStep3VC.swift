@@ -15,7 +15,7 @@ class DriverStep3VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         }
     }
     @IBOutlet weak var btn_continue: UIButton!
-    var arr_city:Array = [[String:String]]()
+    var arr_city:Array = [City]()
     var index = -1
     @IBOutlet weak var tableView: UITableView!
     fileprivate var dataTask:URLSessionDataTask?
@@ -42,51 +42,19 @@ class DriverStep3VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
     {
         
         if self.arr_city.count > 0 {
-            let data1 = self.arr_city[self.index]
-            let urlString = "https://maps.googleapis.com/maps/api/place/details/json?key=\(txt_apiKey)&placeid=\(data1["place_id"]!)"
-            print(urlString)
-            let s = (CharacterSet.urlQueryAllowed as NSCharacterSet).mutableCopy() as! NSMutableCharacterSet
-            s.addCharacters(in: "+&")
-            if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: s as CharacterSet) {
-                if let url = URL(string: encodedString) {
-                    let request = URLRequest(url: url)
-                    self.hudShow()
-                    dataTask = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-                        self.hudHide()
-                        if let data = data{
-                            do{
-                                let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
-                                if let status = result["status"] as? String{
-                                    if status == "OK"{
-                                        let result1 = result["result"] as! NSDictionary
-                                        let geometry = result1["geometry"] as! NSDictionary
-                                        let location = geometry["location"] as! NSDictionary
-                                        DispatchQueue.main.async(execute: { () -> Void in
-                                           
-                                            self.ride.to_city = data1["main_text"]!
-                                            self.ride.to_city_lat = "\(location["lat"]!)"
-                                            self.ride.to_city_lng = "\(location["lng"]!)"
-                                            
-                                            
-                                            //Missing step 4
-                                            let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
-                                            let vc: DriverStep5VC = storyboard.instantiateViewController(withIdentifier: "DriverStep5VC") as! DriverStep5VC
-                                            vc.ride = self.ride
-                                            // self.present(vc, animated: true, completion: nil)
-                                            self.navigationController?.pushViewController(vc, animated: true)
-                                        })
-                                    }
-                                }
-                                
-                            }
-                            catch let error as NSError{
-                                print_debug("Error: \(error.localizedDescription)")
-                            }
-                        }
-                    })
-                    dataTask?.resume()
-                }
-            }
+            let data = self.arr_city[self.index]
+            self.ride.to_city = data.city_id!
+            self.ride.to_city_lat = data.city_lat!
+            self.ride.to_city_lng = data.city_lng!
+            
+            
+            //Missing step 4
+            let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+            let vc: DriverStep5VC = storyboard.instantiateViewController(withIdentifier: "DriverStep5VC") as! DriverStep5VC
+            vc.ride = self.ride
+            // self.present(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         }
         
         
@@ -120,53 +88,11 @@ class DriverStep3VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         if keyword.characters.count != 0 {
             
             
-            let urlString = "https://maps.googleapis.com/maps/api/place/autocomplete/json?key=\(txt_apiKey)&language=en&sensor=true&region=GB&input=\(keyword)"
-            print(urlString)
-            let s = (CharacterSet.urlQueryAllowed as NSCharacterSet).mutableCopy() as! NSMutableCharacterSet
-            s.addCharacters(in: "+&")
-            if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: s as CharacterSet) {
-                if let url = URL(string: encodedString) {
-                    let request = URLRequest(url: url)
-                    self.hudShow()
-                    dataTask = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-                        self.hudHide()
-                        if let data = data{
-                            do{
-                                let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
-                                if let status = result["status"] as? String{
-                                    if status == "OK"{
-                                        if let predictions = result["predictions"] as? NSArray{
-                                            
-                                            for dict in predictions as! [NSDictionary]{
-                                                let structuredFormatting = dict["structured_formatting"] as! NSDictionary
-                                                let emptyDict = ["place_id" : dict["place_id"] as! String,
-                                                                 "main_text" : structuredFormatting["main_text"] as! String,
-                                                                 //"secondary_text" : structuredFormatting["secondary_text"] as! String,
-                                                                 "description" : dict["description"] as! String]
-                                                self.arr_city.append(emptyDict)
-                                            }
-                                            DispatchQueue.main.async(execute: { () -> Void in
-                                                if(self.arr_city.count > 0) {
-                                                    print(self.arr_city)
-                                                    self.tableView.isHidden = false
-                                                    self.tableView.reloadData()
-                                                }
-                                            })
-                                            return
-                                        }
-                                    }
-                                }
-                                DispatchQueue.main.async(execute: { () -> Void in
-                                    //self.searchTextField.autoCompleteStrings = nil
-                                })
-                            }
-                            catch let error as NSError{
-                                print_debug("Error: \(error.localizedDescription)")
-                            }
-                        }
-                    })
-                    dataTask?.resume()
-                }
+            self.arr_city = appDelegate.arr_city.filter({$0.city_name.lowercased().hasPrefix(keyword.lowercased())})
+            if(self.arr_city.count > 0) {
+                print(self.arr_city)
+                self.tableView.isHidden = false
+                self.tableView.reloadData()
             }
             
         }
@@ -189,14 +115,14 @@ class DriverStep3VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         let data = self.arr_city[indexPath.row]
         if index == indexPath.row {
             cell.img_tick.isHidden = false
-            txt_search.text = data["description"]
+            txt_search.text = data.city_name!
         }
         else {
             cell.img_tick.isHidden = true
         }
         cell.img_icon.image = UIImage(named: "img_location")
         cell.selectionStyle = .none
-        cell.lbl_text.text = data["main_text"]
+        cell.lbl_text.text = data.city_name!
         return cell
     }
     

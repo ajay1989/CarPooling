@@ -20,7 +20,7 @@ class ServiceClass: NSObject {
     }
     
     typealias completionBlockType = (ResponseType, JSON, AnyObject?) ->Void
-    
+    typealias completionBlockTypeData = (ResponseType, [String:Any], AnyObject?) ->Void
     //MARK:- Common Get Webservice calling Method using SwiftyJSON and Alamofire
     func hitServiceWithUrlString( urlString:String, parameters:[String:AnyObject],headers:HTTPHeaders,completion:@escaping completionBlockType)
     {
@@ -74,6 +74,83 @@ class ServiceClass: NSObject {
             
         }
         
+    }
+    func hitGetServiceWithUrlStringGetData( urlString:String, parameters:[String:Any],headers:HTTPHeaders,completion:@escaping completionBlockTypeData)
+    {
+        if Reachability.forInternetConnection()!.isReachable()
+        {
+            let updatedUrl = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+            let url = URL(string: updatedUrl!)!
+            
+            Alamofire.request(url, method: .get , encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+                
+                guard case .success(let rawJSON) = response.result else {
+                    print("SomeThing wrong")
+                    
+                    print(response.result)
+                    
+                    var errorDict:[String:Any] = [String:Any]()
+                    errorDict[ServiceKeys.keyErrorCode] = ErrorCodes.errorCodeFailed
+                    errorDict[ServiceKeys.keyErrorMessage] = "SomeThing wrong"
+                    
+                   // completion(ResponseType.kResponseTypeFail,nil,errorDict as AnyObject);
+                    
+                    return
+                }
+                if rawJSON is [Any] {
+                    
+                    let json = JSON(rawJSON)
+                    
+                    if  json["status"] == "error"{
+                        var errorDict:[String:Any] = [String:Any]()
+                        
+                        errorDict[ServiceKeys.keyErrorCode] = ErrorCodes.errorCodeFailed
+                        errorDict[ServiceKeys.keyErrorMessage] = json["error"].stringValue
+                        
+                      //  completion(ResponseType.kResponseTypeFail,nil,errorDict as AnyObject);
+                    }
+                    else {
+                        completion(ResponseType.kresponseTypeSuccess,rawJSON as! [String : Any] ,nil)
+                    }
+                }
+                if rawJSON is [String : Any] {
+                    
+                    let json = JSON(rawJSON)
+                    
+                    if  json["status"].bool == false{
+                        var errorDict:[String:Any] = [String:Any]()
+                        print(json)
+                        
+                        errorDict[ServiceKeys.keyErrorCode] = ErrorCodes.errorCodeFailed
+                        errorDict[ServiceKeys.keyErrorMessage] = json["message"].stringValue
+                        if json["error_code"].stringValue == "delete_user"{
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            SVProgressHUD.dismiss()
+                            appDelegate.logoutAlert(message: json["message"].stringValue)
+                            
+                        }
+                        else {
+                          //  completion(ResponseType.kResponseTypeFail,nil,errorDict as AnyObject);
+                        }
+                        
+                    }
+                    else {
+                        completion(ResponseType.kresponseTypeSuccess,rawJSON as! [String : Any] ,nil)
+                    }
+                }
+            }
+        }
+            
+        else  {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                
+                let errorDict = NSMutableDictionary()
+                errorDict.setObject(ErrorCodes.errorCodeInternetProblem, forKey: ServiceKeys.keyErrorCode as NSCopying)
+                errorDict.setObject("Check your internet connectivity", forKey: ServiceKeys.keyErrorMessage as NSCopying)
+                //completion(ResponseType.kResponseTypeFail,nil,errorDict as NSDictionary)
+                
+            }
+        }
     }
     func hitGetServiceWithUrlString( urlString:String, parameters:[String:Any],headers:HTTPHeaders,completion:@escaping completionBlockType)
     {
@@ -222,6 +299,7 @@ class ServiceClass: NSObject {
     // For SignUp
     func hitServiceForCheckPhoneNumber(_ params:[String : Any], completion:@escaping completionBlockType)
     {
+        
         let user = "admin"
         let password = "1234"
         let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
@@ -449,6 +527,22 @@ class ServiceClass: NSObject {
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
     }
     
+    func hitServiceForGetDriverRide(_ params:[String : Any], completion:@escaping completionBlockType)
+    {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.driver_rides)/\(params["keyword"]!)"
+        print(baseUrl)
+        let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
+        print_debug(params)
+        //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+        self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
+    }
+    
     func hitServiceForGetColor(_ params:[String : Any], completion:@escaping completionBlockType)
     {
         let user = "admin"
@@ -465,6 +559,22 @@ class ServiceClass: NSObject {
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
     }
     
+    
+    func hitServiceForGetCity(_ params:[String : Any], completion:@escaping completionBlockType)
+    {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.city)"
+        print(baseUrl)
+        let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
+        print_debug(params)
+        //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+        self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
+    }
     func hitServiceForGetRides(_ params:[String : Any], completion:@escaping completionBlockType)
     {
         let user = "admin"
@@ -479,6 +589,23 @@ class ServiceClass: NSObject {
         print_debug(headers)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
+    }
+    
+    func hitServiceForGetSearchRides(_ params:[String : Any], completion:@escaping completionBlockType)
+    {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.search_Ride)"
+        print(baseUrl)
+        let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
+        print_debug(headers)
+        //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+  self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject], headers: headers, completion: completion)
+       
     }
     
     func hitServiceForGetUserDetail(_ params:[String : Any], completion:@escaping completionBlockType)

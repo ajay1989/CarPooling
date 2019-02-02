@@ -17,9 +17,10 @@ class UserProfileVC: BaseViewController {
     var arr_comments = [Comment]()
     
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
+         tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
     @IBAction func goToBack(sender: UIButton)
@@ -59,7 +60,7 @@ class UserProfileVC: BaseViewController {
                     
                     self.img_profile.af_setImage(withURL: url, placeholderImage: placeholderImage)
                     let age = self.getAge(dob: user.dob!)
-                    self.lbl_name.text = "\(user.first_name!), \(age) \("ans")"
+                    self.lbl_name.text = "\(user.first_name!) \(user.last_name!), \(age)"
                     self.lbl_mobile.text = user.mobile_number
                     self.lbl_email.text = user.user_email
                     

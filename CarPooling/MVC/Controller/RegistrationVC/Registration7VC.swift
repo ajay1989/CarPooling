@@ -13,7 +13,7 @@ class Registration7VC: BaseViewController {
     var imageData = Data()
     override func viewDidLoad() {
         super.viewDidLoad()
-       // imageData = image.jpeg(.low)!
+        imageData = image.jpeg(.low)!
         
         
         

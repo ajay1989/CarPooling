@@ -12,7 +12,7 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
     
     
     @IBOutlet weak var btn_continue: UIButton!
-    var arr_city:Array = [[String:String]]()
+    var arr_city:Array = [City]()
     var index = -1
     @IBOutlet weak var tableView: UITableView!
     fileprivate var dataTask:URLSessionDataTask?
@@ -60,53 +60,11 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         let keyword = txt_search.text!
         if keyword.characters.count != 0 {
             
-            
-            let urlString = "https://maps.googleapis.com/maps/api/place/autocomplete/json?key=\(txt_apiKey)&language=en&sensor=true&region=GB&input=\(keyword)"
-            print(urlString)
-            let s = (CharacterSet.urlQueryAllowed as NSCharacterSet).mutableCopy() as! NSMutableCharacterSet
-            s.addCharacters(in: "+&")
-            if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: s as CharacterSet) {
-                if let url = URL(string: encodedString) {
-                    let request = URLRequest(url: url)
-                    self.hudShow()
-                    dataTask = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-                        self.hudHide()
-                        if let data = data{
-                            do{
-                                let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
-                                if let status = result["status"] as? String{
-                                    if status == "OK"{
-                                        if let predictions = result["predictions"] as? NSArray{
-                                            
-                                            for dict in predictions as! [NSDictionary]{
-                                                let structuredFormatting = dict["structured_formatting"] as! NSDictionary
-                                                let emptyDict = ["place_id" : dict["place_id"] as! String,
-                                                                 "main_text" : structuredFormatting["main_text"] as! String,      "description" : dict["description"] as! String]
-                                                self.arr_city.append(emptyDict)
-                                            }
-                                          //"secondary_text" : structuredFormatting["secondary_text"] as! String,
-                                            DispatchQueue.main.async(execute: { () -> Void in
-                                                if(self.arr_city.count > 0) {
-                                                    print(self.arr_city)
-                                                    self.tableView.isHidden = false
-                                                    self.tableView.reloadData()
-                                                }
-                                            })
-                                            return
-                                        }
-                                    }
-                                }
-                                DispatchQueue.main.async(execute: { () -> Void in
-                                    //self.searchTextField.autoCompleteStrings = nil
-                                })
-                            }
-                            catch let error as NSError{
-                                print_debug("Error: \(error.localizedDescription)")
-                            }
-                        }
-                    })
-                    dataTask?.resume()
-                }
+            self.arr_city = appDelegate.arr_city.filter({$0.city_name.lowercased().hasPrefix(keyword.lowercased())})
+            if(self.arr_city.count > 0) {
+                print(self.arr_city)
+                self.tableView.isHidden = false
+                self.tableView.reloadData()
             }
             
         }
@@ -118,50 +76,18 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
     @IBAction func actionNext(sender: UIButton)
     {
         if self.arr_city.count > 0 {
-            let data1 = self.arr_city[self.index]
-            let urlString = "https://maps.googleapis.com/maps/api/place/details/json?key=\(txt_apiKey)&placeid=\(data1["place_id"]!)"
-            print(urlString)
-            let s = (CharacterSet.urlQueryAllowed as NSCharacterSet).mutableCopy() as! NSMutableCharacterSet
-            s.addCharacters(in: "+&")
-            if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: s as CharacterSet) {
-                if let url = URL(string: encodedString) {
-                    let request = URLRequest(url: url)
-                    self.hudShow()
-                    dataTask = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-                        self.hudHide()
-                        if let data = data{
-                            do{
-                                let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
-                                if let status = result["status"] as? String{
-                                    if status == "OK"{
-                                        let result1 = result["result"] as! NSDictionary
-                                        let geometry = result1["geometry"] as! NSDictionary
-                                        let location = geometry["location"] as! NSDictionary
-                                        DispatchQueue.main.async(execute: { () -> Void in
-                                            let ride = Ride(fromJson: JSON.init(rawValue: ""))
-                                            ride.device_type = "3"
-                                            ride.user = AppHelper.getStringForKey(ServiceKeys.user_id)
-                                            ride.from_city = data1["main_text"]!
-                                            ride.from_city_lat = "\(location["lat"]!)"
-                                            ride.from_city_lng = "\(location["lng"]!)"
-                                        ride.from_city_address = data1["description"]!
-                                            let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
-                                            let vc: DriverStep2VC = storyboard.instantiateViewController(withIdentifier: "DriverStep2VC") as! DriverStep2VC
-                                            vc.ride = ride
-                                            self.navigationController?.pushViewController(vc, animated: true)
-                                        })
-                                    }
-                                }
-                                
-                            }
-                            catch let error as NSError{
-                                print_debug("Error: \(error.localizedDescription)")
-                            }
-                        }
-                    })
-                    dataTask?.resume()
-                }
-            }
+            let data = self.arr_city[index]
+            let ride = Ride(fromJson: JSON.init(rawValue: ""))
+            ride.device_type = "3"
+            ride.user = AppHelper.getStringForKey(ServiceKeys.user_id)
+            ride.from_city = data.city_id!
+            ride.from_city_lat = data.city_lat!
+            ride.from_city_lng = data.city_lng!
+            ride.from_city_address = ""
+            let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
+            let vc: DriverStep2VC = storyboard.instantiateViewController(withIdentifier: "DriverStep2VC") as! DriverStep2VC
+            vc.ride = ride
+            self.navigationController?.pushViewController(vc, animated: true)
         }
   
     
@@ -180,14 +106,14 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         let data = self.arr_city[indexPath.row]
         if index == indexPath.row {
             cell.img_tick.isHidden = false
-            txt_search.text = data["description"]
+            txt_search.text = data.city_name!
         }
         else {
             cell.img_tick.isHidden = true
         }
         cell.img_icon.image = UIImage(named: "img_location")
         cell.selectionStyle = .none
-        cell.lbl_text.text = data["main_text"]
+        cell.lbl_text.text = data.city_name!
         return cell
     }
     

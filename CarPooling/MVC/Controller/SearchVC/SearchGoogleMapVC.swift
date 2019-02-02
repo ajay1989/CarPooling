@@ -277,13 +277,16 @@ extension SearchGoogleMapVC : UITableViewDataSource, UITableViewDelegate {
                 if (txtFromPlace.isEditing)
                 {
                     self.fromLatLong = latLong
-                    self.txtFromPlace.text = self.arrPlaces[indexPath.row].description
-                    self.addFromMarker(location: latLong, address: self.arrPlaces[indexPath.row].description, shortAddress: "")
-                    break
-                default:
+                    self.txtFromPlace.text = data.city_name
+                    self.frmCity = data.city_id
+                    self.addFromMarker(location: latLong, address: data.city_name, shortAddress: "")
+                }
+                else
+                {
+                    self.toCity = data.city_id
                     self.toLatLong = latLong
-                    self.txtToPlace.text = self.arrPlaces[indexPath.row].description
-                    self.addToMarker(location: latLong, address: self.arrPlaces[indexPath.row].description, shortAddress: "")
+                    self.txtToPlace.text = data.city_name
+                    self.addToMarker(location: latLong, address: data.city_name, shortAddress: "")
                     self.btn_next.isHidden = false
                     self.btnGo.isEnabled = true
                     self.view.endEditing(true)
@@ -292,10 +295,31 @@ extension SearchGoogleMapVC : UITableViewDataSource, UITableViewDelegate {
                         self.tablePlaces.isHidden = true
                         self.addMarkerAndDrawPloyline(from: self.fromLatLong, to: self.toLatLong)
                     }
-                    break
                 }
+
+                
+//                switch self.isFromTxtActive {
+//                case true:
+//                    self.fromLatLong = latLong
+//                    self.txtFromPlace.text = data.city_name
+//                    self.addFromMarker(location: latLong, address: data.city_name, shortAddress: "")
+//                    break
+//                default:
+//                    self.toLatLong = latLong
+//                    self.txtToPlace.text = data.city_name
+//                    self.addToMarker(location: latLong, address: data.city_name, shortAddress: "")
+//                    self.btn_next.isHidden = false
+//                    self.btnGo.isEnabled = true
+//                    self.view.endEditing(true)
+//                    if self.fromLatLong != nil && self.toLatLong != nil {
+//                        //self.btnBackAction()
+//                        self.tablePlaces.isHidden = true
+//                        self.addMarkerAndDrawPloyline(from: self.fromLatLong, to: self.toLatLong)
+//                    }
+//                    break
+//                }
             }
-        }
+        
         tablePlaces.isHidden = true
     }
     
