@@ -118,7 +118,7 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
                     let placeholderImage = UIImage(named: "Male-driver")!
                     
                     self.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
-                    self.lbl_name.text = "\(user.first_name!) \(user.last_name!)"
+                    //self.lbl_name.text = "\(user.first_name!) \(user.last_name!)"
                     self.txt_mobile.text = user.mobile_number
                     self.txt_email.text = user.user_email
                     self.txt_dob.text = user.dob
@@ -215,7 +215,7 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
     }
     
     
-    @IBAction func btn_addcar_tap(_ sender: Any) {
+    @IBAction func btn_addcar_tap(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
         let vc: CarModelSelectionVC = storyboard.instantiateViewController(withIdentifier: "CarModelSelectionVC") as! CarModelSelectionVC
         // self.present(vc, animated: true, completion: nil)

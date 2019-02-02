@@ -70,7 +70,7 @@ class DriverStep2VC: BaseViewController,GMSMapViewDelegate,UITableViewDelegate,U
         if keyword.characters.count != 0 {
             
             
-            let urlString = "https://maps.googleapis.com/maps/api/place/autocomplete/json?key=\(txt_apiKey)&language=en&sensor=true&types=establishment&location=\(ride.from_city_lat!),\(ride.from_city_lng!)&radius=500&input=\(keyword)"
+            let urlString = "https://maps.googleapis.com/maps/api/place/autocomplete/json?key=\(txt_apiKey)&language=en&sensor=true&region=GB&input=\(keyword)"
             print(urlString)
             let s = (CharacterSet.urlQueryAllowed as NSCharacterSet).mutableCopy() as! NSMutableCharacterSet
             s.addCharacters(in: "+&")

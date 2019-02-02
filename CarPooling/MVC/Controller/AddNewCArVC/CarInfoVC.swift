@@ -231,7 +231,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
                 })
             }
              else {
-                self.makeToast(errorDict!["message"] as! String)
+                self.makeToast("failed!")
             }
         }
     }
@@ -260,7 +260,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
                 
             }
             else {
-               self.makeToast(errorDict!["message"] as! String)
+                self.makeToast("Failed")
             }
             
         })

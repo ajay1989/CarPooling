@@ -17,34 +17,22 @@ import GooglePlaces
 @available(iOS 10.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     var window: UIWindow?
     var arr_color = [Color]()
-    var arr_city = [City]()
-    var nav = UINavigationController()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        self.loadCity()
-        self.loadColor()
-      
         // Override point for customization after application launch.
         GMSServices.provideAPIKey(GoogleMap().key)
         GMSPlacesClient.provideAPIKey(GoogleMap().key)
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-       
+        self.loadColor()
         if !AppHelper.getStringForKey(ServiceKeys.user_id).isEqualToString(find: "") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-            nav = UINavigationController(rootViewController: vc)
-            self.window?.rootViewController = nav
-            self.window?.makeKeyAndVisible()
-        }
-        else
-        {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-            nav = UINavigationController(rootViewController: vc)
-            self.window?.rootViewController = nav
+            let navigationController = UINavigationController(rootViewController: vc)
+            self.window?.rootViewController = navigationController
             self.window?.makeKeyAndVisible()
         }
         return true
@@ -70,47 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         
     }
-    
-    func loadCity() {
-        let params = ["":""]
-        ServiceClass.sharedInstance.hitServiceForGetCity(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
-            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                
-                if (parseData["message"] != "No result found" ) {
-                    for data in parseData["data"]{
-                        let city = City.init(fromJson: data.1)
-                        self.arr_city.append(city)
-                    }
-                }
-            }
-            else {
-                
-            }
-            
-        })
-        
-        
-        
-    }
-    func loginUser()
-    {
-        
-//   if !AppHelper.getStringForKey(ServiceKeys.user_id).isEqualToString(find: "")
-//        {
-    
-            
-//    if (!self.nav.topViewController.is(HomeVC.class
-//            )) {
-    
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-                vc.selectedIndex = 0
-                self.nav.setViewControllers([vc], animated: true)
-              
-                
-            //}
-       // }
-    }
+
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

@@ -12,26 +12,21 @@ class LoginEmailVC: BaseViewController {
     
     @IBOutlet weak var txt_password: UITextField!
     @IBOutlet weak var txt_email: UITextField!
-    @IBOutlet weak var vw_email: UIView! {
-        didSet {
-            vw_email.layer.borderColor = UIColor.gray.cgColor
-        }
-        
-    }
-    @IBOutlet weak var vw_pass: UIView! {
-        didSet {
-            vw_pass.layer.borderColor = UIColor.gray.cgColor
-        }
-        
-    }
+    @IBOutlet weak var vw_email: UIView!
+    @IBOutlet weak var vw_pass: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    
     @IBAction func goToBack(sender: UIButton)
     {
-        
         //self.navigationController?.popViewController(animated: true)
     }
 
@@ -47,10 +42,12 @@ class LoginEmailVC: BaseViewController {
     //MARK: Action method
     @IBAction func actionBack()
     {
-        
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
     @IBAction func btn_login_tap(_ sender: Any) {
+        
         let params: [String : String] = ["email":self.txt_email.text!,
                                          "password":self.txt_password.text!,
                                          "imei_number":""]
@@ -61,16 +58,13 @@ class LoginEmailVC: BaseViewController {
                let user = UserData.init(fromJson: parseData["data"])
                 AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
                 AppHelper.setStringForKey(user.profile_photo!, key: ServiceKeys.profile_image)
-                appDelegate.loginUser()
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-//                self.navigationController?.pushViewController(vc, animated: true)
-                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                self.navigationController?.pushViewController(vc, animated: true)
             }
             else {
                 self.makeToast(errorDict!["message"] as! String)
             }
-            
         })
     }
 }

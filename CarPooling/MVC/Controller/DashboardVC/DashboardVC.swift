@@ -16,10 +16,8 @@ class DashboardVC: BaseViewController {
     @IBOutlet weak var img_profilePic: UIImageView!
    // @IBOutlet weak var searchBar: UISearchBar!
     var arr_rides:Array = [Ride]()
-     var arr_city:Array = [City]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 //        searchBar.barTintColor = UIColor.clear
 //        searchBar.backgroundColor = UIColor.clear
 //        searchBar.isTranslucent = true
@@ -66,7 +64,6 @@ class DashboardVC: BaseViewController {
                         self.arr_rides.append(model)
                     }
                     if self.arr_rides.count>0 {
-                        self.arr_city = appDelegate.arr_city
                         self.tblVw.reloadData()
                     }
                 }
@@ -89,14 +86,6 @@ class DashboardVC: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func btn_mesdemands_tap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc:DriverRequestDetailsVC = storyboard.instantiateViewController(withIdentifier: "DriverRequestDetailsVC") as! DriverRequestDetailsVC
-        // self.present(vc, animated: true, completion: nil)
-        vc.isFromDashboard = true
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-    }
     @objc  func actionProfileImage(_ sender: UIButton)
     {
         var id = self.arr_rides[sender.tag].user_id
@@ -140,26 +129,11 @@ class DashboardVC: BaseViewController {
                 // Fallback on earlier versions
             }
            let data = self.arr_rides[indexPath.row]
-            if (self.arr_city.count > 0 && data.from_city != "0" && data.to_city != "0"){
-                 let dataCityfrom = self.arr_city[Int(data.from_city)! - 1 ]
-                  let dataCityTo = self.arr_city[Int(data.to_city)! - 1]
-                 cell.lbl_fromDestination.text = dataCityfrom.city_name!
-                   cell.lbl_ToDestination.text = dataCityTo.city_name!
-            }
-            else
-            {
-                cell.lbl_fromDestination.text = data.from_city
-                  cell.lbl_ToDestination.text = data.to_city
-                
-                
-            }
-        
+            cell.lbl_fromDestination.text = data.from_city
+            cell.lbl_ToDestination.text = data.to_city
             cell.lbl_timeFrom.text = data.departure_time
             cell.llbl_TimeTo.text = data.arrival_time
-           // cell.lbl_userName.text = data.first_name + data.last_name
-            let age = self.getAge(dob:data.dob!)
-            cell.lbl_userName.text = data.first_name + "," + String(age)
-            
+            cell.lbl_userName.text = data.first_name + data.last_name
              cell.lbl_seats.text = data.available_seats
             cell.lbl_Price.text = data.price
             
