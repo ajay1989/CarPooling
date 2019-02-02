@@ -5,7 +5,7 @@
 //  Created by Archit Rai Saxena on 16/01/19.
 //  Copyright © 2019 Ajay Vyas. All rights reserved.
 //
-
+// means passenger Requests...............
 import UIKit
 
 class DriverRequestDetailsVC: BaseViewController {
@@ -27,12 +27,12 @@ class DriverRequestDetailsVC: BaseViewController {
         btn_completed.borderColor = UIColor.lightGray
         btn_completed.titleLabel?.textColor = UIColor.lightGray
         if self.isFromDashboard {
-            self.loadRide()
+            self.loadRidePassenger()  //passenger
             self.lbl_title.text = "Mes demandes"
         }
         else {
-            self.loadRideDriver()
-            self.lbl_title.text = "Mes demandes"
+            self.loadRideDriver() //Driver
+            self.lbl_title.text = "Mes offres"
         }
         
         // Do any additional setup after loading the view.
@@ -118,7 +118,7 @@ class DriverRequestDetailsVC: BaseViewController {
     }
     
     
-    func loadRide() {
+    func loadRidePassenger() {
         let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
         self.hudShow()
         ServiceClass.sharedInstance.hitServiceForGetPassengerRide(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
@@ -201,11 +201,22 @@ extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isFromDashboard
+        {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc:BookingStatusVC = storyboard.instantiateViewController(withIdentifier: "BookingStatusVC") as! BookingStatusVC
         // self.present(vc, animated: true, completion: nil)
-      //  vc.rideDetail = self.arr_tempRide[indexPath.row]
+        vc.rideDetail = self.arr_tempRide[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc:MessOffersVC = storyboard.instantiateViewController(withIdentifier: "MessOffersVC") as! MessOffersVC
+            // self.present(vc, animated: true, completion: nil)
+            vc.rideDetail = self.arr_tempRide[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
         
     }
