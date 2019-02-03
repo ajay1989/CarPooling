@@ -120,9 +120,9 @@ class LoginVC: BaseViewController {
                             AppHelper.setStringForKey(user.profile_photo!, key: ServiceKeys.profile_image)
                             AppHelper.setStringForKey(user.user_fname!, key: ServiceKeys.keyFirstName)
                             appDelegate.loginUser()
-//                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                            let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-//                            self.navigationController?.pushViewController(vc, animated: true)
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                            self.navigationController?.pushViewController(vc, animated: true)
                             
                         }
                         else {

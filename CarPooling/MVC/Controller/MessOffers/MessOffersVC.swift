@@ -44,8 +44,10 @@ class MessOffersVC: BaseViewController {
         //   @IBOutlet weak var lbl_status: UILabel!
         lbl_fromDate.text  = "\(ride.departure_date!) \(ride.departure_time!)"
         lbl_toDate.text = "\(ride.arrival_date!) \(ride.arrival_time!)"
-        lbl_fromcity.text = ride.from_city!
-        lbl_toCity.text = ride.to_city!
+        let data = appDelegate.arr_city.filter({$0.city_id == ride.from_city!})
+        let data1 = appDelegate.arr_city.filter({$0.city_id == ride.to_city!})
+        lbl_fromcity.text = data[0].city_name
+        lbl_toCity.text = data1[0].city_name
         lbl_address.text = ride.from_city_address
         lbl_seats.text = "\(ride.available_seats!) place(s) restante(s)"
         lbl_price.text = "\(ride.price!)DH per passager"
@@ -170,6 +172,47 @@ class MessOffersVC: BaseViewController {
             
         })
         
+    }
+    
+    @IBAction func btn_cancel_tap(_ sender: Any) {
+        let ride = self.arr_rides[0]
+        let params = ["note":"Cancel ride from driver",
+                      "ride":ride.ride_id!,
+                      "status":"2",
+                      "user":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        self.hudShow()
+        
+        ServiceClass.sharedInstance.hitServiceUpdateRideFromDriver(params as [String : Any], id:ride.user_id) { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                self.makeToast("success!")
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            else {
+                self.makeToast("failed!")
+            }
+        }
+    }
+    
+    
+    @IBAction func btn_changeStatus_tap(_ sender: Any) {
+        let ride = self.arr_rides[0]
+        let params = ["note":"Update ride from driver",
+                      "ride":ride.ride_id!,
+                      "status":"1",
+                      "user":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        self.hudShow()
+        
+        ServiceClass.sharedInstance.hitServiceUpdateRideFromDriver(params as [String : Any], id:ride.user_id) { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                self.makeToast("success!")
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            else {
+                self.makeToast("failed!")
+            }
+        }
     }
     
 }

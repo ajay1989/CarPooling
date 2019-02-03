@@ -81,6 +81,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         let city = City.init(fromJson: data.1)
                         self.arr_city.append(city)
                     }
+                    if self.arr_city.count > 0 {
+                        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
+                    }
                 }
             }
             else {

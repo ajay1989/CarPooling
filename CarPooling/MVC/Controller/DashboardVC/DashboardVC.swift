@@ -35,6 +35,7 @@ class DashboardVC: BaseViewController {
         let placeholderImage = UIImage(named: "Male-driver")!
 
         self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
         
     }
     
@@ -45,6 +46,10 @@ class DashboardVC: BaseViewController {
         let placeholderImage = UIImage(named: "Male-driver")!
         
         self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
+    }
+    
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        self.loadUserData()
     }
     
     
@@ -140,7 +145,7 @@ class DashboardVC: BaseViewController {
                 // Fallback on earlier versions
             }
            let data = self.arr_rides[indexPath.row]
-            if (self.arr_city.count > 0 && data.from_city != "0" && data.to_city != "0"){
+            if (self.arr_city.count > 0){
                  let dataCityfrom = self.arr_city[Int(data.from_city)! - 1 ]
                   let dataCityTo = self.arr_city[Int(data.to_city)! - 1]
                  cell.lbl_fromDestination.text = dataCityfrom.city_name!

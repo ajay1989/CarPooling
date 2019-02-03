@@ -98,6 +98,7 @@ class DriverRequestDetailsVC: BaseViewController {
         self.hudShow()
         ServiceClass.sharedInstance.hitServiceForGetDriverRide(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
+            print(parseData)
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 if (parseData["message"] != "No result found" ) {
                     

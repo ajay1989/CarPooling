@@ -83,8 +83,11 @@ class BookingDetailVC: BaseViewController {
                 
                 if self.arr_rides.count > 0 {
                     let ride = self.arr_rides[0]
-                    self.lbl_From.text = ride.from_city!
-                    self.lbl_To.text = ride.to_city!
+                    
+                    let data = appDelegate.arr_city.filter({$0.city_id == ride.from_city!})
+                    self.lbl_From.text = data[0].city_name
+                    let data1 = appDelegate.arr_city.filter({$0.city_id == ride.to_city!})
+                    self.lbl_To.text = data1[0].city_name
                     self.lbl_DateFrom.text = "\(ride.departure_date!) \(ride.departure_time!)"
                     self.lbl_DateTo.text = "\(ride.arrival_date!) \(ride.arrival_time!)"
                     self.lbl_seat.text = "\(ride.available_seats!) place(s) restante(s)"
