@@ -43,6 +43,14 @@ class User {
     var is_approved : String!
     var created_date : String!
     
+    var is_mobile_number_approved : String!
+    var is_cin_approved : String!
+    var is_email_approved : String!
+    
+    
+    
+    
+    
     
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
@@ -61,6 +69,11 @@ class User {
         doc_id_photo = parseData!["doc_id_photo"].stringValue
         is_approved = parseData!["is_approved"].stringValue
         created_date = parseData!["created_date"].stringValue
+        
+        is_mobile_number_approved = parseData!["is_mobile_number_approved"].stringValue
+        is_cin_approved = parseData!["is_cin_approved"].stringValue
+        is_email_approved = parseData!["is_email_approved"].stringValue
+
         
     }
 }

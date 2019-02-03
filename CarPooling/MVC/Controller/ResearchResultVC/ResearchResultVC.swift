@@ -228,7 +228,7 @@ extension ResearchResultVC : UITableViewDataSource, UITableViewDelegate {
         cell.lbl_Price.text = data.price
         
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
-        let placeholderImage = UIImage(named: "Male-driver")!
+        let placeholderImage = UIImage(named: "placeholder")!
         
         cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
         

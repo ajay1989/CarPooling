@@ -10,10 +10,14 @@ import UIKit
 
 class PublicProfileVC: BaseViewController {
     var arr_comments = [Comment]()
-    @IBOutlet weak var lbl_dob: UILabel!
     @IBOutlet weak var lbl_email: UILabel!
     @IBOutlet weak var lbl_phone: UILabel!
     @IBOutlet weak var lbl_name: UILabel!
+    
+    
+    @IBOutlet weak var img_phone: UIImageView!
+    @IBOutlet weak var img_email: UIImageView!
+    @IBOutlet weak var img_cin: UIImageView!
    
     @IBOutlet weak var btn_memberSince: UIButton!
     @IBOutlet weak var img_profilePic: UIImageView!
@@ -41,7 +45,7 @@ class PublicProfileVC: BaseViewController {
                 for data in basic {
                     let user = User.init(fromJson: data)
                     let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
-                    let placeholderImage = UIImage(named: "Male-driver")!
+                    let placeholderImage = UIImage(named: "placeholder")!
                     
                     self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
                     let age = self.getAge(dob: user.dob!)
@@ -49,7 +53,6 @@ class PublicProfileVC: BaseViewController {
                     self.lbl_phone.text = user.mobile_number
                     self.lbl_email.text = user.user_email
                     
-                    self.lbl_dob.text = user.dob
                     let dateformatter = DateFormatter()
                     dateformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                     let date = dateformatter.date(from: user.created_date!)
@@ -62,10 +65,28 @@ class PublicProfileVC: BaseViewController {
                     if(user.user_email == ""){
                         self.lbl_email.text = ""
                     }
-                    if(user.dob == ""){
-                        self.lbl_dob.text = ""
+                    
+                    if(user.is_mobile_number_approved == "0"){
+                        self.img_phone.image = UIImage(named: "cross_red")!
+                    } else {
+                        self.img_phone.image = UIImage(named: "check_green")!
                     }
+                    
+                    if(user.is_email_approved == "0"){
+                        self.img_email.image = UIImage(named: "cross_red")!
 
+                    } else {
+                        self.img_email.image = UIImage(named: "check_green")!
+                    }
+                    
+                    if(user.is_cin_approved == "0"){
+                        self.img_cin.image = UIImage(named: "cross_red")!
+                    } else {
+                        self.img_cin.image = UIImage(named: "check_green")!
+                    }
+                    
+                    
+                    
                 }
                 for comment in comments {
                     let commentData = Comment.init(fromJson: comment)
@@ -128,7 +149,7 @@ extension PublicProfileVC : UITableViewDataSource, UITableViewDelegate {
         cell.lblDate.text = "\(data.first_name!) \(data.last_name!)  \(data.created_date!)"
         cell.txtDescription.text = data.comment!
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
-        let placeholderImage = UIImage(named: "Male-driver")!
+        let placeholderImage = UIImage(named: "placeholder")!
         
         cell.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
         cell.selectionStyle = .none

@@ -150,7 +150,7 @@ class BookingStatusVC: BaseViewController {
        //  btn_contact.text = ""
         lbl_nameAge2.text  = "\(ride.first_name!) \(ride.last_name!), \(age) years"
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(ride.profile_photo!)")!
-         let placeholderImage = UIImage(named: "Male-driver")!
+         let placeholderImage = UIImage(named: "placeholder")!
          img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
         img_user2.af_setImage(withURL: url, placeholderImage: placeholderImage)
         // btn_whatsap.text = ""

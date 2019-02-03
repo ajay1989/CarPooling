@@ -14,6 +14,12 @@ class UserProfileVC: BaseViewController {
     @IBOutlet weak var lbl_mobile: UILabel!
     @IBOutlet weak var lbl_name: UILabel!
     @IBOutlet weak var img_profile: UIImageView!
+    @IBOutlet weak var RatingView: FloatRatingView!
+
+    @IBOutlet weak var img_phone: UIImageView!
+    @IBOutlet weak var img_email: UIImageView!
+    @IBOutlet weak var img_cin: UIImageView!
+    
     var arr_comments = [Comment]()
     
     @IBOutlet weak var tableView: UITableView!
@@ -52,17 +58,40 @@ class UserProfileVC: BaseViewController {
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 let basic = parseData["data"]["basic"].arrayValue
                 let comments = parseData["data"]["comment"].arrayValue
+                self.RatingView.rating = parseData["data"]["rate"].doubleValue
+                self.RatingView.editable = false
                 for data in basic {
                     let user = User.init(fromJson: data)
                     let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
                     AppHelper.setStringForKey(user.profile_photo!, key: ServiceKeys.profile_image)
-                    let placeholderImage = UIImage(named: "Male-driver")!
+                    let placeholderImage = UIImage(named: "placeholder")!
                     
                     self.img_profile.af_setImage(withURL: url, placeholderImage: placeholderImage)
                     let age = self.getAge(dob: user.dob!)
-                    self.lbl_name.text = "\(user.first_name!) \(user.last_name!), \(age)"
+                    self.lbl_name.text = "\(user.first_name!), \(age) \("ans")"
                     self.lbl_mobile.text = user.mobile_number
                     self.lbl_email.text = user.user_email
+                    
+                    
+                    if(user.is_mobile_number_approved == "0"){
+                        self.img_phone.image = UIImage(named: "cross_red")!
+                    } else {
+                        self.img_phone.image = UIImage(named: "check_green")!
+                    }
+                    
+                    if(user.is_email_approved == "0"){
+                        self.img_email.image = UIImage(named: "cross_red")!
+                        
+                    } else {
+                        self.img_email.image = UIImage(named: "check_green")!
+                    }
+                    
+                    if(user.is_cin_approved == "0"){
+                        self.img_cin.image = UIImage(named: "cross_red")!
+                    } else {
+                        self.img_cin.image = UIImage(named: "check_green")!
+                    }
+                    
                     
                 }
                 for comment in comments {
@@ -125,7 +154,7 @@ extension UserProfileVC : UITableViewDataSource, UITableViewDelegate {
         cell.lblDate.text = data.created_date!
         cell.txtDescription.text = data.comment!
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
-        let placeholderImage = UIImage(named: "Male-driver")!
+        let placeholderImage = UIImage(named: "placeholder")!
         
         cell.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
         cell.selectionStyle = .none

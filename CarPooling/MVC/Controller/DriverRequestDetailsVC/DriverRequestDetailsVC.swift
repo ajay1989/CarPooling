@@ -16,6 +16,8 @@ class DriverRequestDetailsVC: BaseViewController {
     @IBOutlet weak var btn_refused: UIButton!
     @IBOutlet weak var btn_completed: UIButton!
     @IBOutlet weak var btn_waitingApproval: UIButton!
+    
+    
     var arr_allRide = [Ride]()
     var arr_tempRide = [Ride]()
     override func viewDidLoad() {
@@ -35,6 +37,9 @@ class DriverRequestDetailsVC: BaseViewController {
             self.lbl_title.text = "Mes offres"
         }
         
+        tableView.delegate = self
+        tableView.dataSource = self
+
         // Do any additional setup after loading the view.
     }
     
@@ -186,7 +191,7 @@ extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
         cell.lbl_Price.text = data.price
         
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
-        let placeholderImage = UIImage(named: "Male-driver")!
+        let placeholderImage = UIImage(named: "placeholder")!
         
         cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
         

@@ -115,7 +115,7 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
                 for data in basic {
                     let user = User.init(fromJson: data)
                     let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
-                    let placeholderImage = UIImage(named: "Male-driver")!
+                    let placeholderImage = UIImage(named: "placeholder")!
                     
                     self.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
                     self.lbl_name.text = "\(user.first_name!) \(user.last_name!)"
