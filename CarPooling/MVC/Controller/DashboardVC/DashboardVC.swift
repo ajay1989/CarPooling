@@ -32,7 +32,7 @@ class DashboardVC: BaseViewController {
         self.loadUserData()
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
 
-        let placeholderImage = UIImage(named: "placeholder")!
+        let placeholderImage = UIImage(named: "Male-driver")!
 
         self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
         
@@ -42,7 +42,7 @@ class DashboardVC: BaseViewController {
         super.viewWillAppear(animated)
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
         
-        let placeholderImage = UIImage(named: "placeholder")!
+        let placeholderImage = UIImage(named: "Male-driver")!
         
         self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
     }
@@ -164,7 +164,7 @@ class DashboardVC: BaseViewController {
             cell.lbl_Price.text = data.price
             
             let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
-            let placeholderImage = UIImage(named: "placeholder")!
+            let placeholderImage = UIImage(named: "Male-driver")!
             
             cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
            

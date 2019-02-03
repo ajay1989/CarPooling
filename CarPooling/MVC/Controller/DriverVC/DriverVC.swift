@@ -38,7 +38,7 @@ class DriverVC: UIViewController {
         // Do any additional setup after loading the view.
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
         
-        let placeholderImage = UIImage(named: "placeholder")!
+        let placeholderImage = UIImage(named: "Male-driver")!
         
         self.img_User.af_setImage(withURL: url, placeholderImage: placeholderImage)
 

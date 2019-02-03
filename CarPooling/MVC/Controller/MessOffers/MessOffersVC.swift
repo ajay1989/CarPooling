@@ -93,7 +93,7 @@ class MessOffersVC: BaseViewController {
         
        lbl_passegerName.text = passenger.first_name
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(passenger.profile_photo!)")!
-        let placeholderImage = UIImage(named: "placeholder")!
+        let placeholderImage = UIImage(named: "Male-driver")!
         img_pasenger.af_setImage(withURL: url, placeholderImage: placeholderImage)
     }
     // MARK: - ActionMethod

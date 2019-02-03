@@ -103,7 +103,7 @@ class BookingDetailVC: BaseViewController {
                     self.lbl_userNAmeAge.text = "\(ride.first_name!) \(ride.last_name!), \(age) years"
                     let url = URL(string: "\(ServiceUrls.profilePicURL)\(ride.profile_photo!)")!
                     
-                    let placeholderImage = UIImage(named: "placeholder")!
+                    let placeholderImage = UIImage(named: "Male-driver")!
                     
                     self.img_User.af_setImage(withURL: url, placeholderImage: placeholderImage)
                 }

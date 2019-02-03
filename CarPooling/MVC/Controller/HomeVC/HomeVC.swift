@@ -23,6 +23,8 @@ class HomeVC: UIViewController {
         changeSelectionOfButton()
         //add observer
         NotificationCenter.default.addObserver(self, selector: #selector(switchToDashboard(notification:)), name:NSNotification.Name(rawValue: "fromBookingConfirm"), object: nil)
+        //add observer
+        NotificationCenter.default.addObserver(self, selector: #selector(switchToDashboard(notification:)), name:NSNotification.Name(rawValue: "fromMessOffers"), object: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)

@@ -16,12 +16,12 @@ class DriverRequestDetailsVC: BaseViewController {
     @IBOutlet weak var btn_refused: UIButton!
     @IBOutlet weak var btn_completed: UIButton!
     @IBOutlet weak var btn_waitingApproval: UIButton!
-    
-    
     var arr_allRide = [Ride]()
     var arr_tempRide = [Ride]()
+      var arr_city:Array = [City]()
     override func viewDidLoad() {
         super.viewDidLoad()
+          self.arr_city = appDelegate.arr_city
         btn_waitingApproval.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
         btn_waitingApproval.titleLabel?.textColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
         btn_refused.borderColor = UIColor.lightGray
@@ -37,9 +37,6 @@ class DriverRequestDetailsVC: BaseViewController {
             self.lbl_title.text = "Mes offres"
         }
         
-        tableView.delegate = self
-        tableView.dataSource = self
-
         // Do any additional setup after loading the view.
     }
     
@@ -182,8 +179,21 @@ extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
             // Fallback on earlier versions
         }
         let data = self.arr_tempRide[indexPath.row]
-        cell.lbl_fromDestination.text = data.from_city
-        cell.lbl_ToDestination.text = data.to_city
+        if (self.arr_city.count > 0 && data.from_city != "0" && data.to_city != "0"){
+            let dataCityfrom = self.arr_city[Int(data.from_city)! - 1 ]
+            let dataCityTo = self.arr_city[Int(data.to_city)! - 1]
+            cell.lbl_fromDestination.text = dataCityfrom.city_name!
+            cell.lbl_ToDestination.text = dataCityTo.city_name!
+        }
+        else
+        {
+            cell.lbl_fromDestination.text = data.from_city
+            cell.lbl_ToDestination.text = data.to_city
+            
+            
+        }
+       // cell.lbl_fromDestination.text = data.from_city
+      //  cell.lbl_ToDestination.text = data.to_city
         cell.lbl_timeFrom.text = data.departure_time
         cell.llbl_TimeTo.text = data.arrival_time
         cell.lbl_userName.text = data.first_name + data.last_name
@@ -191,7 +201,7 @@ extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
         cell.lbl_Price.text = data.price
         
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
-        let placeholderImage = UIImage(named: "placeholder")!
+        let placeholderImage = UIImage(named: "Male-driver")!
         
         cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
         

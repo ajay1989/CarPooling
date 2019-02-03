@@ -10,6 +10,7 @@
  */
 import UIKit
 
+
 class BookingStatusVC: BaseViewController {
 
     @IBOutlet weak var vw_contact: UIView!
@@ -17,7 +18,8 @@ class BookingStatusVC: BaseViewController {
     @IBOutlet weak var btn_Contact: UIButton!
     
     @IBOutlet weak var btn_demade: UIButton!
-    
+    //recherche
+     @IBOutlet weak var btn_recherche: UIButton!
     @IBOutlet weak var ct_vwContactBottom: NSLayoutConstraint!
     
     @IBOutlet weak var vw_contactShadow: UIView!
@@ -59,6 +61,7 @@ class BookingStatusVC: BaseViewController {
 
   
     // MARK: - ActionMethod
+    
     @IBAction func hideContactView()
     {
         hideView(view: vw_contact, hidden: true)
@@ -71,6 +74,32 @@ class BookingStatusVC: BaseViewController {
     {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func actionGoToDashboard()
+    {
+       NotificationCenter.default.post(name: NSNotification.Name("fromBookingConfirm"), object: nil)
+    }
+    @IBAction func actionCancelRequest()
+    {
+        
+        let otherAlert = UIAlertController(title: "", message: "Tu es sur le point d'annuler une demande validée.La place est automatiquement libérée pour les autres membres et il ne sera plus possible de faire marche arrière.", preferredStyle: UIAlertController.Style.actionSheet)
+        
+        let printSomething = UIAlertAction(title: "Confimer", style: UIAlertAction.Style.default) { _ in
+            print("run code for cancel ride" )
+        }
+        
+       // let callFunction = UIAlertAction(title: "Call Function", style: UIAlertAction.Style.Destructive, handler: myHandler)
+        
+        let dismiss = UIAlertAction(title: "Retour", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        // relate actions to controllers
+        otherAlert.addAction(printSomething)
+       // otherAlert.addAction(callFunction)
+        otherAlert.addAction(dismiss)
+        
+        present(otherAlert, animated: true, completion: nil)
+    }
+
+    
     func setView(view: UIView, hidden: Bool) {
         
         vw_contact.isHidden = false
@@ -96,6 +125,7 @@ class BookingStatusVC: BaseViewController {
     //MARK: set values
     func setValuesToView()
     {
+        //Archit......
         let ride = self.arr_rides[0]
        // img_status: UIImageView!
      //   @IBOutlet weak var lbl_status: UILabel!
@@ -110,25 +140,42 @@ class BookingStatusVC: BaseViewController {
         if ride.status == "0" {
             self.lbl_luggage.text = "En attente de validation"
             self.img_status.image = UIImage.init(named: "yellow strip")
+            //btn contact hide, btn demand show(cancel pending request api)
+            self.btn_recherche.isHidden = true
+            self.btn_contact.isHidden = true
+            self.btn_demade.isHidden = false  // cancel
         }
         else if ride.status == "1" {
             self.lbl_luggage.text = "Demande acceptée"
              self.img_status.image = UIImage.init(named: "green-strip")
             //show both button   "contacter le conducteur"   "Annuler ma demande"
+            // demande = cancel pop up show
+            self.btn_recherche.isHidden = true
+            self.btn_contact.isHidden = false
+            self.btn_demade.isHidden = false
         }
         else if ride.status == "2" {
             self.lbl_luggage.text = "Demande refusée"
              self.img_status.image = UIImage.init(named: "red-strip")
             // single btn show with fray bordr text "Nouvelle recherche "
-            
+            // action go to dashboard applicable (btn text = Nouvelle recherche)
+            self.btn_recherche.isHidden = false
+            self.btn_contact.isHidden = true
+            self.btn_demade.isHidden = true
         }
         else if ride.status == "3" {
             self.lbl_luggage.text = "Completed"
              self.img_status.image = UIImage.init(named: "green-strip")
+            self.btn_recherche.isHidden = false
+            self.btn_contact.isHidden = true
+            self.btn_demade.isHidden = true
         }
         else {
             self.lbl_luggage.text = "Completed"
              self.img_status.image = UIImage.init(named: "yellow strip")
+            self.btn_recherche.isHidden = false
+            self.btn_contact.isHidden = true
+            self.btn_demade.isHidden = true
         }
         //
         if ride.luggage == "" || ride.luggage == "1" {
@@ -150,7 +197,7 @@ class BookingStatusVC: BaseViewController {
        //  btn_contact.text = ""
         lbl_nameAge2.text  = "\(ride.first_name!) \(ride.last_name!), \(age) years"
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(ride.profile_photo!)")!
-         let placeholderImage = UIImage(named: "placeholder")!
+         let placeholderImage = UIImage(named: "Male-driver")!
          img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
         img_user2.af_setImage(withURL: url, placeholderImage: placeholderImage)
         // btn_whatsap.text = ""
