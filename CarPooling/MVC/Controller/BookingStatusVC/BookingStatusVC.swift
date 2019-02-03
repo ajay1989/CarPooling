@@ -133,8 +133,10 @@ class BookingStatusVC: BaseViewController {
      //   @IBOutlet weak var lbl_status: UILabel!
          lbl_dateFrom.text  = "\(ride.departure_date!) \(ride.departure_time!)"
          lbl_dateTo.text = "\(ride.arrival_date!) \(ride.arrival_time!)"
-         lbl_fromCity.text = ride.from_city!
-         lbl_toCity.text = ride.to_city!
+        let data = appDelegate.arr_city.filter({$0.city_id == ride.from_city!})
+        let data1 = appDelegate.arr_city.filter({$0.city_id == ride.to_city!})
+         lbl_fromCity.text = data[0].city_name
+         lbl_toCity.text = data1[0].city_name
          lblSeats.text = "\(ride.available_seats!) place(s) restante(s)"
          lbl_price.text = "\(ride.price!)DH per passager"
         //status

@@ -175,6 +175,30 @@ class MessOffersVC: BaseViewController {
     }
     
     @IBAction func btn_cancel_tap(_ sender: Any) {
+        
+        let otherAlert = UIAlertController(title: "", message: "Tu es sur le point d'annuler une demande validée.La place est automatiquement libérée pour les autres membres et il ne sera plus possible de faire marche arrière.", preferredStyle: UIAlertController.Style.actionSheet)
+        
+        let printSomething = UIAlertAction(title: "Confimer", style: UIAlertAction.Style.default) { _ in
+            print("run code for cancel ride" )
+            self.cancelRequest()
+        }
+        
+        // let callFunction = UIAlertAction(title: "Call Function", style: UIAlertAction.Style.Destructive, handler: myHandler)
+        
+        let dismiss = UIAlertAction(title: "Retour", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        // relate actions to controllers
+        otherAlert.addAction(printSomething)
+        // otherAlert.addAction(callFunction)
+        otherAlert.addAction(dismiss)
+        
+        present(otherAlert, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    func cancelRequest() {
         let ride = self.arr_rides[0]
         let params = ["note":"Cancel ride from driver",
                       "ride":ride.ride_id!,
