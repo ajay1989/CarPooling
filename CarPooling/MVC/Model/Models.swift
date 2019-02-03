@@ -132,7 +132,40 @@ class City {
     }
     
 }
-
+class Passenger {
+ 
+    
+    var status : String!
+    var to_city : String!
+    var profile_photo : String!
+    var last_name : String!
+    var ride_passenger_id : String!
+    var seats : String!
+    var user_id : String!
+    var from_city : String!
+    var first_name : String!
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return
+        }
+        
+        status = parseData!["status"].stringValue
+        to_city = parseData!["to_city"].stringValue
+        
+        profile_photo = parseData!["profile_photo"].stringValue
+        last_name = parseData!["last_name"].stringValue
+        
+        ride_passenger_id = parseData!["ride_passenger_id"].stringValue
+        seats = parseData!["seats"].stringValue
+        user_id = parseData!["user_id"].stringValue
+        
+        from_city = parseData!["from_city"].stringValue
+        first_name = parseData!["first_name"].stringValue
+        
+       
+    }
+    
+}
 class Ride {
     
     var ride_id : String!

@@ -50,6 +50,7 @@ class BookingStatusVC: BaseViewController {
     
     var rideDetail: Ride!
      var arr_rides = [Ride]()
+    var passenger: Passenger!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadRideDetail()
@@ -85,6 +86,7 @@ class BookingStatusVC: BaseViewController {
         
         let printSomething = UIAlertAction(title: "Confimer", style: UIAlertAction.Style.default) { _ in
             print("run code for cancel ride" )
+            self.cancelRideRequest()
         }
         
        // let callFunction = UIAlertAction(title: "Call Function", style: UIAlertAction.Style.Destructive, handler: myHandler)
@@ -137,7 +139,7 @@ class BookingStatusVC: BaseViewController {
          lbl_price.text = "\(ride.price!)DH per passager"
         //status
       //  0-wating,1-approve,2-cancel,3-completed
-        if ride.status == "0" {
+        if self.passenger.status == "0" {
             self.lbl_luggage.text = "En attente de validation"
             self.img_status.image = UIImage.init(named: "yellow strip")
             //btn contact hide, btn demand show(cancel pending request api)
@@ -145,7 +147,7 @@ class BookingStatusVC: BaseViewController {
             self.btn_contact.isHidden = true
             self.btn_demade.isHidden = false  // cancel
         }
-        else if ride.status == "1" {
+        else if self.passenger.status == "1" {
             self.lbl_luggage.text = "Demande acceptée"
              self.img_status.image = UIImage.init(named: "green-strip")
             //show both button   "contacter le conducteur"   "Annuler ma demande"
@@ -154,7 +156,7 @@ class BookingStatusVC: BaseViewController {
             self.btn_contact.isHidden = false
             self.btn_demade.isHidden = false
         }
-        else if ride.status == "2" {
+        else if self.passenger.status == "2" {
             self.lbl_luggage.text = "Demande refusée"
              self.img_status.image = UIImage.init(named: "red-strip")
             // single btn show with fray bordr text "Nouvelle recherche "
@@ -163,7 +165,7 @@ class BookingStatusVC: BaseViewController {
             self.btn_contact.isHidden = true
             self.btn_demade.isHidden = true
         }
-        else if ride.status == "3" {
+        else if self.passenger.status == "3" {
             self.lbl_luggage.text = "Completed"
              self.img_status.image = UIImage.init(named: "green-strip")
             self.btn_recherche.isHidden = false
@@ -218,6 +220,15 @@ class BookingStatusVC: BaseViewController {
                 for ride in data["ride"]! {
                     self.arr_rides.append(Ride.init(fromJson: ride.1))
                 }
+                
+                for passenge in data["passenger"]! {
+                    var psng = Passenger.init(fromJson: passenge.1)
+                    if (psng.user_id == AppHelper.getStringForKey(ServiceKeys.user_id) )
+                    {
+                        self.passenger = psng
+                    }
+                }
+                // data["passenger"] -> match user id then status update
                 //                for station in data["station"]! {
                 //                    self.arr_station.append(Station.init(fromJson: station.1))
                 //                }
@@ -236,5 +247,28 @@ class BookingStatusVC: BaseViewController {
         })
         
     }
-
+ func cancelRideRequest()
+ {
+    
+    let params = ["keyword":self.passenger.ride_passenger_id!, "user":AppHelper.getStringForKey(ServiceKeys.user_id),
+                  "status":"2", "note":""]
+    self.hudShow()
+    ServiceClass.sharedInstance.hitServiceForChangeRideStatus(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+        self.hudHide()
+        if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+           // let data = parseData["data"].dictionary!
+            
+           // self.setValuesToView()
+            self.makeToast("Success")
+             self.navigationController?.popViewController(animated: true)
+           
+            
+        }
+        else {
+            self.hudHide()
+            
+        }
+        
+    })
+    }
 }

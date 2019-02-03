@@ -1737,7 +1737,7 @@ en 3h30</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hre-4j-2tv">
-                                <rect key="frame" x="122" y="637" width="170" height="30"/>
+                                <rect key="frame" x="122" y="650" width="170" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LX8-hI-Wl5"/>
@@ -1991,7 +1991,6 @@ en 3h30</string>
                             <constraint firstItem="ulT-aS-TzN" firstAttribute="centerX" secondItem="IZK-Jg-F08" secondAttribute="centerX" id="8hl-Cw-HNi"/>
                             <constraint firstAttribute="bottom" secondItem="fdG-Li-2C8" secondAttribute="bottom" constant="-431" id="EzI-qE-J7I"/>
                             <constraint firstItem="IlJ-Lw-Qdf" firstAttribute="leading" secondItem="O8g-Ix-Gdt" secondAttribute="leading" constant="10" id="FaZ-g0-3md"/>
-                            <constraint firstItem="Hre-4j-2tv" firstAttribute="top" secondItem="zCY-cz-659" secondAttribute="bottom" constant="25.333333333333371" id="HNF-JF-f1w"/>
                             <constraint firstItem="7G4-xS-uQw" firstAttribute="top" secondItem="tUV-GR-k8t" secondAttribute="bottom" id="Kzs-Ak-5Xh"/>
                             <constraint firstItem="dz6-bT-UE5" firstAttribute="top" secondItem="IlJ-Lw-Qdf" secondAttribute="bottom" constant="14.5" id="PAE-UU-TPU"/>
                             <constraint firstItem="ekO-L3-hf1" firstAttribute="top" secondItem="mwo-yQ-tv9" secondAttribute="bottom" constant="-3" id="Sl2-Fj-s81"/>
@@ -2014,6 +2013,7 @@ en 3h30</string>
                             <constraint firstItem="O8g-Ix-Gdt" firstAttribute="trailing" secondItem="tUV-GR-k8t" secondAttribute="trailing" constant="20" id="m1e-4a-PxO"/>
                             <constraint firstItem="O8g-Ix-Gdt" firstAttribute="trailing" secondItem="IlJ-Lw-Qdf" secondAttribute="trailing" constant="10" id="rhc-9l-LfF"/>
                             <constraint firstItem="ekO-L3-hf1" firstAttribute="centerX" secondItem="mwo-yQ-tv9" secondAttribute="centerX" id="uBm-9B-4cS"/>
+                            <constraint firstItem="ulT-aS-TzN" firstAttribute="top" secondItem="Hre-4j-2tv" secondAttribute="bottom" constant="15" id="x1I-30-rTp"/>
                             <constraint firstItem="zCY-cz-659" firstAttribute="top" secondItem="ekO-L3-hf1" secondAttribute="bottom" constant="16" id="xzd-7s-6Xp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O8g-Ix-Gdt"/>
