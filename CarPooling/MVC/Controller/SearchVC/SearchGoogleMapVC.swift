@@ -71,6 +71,11 @@ class SearchGoogleMapVC: BaseViewController {
         }
     }
     @objc func typingName(textField:UITextField){
+      if textField == txtFromPlace
+      {
+        isFromTxtActive = true
+        }
+      else { isFromTxtActive = false }
         if searchTimer != nil {
             searchTimer?.invalidate()
             searchTimer = nil
@@ -93,8 +98,6 @@ class SearchGoogleMapVC: BaseViewController {
      {
         keyword = txtToPlace.text!
         }
-
-        
         if keyword.characters.count != 0 {
             
             self.arr_city = appDelegate.arr_city.filter({$0.city_name.lowercased().hasPrefix(keyword.lowercased())})
@@ -248,12 +251,12 @@ extension SearchGoogleMapVC : UITableViewDataSource, UITableViewDelegate {
     {
         return 80.0;//Choose your custom row height
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        if (self.arr_city.count != nil) {
-            return self.arr_city.count
-        }
-        return 0
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        if (self.arr_city.count != nil) {
+//            return self.arr_city.count
+//        }
+//        return 0
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.arr_city.count
@@ -274,7 +277,7 @@ extension SearchGoogleMapVC : UITableViewDataSource, UITableViewDelegate {
             if status {
                 let data = self.arr_city[indexPath.row]
                 let latLong = CLLocationCoordinate2D(latitude: Double(data.city_lat) ?? 0.0, longitude: Double(data.city_lng) ?? 0.0)
-                if (txtFromPlace.isEditing)
+                if (isFromTxtActive)
                 {
                     self.fromLatLong = latLong
                     self.txtFromPlace.text = data.city_name

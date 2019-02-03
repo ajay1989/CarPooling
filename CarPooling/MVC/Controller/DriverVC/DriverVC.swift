@@ -33,15 +33,43 @@ class DriverVC: UIViewController {
     var  timer2: Timer = Timer()
     override func viewDidLoad() {
         super.viewDidLoad()
-         timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(movingLabels), userInfo: nil, repeats: true)
-         timer2 = Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(movingLabels2), userInfo: nil, repeats: true)
+//         timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(movingLabels), userInfo: nil, repeats: true)
+//         timer2 = Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(movingLabels2), userInfo: nil, repeats: true)
+//        // Do any additional setup after loading the view.
+//        let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
+//        
+//        let placeholderImage = UIImage(named: "Male-driver")!
+//        
+//        self.img_User.af_setImage(withURL: url, placeholderImage: placeholderImage)
+//
+//        //Otman
+//        
+//        print((AppHelper.getValueForKey(ServiceKeys.keyFirstName)!))
+//        
+//        
+//        let myAttribute = [ NSAttributedString.Key.font: UIFont(name:
+//            "Montserrat", size: 17.0)! ]
+//        let nameStr = NSMutableAttributedString(string: AppHelper.getValueForKey(ServiceKeys.keyFirstName) as! String, attributes: myAttribute )
+//        let myString = NSMutableAttributedString(string: ", tu voyages quelque part? À plusieurs ćest", attributes: myAttribute )
+//        nameStr.append(myString)
+//        let attrString = NSMutableAttributedString(string: " mieux!")
+//        let myRange = NSRange(location: 1, length: 6)
+//        attrString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), range: myRange)
+//        nameStr.append(attrString)
+//        lblDes.attributedText = nameStr
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+       
+        timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(movingLabels), userInfo: nil, repeats: true)
+        timer2 = Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(movingLabels2), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
         
         let placeholderImage = UIImage(named: "Male-driver")!
         
         self.img_User.af_setImage(withURL: url, placeholderImage: placeholderImage)
-
+        
         //Otman
         
         print((AppHelper.getValueForKey(ServiceKeys.keyFirstName)!))
