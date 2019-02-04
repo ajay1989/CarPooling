@@ -349,9 +349,9 @@ extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate {
         
         for i in 0..<appDelegate.arr_color.count {
             let color1 = appDelegate.arr_color[i]
-            let col = hexStringToUIColor(hex: color1.color_name!)
+            let col = hexStringToUIColor(hex: color1.color_code!)
             tempColor.append(col)
-            if data.color! == color1.color_name! {
+            if data.color! == color1.color_code! {
                 cell.carColorPickerView.preselectedIndex = i
             }
         }

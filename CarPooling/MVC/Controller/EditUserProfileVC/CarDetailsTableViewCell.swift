@@ -32,7 +32,7 @@ class CarDetailsTableViewCell: UITableViewCell,ColorPickerViewDelegateFlowLayout
         // Initialization code
         var tempColor = [UIColor]()
         for data in appDelegate.arr_color {
-            let col = hexStringToUIColor(hex: data.color_name!)
+            let col = hexStringToUIColor(hex: data.color_code!)
             tempColor.append(col)
         }
 

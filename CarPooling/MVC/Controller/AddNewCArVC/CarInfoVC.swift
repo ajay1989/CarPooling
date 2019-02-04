@@ -42,7 +42,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
         colorPickerView.backgroundColor = .clear
         var tempColor = [UIColor]()
         for data in appDelegate.arr_color {
-            let col = hexStringToUIColor(hex: data.color_name!)
+            let col = hexStringToUIColor(hex: data.color_code!)
             tempColor.append(col)
         }
         colorPickerView.colors = tempColor
@@ -69,7 +69,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
     
     func colorPickerView(_ colorPickerView: ColorPickerView, didSelectItemAt indexPath: IndexPath) {
         let data = appDelegate.arr_color[indexPath.item]
-        self.selectedColor = data.color_name!
+        self.selectedColor = data.color_code!
         self.color  = colorPickerView.colors[indexPath.item]
     }
     
