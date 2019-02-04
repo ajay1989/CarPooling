@@ -197,6 +197,7 @@ class Ride {
     var luggage : String!
     var dob : String!
     var status :String!
+    var station : String!
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -227,6 +228,7 @@ class Ride {
         arrival_date = parseData!["arrival_date"].stringValue
         dob = parseData!["dob"].stringValue
         status = parseData!["status"].string
+        station = parseData!["station"].string
     }
     
 }

@@ -43,6 +43,7 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
     @IBOutlet weak var txt_search: UITextField!
     var searchTimer: Timer?
     var arr_city:Array = [City]()
+     var arr_SelectedCity:NSMutableArray = ["0","0","0","0","0"]
      var index = -1
     var totalView:Int = 0
     var ride:Ride!
@@ -113,27 +114,32 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
         if sender.tag == 1
         {
             viewCity1Height.constant = 0
+            arr_SelectedCity.replaceObject(at: 0, with: "0")
            // lbl_city1.text = city.city_name
             
         }
         else if (sender.tag == 2)
         {
             viewCity2Height.constant = 0
+             arr_SelectedCity.replaceObject(at: 1, with: "0")
             //lbl_city2.text = city.city_name
         }
         else if (sender.tag == 3)
         {
             viewCity3Height.constant = 0
+             arr_SelectedCity.replaceObject(at: 2, with: "0")
            // lbl_city3.text = city.city_name
         }
         else if (sender.tag == 4)
         {
             viewCity4Height.constant = 0
+              arr_SelectedCity.replaceObject(at: 3, with: "0")
             //lbl_city4.text = city.city_name
         }
         else if (sender.tag == 5)
         {
             viewCity5Height.constant = 0
+            arr_SelectedCity.replaceObject(at: 4, with: "0")
           //  lbl_city5.text = city.city_name
         }
         else
@@ -158,6 +164,7 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
     }
     @IBAction func actionTest(sender: UIButton)
     {
+        print(self.arr_SelectedCity) // remove 0 and save selected cities to ride model
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
         let vc: DriverStep5VC = storyboard.instantiateViewController(withIdentifier: "DriverStep5VC") as! DriverStep5VC
         vc.ride = self.ride
@@ -166,33 +173,39 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
     }
     func createCityLabel(city:City,xVal:Int,yVal:Int)
   {
-    btn_next.setTitle("Continuer👉🏻", for: .normal)
+   // self.btn_next.setTitle("Continuer👉🏻", for: .normal)
+    self.btn_next.titleLabel?.text = "Continuer👉🏻"
     self.totalView += 1
     if self.totalView == 1
     {
         viewCity1Height.constant = 20
         lbl_city1.text = city.city_name
+         arr_SelectedCity.replaceObject(at: 0, with: city.city_id)
         
     }
     else if (self.totalView == 2)
     {
         viewCity2Height.constant = 20
         lbl_city2.text = city.city_name
+        arr_SelectedCity.replaceObject(at: 1, with: city.city_id)
     }
     else if (self.totalView == 3)
     {
         viewCity3Height.constant = 20
        lbl_city3.text = city.city_name
+        arr_SelectedCity.replaceObject(at: 2, with: city.city_id)
     }
     else if (self.totalView == 4)
     {
         viewCity4Height.constant = 20
         lbl_city4.text = city.city_name
+        arr_SelectedCity.replaceObject(at: 3, with: city.city_id)
     }
     else if (self.totalView == 5)
     {
         viewCity5Height.constant = 20
         lbl_city5.text = city.city_name
+        arr_SelectedCity.replaceObject(at: 4, with: city.city_id)
     }
     else
     {
