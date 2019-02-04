@@ -165,8 +165,24 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
     @IBAction func actionTest(sender: UIButton)
     {
         print(self.arr_SelectedCity) // remove 0 and save selected cities to ride model
+        var str = ""
+        var i = 0
+        let arr = self.arr_SelectedCity.filter({$0 as! String != "0"})
+        for data in arr {
+            let data1 = data as! String
+            if data1 != "0" {
+                if i == arr.count - 1 {
+                    str = "\(str)\(data1)"
+                }
+                else {
+                    str = "\(str)\(data1),"
+                }
+            }
+            i = i + 1
+        }
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
         let vc: DriverStep5VC = storyboard.instantiateViewController(withIdentifier: "DriverStep5VC") as! DriverStep5VC
+        ride.station = str
         vc.ride = self.ride
         // self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
