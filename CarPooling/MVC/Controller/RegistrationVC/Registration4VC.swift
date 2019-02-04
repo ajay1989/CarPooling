@@ -16,7 +16,7 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
     @IBOutlet weak var scrollView:UIScrollView!
     @IBOutlet weak var btn_continue: UIButton!
     @IBOutlet weak var txt_email: UITextField!
-    
+    @IBOutlet weak var img_email: UIImageView!
     @IBOutlet weak var txt_password: UITextField!
     @IBOutlet weak var vw_email: UIView! {
         didSet {
@@ -28,6 +28,7 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       // img_email.isHidden = true
         self.registerScrollView(scrollView)
         if #available(iOS 11.0, *) {
             scrollView.contentInsetAdjustmentBehavior = .never
@@ -72,7 +73,7 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
         ServiceClass.sharedInstance.hitServiceForCheckEmail(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                
+                self.img_email.image = UIImage.init(named: "checkcircle")
                 print("sucess")
                 AppHelper.setStringForKey(self.txt_email.text!, key: ServiceKeys.keyEmail)
                 AppHelper.setStringForKey(self.txt_password.text!, key: ServiceKeys.KeyPassword)
@@ -82,6 +83,7 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
                 
             }
             else {
+                 self.img_email.image = UIImage.init(named: "cross")
                 self.makeToast(errorDict!["message"] as! String)
             }
             

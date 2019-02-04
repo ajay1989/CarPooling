@@ -172,6 +172,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
         }
         if textField == txt_number2
         {
+            if (string != ""){
             if ( CharacterSet.uppercaseLetters.isSuperset(of: CharacterSet(charactersIn: string)) && (textField.text?.count ?? 0 <= 0 ) ) {
                 return true
             }
@@ -180,10 +181,16 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
             {
                 return false
             }
+            }
+            else
+            {
+            return true
+            }
            
         }
         if textField == txt_number3
         {
+             if (string != ""){
             if ( CharacterSet(charactersIn: "0123456789").isSuperset(of: CharacterSet(charactersIn: string)) && (textField.text?.count ?? 0 <= 0 )) {
                 return true
             }
@@ -192,6 +199,11 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
             {
                 return false
             }
+            }
+           else {
+                return true
+            }
+            
            
         }
         return false

@@ -83,7 +83,7 @@ class Registration5VC: BaseViewController,UITextFieldDelegate  {
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
-        
+        datePicker.maximumDate  = Date()
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()

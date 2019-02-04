@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DriverStep9VC: UIViewController {
+class DriverStep9VC: BaseViewController {
     @IBOutlet weak var lbl_Price:UILabel!
     @IBOutlet weak var vw_Search: UIView!{
         didSet{
@@ -20,7 +20,7 @@ class DriverStep9VC: UIViewController {
     var ride:Ride!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+  self.loadPriceApi()
         // Do any additional setup after loading the view.
     }
     
@@ -73,4 +73,36 @@ class DriverStep9VC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    //MARK: APi method
+    func loadPriceApi()
+    {
+       // from_city, to_city,seats
+       
+        
+        let params = ["from_city" : self.ride.from_city,"to_city" : self.ride.to_city,"seats":self.ride.seats]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForGetPriceAndDistance(params as [String : Any], completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                
+                if (parseData["message"] != "No result found" ) {
+                    for data in parseData["data"]{
+                       // let model = Car.init(fromJson: data.1)
+                      //  self.arr_cars.append(model)
+                        print(data)
+                    }
+                   
+                }
+            }
+            else {
+                self.hudHide()
+                
+            }
+            
+        })
+        
+    }
+        
+        //
+
 }

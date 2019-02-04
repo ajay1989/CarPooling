@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -7473,7 +7473,7 @@ publier ton premier covoiturage via l'application.
                                                     <constraint firstAttribute="width" constant="112" id="WJs-0I-Q1i"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
-                                                <state key="normal" title="Yalah 🚗">
+                                                <state key="normal" title="Yalah ">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -7491,6 +7491,13 @@ publier ton premier covoiturage via l'application.
                                                     <action selector="btn_register_tap:" destination="HgJ-mD-tZG" eventType="touchUpInside" id="bTh-7c-fl1"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios-car" translatesAutoresizingMaskIntoConstraints="NO" id="2sQ-oK-EkU">
+                                                <rect key="frame" x="230" y="643.66666666666663" width="15" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="PfA-D3-sJN"/>
+                                                    <constraint firstAttribute="width" constant="15" id="YGQ-WF-oiz"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -7503,7 +7510,9 @@ publier ton premier covoiturage via l'application.
                                             <constraint firstItem="chX-gO-Ap7" firstAttribute="centerX" secondItem="BeR-J8-scQ" secondAttribute="centerX" id="Dfk-zc-6su"/>
                                             <constraint firstItem="guc-QI-gff" firstAttribute="top" secondItem="chX-gO-Ap7" secondAttribute="bottom" constant="80" id="JOB-B4-pe6"/>
                                             <constraint firstItem="chX-gO-Ap7" firstAttribute="top" secondItem="BeR-J8-scQ" secondAttribute="top" constant="50" id="Ju4-8G-ETg"/>
+                                            <constraint firstItem="2sQ-oK-EkU" firstAttribute="leading" secondItem="7eO-Hb-Nv5" secondAttribute="trailing" constant="-33" id="L1W-Kp-SB9"/>
                                             <constraint firstItem="rrN-Dh-7Cj" firstAttribute="top" secondItem="guc-QI-gff" secondAttribute="bottom" constant="15" id="ZCB-uf-OrV"/>
+                                            <constraint firstItem="2sQ-oK-EkU" firstAttribute="centerY" secondItem="7eO-Hb-Nv5" secondAttribute="centerY" id="ZmR-zM-wbo"/>
                                             <constraint firstItem="RS9-0Z-57y" firstAttribute="leading" secondItem="BeR-J8-scQ" secondAttribute="leading" constant="8" id="eAm-JL-nn0"/>
                                             <constraint firstItem="7eO-Hb-Nv5" firstAttribute="centerX" secondItem="BeR-J8-scQ" secondAttribute="centerX" id="s3A-qd-Mdv"/>
                                             <constraint firstItem="RS9-0Z-57y" firstAttribute="top" secondItem="rrN-Dh-7Cj" secondAttribute="bottom" constant="70" id="uou-gD-Ckp"/>
@@ -7533,7 +7542,7 @@ publier ton premier covoiturage via l'application.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRu-JT-ZKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5610" y="107"/>
+            <point key="canvasLocation" x="5608.6956521739139" y="106.79347826086958"/>
         </scene>
         <!--Registration6VC-->
         <scene sceneID="78I-JD-o0a">
@@ -8135,7 +8144,7 @@ nous Otman 🎉</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qh-zg-kGo">
                                                         <rect key="frame" x="199.66666666666663" y="0.0" width="198.33333333333337" height="84"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harrak" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyw-RI-f7u">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyw-RI-f7u">
                                                                 <rect key="frame" x="6" y="0.0" width="192.33333333333334" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="TiK-MT-ib7"/>
@@ -8147,7 +8156,7 @@ nous Otman 🎉</string>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFl-H2-L5J">
                                                                 <rect key="frame" x="0.0" y="38" width="182.33333333333334" height="35"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Harrak" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4mb-Dc-Onj">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4mb-Dc-Onj">
                                                                         <rect key="frame" x="8" y="0.0" width="174.33333333333334" height="35"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
@@ -8348,6 +8357,13 @@ nous Otman 🎉</string>
                                                             <outlet property="delegate" destination="MO6-aO-HAz" id="VsE-ya-uxM"/>
                                                         </connections>
                                                     </textField>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="37D-z2-cSC">
+                                                        <rect key="frame" x="370" y="10" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="29R-kF-wdl"/>
+                                                            <constraint firstAttribute="width" constant="20" id="wdn-Rf-Ga8"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -8355,6 +8371,8 @@ nous Otman 🎉</string>
                                                     <constraint firstItem="g6w-MM-B2l" firstAttribute="leading" secondItem="EbM-Tx-FX3" secondAttribute="leading" constant="8" id="Oef-Ex-ARh"/>
                                                     <constraint firstItem="g6w-MM-B2l" firstAttribute="top" secondItem="EbM-Tx-FX3" secondAttribute="top" id="Yjb-QB-iHE"/>
                                                     <constraint firstAttribute="trailing" secondItem="g6w-MM-B2l" secondAttribute="trailing" id="fNR-Ue-JpO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="37D-z2-cSC" secondAttribute="trailing" constant="8" id="s0H-VI-dq1"/>
+                                                    <constraint firstItem="37D-z2-cSC" firstAttribute="centerY" secondItem="g6w-MM-B2l" secondAttribute="centerY" id="tMZ-nL-gk1"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -8449,6 +8467,15 @@ nous Otman 🎉</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Nous t'enverrons toutes les informations pratiques concernant tes covoiturages sur ce méme mail.🚗" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBW-C5-JTL">
+                                                <rect key="frame" x="8" y="541" width="398" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="27" id="KBX-Ln-Rw2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -8459,11 +8486,13 @@ nous Otman 🎉</string>
                                             <constraint firstItem="6v9-PV-V5g" firstAttribute="leading" secondItem="3BK-K5-yuc" secondAttribute="leading" constant="8" id="MrV-sT-Ula"/>
                                             <constraint firstItem="unY-MX-0yl" firstAttribute="top" secondItem="3BK-K5-yuc" secondAttribute="top" constant="50" id="N7Q-dK-fCc"/>
                                             <constraint firstItem="Tab-Dt-gWe" firstAttribute="top" secondItem="YgQ-eZ-ux1" secondAttribute="bottom" constant="5" id="PU3-QQ-G6f"/>
+                                            <constraint firstItem="RBW-C5-JTL" firstAttribute="top" secondItem="ABa-bd-2Sg" secondAttribute="bottom" constant="45" id="Pw4-Jp-vRI"/>
                                             <constraint firstItem="YgQ-eZ-ux1" firstAttribute="top" secondItem="EbM-Tx-FX3" secondAttribute="bottom" constant="3" id="QlV-dD-jPo"/>
                                             <constraint firstItem="Tab-Dt-gWe" firstAttribute="leading" secondItem="3BK-K5-yuc" secondAttribute="leading" constant="8" id="UX7-aD-WjP"/>
-                                            <constraint firstAttribute="bottom" secondItem="gSp-Ui-gkp" secondAttribute="bottom" constant="105" id="Usg-ZI-LQq"/>
                                             <constraint firstItem="Vgm-XL-ENb" firstAttribute="leading" secondItem="3BK-K5-yuc" secondAttribute="leading" constant="8" id="W15-oV-ZGh"/>
                                             <constraint firstAttribute="trailing" secondItem="EbM-Tx-FX3" secondAttribute="trailing" constant="8" id="aHU-Do-J4C"/>
+                                            <constraint firstItem="gSp-Ui-gkp" firstAttribute="top" secondItem="RBW-C5-JTL" secondAttribute="bottom" constant="33" id="aNN-J3-W8N"/>
+                                            <constraint firstAttribute="trailing" secondItem="RBW-C5-JTL" secondAttribute="trailing" constant="8" id="c7A-Ax-W8Q"/>
                                             <constraint firstAttribute="trailing" secondItem="Vgm-XL-ENb" secondAttribute="trailing" constant="8" id="c7O-R3-2Af"/>
                                             <constraint firstAttribute="trailing" secondItem="YgQ-eZ-ux1" secondAttribute="trailing" constant="8" id="cBR-9b-hYc"/>
                                             <constraint firstItem="YgQ-eZ-ux1" firstAttribute="leading" secondItem="3BK-K5-yuc" secondAttribute="leading" constant="23" id="cbq-Na-jQN"/>
@@ -8472,6 +8501,7 @@ nous Otman 🎉</string>
                                             <constraint firstItem="EbM-Tx-FX3" firstAttribute="leading" secondItem="3BK-K5-yuc" secondAttribute="leading" constant="8" id="iR0-4b-VLn"/>
                                             <constraint firstItem="Vgm-XL-ENb" firstAttribute="top" secondItem="unY-MX-0yl" secondAttribute="bottom" constant="120" id="ikf-SD-l5d"/>
                                             <constraint firstAttribute="trailing" secondItem="gSp-Ui-gkp" secondAttribute="trailing" constant="8" id="leu-Ka-4KI"/>
+                                            <constraint firstItem="RBW-C5-JTL" firstAttribute="leading" secondItem="3BK-K5-yuc" secondAttribute="leading" constant="8" id="mW6-YF-Ocd"/>
                                             <constraint firstAttribute="trailing" secondItem="Tab-Dt-gWe" secondAttribute="trailing" constant="8" id="tli-XX-gDq"/>
                                         </constraints>
                                     </view>
@@ -8497,6 +8527,7 @@ nous Otman 🎉</string>
                     </view>
                     <connections>
                         <outlet property="btn_continue" destination="gSp-Ui-gkp" id="NGk-w9-AKN"/>
+                        <outlet property="img_email" destination="37D-z2-cSC" id="t8J-fu-5BS"/>
                         <outlet property="lbl_textDetail" destination="Vgm-XL-ENb" id="zeY-4K-D9l"/>
                         <outlet property="scrollView" destination="nYr-4P-Mg1" id="K1G-eP-xAF"/>
                         <outlet property="txt_email" destination="g6w-MM-B2l" id="sWL-jv-kt2"/>
@@ -8506,7 +8537,7 @@ nous Otman 🎉</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uir-K4-qrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3546" y="107"/>
+            <point key="canvasLocation" x="3544.9275362318845" y="106.79347826086958"/>
         </scene>
         <!--User ProfileVC-->
         <scene sceneID="Jhg-Xz-ITE">
@@ -10307,6 +10338,7 @@ nous Otman 🎉</string>
         <image name="img_eye" width="76.800003051757812" height="76.800003051757812"/>
         <image name="img_logout" width="76.800003051757812" height="76.800003051757812"/>
         <image name="img_star" width="69" height="69"/>
+        <image name="ios-car" width="14" height="11"/>
         <image name="like" width="16.416000366210938" height="16.416000366210938"/>
         <image name="lock" width="98.160003662109375" height="131"/>
         <image name="loginBg" width="191.66400146484375" height="340.84799194335938"/>

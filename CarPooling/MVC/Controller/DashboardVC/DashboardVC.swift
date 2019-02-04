@@ -144,6 +144,7 @@ class DashboardVC: BaseViewController {
             } else {
                 // Fallback on earlier versions
             }
+            //Ajay app crash ho rhi h
            let data = self.arr_rides[indexPath.row]
             if (self.arr_city.count > 0){
                  let dataCityfrom = self.arr_city[Int(data.from_city)! - 1 ]
