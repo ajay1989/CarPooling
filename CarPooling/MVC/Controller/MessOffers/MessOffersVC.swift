@@ -42,8 +42,9 @@ class MessOffersVC: BaseViewController {
         let ride = self.arr_rides[0]
         // img_status: UIImageView!
         //   @IBOutlet weak var lbl_status: UILabel!
-        lbl_fromDate.text  = "\(ride.departure_date!) \(ride.departure_time!)"
-        lbl_toDate.text = "\(ride.arrival_date!) \(ride.arrival_time!)"
+        
+        lbl_fromDate.text  =  self.dateTimeFormateAccordingToUI(date: ride.departure_date, time: ride.departure_time)
+        lbl_toDate.text =  self.dateTimeFormateAccordingToUI(date: ride.arrival_date, time: ride.arrival_time)
         let data = appDelegate.arr_city.filter({$0.city_id == ride.from_city!})
         let data1 = appDelegate.arr_city.filter({$0.city_id == ride.to_city!})
         lbl_fromcity.text = data[0].city_name

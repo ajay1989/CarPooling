@@ -191,7 +191,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
         if textField == txt_number3
         {
              if (string != ""){
-            if ( CharacterSet(charactersIn: "0123456789").isSuperset(of: CharacterSet(charactersIn: string)) && (textField.text?.count ?? 0 <= 0 )) {
+            if ( CharacterSet(charactersIn: "0123456789").isSuperset(of: CharacterSet(charactersIn: string)) && (textField.text?.count ?? 0 <= 1 )) {
                 return true
             }
             

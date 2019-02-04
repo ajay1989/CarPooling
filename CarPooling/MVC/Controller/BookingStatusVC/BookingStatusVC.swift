@@ -131,8 +131,11 @@ class BookingStatusVC: BaseViewController {
         let ride = self.arr_rides[0]
        // img_status: UIImageView!
      //   @IBOutlet weak var lbl_status: UILabel!
-         lbl_dateFrom.text  = "\(ride.departure_date!) \(ride.departure_time!)"
-         lbl_dateTo.text = "\(ride.arrival_date!) \(ride.arrival_time!)"
+       
+        
+        
+         lbl_dateFrom.text  = self.dateTimeFormateAccordingToUI(date: ride.departure_date, time: ride.departure_time) //"\(ride.departure_date!) \(ride.departure_time!)"
+         lbl_dateTo.text = self.dateTimeFormateAccordingToUI(date: ride.arrival_date, time: ride.arrival_time) //"\(ride.arrival_date!) \(ride.arrival_time!)"
         let data = appDelegate.arr_city.filter({$0.city_id == ride.from_city!})
         let data1 = appDelegate.arr_city.filter({$0.city_id == ride.to_city!})
          lbl_fromCity.text = data[0].city_name
@@ -191,19 +194,27 @@ class BookingStatusVC: BaseViewController {
                                 else {
                                     self.lbl_luggage.text = "Grande valise"
                                 }
-         lbl_distance.text = "0"
+        
+        let dateformatter2 = DateFormatter()
+        dateformatter2.dateFormat = "HH:mm"
+        let date2 = dateformatter2.date(from: ride.duration)
+        dateformatter2.dateFormat = "hh'h'mm"
+        let dateStr2:String = dateformatter2.string(from: date2!)
+         lbl_distance.text = "Traget de" + ride.distance + "kms" + "\nen " + dateStr2
+        
         
        // btn_demande.text = ""
     
         lbl_tripName.text = ""
         let age = self.getAge(dob:ride.dob!)
-        lbl_nameAge.text  = "\(ride.first_name!) \(ride.last_name!), \(age) years"
+        lbl_nameAge.text  = "\(ride.first_name!), \(age) ans"
        //  btn_contact.text = ""
-        lbl_nameAge2.text  = "\(ride.first_name!) \(ride.last_name!), \(age) years"
+        lbl_nameAge2.text  = "\(ride.first_name!), \(age) ans"
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(ride.profile_photo!)")!
          let placeholderImage = UIImage(named: "Male-driver")!
          img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
         img_user2.af_setImage(withURL: url, placeholderImage: placeholderImage)
+        lbl_tripName.text = "car name"
         // btn_whatsap.text = ""
         // btmn_msg.text = ""
         // btn_phone.text = ""

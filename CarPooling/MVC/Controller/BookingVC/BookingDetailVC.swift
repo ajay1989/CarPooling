@@ -88,8 +88,8 @@ class BookingDetailVC: BaseViewController {
                     self.lbl_From.text = data[0].city_name
                     let data1 = appDelegate.arr_city.filter({$0.city_id == ride.to_city!})
                     self.lbl_To.text = data1[0].city_name
-                    self.lbl_DateFrom.text = "\(ride.departure_date!) \(ride.departure_time!)"
-                    self.lbl_DateTo.text = "\(ride.arrival_date!) \(ride.arrival_time!)"
+                    self.lbl_DateFrom.text =  self.dateTimeFormateAccordingToUI(date: ride.departure_date, time: ride.departure_time)
+                    self.lbl_DateTo.text =  self.dateTimeFormateAccordingToUI(date: ride.arrival_date, time: ride.arrival_time)
                     self.lbl_seat.text = "\(ride.available_seats!) place(s) restante(s)"
                     self.lbl_Price.text = "\(ride.price!)DH per passager"
                     if ride.luggage == "" || ride.luggage == "1" {
@@ -103,7 +103,7 @@ class BookingDetailVC: BaseViewController {
                     }
                     let age = self.getAge(dob:ride.dob!)
                     
-                    self.lbl_userNAmeAge.text = "\(ride.first_name!) \(ride.last_name!), \(age) years"
+                    self.lbl_userNAmeAge.text = ride.first_name + "," + String(age) + "ans"
                     let url = URL(string: "\(ServiceUrls.profilePicURL)\(ride.profile_photo!)")!
                     
                     let placeholderImage = UIImage(named: "Male-driver")!

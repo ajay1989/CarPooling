@@ -74,7 +74,23 @@ class BaseViewController: UIViewController {
         
     }
     
-    
+    func dateTimeFormateAccordingToUI(date:String,time:String)->String
+    {
+        //Archit..
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "yyyy-MM-dd"
+        let date = dateformatter.date(from: date)
+        dateformatter.dateFormat = "dd/MM/yyyy"
+        let dateStr:String = dateformatter.string(from: date!)
+        
+        
+        let dateformatter2 = DateFormatter()
+        dateformatter2.dateFormat = "HH:mm:ss"
+        let date2 = dateformatter2.date(from: time)
+        dateformatter2.dateFormat = "hh'h'mm"
+        let dateStr2:String = dateformatter2.string(from: date2!)
+        return "le " + dateStr + " á " + dateStr2
+    }
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         

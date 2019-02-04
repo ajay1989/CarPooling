@@ -38,7 +38,8 @@ class DriverStep8VC: UIViewController {
             let  s = parts?[0]
           
             if let x = Int(s ?? "0") {
-                if (x < 7) {
+                //Archit..
+                if (x < 6) {
                     i = x + 1
                     self.lblPassanger.text = i.description + " places"
                 }

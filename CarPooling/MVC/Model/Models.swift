@@ -198,6 +198,8 @@ class Ride {
     var dob : String!
     var status :String!
     var station : String!
+     var distance : String!
+    var duration : String!
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -229,6 +231,8 @@ class Ride {
         dob = parseData!["dob"].stringValue
         status = parseData!["status"].string
         station = parseData!["station"].string
+         distance = parseData!["distance"].string //Archit..
+        duration = parseData!["duration"].string 
     }
     
 }
