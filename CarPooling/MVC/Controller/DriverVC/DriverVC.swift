@@ -94,6 +94,13 @@ class DriverVC: UIViewController {
     }
     
     //MARK: Custom Action
+    @IBAction func btn_profilePic_tap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc:UserProfileVC = storyboard.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileVC
+        // self.present(vc, animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     @IBAction func actionGoToStep1(sender: UIButton)
     {
         let driverStoryboard: UIStoryboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)

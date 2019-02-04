@@ -3619,6 +3619,12 @@ en 3h30</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cp7-ag-7zj">
+                                        <rect key="frame" x="20" y="7.6666666666666679" width="40" height="40"/>
+                                        <connections>
+                                            <action selector="btn_profilePic_tap:" destination="mOH-vr-b1z" eventType="touchUpInside" id="tG3-7T-8xB"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conducteur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdK-Ef-Xft">
                                         <rect key="frame" x="68" y="16.666666666666664" width="112" height="22"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
@@ -3632,8 +3638,12 @@ en 3h30</string>
                                     <constraint firstItem="VdK-Ef-Xft" firstAttribute="leading" secondItem="QeO-SB-roe" secondAttribute="trailing" constant="8" id="5dl-bA-6Bl"/>
                                     <constraint firstAttribute="height" constant="55" id="Ivf-0B-tBm"/>
                                     <constraint firstItem="Jzp-LQ-8Mt" firstAttribute="centerY" secondItem="Yrv-tM-dNg" secondAttribute="centerY" id="PC8-v7-Q7N"/>
+                                    <constraint firstItem="cp7-ag-7zj" firstAttribute="top" secondItem="QeO-SB-roe" secondAttribute="top" id="PRQ-gL-1cF"/>
                                     <constraint firstItem="QeO-SB-roe" firstAttribute="centerY" secondItem="Yrv-tM-dNg" secondAttribute="centerY" id="aE7-b8-J9Y"/>
+                                    <constraint firstItem="cp7-ag-7zj" firstAttribute="width" secondItem="QeO-SB-roe" secondAttribute="width" id="axb-sC-kSF"/>
                                     <constraint firstAttribute="trailing" secondItem="Jzp-LQ-8Mt" secondAttribute="trailing" constant="20" id="gl7-qf-ZEf"/>
+                                    <constraint firstItem="cp7-ag-7zj" firstAttribute="leading" secondItem="QeO-SB-roe" secondAttribute="leading" id="t0G-6e-9iS"/>
+                                    <constraint firstItem="cp7-ag-7zj" firstAttribute="height" secondItem="QeO-SB-roe" secondAttribute="height" id="tum-xU-eaF"/>
                                     <constraint firstItem="QeO-SB-roe" firstAttribute="leading" secondItem="Yrv-tM-dNg" secondAttribute="leading" constant="20" id="w9s-SN-YYj"/>
                                 </constraints>
                             </view>
