@@ -45,7 +45,7 @@ class PublicProfileVC: BaseViewController {
                     
                     self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
                     let age = self.getAge(dob: user.dob!)
-                    self.lbl_name.text = "\(user.first_name!), \(age) \("ans")"
+                    self.lbl_name.text = "\(user.first_name!), \(age) \(" ans")"
                     self.lbl_phone.text = user.mobile_number
                     self.lbl_email.text = user.user_email
                     

@@ -114,6 +114,7 @@ class BaseViewController: UIViewController {
     }
     
     func getAge(dob:String) -> Int {
+        if dob.count > 0 {
         let now = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -122,6 +123,11 @@ class BaseViewController: UIViewController {
         
         let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
         return ageComponents.year!
+        }
+        else
+        {
+            return 0
+        }
     }
     
     @objc func backButton(_ sender: UIButton) {

@@ -20,6 +20,7 @@ class DriverStep9VC: BaseViewController {
     @IBOutlet weak var btn_continue: UIButton!
      var distance:Distances!
     var ride:Ride!
+    var increment:Int = 10
     override func viewDidLoad() {
         super.viewDidLoad()
   self.loadPriceApi()
@@ -42,7 +43,7 @@ class DriverStep9VC: BaseViewController {
             
             if let x = Int(s ?? "0") {
                 if (x < 999999) {
-                    i = x + 1
+                    i = x + increment
                     self.lbl_Price.text = i.description + " DH"
                 }
             }
@@ -55,8 +56,8 @@ class DriverStep9VC: BaseViewController {
             let i : Int!
             
             if let x = Int(s!) {
-                if (x > 1) {
-                    i = x - 1
+                if (x > increment) {
+                    i = x - increment
                     self.lbl_Price.text = i.description + " DH"
                 }
             }
@@ -91,7 +92,8 @@ class DriverStep9VC: BaseViewController {
                 
                 if (parseData["message"] != "No result found" ) {
                     self.distance = Distances.init(fromJson: parseData["data"])
-                    
+                    self.increment = Int(self.distance.price_factor) ?? 10
+                    print(self.increment)
                 }
             }
             else {

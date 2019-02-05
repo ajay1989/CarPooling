@@ -146,7 +146,26 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
         {
             
         }
-        
+     //   btn_next.setTitle("Ignorer👉🏻", for: .normal)
+       var p = 0
+        var i = 0
+        let arr = self.arr_SelectedCity.filter({$0 as! String != "0"})
+        for data in arr {
+            let data1 = data as! String
+            if data1 != "0" {
+                p = 1
+            }
+            
+            i = i + 1
+        }
+        if p != 1
+        {
+            btn_next.setTitle("Ignorer👉🏻", for: .normal)
+        }
+        else
+        {
+            self.btn_next.titleLabel?.text = "Continuer👉🏻"
+        }
         
     }
     @IBAction func actionOpenAlert()

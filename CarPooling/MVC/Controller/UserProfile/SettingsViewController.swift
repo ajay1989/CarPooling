@@ -84,11 +84,11 @@ class SettingsViewController: BaseViewController {
                 
                 //                appDelegate.openDashBoard(isRemoveKey: true)
                 Utilities.resetDefaults()
-                let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-                let navigationController = UINavigationController(rootViewController: testController)
-                appDelegate.window?.rootViewController = navigationController
-                appDelegate.window?.makeKeyAndVisible()
-                
+//                let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//                let navigationController = UINavigationController(rootViewController: testController)
+//                appDelegate.window?.rootViewController = navigationController
+//                appDelegate.window?.makeKeyAndVisible()
+                appDelegate.logout()
                 
             }
             else {

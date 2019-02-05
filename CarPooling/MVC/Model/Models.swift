@@ -167,6 +167,8 @@ class Ride {
     var station : String!
     var duration :String!
     var distance : String!
+    var brand_name : String!
+     var model_name : String!
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -200,6 +202,8 @@ class Ride {
         station = parseData!["station"].string
         duration = parseData!["duration"].string
         distance = parseData!["distance"].string
+        brand_name = parseData!["brand_name"].string
+        model_name = parseData!["model_name"].string
     }
     
 }

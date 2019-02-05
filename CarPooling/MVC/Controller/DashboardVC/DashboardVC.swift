@@ -26,7 +26,7 @@ class DashboardVC: BaseViewController {
 //        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)        // Do any additional setup after loading the view.
         tblVw.delegate = self
         tblVw.dataSource = self
-        
+        self.tblVw.addSubview(self.refreshControl)
         
         
         self.loadUserData()
@@ -112,6 +112,26 @@ class DashboardVC: BaseViewController {
         vc.id = id!
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(DashboardVC.handleRefresh(_:)),
+                                 for: UIControl.Event.valueChanged)
+        refreshControl.tintColor = UIColor.black
+        
+        return refreshControl
+    }()
+ @objc   func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+//        let newHotel = Hotels(name: "Montage Laguna Beach", place:
+//            "California south")
+//        hotels.append(newHotel)
+//
+//        hotels.sort() { $0.name < $0.place }
+        self.loadUserData()
+        self.tblVw.reloadData()
+        refreshControl.endRefreshing()
+    }
 }
     //MARK:- UIableView Data Source & Delegates Methods
     
@@ -165,7 +185,7 @@ class DashboardVC: BaseViewController {
                 cell.llbl_TimeTo.text = self.dateTimeFormateAccordingToUI(date: data.arrival_date, time: data.arrival_time)
                 // cell.lbl_userName.text = data.first_name + data.last_name
                 let age = self.getAge(dob:data.dob!)
-                cell.lbl_userName.text = data.first_name + "," + String(age) + "ans"
+                cell.lbl_userName.text = data.first_name + ", " + String(age) + " ans"
                 
                 cell.lbl_seats.text = data.available_seats
                 cell.lbl_Price.text = data.price

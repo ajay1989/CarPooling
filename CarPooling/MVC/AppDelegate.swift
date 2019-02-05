@@ -198,7 +198,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
 //        }
     }
-    
+    func logout()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+       self.nav.setViewControllers([vc], animated: true)
+    }
     func logoutAlert(message:String) {
         let alertController = UIAlertController(title: txt_AppName, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) {

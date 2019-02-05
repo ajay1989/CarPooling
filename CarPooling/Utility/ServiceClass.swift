@@ -517,7 +517,12 @@ class ServiceClass: NSObject {
         let base64Credentials = credentialData.base64EncodedString(options: [])
         //Ajay tere kale karname
        // let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.city_distance)"
-       let baseUrl = "http://echofounder.com/demo/carpoll/v1/api/city_distance?from_city=21&to_city=13&seats=2"
+       //let baseUrl1 = "http://echofounder.com/demo/carpoll/v1/api/city_distance?from_city=21&to_city=13&seats=2"
+        
+        let toCity:String = params["to_city"] as! String
+        let fromCity:String = params["from_city"] as! String
+        let seats:String = params["seats"] as! String
+        let baseUrl = "http://echofounder.com/demo/carpoll/v1/api/city_distance" + "?from_city=" + fromCity + "&to_city=" + toCity + "&seats=" + seats
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
             "X-API-KEY":"CYLPIUnVia7UUl"]

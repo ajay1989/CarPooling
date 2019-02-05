@@ -103,12 +103,13 @@ class BookingDetailVC: BaseViewController {
                     }
                     let age = self.getAge(dob:ride.dob!)
                     
-                    self.lbl_userNAmeAge.text = ride.first_name + "," + String(age) + "ans"
+                    self.lbl_userNAmeAge.text = ride.first_name + ", " + String(age) + " ans"
                     let url = URL(string: "\(ServiceUrls.profilePicURL)\(ride.profile_photo!)")!
                     
                     let placeholderImage = UIImage(named: "Male-driver")!
                     
                     self.img_User.af_setImage(withURL: url, placeholderImage: placeholderImage)
+                    self.lbl_tripName.text = ride.brand_name + "," + ride.model_name
                 }
                 
             }
