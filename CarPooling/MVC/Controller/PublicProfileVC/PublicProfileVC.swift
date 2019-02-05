@@ -49,7 +49,7 @@ class PublicProfileVC: BaseViewController {
                     self.lbl_phone.text = user.mobile_number
                     self.lbl_email.text = user.user_email
                     
-                    self.lbl_dob.text = user.dob
+                    self.lbl_dob.text = ""
                     let dateformatter = DateFormatter()
                     dateformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                     let date = dateformatter.date(from: user.created_date!)

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -2072,7 +2072,7 @@ en 3h30</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apQ-lb-PDx">
-                                <rect key="frame" x="354" y="39" width="52" height="30"/>
+                                <rect key="frame" x="344" y="39" width="62" height="31"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
                                 <state key="normal" title="Annuler">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2085,31 +2085,31 @@ en 3h30</string>
                                 <rect key="frame" x="20" y="86" width="374" height="72.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1le 05/11/20181h30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3d-mG-G9U">
-                                        <rect key="frame" x="240.66666666666671" y="0.0" width="125.33333333333334" height="16.333333333333332"/>
+                                        <rect key="frame" x="245" y="0.0" width="121" height="17.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <color key="textColor" red="0.64166271689999999" green="0.63572192189999999" blue="0.63548094030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="le 05/11/201814h30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0f-9u-xAF">
-                                        <rect key="frame" x="240.66666666666671" y="41.333333333333329" width="125.33333333333334" height="17.333333333333329"/>
+                                        <rect key="frame" x="240.66666666666671" y="42.333333333333343" width="125.33333333333334" height="17.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casablanca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vq-ZU-lSj">
-                                        <rect key="frame" x="27" y="0.0" width="68.666666666666671" height="16"/>
+                                        <rect key="frame" x="27" y="0.0" width="75" height="16"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-cone" translatesAutoresizingMaskIntoConstraints="NO" id="LxO-FY-EvC">
-                                        <rect key="frame" x="7" y="3.3333333333333286" width="10" height="10"/>
+                                        <rect key="frame" x="7" y="3.6666666666666714" width="10" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="d40-zW-2tj"/>
                                             <constraint firstAttribute="width" constant="10" id="yfj-V1-qwK"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jw4-WO-NGp">
-                                        <rect key="frame" x="10.666666666666668" y="23.333333333333329" width="3" height="3"/>
+                                        <rect key="frame" x="10.666666666666668" y="23.666666666666671" width="3" height="3"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="3" id="YYz-nj-po9"/>
@@ -2122,7 +2122,7 @@ en 3h30</string>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9qR-0X-LBO">
-                                        <rect key="frame" x="10.666666666666668" y="36.333333333333329" width="3" height="3"/>
+                                        <rect key="frame" x="10.666666666666668" y="36.666666666666671" width="3" height="3"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="3" id="PMe-mU-ZJS"/>
@@ -2135,14 +2135,14 @@ en 3h30</string>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="wQM-3T-Eoq">
-                                        <rect key="frame" x="6" y="45" width="12" height="10"/>
+                                        <rect key="frame" x="6" y="46" width="12" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="12" id="bFv-Rd-AOr"/>
                                             <constraint firstAttribute="height" constant="10" id="h9x-cl-JKj"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fés" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViZ-Dv-800">
-                                        <rect key="frame" x="28" y="41.333333333333329" width="22.666666666666671" height="17.333333333333329"/>
+                                        <rect key="frame" x="28" y="42.333333333333343" width="24" height="17.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2204,7 +2204,7 @@ en 3h30</string>
                                 <rect key="frame" x="20" y="218.66666666666666" width="374" height="54.999999999999972"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville de passage:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUz-Mj-6Kp">
-                                        <rect key="frame" x="7.9999999999999929" y="0.0" width="113.33333333333331" height="18.333333333333332"/>
+                                        <rect key="frame" x="8.0000000000000071" y="0.0" width="123.66666666666669" height="18.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2377,7 +2377,7 @@ en 3h30</string>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFp-Zj-7Fz">
-                                                <rect key="frame" x="32" y="13.666666666666627" width="149.33333333333334" height="30.333333333333329"/>
+                                                <rect key="frame" x="32" y="13" width="149.33333333333334" height="32"/>
                                                 <string key="text">Trajet de 300 kms
 en 3h30</string>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
@@ -2697,7 +2697,7 @@ en 3h30</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deepika, 29 ans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xr8-tX-eeB">
-                                        <rect key="frame" x="149.33333333333334" y="192" width="115.33333333333334" height="19.666666666666657"/>
+                                        <rect key="frame" x="144.33333333333334" y="192" width="125.33333333333334" height="19.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -5939,7 +5939,7 @@ en 3h30</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcr-Yo-C9m">
                                 <rect key="frame" x="0.0" y="120" width="414" height="616"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="VFm-xi-k4d">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="men-colored" translatesAutoresizingMaskIntoConstraints="NO" id="VFm-xi-k4d">
                                         <rect key="frame" x="162" y="0.0" width="90" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="a4Y-je-qcQ"/>
@@ -6227,14 +6227,14 @@ en 3h30</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASN-hx-RKY">
                                                 <rect key="frame" x="8" y="214" width="382" height="45"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="57J-JN-bRU">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pass" translatesAutoresizingMaskIntoConstraints="NO" id="57J-JN-bRU">
                                                         <rect key="frame" x="8" y="12.666666666666686" width="15" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="WiA-Q0-jyu"/>
                                                             <constraint firstAttribute="width" constant="15" id="kv5-WG-KvZ"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0808097667" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zu9-eV-0Xf">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="*********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zu9-eV-0Xf">
                                                         <rect key="frame" x="26" y="3" width="348" height="40"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
@@ -8652,12 +8652,11 @@ nous Otman 🎉</string>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpC-mj-HVo">
-                                                <rect key="frame" x="78" y="83.666666666666671" width="112" height="30"/>
+                                                <rect key="frame" x="78" y="83.666666666666671" width="154" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="8m7-M4-L7A"/>
-                                                    <constraint firstAttribute="width" constant="112" id="J9u-EX-wSa"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                                 <state key="normal" title="     Appliquer">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -8673,6 +8672,7 @@ nous Otman 🎉</string>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="lpC-mj-HVo" secondAttribute="trailing" constant="8" id="00W-zP-G1F"/>
                                             <constraint firstAttribute="height" constant="128" id="7ON-Fj-AkF"/>
                                             <constraint firstItem="lpC-mj-HVo" firstAttribute="leading" secondItem="MdV-w3-Xnv" secondAttribute="trailing" constant="8" id="dcl-fa-UYk"/>
                                             <constraint firstItem="lpC-mj-HVo" firstAttribute="top" secondItem="LcZ-R0-raA" secondAttribute="bottom" constant="2" id="de7-Ly-maF"/>
@@ -8721,7 +8721,7 @@ nous Otman 🎉</string>
                                                     <constraint firstAttribute="width" constant="20" id="oZd-cu-YP2"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_right" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-Hu-MAx">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-green" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-Hu-MAx">
                                                 <rect key="frame" x="384" y="12.666666666666657" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="2Ne-Pf-JuS"/>
@@ -8757,7 +8757,7 @@ nous Otman 🎉</string>
                                                     <constraint firstAttribute="height" constant="20" id="caP-ne-SLY"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_cross" translatesAutoresizingMaskIntoConstraints="NO" id="z85-zJ-3gd">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-green" translatesAutoresizingMaskIntoConstraints="NO" id="z85-zJ-3gd">
                                                 <rect key="frame" x="384" y="12.666666666666657" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="5wh-rR-Qg5"/>
@@ -8793,7 +8793,7 @@ nous Otman 🎉</string>
                                                     <constraint firstAttribute="width" constant="20" id="y2o-Ey-jef"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_right" translatesAutoresizingMaskIntoConstraints="NO" id="xph-BG-0sU">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_cross" translatesAutoresizingMaskIntoConstraints="NO" id="xph-BG-0sU">
                                                 <rect key="frame" x="384" y="12.666666666666657" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="9xu-V7-njJ"/>
@@ -9072,7 +9072,7 @@ nous Otman 🎉</string>
                                     <constraint firstItem="57B-nJ-qfA" firstAttribute="top" secondItem="2is-cJ-EHG" secondAttribute="top" constant="1" id="yE0-gI-Ugp"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2er-fI-fGw">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2er-fI-fGw">
                                 <rect key="frame" x="0.0" y="510" width="414" height="266"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -9080,7 +9080,7 @@ nous Otman 🎉</string>
                                         <rect key="frame" x="0.0" y="28" width="414" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8hP-aQ-57k" id="JOK-bs-xdo">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmf-Pk-QmP">
@@ -9168,7 +9168,7 @@ nous Otman 🎉</string>
                                     <outlet property="delegate" destination="vPc-WQ-vhN" id="BjU-Pk-OJ5"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fso-Gx-jv0">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fso-Gx-jv0">
                                 <rect key="frame" x="0.0" y="677" width="414" height="59"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSg-hq-zYS">
@@ -9236,6 +9236,7 @@ nous Otman 🎉</string>
                     <connections>
                         <outlet property="img_profile" destination="MdV-w3-Xnv" id="Bj3-U2-Pey"/>
                         <outlet property="lbl_email" destination="zeH-jJ-H0d" id="AEu-7t-27v"/>
+                        <outlet property="lbl_joinedDate" destination="lpC-mj-HVo" id="aqQ-AQ-7z4"/>
                         <outlet property="lbl_mobile" destination="U2j-qW-ebv" id="Kzc-kT-tth"/>
                         <outlet property="lbl_name" destination="UDl-mR-J9h" id="qcy-rK-mBw"/>
                         <outlet property="tableView" destination="2er-fI-fGw" id="Seb-Hf-i4i"/>
@@ -9243,7 +9244,7 @@ nous Otman 🎉</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J73-G5-3mS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2987" y="2253"/>
+            <point key="canvasLocation" x="2986.9565217391305" y="2251.630434782609"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="ar7-pf-NBh">
@@ -9734,7 +9735,7 @@ nous Otman 🎉</string>
                                                     <constraint firstAttribute="height" constant="20" id="g9D-3w-sv8"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_right" translatesAutoresizingMaskIntoConstraints="NO" id="pTq-gK-hJc">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-green" translatesAutoresizingMaskIntoConstraints="NO" id="pTq-gK-hJc">
                                                 <rect key="frame" x="384" y="12.666666666666657" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="eLC-v4-jsN"/>
@@ -9770,7 +9771,7 @@ nous Otman 🎉</string>
                                                     <constraint firstAttribute="height" constant="20" id="rlB-sN-vkp"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="s7J-p0-yck">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-green" translatesAutoresizingMaskIntoConstraints="NO" id="s7J-p0-yck">
                                                 <rect key="frame" x="384" y="12.666666666666657" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="SeJ-KR-mjm"/>
@@ -9806,7 +9807,7 @@ nous Otman 🎉</string>
                                                     <constraint firstAttribute="height" constant="20" id="fGx-fc-QJ1"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_right" translatesAutoresizingMaskIntoConstraints="NO" id="lf9-W8-IeW">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_cross" translatesAutoresizingMaskIntoConstraints="NO" id="lf9-W8-IeW">
                                                 <rect key="frame" x="384" y="12.666666666666686" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Mds-Bp-G6N"/>
@@ -9860,7 +9861,7 @@ nous Otman 🎉</string>
                                     <constraint firstAttribute="trailing" secondItem="dxz-Jo-4dd" secondAttribute="trailing" id="vOq-LG-4xd"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agw-fe-psY">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agw-fe-psY">
                                 <rect key="frame" x="0.0" y="310" width="414" height="45"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment" translatesAutoresizingMaskIntoConstraints="NO" id="aN7-j9-Qz0">
@@ -9896,7 +9897,7 @@ nous Otman 🎉</string>
                                     <constraint firstItem="aN7-j9-Qz0" firstAttribute="leading" secondItem="Agw-fe-psY" secondAttribute="leading" constant="10" id="vtG-xM-63j"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Fw-W2-P0f">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Fw-W2-P0f">
                                 <rect key="frame" x="0.0" y="355" width="414" height="322"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -9904,7 +9905,7 @@ nous Otman 🎉</string>
                                         <rect key="frame" x="0.0" y="28" width="414" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N4X-oU-SMZ" id="NuG-ib-eRO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIL-mm-Ped">
@@ -9982,14 +9983,14 @@ nous Otman 🎉</string>
                                     <outlet property="delegate" destination="jKp-8O-Ogz" id="O85-3j-d4y"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7l8-29-xXU">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7l8-29-xXU">
                                 <rect key="frame" x="0.0" y="677" width="414" height="59"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="G49-x9-3Jd"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MN-hW-Td7">
+                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MN-hW-Td7">
                                 <rect key="frame" x="142" y="687" width="130" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -10012,7 +10013,7 @@ nous Otman 🎉</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_plus_green" translatesAutoresizingMaskIntoConstraints="NO" id="hD8-PH-1dC">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_plus_green" translatesAutoresizingMaskIntoConstraints="NO" id="hD8-PH-1dC">
                                 <rect key="frame" x="157" y="692" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="LB1-je-BwK"/>
@@ -10334,7 +10335,6 @@ nous Otman 🎉</string>
         <image name="checkcircle" width="24.191999435424805" height="24.624000549316406"/>
         <image name="comment" width="19.871999740600586" height="19.871999740600586"/>
         <image name="credit-card" width="38.880001068115234" height="26.784000396728516"/>
-        <image name="cross" width="25.055999755859375" height="25.055999755859375"/>
         <image name="delete-button" width="20.736000061035156" height="25.920000076293945"/>
         <image name="down-arrow" width="12.095999717712402" height="10.223999977111816"/>
         <image name="driver" width="24.333333969116211" height="24.333333969116211"/>
@@ -10354,7 +10354,6 @@ nous Otman 🎉</string>
         <image name="img_star" width="69" height="69"/>
         <image name="ios-car" width="14" height="11"/>
         <image name="like" width="24.624000549316406" height="25.488000869750977"/>
-        <image name="lock" width="98.160003662109375" height="131"/>
         <image name="loginBg" width="191.66400146484375" height="340.84799194335938"/>
         <image name="logo" width="131.27999877929688" height="104.40000152587891"/>
         <image name="magnifyDark" width="18.333333969116211" height="18.333333969116211"/>
@@ -10362,6 +10361,7 @@ nous Otman 🎉</string>
         <image name="mail" width="28.944000244140625" height="20.736000061035156"/>
         <image name="man" width="102" height="133"/>
         <image name="man-colored" width="42.666667938232422" height="55.666667938232422"/>
+        <image name="men-colored" width="73.872001647949219" height="96.33599853515625"/>
         <image name="messanger" width="28.079999923706055" height="28.079999923706055"/>
         <image name="mobile" width="14.687999725341797" height="25.055999755859375"/>
         <image name="money-management" width="19.871999740600586" height="19.871999740600586"/>
@@ -10378,8 +10378,8 @@ nous Otman 🎉</string>
         <image name="sports-car" width="29.375999450683594" height="21.600000381469727"/>
         <image name="stop" width="130.55999755859375" height="130.55999755859375"/>
         <image name="test" width="1080" height="1920"/>
+        <image name="tick-green" width="17" height="17"/>
         <image name="tick_cross" width="21" height="21"/>
-        <image name="tick_right" width="21" height="21"/>
         <image name="user" width="18.576000213623047" height="21.743999481201172"/>
         <image name="valise" width="22.895999908447266" height="31.104000091552734"/>
         <image name="whatapp" width="24.624000549316406" height="24.624000549316406"/>

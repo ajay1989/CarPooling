@@ -10,6 +10,7 @@ import UIKit
 
 class UserProfileVC: BaseViewController {
 
+    @IBOutlet weak var lbl_joinedDate: UIButton!
     @IBOutlet weak var lbl_email: UILabel!
     @IBOutlet weak var lbl_mobile: UILabel!
     @IBOutlet weak var lbl_name: UILabel!
@@ -57,10 +58,12 @@ class UserProfileVC: BaseViewController {
                     let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
                     AppHelper.setStringForKey(user.profile_photo!, key: ServiceKeys.profile_image)
                     let placeholderImage = UIImage(named: "Male-driver")!
+                    let str = Utilities.convertToString(dateString: user.created_date!, formatIn: "yyyy-MM-dd HH:mm:ss", formatOut: "dd/MM/yyy")
                     
+                    self.lbl_joinedDate.setTitle("Membre depuis le \(str)", for: .normal)
                     self.img_profile.af_setImage(withURL: url, placeholderImage: placeholderImage)
                     let age = self.getAge(dob: user.dob!)
-                    self.lbl_name.text = "\(user.first_name!) \(user.last_name!), \(age)"
+                    self.lbl_name.text = "\(user.first_name!) \(user.last_name!), \(age) ans"
                     self.lbl_mobile.text = user.mobile_number
                     self.lbl_email.text = user.user_email
                     
