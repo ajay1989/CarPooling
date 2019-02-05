@@ -18,12 +18,13 @@ class DriverRequestDetailsVC: BaseViewController {
     @IBOutlet weak var btn_waitingApproval: UIButton!
     var arr_allRide = [Ride]()
     var arr_tempRide = [Ride]()
+    var passenger: Passenger!
       var arr_city:Array = [City]()
     override func viewDidLoad() {
         super.viewDidLoad()
           self.arr_city = appDelegate.arr_city
-        btn_waitingApproval.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
-        btn_waitingApproval.titleLabel?.textColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
+        btn_waitingApproval.borderColor = UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1)
+        btn_waitingApproval.setTitleColor(UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1), for: .normal)
         btn_refused.borderColor = UIColor.lightGray
         btn_refused.titleLabel?.textColor = UIColor.lightGray
         btn_completed.borderColor = UIColor.lightGray
@@ -60,20 +61,20 @@ class DriverRequestDetailsVC: BaseViewController {
         
         if (sender as AnyObject).tag == 1 {
             self.arr_tempRide = self.arr_allRide.filter({$0.status == "0" || $0.status == "1"})
-            btn_waitingApproval.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
-                        btn_waitingApproval.setTitleColor(UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), for: .normal)
+            btn_waitingApproval.borderColor = UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1)
+                        btn_waitingApproval.setTitleColor(UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1), for: .normal)
             
         }
         else if (sender as AnyObject).tag == 2 {
             self.arr_tempRide = self.arr_allRide.filter({$0.status == "2" || $0.status == "3"})
-            btn_refused.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
-            btn_refused.setTitleColor(UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), for: .normal)
+            btn_refused.borderColor = UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1)
+            btn_refused.setTitleColor(UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1), for: .normal)
             
         }
         else {
             self.arr_tempRide = self.arr_allRide.filter({$0.status == "4"})
-            btn_completed.borderColor = UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1)
-            btn_completed.setTitleColor(UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), for: .normal)
+            btn_completed.borderColor = UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1)
+            btn_completed.setTitleColor(UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1), for: .normal)
         }
         self.tableView.reloadData()
         
@@ -220,6 +221,7 @@ extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFromDashboard
         {
+             //Mess demands
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc:BookingStatusVC = storyboard.instantiateViewController(withIdentifier: "BookingStatusVC") as! BookingStatusVC
         // self.present(vc, animated: true, completion: nil)
@@ -228,6 +230,7 @@ extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
         }
         else
         {
+           //Mess offers
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc:MessOffersVC = storyboard.instantiateViewController(withIdentifier: "MessOffersVC") as! MessOffersVC
             // self.present(vc, animated: true, completion: nil)

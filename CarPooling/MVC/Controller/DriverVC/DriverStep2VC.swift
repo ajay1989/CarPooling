@@ -51,6 +51,7 @@ class DriverStep2VC: BaseViewController,GMSMapViewDelegate,UITableViewDelegate,U
     }
     
     @objc func typingName(textField:UITextField){
+       
         if searchTimer != nil {
             searchTimer?.invalidate()
             searchTimer = nil

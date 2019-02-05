@@ -862,7 +862,7 @@
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BU-kc-7mZ">
                                         <rect key="frame" x="286" y="25" width="118" height="30"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
-                                        <state key="normal" title="Validé">
+                                        <state key="normal" title="Terminé">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -1222,16 +1222,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vD0-xv-012">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red-strip" translatesAutoresizingMaskIntoConstraints="NO" id="vv6-rp-W1w">
-                                        <rect key="frame" x="184" y="28" width="230" height="45"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vv6-rp-W1w">
+                                        <rect key="frame" x="164" y="28" width="250" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="ORu-nJ-7My"/>
-                                            <constraint firstAttribute="width" constant="230" id="XOZ-74-UkN"/>
+                                            <constraint firstAttribute="width" constant="250" id="XOZ-74-UkN"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demande refusée" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOp-Dr-2Ra">
-                                        <rect key="frame" x="234.66666666666663" y="28" width="153.33333333333337" height="45"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOp-Dr-2Ra">
+                                        <rect key="frame" x="399" y="28" width="0.0" height="45"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1254,7 +1254,7 @@
                                 <constraints>
                                     <constraint firstItem="N81-35-y8J" firstAttribute="centerY" secondItem="vD0-xv-012" secondAttribute="centerY" id="AV4-ev-Dxz"/>
                                     <constraint firstItem="vv6-rp-W1w" firstAttribute="top" secondItem="vD0-xv-012" secondAttribute="top" constant="28" id="CQx-rY-6j3"/>
-                                    <constraint firstAttribute="trailing" secondItem="sOp-Dr-2Ra" secondAttribute="trailing" constant="26" id="Mcw-j5-0bA"/>
+                                    <constraint firstAttribute="trailing" secondItem="sOp-Dr-2Ra" secondAttribute="trailing" constant="15" id="Mcw-j5-0bA"/>
                                     <constraint firstItem="N81-35-y8J" firstAttribute="leading" secondItem="vD0-xv-012" secondAttribute="leading" id="OrE-3A-meM"/>
                                     <constraint firstAttribute="trailing" secondItem="vv6-rp-W1w" secondAttribute="trailing" id="WSX-Lm-9Mr"/>
                                     <constraint firstItem="sOp-Dr-2Ra" firstAttribute="height" secondItem="vv6-rp-W1w" secondAttribute="height" id="gln-Yp-bA5"/>
@@ -1554,7 +1554,7 @@ en 3h30</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.86005580455518615" green="0.86005580455518615" blue="0.86005580455518615" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="avx-CG-2a8" firstAttribute="top" secondItem="IlJ-Lw-Qdf" secondAttribute="top" constant="1" id="3lp-5S-I1d"/>
                                     <constraint firstItem="ren-jb-g1E" firstAttribute="top" secondItem="IlJ-Lw-Qdf" secondAttribute="top" constant="1" id="4cZ-RW-vjZ"/>
@@ -2036,6 +2036,7 @@ en 3h30</string>
                         <outlet property="lbl_distance" destination="WgU-me-3Hh" id="276-QT-bOV"/>
                         <outlet property="lbl_fromCity" destination="UqZ-uM-LBY" id="i8c-Eh-dYa"/>
                         <outlet property="lbl_luggage" destination="74F-52-5l0" id="qhF-a5-Def"/>
+                        <outlet property="lbl_multiplecity" destination="iR4-dj-T1a" id="6Yn-E1-76E"/>
                         <outlet property="lbl_nameAge" destination="mwo-yQ-tv9" id="H36-Fk-gGy"/>
                         <outlet property="lbl_nameAge2" destination="p1J-LV-DMs" id="Uws-p4-itU"/>
                         <outlet property="lbl_price" destination="Zx5-fi-Afx" id="gcd-sQ-JOc"/>
@@ -10369,7 +10370,6 @@ nous Otman 🎉</string>
         <image name="passenger-selected" width="26.666666030883789" height="24.333333969116211"/>
         <image name="pin" width="35.423999786376953" height="32.400001525878906"/>
         <image name="question" width="130.55999755859375" height="130.55999755859375"/>
-        <image name="red-strip" width="302.39999389648438" height="51.408000946044922"/>
         <image name="road" width="26.351999282836914" height="26.351999282836914"/>
         <image name="setting" width="21.600000381469727" height="21.600000381469727"/>
         <image name="sign" width="28" height="24.333333969116211"/>

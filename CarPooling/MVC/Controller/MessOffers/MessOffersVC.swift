@@ -86,7 +86,7 @@ class MessOffersVC: BaseViewController {
         
         // btn_demande.text = ""
         
-        lbl_tripname.text = "yep yep yalah"
+        lbl_tripname.text = ride.brand_name + "," + ride.model_name
       
         
         
@@ -256,7 +256,7 @@ extension MessOffersVC : UITableViewDataSource, UITableViewDelegate {
 //            return 0
 //
 //        }
-        return 2
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -42,6 +42,7 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
         self.navigationController?.popViewController(animated: true)
     }
     @objc func typingName(textField:UITextField){
+        self.hudShow()
         if searchTimer != nil {
             searchTimer?.invalidate()
             searchTimer = nil
@@ -53,6 +54,7 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
     }
     
     @objc func searchForKeyword(_ timer: Timer) {
+        
         self.arr_city.removeAll()
         self.tableView.isHidden = true
         self.tableView.reloadData()
@@ -63,8 +65,10 @@ class DriverStep1VC: BaseViewController,UITextFieldDelegate,UITableViewDelegate,
             self.arr_city = appDelegate.arr_city.filter({$0.city_name.lowercased().hasPrefix(keyword.lowercased())})
             if(self.arr_city.count > 0) {
                 print(self.arr_city)
+                
                 self.tableView.isHidden = false
                 self.tableView.reloadData()
+                self.hudHide()
             }
             
         }

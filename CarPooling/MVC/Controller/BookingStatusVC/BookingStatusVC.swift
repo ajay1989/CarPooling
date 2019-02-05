@@ -48,6 +48,7 @@ class BookingStatusVC: BaseViewController {
     @IBOutlet weak var btmn_msg: UIButton!
     @IBOutlet weak var btn_phone: UIButton!
     
+    @IBOutlet weak var lbl_multiplecity: UILabel!
     var rideDetail: Ride!
      var arr_rides = [Ride]()
     var passenger: Passenger!
@@ -144,8 +145,9 @@ class BookingStatusVC: BaseViewController {
          lbl_price.text = "\(ride.price!)DH per passager"
         //status
       //  0-wating,1-approve,2-cancel,3-completed
+        print(self.passenger.status)
         if self.passenger.status == "0" {
-            self.lbl_luggage.text = "En attente de validation"
+            self.lbl_status.text = "En attente de validation"
             self.img_status.image = UIImage.init(named: "yellow strip")
             //btn contact hide, btn demand show(cancel pending request api)
             self.btn_recherche.isHidden = true
@@ -153,7 +155,7 @@ class BookingStatusVC: BaseViewController {
             self.btn_demade.isHidden = false  // cancel
         }
         else if self.passenger.status == "1" {
-            self.lbl_luggage.text = "Demande acceptée"
+            self.lbl_status.text = "Demande acceptée"
              self.img_status.image = UIImage.init(named: "green-strip")
             //show both button   "contacter le conducteur"   "Annuler ma demande"
             // demande = cancel pop up show
@@ -162,7 +164,7 @@ class BookingStatusVC: BaseViewController {
             self.btn_demade.isHidden = false
         }
         else if self.passenger.status == "2" {
-            self.lbl_luggage.text = "Demande refusée"
+            self.lbl_status.text = "Demande refusée"
              self.img_status.image = UIImage.init(named: "red-strip")
             // single btn show with fray bordr text "Nouvelle recherche "
             // action go to dashboard applicable (btn text = Nouvelle recherche)
@@ -171,14 +173,14 @@ class BookingStatusVC: BaseViewController {
             self.btn_demade.isHidden = true
         }
         else if self.passenger.status == "3" {
-            self.lbl_luggage.text = "Completed"
+            self.lbl_status.text = "Completed"
              self.img_status.image = UIImage.init(named: "green-strip")
             self.btn_recherche.isHidden = false
             self.btn_contact.isHidden = true
             self.btn_demade.isHidden = true
         }
         else {
-            self.lbl_luggage.text = "Completed"
+            self.lbl_status.text = "Completed"
              self.img_status.image = UIImage.init(named: "yellow strip")
             self.btn_recherche.isHidden = false
             self.btn_contact.isHidden = true
@@ -219,6 +221,14 @@ class BookingStatusVC: BaseViewController {
          img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
         img_user2.af_setImage(withURL: url, placeholderImage: placeholderImage)
         lbl_tripName.text = ride.brand_name + "," + ride.model_name
+      if ride.station != nil
+      {
+        lbl_multiplecity.isHidden = false
+      }
+        else
+      {
+        lbl_multiplecity.isHidden = true
+        }
         // btn_whatsap.text = ""
         // btmn_msg.text = ""
         // btn_phone.text = ""

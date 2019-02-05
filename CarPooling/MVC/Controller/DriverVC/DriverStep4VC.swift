@@ -75,6 +75,7 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
     
     
     @objc func typingName(textField:UITextField){
+       self.hudShow()
         if searchTimer != nil {
             searchTimer?.invalidate()
             searchTimer = nil
@@ -95,6 +96,7 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
                 print(self.arr_city)
                 self.tableView.isHidden = false
                 self.tableView.reloadData()
+                self.hudHide()
             }
             
         }
