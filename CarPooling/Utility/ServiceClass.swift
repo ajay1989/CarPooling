@@ -386,15 +386,15 @@ class ServiceClass: NSObject {
         
 //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     
-  func hitServiceForChangeRideStatus(_ params:[String : Any], completion:@escaping completionBlockType)
+  func hitServiceForChangeRideStatusPassenger(_ params:[String : Any], completion:@escaping completionBlockType)
   {
     //change_passenger_status
     let user = "admin"
     let password = "1234"
     let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
     let base64Credentials = credentialData.base64EncodedString(options: [])
-    
-    let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.change_ride_status)/\(params["keyword"]!)"
+    let str:String = (params["keyword"]! as! String)
+    let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.change_ride_statusPassenger)/\(str)"
     print(baseUrl)
     let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
         "X-API-KEY":"CYLPIUnVia7UUl"]
@@ -515,8 +515,9 @@ class ServiceClass: NSObject {
         let password = "1234"
         let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString(options: [])
-        
-        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.city_distance)"
+        //Ajay tere kale karname
+       // let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.city_distance)"
+       let baseUrl = "http://echofounder.com/demo/carpoll/v1/api/city_distance?from_city=21&to_city=13&seats=2"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
             "X-API-KEY":"CYLPIUnVia7UUl"]

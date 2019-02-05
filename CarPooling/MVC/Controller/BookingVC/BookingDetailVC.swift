@@ -19,7 +19,7 @@ class BookingDetailVC: BaseViewController {
     @IBOutlet weak var lbl_Lugguage: UILabel!
     @IBOutlet weak var lbl_Price: UILabel!
     var arr_rides = [Ride]()
-    var arr_station = [Station]()
+    //var arr_station = [Station]()
     @IBOutlet weak var lbl_Distance: UILabel!
     @IBOutlet weak var lbl_tripName: UILabel!
     
@@ -63,7 +63,7 @@ class BookingDetailVC: BaseViewController {
         let vc:PaymentMethodVC = storyboard.instantiateViewController(withIdentifier: "PaymentMethodVC") as! PaymentMethodVC
         // self.present(vc, animated: true, completion: nil)
         vc.rideDetail = self.arr_rides[0]
-        vc.arr_station = self.arr_station
+       // vc.arr_station = self.arr_station
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -15,8 +15,10 @@ class DriverStep9VC: BaseViewController {
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
-    var distance:Distance!
+   
+    
     @IBOutlet weak var btn_continue: UIButton!
+     var distance:Distances!
     var ride:Ride!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +90,7 @@ class DriverStep9VC: BaseViewController {
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 
                 if (parseData["message"] != "No result found" ) {
-                    self.distance = Distance.init(fromJson: parseData["data"])
+                    self.distance = Distances.init(fromJson: parseData["data"])
                     
                 }
             }

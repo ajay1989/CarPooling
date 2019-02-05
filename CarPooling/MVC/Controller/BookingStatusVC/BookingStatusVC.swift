@@ -194,15 +194,19 @@ class BookingStatusVC: BaseViewController {
                                 else {
                                     self.lbl_luggage.text = "Grande valise"
                                 }
-        
+        if ride.duration != nil {
         let dateformatter2 = DateFormatter()
         dateformatter2.dateFormat = "HH:mm"
         let date2 = dateformatter2.date(from: ride.duration)
         dateformatter2.dateFormat = "hh'h'mm"
         let dateStr2:String = dateformatter2.string(from: date2!)
-         lbl_distance.text = "Traget de" + ride.distance + "kms" + "\nen " + dateStr2
+         lbl_distance.text = "Traget de " + ride.distance + "kms" + "\nen " + dateStr2
         
-        
+        }
+        else
+        {
+            lbl_distance.text = "Traget de " + "0" + "kms" + "\nen " + "0"
+        }
        // btn_demande.text = ""
     
         lbl_tripName.text = ""
@@ -264,9 +268,9 @@ class BookingStatusVC: BaseViewController {
  {
     
     let params = ["keyword":self.passenger.ride_passenger_id!, "user":AppHelper.getStringForKey(ServiceKeys.user_id),
-                  "status":"2", "note":""]
+                  "status":"2", "note":"" , "ride" : self.rideDetail.ride_id]
     self.hudShow()
-    ServiceClass.sharedInstance.hitServiceForChangeRideStatus(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+    ServiceClass.sharedInstance.hitServiceForChangeRideStatusPassenger(params as [String : Any], completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
         self.hudHide()
         if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
            // let data = parseData["data"].dictionary!

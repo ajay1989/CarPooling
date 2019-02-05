@@ -28,6 +28,8 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     var gender = "0"
     var from_City:String = ""
     var to_city:String = ""
+    var fromCityName = ""
+    var toCityName = ""
     var departureDate:String = ""
     
     var customDatePicker:ActionSheetStringPicker = ActionSheetStringPicker.init()
@@ -45,8 +47,8 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
         self.btn_male.isSelected = true
         self.loadData()
         // Do any additional setup after loading the view.
-        lbl_toCity.text = self.to_city
-        lbl_fromCity.text = self.from_City
+        lbl_toCity.text = self.toCityName
+        lbl_fromCity.text = self.fromCityName
     }
     
     

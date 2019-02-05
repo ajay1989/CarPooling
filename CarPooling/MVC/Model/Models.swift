@@ -80,7 +80,7 @@ class Color {
         color_name = parseData!["color_name"].stringValue
         
         color_code = parseData!["color_code"].stringValue
-       
+        
     }
     
 }
@@ -132,41 +132,7 @@ class City {
     }
     
 }
-class Passenger {
- 
-    
-    var status : String!
-    var to_city : String!
-    var profile_photo : String!
-    var last_name : String!
-    var ride_passenger_id : String!
-    var seats : String!
-    var user_id : String!
-    var from_city : String!
-    var first_name : String!
-    
-    init(fromJson parseData: JSON!){
-        if parseData.isEmpty{
-            return
-        }
-        
-        status = parseData!["status"].stringValue
-        to_city = parseData!["to_city"].stringValue
-        
-        profile_photo = parseData!["profile_photo"].stringValue
-        last_name = parseData!["last_name"].stringValue
-        
-        ride_passenger_id = parseData!["ride_passenger_id"].stringValue
-        seats = parseData!["seats"].stringValue
-        user_id = parseData!["user_id"].stringValue
-        
-        from_city = parseData!["from_city"].stringValue
-        first_name = parseData!["first_name"].stringValue
-        
-       
-    }
-    
-}
+
 class Ride {
     
     var ride_id : String!
@@ -188,21 +154,19 @@ class Ride {
     var arrival_date : String!
     var arrival_time : String!
     var vehicle : String!
-     var user : String!
+    var user : String!
     var user_id : String!
     var first_name : String!
     var last_name : String!
     var profile_photo : String!
     var available_seats : String!
-     var created_date : String!
+    var created_date : String!
     var luggage : String!
     var dob : String!
     var status :String!
     var station : String!
-
-     var distance : String!
-    var duration : String!
-
+    var duration :String!
+    var distance : String!
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -228,29 +192,45 @@ class Ride {
         last_name = parseData!["last_name"].stringValue
         profile_photo = parseData!["profile_photo"].stringValue
         available_seats = parseData!["available_seats"].stringValue
-            created_date = parseData!["created_date"].stringValue
+        created_date = parseData!["created_date"].stringValue
         luggage = parseData!["luggage"].stringValue
         arrival_date = parseData!["arrival_date"].stringValue
         dob = parseData!["dob"].stringValue
         status = parseData!["status"].string
         station = parseData!["station"].string
-
+        duration = parseData!["duration"].string
+        distance = parseData!["distance"].string
+    }
     
 }
-
-
-class Distance {
+class Passenger {
+    var user_id : String!
+    var from_city : String!
+    var first_name : String!
+    var status : String!
+    var ride_passenger_id : String!
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return}
+        user_id = parseData!["user_id"].stringValue
+        from_city = parseData!["from_city"].stringValue
+         first_name = parseData!["first_name"].stringValue
+         status = parseData!["status"].stringValue
+        ride_passenger_id = parseData!["ride_passenger_id"].stringValue
+        }
+}
+class Distances {
     var distance : String!
     var duration : String!
     var price_factor : String!
     var price_fare : String!
-   
+    
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
         }
         
-       
+        
         distance = parseData!["distance"].stringValue
         duration = parseData!["duration"].stringValue
         
@@ -319,7 +299,7 @@ class Model {
     var update_date : String!
     
     var brand_name : String!
-   
+    
     
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
@@ -332,7 +312,7 @@ class Model {
         created_date = parseData!["created_date"].stringValue
         update_date = parseData!["update_date"].stringValue
         brand_name = parseData!["brand_name"].stringValue
-       
+        
         
     }
     
@@ -443,7 +423,7 @@ class Dashboard {
         messages = parseData!["messages"].stringValue
         clinics_count = parseData!["clinics_count"].stringValue
     }
-
+    
 }
 
 
@@ -493,10 +473,10 @@ class Specific {
     
     var doctor_specialty_id : String!
     var speciality : String!
-  
+    
     var icon : String!
     
- 
+    
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -504,7 +484,7 @@ class Specific {
         
         doctor_specialty_id = parseData!["doctor_specialty_id"].stringValue
         speciality = parseData!["speciality"].stringValue
-       
+        
         icon = parseData!["icon"].stringValue
     }
     
@@ -592,7 +572,7 @@ class NotificationData{
     var notification_text : String!
     var title : String!
     var add_date : String!
-   
+    
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -658,7 +638,7 @@ class CarList {
     var BODENFREIHEIT : String!
     var WENDEKREISDURCHMESSER : String!
     var HUBRAUM :String!
-   var HOECHSTGESCHWINDIGKEIT :String!
+    var HOECHSTGESCHWINDIGKEIT :String!
     var LEERGEWICHT:String!
     var BENZINLI00KM_MAX:String!
     var PREIS:String!

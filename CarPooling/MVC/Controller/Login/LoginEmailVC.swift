@@ -54,6 +54,7 @@ class LoginEmailVC: BaseViewController {
                let user = UserData.init(fromJson: parseData["data"])
                 AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
                 AppHelper.setStringForKey(user.profile_photo!, key: ServiceKeys.profile_image)
+                AppHelper.setStringForKey(user.user_fname!, key: ServiceKeys.keyFirstName)
                 appDelegate.loginUser()
 //                let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //                let vc: HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC

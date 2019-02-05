@@ -72,9 +72,9 @@ class DriverVC: UIViewController {
         
         //Otman
         
-        print((AppHelper.getValueForKey(ServiceKeys.keyFirstName)!))
-        
-        
+      //  print((AppHelper.getValueForKey(ServiceKeys.keyFirstName)!))
+        if ((AppHelper.getValueForKey(ServiceKeys.keyFirstName)) != nil)
+        {
         let myAttribute = [ NSAttributedString.Key.font: UIFont(name:
             "Montserrat", size: 17.0)! ]
         let nameStr = NSMutableAttributedString(string: AppHelper.getValueForKey(ServiceKeys.keyFirstName) as! String, attributes: myAttribute )
@@ -85,6 +85,12 @@ class DriverVC: UIViewController {
         attrString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(red: (193.0/255.0), green: (164.0/255.0), blue: (85.0/255.0), alpha: 1), range: myRange)
         nameStr.append(attrString)
         lblDes.attributedText = nameStr
+        }
+        else
+        {
+            
+            
+        }
         
     }
     override func viewWillDisappear(_ animated: Bool) {

@@ -115,8 +115,14 @@ class SearchGoogleMapVC: BaseViewController {
     @IBAction func btnDoneAction() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let researchResultVC: ResearchResultVC = storyboard.instantiateViewController(withIdentifier: "ResearchResultVC") as! ResearchResultVC
-      researchResultVC.to_city = self.toCity
+     
+        
+        
+        researchResultVC.to_city = self.toCity
         researchResultVC.from_City = self.frmCity
+        researchResultVC.toCityName = self.txtFromPlace.text ?? " "
+        
+        researchResultVC.fromCityName = self.txtToPlace.text ?? " "
         self.navigationController?.pushViewController(researchResultVC, animated: true)
 //        if fromLatLong != nil && toLatLong != nil {
 //            //self.btnBackAction()
