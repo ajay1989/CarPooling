@@ -135,47 +135,56 @@ class DashboardVC: BaseViewController {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             // if placeArray.count > 0 {
             let cell = tblVw.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell
-             cell.vw_base.layer.cornerRadius = 15
-            cell.vw_base.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
-            cell.vw_green.clipsToBounds = true
-            cell.vw_green.layer.cornerRadius = 15
-            if #available(iOS 11.0, *) {
-                cell.vw_green.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-            } else {
-                // Fallback on earlier versions
-            }
-            //Ajay app crash ho rhi h
-           let data = self.arr_rides[indexPath.row]
-            if (self.arr_city.count > 0){
-                 let dataCityfrom = self.arr_city[Int(data.from_city)! - 1 ]
-                  let dataCityTo = self.arr_city[Int(data.to_city)! - 1]
-                 cell.lbl_fromDestination.text = dataCityfrom.city_name!
-                   cell.lbl_ToDestination.text = dataCityTo.city_name!
-            }
-            else
-            {
-                cell.lbl_fromDestination.text = data.from_city
-                  cell.lbl_ToDestination.text = data.to_city
+            if self.arr_rides.count > 0 {
+                cell.vw_base.layer.cornerRadius = 15
+                cell.vw_base.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
+                cell.vw_green.clipsToBounds = true
+                cell.vw_green.layer.cornerRadius = 15
+                if #available(iOS 11.0, *) {
+                    cell.vw_green.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+                } else {
+                    // Fallback on earlier versions
+                }
+                //Ajay app crash ho rhi h
+                let data = self.arr_rides[indexPath.row]
+                if (self.arr_city.count > 0){
+                    let dataCityfrom = self.arr_city[Int(data.from_city)! - 1 ]
+                    let dataCityTo = self.arr_city[Int(data.to_city)! - 1]
+                    cell.lbl_fromDestination.text = dataCityfrom.city_name!
+                    cell.lbl_ToDestination.text = dataCityTo.city_name!
+                }
+                else
+                {
+                    cell.lbl_fromDestination.text = data.from_city
+                    cell.lbl_ToDestination.text = data.to_city
+                    
+                    
+                }
+                
+                cell.lbl_timeFrom.text =  self.dateTimeFormateAccordingToUI(date: data.departure_date, time: data.departure_time)//data.departure_time
+                cell.llbl_TimeTo.text = self.dateTimeFormateAccordingToUI(date: data.arrival_date, time: data.arrival_time)
+                // cell.lbl_userName.text = data.first_name + data.last_name
+                let age = self.getAge(dob:data.dob!)
+                cell.lbl_userName.text = data.first_name + "," + String(age) + "ans"
+                
+                cell.lbl_seats.text = data.available_seats
+                cell.lbl_Price.text = data.price
+                
+                let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
+                let placeholderImage = UIImage(named: "Male-driver")!
+              
                 
                 
+                
+               
+                
+                cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
+                
+                cell.btn_Profile.addTarget(self, action: #selector(self.actionProfileImage(_:)) , for: .touchUpInside)
+                cell.btn_Profile.tag = indexPath.row
             }
-        
-            cell.lbl_timeFrom.text =  self.dateTimeFormateAccordingToUI(date: data.departure_date, time: data.departure_time)//data.departure_time
-            cell.llbl_TimeTo.text = self.dateTimeFormateAccordingToUI(date: data.arrival_date, time: data.arrival_time)
-           // cell.lbl_userName.text = data.first_name + data.last_name
-            let age = self.getAge(dob:data.dob!)
-            cell.lbl_userName.text = data.first_name + "," + String(age) + "ans"
+
             
-             cell.lbl_seats.text = data.available_seats
-            cell.lbl_Price.text = data.price
-            
-            let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
-            let placeholderImage = UIImage(named: "Male-driver")!
-            
-            cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
-           
-            cell.btn_Profile.addTarget(self, action: #selector(self.actionProfileImage(_:)) , for: .touchUpInside)
-            cell.btn_Profile.tag = indexPath.row
             return cell
             // }
             //p;return UITableViewCell()

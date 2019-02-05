@@ -4822,6 +4822,9 @@ en 3h30</string>
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="alertCreate" destination="hXq-fb-EBH" eventType="touchUpInside" id="cyr-4b-QXQ"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Notification" translatesAutoresizingMaskIntoConstraints="NO" id="rlU-0M-QAM">
                                         <rect key="frame" x="30" y="686.66666666666663" width="12" height="15"/>

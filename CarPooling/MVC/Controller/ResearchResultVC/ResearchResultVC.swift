@@ -51,6 +51,36 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     
     
     //MARK: Action method
+    @IBAction func alertCreate()
+    {
+       
+        //Archit
+            let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
+            self.hudShow()
+            ServiceClass.sharedInstance.hitServiceForGetCars(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+                self.hudHide()
+                if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                    
+//                    if (parseData["message"] != "No result found" ) {
+//                        for data in parseData["data"]{
+//                            let model = Car.init(fromJson: data.1)
+//                            self.arr_cars.append(model)
+//                        }
+//                        if self.arr_cars.count>0 {
+//                            self.tableView.reloadData()
+//                        }
+//                    }
+                }
+                else {
+                    self.hudHide()
+                    
+                }
+                
+            })
+            
+        }
+        
+   
     @IBAction func btn_male_tap(_ sender: Any) {
         self.gender = "Male"
         self.btn_male.borderColor = selectedColor

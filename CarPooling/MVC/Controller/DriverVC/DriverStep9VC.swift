@@ -15,7 +15,7 @@ class DriverStep9VC: BaseViewController {
             vw_Search.borderWithShadow(radius: 6.0)
         }
     }
-    
+    var distance:Distance!
     @IBOutlet weak var btn_continue: UIButton!
     var ride:Ride!
     override func viewDidLoad() {
@@ -68,6 +68,8 @@ class DriverStep9VC: BaseViewController {
         self.ride.price = String(arr[0])
         let storyboard = UIStoryboard(name: "DriverStoryboard", bundle: nil)
         let vc: DriverStep10VC = storyboard.instantiateViewController(withIdentifier: "DriverStep10VC") as! DriverStep10VC
+        self.ride.duration = self.distance.duration!
+        self.ride.distance = self.distance.distance!
         vc.ride = self.ride
         // self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -86,12 +88,8 @@ class DriverStep9VC: BaseViewController {
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                 
                 if (parseData["message"] != "No result found" ) {
-                    for data in parseData["data"]{
-                       // let model = Car.init(fromJson: data.1)
-                      //  self.arr_cars.append(model)
-                        print(data)
-                    }
-                   
+                    self.distance = Distance.init(fromJson: parseData["data"])
+                    
                 }
             }
             else {

@@ -144,6 +144,7 @@ class Passenger {
     var user_id : String!
     var from_city : String!
     var first_name : String!
+    
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -198,8 +199,10 @@ class Ride {
     var dob : String!
     var status :String!
     var station : String!
+
      var distance : String!
     var duration : String!
+
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -231,12 +234,31 @@ class Ride {
         dob = parseData!["dob"].stringValue
         status = parseData!["status"].string
         station = parseData!["station"].string
-         distance = parseData!["distance"].string //Archit..
-        duration = parseData!["duration"].string 
-    }
+
     
 }
 
+
+class Distance {
+    var distance : String!
+    var duration : String!
+    var price_factor : String!
+    var price_fare : String!
+   
+    init(fromJson parseData: JSON!){
+        if parseData.isEmpty{
+            return
+        }
+        
+       
+        distance = parseData!["distance"].stringValue
+        duration = parseData!["duration"].stringValue
+        
+        price_factor = parseData!["price_factor"].stringValue
+        price_fare = parseData!["price_fare"].stringValue
+    }
+    
+}
 
 
 
