@@ -53,13 +53,12 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
         print(ride.to_city)
         // Do any additional setup after loading the view.
        // Ignorer ->  Continuer
-        btn_next.setTitle("Ignorer👉🏻", for: .normal)
+       // btn_next.setTitle("Ignorer👉🏻", for: .normal)
         txt_search.returnKeyType = .search
         txt_search.addTarget(self, action: #selector(typingName), for: .editingChanged)
         txt_search.autocorrectionType = .no
         self.tableView.isHidden = true
         //Button text  Ignorer
-        
         self.hideNavigationController()
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
@@ -166,7 +165,8 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
         }
         else
         {
-            self.btn_next.titleLabel?.text = "Continuer👉🏻"
+             btn_next.setTitle("Continuer👉🏻", for: .normal)
+           // self.btn_next.titleLabel?.text = "Continuer👉🏻"
         }
         
     }
@@ -210,8 +210,8 @@ class DriverStep4VC: BaseViewController,UITableViewDelegate,UITableViewDataSourc
     }
     func createCityLabel(city:City,xVal:Int,yVal:Int)
   {
-   // self.btn_next.setTitle("Continuer👉🏻", for: .normal)
-    self.btn_next.titleLabel?.text = "Continuer👉🏻"
+    self.btn_next.setTitle("Continuer👉🏻", for: .normal)
+//self.btn_next.titleLabel?.text = "Continuer👉🏻"
     self.totalView += 1
     if self.totalView == 1
     {

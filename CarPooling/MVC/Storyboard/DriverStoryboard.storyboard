@@ -452,7 +452,7 @@
                                     <constraint firstAttribute="height" constant="30" id="FVl-xr-cqd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" title="Ignorer👉🏻">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pac-cC-UmE">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -2054,7 +2054,7 @@ en 3h30</string>
         <!--Mess OffersVC-->
         <scene sceneID="3y2-gF-VzQ">
             <objects>
-                <viewController storyboardIdentifier="MessOffersVC" id="fif-nd-bcC" customClass="MessOffersVC" customModule="CarPooling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessOffersVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fif-nd-bcC" customClass="MessOffersVC" customModule="CarPooling" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4eC-dc-sC9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2068,7 +2068,7 @@ en 3h30</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionGoBack" destination="fif-nd-bcC" eventType="touchUpInside" id="MNa-V4-K0r"/>
+                                    <action selector="actionGoBack" destination="fif-nd-bcC" eventType="touchUpInside" id="8ze-Ju-Ijd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apQ-lb-PDx">
@@ -2403,7 +2403,7 @@ en 3h30</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.82658499237244509" green="0.82658499237244509" blue="0.82658499237244509" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Xh4-qv-F5d" firstAttribute="width" secondItem="kpG-co-ZJH" secondAttribute="width" id="0Z4-ao-dPv"/>
                                     <constraint firstItem="Xh4-qv-F5d" firstAttribute="top" secondItem="84n-q1-663" secondAttribute="top" constant="1" id="9Nw-bw-nPO"/>
@@ -2478,8 +2478,8 @@ en 3h30</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u7Z-38-ooC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="44"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7Z-38-ooC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.666666666666664"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Male-driver" translatesAutoresizingMaskIntoConstraints="NO" id="9JA-vg-oJo">
                                                                     <rect key="frame" x="8" y="10" width="24" height="24"/>
@@ -2620,6 +2620,22 @@ en 3h30</string>
                                     <action selector="showContactView" destination="5D6-iC-svg" eventType="touchUpInside" id="IeB-5O-32m"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgP-PH-4gZ">
+                                <rect key="frame" x="272" y="646" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.97552710769999995" green="0.79052698610000005" blue="0.33566367629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="rJk-mL-C2m"/>
+                                    <constraint firstAttribute="width" constant="20" id="sFL-xt-jzE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AD-1g-FKx">
                                 <rect key="frame" x="0.0" y="733" width="414" height="434"/>
                                 <subviews>
@@ -2848,6 +2864,7 @@ en 3h30</string>
                             <constraint firstItem="a5F-df-6FJ" firstAttribute="top" secondItem="hLu-yd-1xd" secondAttribute="top" constant="17" id="B7A-kZ-p5n"/>
                             <constraint firstItem="szU-CL-Fba" firstAttribute="top" secondItem="gwv-VN-unt" secondAttribute="bottom" constant="14" id="BCW-Tj-tio"/>
                             <constraint firstItem="apQ-lb-PDx" firstAttribute="top" secondItem="hLu-yd-1xd" secondAttribute="top" constant="19" id="FPA-UV-0d9"/>
+                            <constraint firstItem="tgP-PH-4gZ" firstAttribute="trailing" secondItem="gwv-VN-unt" secondAttribute="trailing" id="GGc-xN-ySC"/>
                             <constraint firstItem="3IS-6e-BYb" firstAttribute="centerX" secondItem="4eC-dc-sC9" secondAttribute="centerX" id="GWv-j9-b3v"/>
                             <constraint firstItem="smD-PP-BKY" firstAttribute="top" secondItem="g81-Wu-TGc" secondAttribute="bottom" id="H4b-68-VsL"/>
                             <constraint firstItem="3IS-6e-BYb" firstAttribute="top" secondItem="84n-q1-663" secondAttribute="bottom" constant="8" id="JwT-bP-eLh"/>
@@ -2858,6 +2875,7 @@ en 3h30</string>
                             <constraint firstItem="szU-CL-Fba" firstAttribute="centerX" secondItem="4eC-dc-sC9" secondAttribute="centerX" id="TT4-gx-Lgd"/>
                             <constraint firstItem="84n-q1-663" firstAttribute="leading" secondItem="hLu-yd-1xd" secondAttribute="leading" constant="20" id="Tt9-7a-lbi"/>
                             <constraint firstItem="g81-Wu-TGc" firstAttribute="leading" secondItem="hLu-yd-1xd" secondAttribute="leading" constant="20" id="U28-ep-3jA"/>
+                            <constraint firstItem="tgP-PH-4gZ" firstAttribute="bottom" secondItem="gwv-VN-unt" secondAttribute="bottom" constant="-20" id="ULE-li-9ft"/>
                             <constraint firstItem="a5F-df-6FJ" firstAttribute="leading" secondItem="hLu-yd-1xd" secondAttribute="leading" constant="8" id="ZNZ-Hr-kVL"/>
                             <constraint firstItem="WMd-b1-9cP" firstAttribute="top" secondItem="3IS-6e-BYb" secondAttribute="bottom" constant="-7" id="cQc-cZ-7rz"/>
                             <constraint firstAttribute="trailing" secondItem="5AD-1g-FKx" secondAttribute="trailing" id="d70-9H-FUT"/>
@@ -2882,6 +2900,7 @@ en 3h30</string>
                         <outlet property="lbl_fromcity" destination="4vq-ZU-lSj" id="Tzk-eP-Gt7"/>
                         <outlet property="lbl_luggage" destination="JLO-kN-LXG" id="Ore-md-6c5"/>
                         <outlet property="lbl_passegerName" destination="Xr8-tX-eeB" id="DD7-fm-zNA"/>
+                        <outlet property="lbl_passengerCount" destination="tgP-PH-4gZ" id="H1k-Td-Enx"/>
                         <outlet property="lbl_price" destination="LrM-VY-Tub" id="yCK-6l-65y"/>
                         <outlet property="lbl_seats" destination="npG-c2-zic" id="Eeh-sj-ox2"/>
                         <outlet property="lbl_toCity" destination="ViZ-Dv-800" id="n3K-bT-Laj"/>
@@ -2893,7 +2912,7 @@ en 3h30</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88a-zb-XL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6932" y="2044.2278860569718"/>
+            <point key="canvasLocation" x="6931.884057971015" y="2043.7500000000002"/>
         </scene>
         <!--Passenger List RequestVC-->
         <scene sceneID="35g-KZ-ZgK">
@@ -9084,7 +9103,7 @@ nous Otman 🎉</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmf-Pk-QmP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="iJl-gw-iXv">
                                                             <rect key="frame" x="8" y="28" width="20" height="20"/>
@@ -9122,7 +9141,7 @@ nous Otman 🎉</string>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14/12/2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZY-gU-nKS">
-                                                            <rect key="frame" x="100" y="61.333333333333343" width="306" height="13"/>
+                                                            <rect key="frame" x="100" y="61.666666666666657" width="306" height="13"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="306" id="QPt-dE-Yka"/>
                                                             </constraints>
@@ -9909,7 +9928,7 @@ nous Otman 🎉</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIL-mm-Ped">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="62M-cU-Rdb">
                                                             <rect key="frame" x="8" y="15" width="20" height="20"/>
@@ -9931,14 +9950,14 @@ nous Otman 🎉</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gAQ-dO-qS5">
-                                                            <rect key="frame" x="69" y="15.000000000000004" width="325" height="34.333333333333343"/>
+                                                            <rect key="frame" x="69" y="14.999999999999996" width="325" height="34.666666666666657"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                             <fontDescription key="fontDescription" name="Montserrat-Italic" family="Montserrat" pointSize="10"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14/12/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ug-tV-0rb">
-                                                            <rect key="frame" x="69" y="59.333333333333343" width="337" height="15"/>
+                                                            <rect key="frame" x="69" y="59.666666666666657" width="337" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="Bcq-d1-gRm"/>
                                                             </constraints>
@@ -10353,7 +10372,7 @@ nous Otman 🎉</string>
         <image name="img_logout" width="76.800003051757812" height="76.800003051757812"/>
         <image name="img_star" width="69" height="69"/>
         <image name="ios-car" width="14" height="11"/>
-        <image name="like" width="24.624000549316406" height="25.488000869750977"/>
+        <image name="like" width="16.416000366210938" height="16.416000366210938"/>
         <image name="loginBg" width="191.66400146484375" height="340.84799194335938"/>
         <image name="logo" width="131.27999877929688" height="104.40000152587891"/>
         <image name="magnifyDark" width="18.333333969116211" height="18.333333969116211"/>

@@ -20,13 +20,24 @@ class DriverStep9VC: BaseViewController {
     @IBOutlet weak var btn_continue: UIButton!
      var distance:Distances!
     var ride:Ride!
-    var increment:Int = 10
+    var increment:Float!
+    var decrement:Float!
     override func viewDidLoad() {
         super.viewDidLoad()
   self.loadPriceApi()
         // Do any additional setup after loading the view.
     }
-    
+    func setIncrementDec()
+    {
+        let str = self.distance.price_fare!
+        let str2 = self.distance.price_factor!
+        let one:Float! = Float(str)
+        let two:Float! = Float(str2)
+        self.increment = Float(one + two)
+        self.decrement =  Float(one - two)
+      //  self.decrement = one - two
+        
+    }
     @IBAction func actionBack()
     {
         self.navigationController?.popViewController(animated: true)
@@ -35,15 +46,15 @@ class DriverStep9VC: BaseViewController {
         
         if sender.tag == 20 {
             
-            let i : Int!
+            let i : Float!
             
             //let s = self.lblPassanger.text
             let parts = self.lbl_Price.text?.components(separatedBy: " ")
             let  s = parts?[0]
             
-            if let x = Int(s ?? "0") {
-                if (x < 999999) {
-                    i = x + increment
+            if let x = Float(s ?? "0") {
+                if (x < increment) {
+                    i = x + 1
                     self.lbl_Price.text = i.description + " DH"
                 }
             }
@@ -53,11 +64,11 @@ class DriverStep9VC: BaseViewController {
             let parts = self.lbl_Price.text?.components(separatedBy: " ")
             let  s = parts?[0]
             
-            let i : Int!
+            let i : Float!
             
-            if let x = Int(s!) {
-                if (x > increment) {
-                    i = x - increment
+            if let x = Float(s!) {
+                if (x > decrement) {
+                    i = x - 1
                     self.lbl_Price.text = i.description + " DH"
                 }
             }
@@ -92,8 +103,15 @@ class DriverStep9VC: BaseViewController {
                 
                 if (parseData["message"] != "No result found" ) {
                     self.distance = Distances.init(fromJson: parseData["data"])
-                    self.increment = Int(self.distance.price_factor) ?? 10
+                   
+//                    let price = Int(parseData["data"]["price_fare"].stringValue)!
+//                    let factor = Int(parseData["data"]["price_factor"].stringValue)!
+//                   self.increment = price + factor
+//
+//                   self.decrement = price - factor
                     print(self.increment)
+                    self.self.lbl_Price.text = self.distance.price_fare
+                    self.setIncrementDec()
                 }
             }
             else {

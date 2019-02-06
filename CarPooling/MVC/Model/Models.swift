@@ -213,6 +213,12 @@ class Passenger {
     var first_name : String!
     var status : String!
     var ride_passenger_id : String!
+    var profile_photo : String!
+    var created_date : String!
+    var to_city : String!
+    var dob : String!
+     var last_name : String!
+      var seats : String!
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return}
@@ -221,6 +227,12 @@ class Passenger {
          first_name = parseData!["first_name"].stringValue
          status = parseData!["status"].stringValue
         ride_passenger_id = parseData!["ride_passenger_id"].stringValue
+        profile_photo = parseData!["profile_photo"].stringValue
+          created_date = parseData!["created_date"].stringValue
+          to_city = parseData!["to_city"].stringValue
+          dob = parseData!["dob"].stringValue
+          last_name = parseData!["last_name"].stringValue
+          seats = parseData!["seats"].stringValue
         }
 }
 class Distances {

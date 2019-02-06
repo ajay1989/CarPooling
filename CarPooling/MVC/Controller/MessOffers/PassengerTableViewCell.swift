@@ -11,7 +11,7 @@ import UIKit
 class PassengerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var img_user: UIImageView!
-    
+    @IBOutlet weak var btn_profile: UIButton!
     @IBOutlet weak var lbl_name: UILabel!
     
     @IBOutlet weak var btn_contact: UIButton!

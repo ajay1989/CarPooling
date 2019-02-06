@@ -29,8 +29,11 @@ class MessOffersVC: BaseViewController {
     @IBOutlet weak var lbl_passegerName: UILabel!
     @IBOutlet weak var img_pasenger: UIImageView!
     
-      var arr_rides = [Ride]()
+    @IBOutlet weak var lbl_passengerCount: UILabel!
+    var arr_rides = [Ride]()
      var rideDetail: Ride!
+    var arr_passenger = [Passenger]()
+    var arr_confirmedPassenger = [Passenger]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadRideDetails()
@@ -88,7 +91,12 @@ class MessOffersVC: BaseViewController {
         
         lbl_tripname.text = ride.brand_name + "," + ride.model_name
       
-        
+        self.arr_confirmedPassenger = self.arr_passenger.filter({$0.status == "2" || $0.status == "3"})
+        if self.arr_rides.count > 0 {
+            self.lbl_passengerCount.text = String(self.arr_passenger.count)
+            
+        }
+        self.tblVwPassenger.reloadData()
         
     }
     func setPassengerContact(passenger:User)
@@ -148,23 +156,22 @@ class MessOffersVC: BaseViewController {
     func loadRideDetails()
     {
         let params = ["keyword":self.rideDetail.ride_id!]
-        self.hudShow()
+        //self.hudShow()
         ServiceClass.sharedInstance.hitServiceForGetRideDetails(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
             self.hudHide()
             if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                self.hudHide()
                 let data = parseData["data"].dictionary!
                 for ride in data["ride"]! {
                     self.arr_rides.append(Ride.init(fromJson: ride.1))
+                }
+                for passenger in data["passenger"]! {
+                    self.arr_passenger.append(Passenger.init(fromJson: passenger.1))
                 }
                 //                for station in data["station"]! {
                 //                    self.arr_station.append(Station.init(fromJson: station.1))
                 //                }
                 self.setValuesToView()
-                
-                if self.arr_rides.count > 0 {
-                    
-                }
-                
             }
             else {
                 self.hudHide()
@@ -249,25 +256,63 @@ extension MessOffersVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if self.arr_rides.count>0 {
-//            return self.arr_rides.count
-//        }
-//        else{
-//            return 0
-//
-//        }
-        return 0
-    }
+        if self.arr_rides.count > 0 && self.arr_confirmedPassenger.count > 0
+        {
+               let ride = self.arr_rides[0]
+        if (arr_confirmedPassenger.count < Int(ride.seats)!)
+        {
+         return   self.arr_confirmedPassenger.count + 1
+        }
+        else if (self.arr_confirmedPassenger.count > 0)
+           {
+            return self.arr_confirmedPassenger.count
+            }
+        }
+       
+            return 0
+        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // if placeArray.count > 0 {
-        let cell = tblVwPassenger.dequeueReusableCell(withIdentifier: "PassengerTableViewCell", for: indexPath) as! PassengerTableViewCell
-       // self.setPassengerContact() .............
+         let cell = tblVwPassenger.dequeueReusableCell(withIdentifier: "PassengerTableViewCell", for: indexPath) as! PassengerTableViewCell
+        let ride = self.arr_rides[0]
+        if arr_confirmedPassenger.count < Int(ride.seats)! && indexPath.row > arr_confirmedPassenger.count
+         {
+            
+            let leftSeats = Int(self.rideDetail.seats)! - arr_confirmedPassenger.count
+            
+          //  let data = self.arr_confirmedPassenger[indexPath.row]
+           // cell.btn_contact.tag = indexPath.row
+          //  cell.btn_profile.tag = indexPath.row
+            cell.btn_contact.isHidden = true
+            
+           cell.img_user.image = UIImage.init(named: "user")
+            cell.lbl_name.text = String(leftSeats) + "place(s) libre(s)"
+        }
+        else {
+       
+        let data = self.arr_confirmedPassenger[indexPath.row]
+        cell.btn_contact.tag = indexPath.row
+        cell.btn_profile.tag = indexPath.row
         cell.btn_contact.addTarget(self, action: #selector(self.showContactView(_:)), for: .touchUpInside)
-        
-        
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
+        let placeholderImage = UIImage(named: "Male-driver")!
+        cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
+        cell.btn_profile.addTarget(self, action: #selector(self.actionProfileImage(_:)) , for: .touchUpInside)
+        cell.btn_profile.tag = indexPath.row
+        }
         return cell
        
+    }
+    @objc  func actionProfileImage(_ sender: UIButton)
+    {
+        let id = self.arr_rides[sender.tag].user_id
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc:PublicProfileVC = storyboard.instantiateViewController(withIdentifier: "PublicProfileVC") as! PublicProfileVC
+        // self.present(vc, animated: true, completion: nil)
+        vc.id = id!
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 165
