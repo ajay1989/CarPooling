@@ -9,6 +9,8 @@
 import UIKit
 
 class MessOffersVC: BaseViewController {
+   
+    
     
   
     @IBOutlet weak var vw_contactPassenger: UIView!
@@ -30,10 +32,15 @@ class MessOffersVC: BaseViewController {
     @IBOutlet weak var img_pasenger: UIImageView!
     
     @IBOutlet weak var lbl_passengerCount: UILabel!
+    
+    @IBOutlet weak var collectionVw_multipleCity: UICollectionView!
+    @IBOutlet weak var vw_multipleCity: UIView!
+    
     var arr_rides = [Ride]()
      var rideDetail: Ride!
     var arr_passenger = [Passenger]()
     var arr_confirmedPassenger = [Passenger]()
+    var arr_MultipleCity = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadRideDetails()
@@ -93,20 +100,22 @@ class MessOffersVC: BaseViewController {
       
         self.arr_confirmedPassenger = self.arr_passenger.filter({$0.status == "2" || $0.status == "3"})
         if self.arr_rides.count > 0 {
-            self.lbl_passengerCount.text = String(self.arr_passenger.count)
+            self.lbl_passengerCount.text = String(self.arr_passenger.count - self.arr_confirmedPassenger.count)
             
+        }
+        if arr_MultipleCity.count == 0
+        {
+            self.vw_multipleCity.isHidden = true
+        }
+        else
+        {
+           collectionVw_multipleCity.delegate = self
+            collectionVw_multipleCity.dataSource = self
         }
         self.tblVwPassenger.reloadData()
         
     }
-    func setPassengerContact(passenger:User)
-    {
-        
-       lbl_passegerName.text = passenger.first_name
-        let url = URL(string: "\(ServiceUrls.profilePicURL)\(passenger.profile_photo!)")!
-        let placeholderImage = UIImage(named: "Male-driver")!
-        img_pasenger.af_setImage(withURL: url, placeholderImage: placeholderImage)
-    }
+   
     // MARK: - ActionMethod
     @IBAction func hideContactView()
     {
@@ -114,6 +123,14 @@ class MessOffersVC: BaseViewController {
     }
  @objc   func showContactView(_ sender: UIButton)
     {
+        
+        //set passngr data
+        let data = self.arr_confirmedPassenger[sender.tag]
+        let age = self.getAge(dob:data.dob!)
+        lbl_passegerName.text = data.first_name + ", " + String(age) + " ans"
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
+        let placeholderImage = UIImage(named: "Male-driver")!
+        img_pasenger.af_setImage(withURL: url, placeholderImage: placeholderImage)
         setView(view: vw_contactPassenger, hidden: false)
     }
 
@@ -126,6 +143,8 @@ class MessOffersVC: BaseViewController {
     {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc:PassengerListRequestVC = storyboard.instantiateViewController(withIdentifier: "PassengerListRequestVC") as! PassengerListRequestVC
+        vc.arr_passenger = self.arr_passenger
+        vc.arr_confirmedPassenger = self.arr_confirmedPassenger
                 // self.present(vc, animated: true, completion: nil)
                // vc.rideDetail = self.arr_rides[indexPath.row]
           self.navigationController?.pushViewController(vc, animated: true)
@@ -156,21 +175,26 @@ class MessOffersVC: BaseViewController {
     func loadRideDetails()
     {
         let params = ["keyword":self.rideDetail.ride_id!]
-        //self.hudShow()
-        ServiceClass.sharedInstance.hitServiceForGetRideDetails(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+        self.hudShow()
+ ServiceClass.sharedInstance.hitServiceForGetRideDetails(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+           
             self.hudHide()
-            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type)
+            {
+               // self.hudHide()
                 let data = parseData["data"].dictionary!
                 for ride in data["ride"]! {
                     self.arr_rides.append(Ride.init(fromJson: ride.1))
                 }
+                if data["passenger"] != nil {
                 for passenger in data["passenger"]! {
                     self.arr_passenger.append(Passenger.init(fromJson: passenger.1))
                 }
-                //                for station in data["station"]! {
-                //                    self.arr_station.append(Station.init(fromJson: station.1))
-                //                }
+                }
+                //[\"21\",\"68\",\"68\"]", set multiple cities
+                let ride = self.arr_rides[0]
+                self.arr_MultipleCity = ride.station?.components(separatedBy: ",") ?? [""]
+                
                 self.setValuesToView()
             }
             else {
@@ -228,10 +252,11 @@ class MessOffersVC: BaseViewController {
     
     
     @IBAction func btn_changeStatus_tap(_ sender: Any) {
+        //Cancel  show alert
         let ride = self.arr_rides[0]
         let params = ["note":"Update ride from driver",
                       "ride":ride.ride_id!,
-                      "status":"1",
+                      "status":"2",
                       "user":AppHelper.getStringForKey(ServiceKeys.user_id)]
         self.hudShow()
         
@@ -248,6 +273,7 @@ class MessOffersVC: BaseViewController {
     }
     
 }
+
  //MARK: Passenger Tableview delegates
 extension MessOffersVC : UITableViewDataSource, UITableViewDelegate {
     
@@ -276,7 +302,7 @@ extension MessOffersVC : UITableViewDataSource, UITableViewDelegate {
         // if placeArray.count > 0 {
          let cell = tblVwPassenger.dequeueReusableCell(withIdentifier: "PassengerTableViewCell", for: indexPath) as! PassengerTableViewCell
         let ride = self.arr_rides[0]
-        if arr_confirmedPassenger.count < Int(ride.seats)! && indexPath.row > arr_confirmedPassenger.count
+        if arr_confirmedPassenger.count < Int(ride.seats)! && indexPath.row > arr_confirmedPassenger.count-1
          {
             
             let leftSeats = Int(self.rideDetail.seats)! - arr_confirmedPassenger.count
@@ -286,12 +312,15 @@ extension MessOffersVC : UITableViewDataSource, UITableViewDelegate {
           //  cell.btn_profile.tag = indexPath.row
             cell.btn_contact.isHidden = true
             
-           cell.img_user.image = UIImage.init(named: "user")
-            cell.lbl_name.text = String(leftSeats) + "place(s) libre(s)"
+           cell.img_user.image = UIImage.init(named: "userBlack")
+            cell.lbl_name.text = String(leftSeats) + " place(s) libre(s)"
         }
         else {
        
         let data = self.arr_confirmedPassenger[indexPath.row]
+            let age = self.getAge(dob:data.dob!)
+            cell.lbl_name.text = data.first_name + ", " + String(age) + " ans"
+            
         cell.btn_contact.tag = indexPath.row
         cell.btn_profile.tag = indexPath.row
         cell.btn_contact.addTarget(self, action: #selector(self.showContactView(_:)), for: .touchUpInside)
@@ -328,4 +357,26 @@ extension MessOffersVC : UITableViewDataSource, UITableViewDelegate {
         
     }
     
+}
+extension MessOffersVC :UICollectionViewDataSource,UICollectionViewDelegate{
+//MARK: CollectionView delegate
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    //
+    return 4
+}
+
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    //
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MultipleCityCellCollectionViewCell", for: indexPath as IndexPath) as! MultipleCityCellCollectionViewCell
+    
+    // Use the outlet in our custom class to get a reference to the UILabel in the cell
+    cell.lbl_name.text = "city name"
+    
+    return cell
+}
+//
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    // handle tap events
+    print("You selected cell #\(indexPath.item)!")
+}
 }

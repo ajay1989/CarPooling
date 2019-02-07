@@ -60,21 +60,39 @@ class DriverRequestDetailsVC: BaseViewController {
         
         
         if (sender as AnyObject).tag == 1 {
-            self.arr_tempRide = self.arr_allRide.filter({$0.status == "0" || $0.status == "1"})
+            if isFromDashboard {
+            self.arr_tempRide = self.arr_allRide.filter({$0.passenger_status == "0" || $0.passenger_status == "1"})
+            }
+            else
+            {
+                 self.arr_tempRide = self.arr_allRide.filter({$0.status == "0" || $0.status == "1"})
+            }
             btn_waitingApproval.borderColor = UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1)
                         btn_waitingApproval.setTitleColor(UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1), for: .normal)
             
         }
         else if (sender as AnyObject).tag == 2 {
-            self.arr_tempRide = self.arr_allRide.filter({$0.status == "2" || $0.status == "3"})
-            btn_refused.borderColor = UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1)
-            btn_refused.setTitleColor(UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1), for: .normal)
+             if isFromDashboard {
+            self.arr_tempRide = self.arr_allRide.filter({$0.passenger_status == "2" || $0.passenger_status == "3"})
+            }
+             else
+             {
+                self.arr_tempRide = self.arr_allRide.filter({$0.status == "2" || $0.status == "3"})
+            }
+            btn_refused.borderColor = UIColor.red
+            btn_refused.setTitleColor(UIColor.red, for: .normal)
             
         }
         else {
-            self.arr_tempRide = self.arr_allRide.filter({$0.status == "4"})
-            btn_completed.borderColor = UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1)
-            btn_completed.setTitleColor(UIColor.init(red: (249.0/255.0), green: (202.0/255.0), blue: (86.0/255.0), alpha: 1), for: .normal)
+             if isFromDashboard {
+            self.arr_tempRide = self.arr_allRide.filter({$0.passenger_status == "4"})
+            }
+             else
+             {
+                self.arr_tempRide = self.arr_allRide.filter({$0.status == "4"})
+            }
+            btn_completed.borderColor = UIColor.green
+            btn_completed.setTitleColor(UIColor.green, for: .normal)
         }
         self.tableView.reloadData()
         
@@ -134,7 +152,7 @@ class DriverRequestDetailsVC: BaseViewController {
                         let model = Ride.init(fromJson: data.1)
                         self.arr_allRide.append(model)
                     }
-                   self.arr_tempRide = self.arr_allRide.filter({$0.status == "0" || $0.status == "1"})
+                   self.arr_tempRide = self.arr_allRide.filter({$0.passenger_status == "0" || $0.passenger_status == "1"})
                     self.tableView.reloadData()
                 }
                 
