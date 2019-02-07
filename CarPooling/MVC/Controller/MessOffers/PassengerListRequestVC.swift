@@ -10,7 +10,7 @@ import UIKit
 
 class PassengerListRequestVC: BaseViewController {
  @IBOutlet weak var tblVwPassengerList: UITableView!
-   
+   @IBOutlet weak var btnConfirmed: UIButton!
     @IBOutlet weak var ct_vwTop: NSLayoutConstraint!
     @IBOutlet weak var vw_top: UIView!
     
@@ -18,6 +18,7 @@ class PassengerListRequestVC: BaseViewController {
     @IBOutlet weak var tabVw_confirmed: UITableView!
     var arr_passenger = [Passenger]()
     var arr_confirmedPassenger = [Passenger]()
+    var arr_selectedPassenger = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         if arr_confirmedPassenger.count == 0
@@ -34,7 +35,13 @@ class PassengerListRequestVC: BaseViewController {
         
         self.tblVwPassengerList.delegate = self
         self.tblVwPassengerList.dataSource = self
+        self.view.layoutSubviews()
         // Do any additional setup after loading the view.
+    }
+ override   func viewDidLayoutSubviews(){
+        tabVw_confirmed.frame = CGRect(x: tabVw_confirmed.frame.origin.x, y: tabVw_confirmed.frame.origin.y, width: tabVw_confirmed.frame.size.width, height: tabVw_confirmed.contentSize.height)
+        tabVw_confirmed.reloadData()
+     self.btnConfirmed.isEnabled = false
     }
     @IBAction func actionGoBack()
     {
@@ -61,7 +68,7 @@ class PassengerListRequestVC: BaseViewController {
     
     let printSomething = UIAlertAction(title: "Confimer", style: UIAlertAction.Style.default) { _ in
         print("run code for cancel ride" )
-        //self.cancelRideRequest()
+        self.confirmRideRequest()
     }
     
     // let callFunction = UIAlertAction(title: "Call Function", style: UIAlertAction.Style.Destructive, handler: myHandler)
@@ -76,6 +83,13 @@ class PassengerListRequestVC: BaseViewController {
     present(otherAlert, animated: true, completion: nil)
     
     }
+    func confirmRideRequest()
+    {
+        //change_passenger_status  multiple ,POST      user, ride, status, note, passenger_id (, comma separated)
+        // single , change_passenger_status/”ride passenger id”  - POST      user, ride, status, note 
+        self.hudShow()
+        self.hudHide()
+    }
 
 }
 //MARK: Passenger Tableview delegates
@@ -84,19 +98,33 @@ extension PassengerListRequestVC : UITableViewDataSource, UITableViewDelegate {
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                if self.arr_passenger.count>0 {
+        
+        if tableView == tblVwPassengerList{
+        if self.arr_passenger.count>0 {
                     return self.arr_passenger.count
+            }
+            else
+           {
+            return 0
+            }
+        }
+        
+             if tableView == tabVw_confirmed
+             {
+                if (self.arr_confirmedPassenger.count > 0)
+                {
+                return arr_confirmedPassenger.count
                 }
-                else{
+                else
+                {
                     return 0
-        
                 }
-       
+            }
+             else {
+                return 0
+                     }
     }
-     @objc  func confirmRequest(_ sender: UIButton)
-     {
-        
-    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // if placeArray.count > 0 {
         if tableView == tblVwPassengerList
@@ -105,8 +133,8 @@ extension PassengerListRequestVC : UITableViewDataSource, UITableViewDelegate {
         let data = self.arr_passenger[indexPath.row]
         let age = self.getAge(dob:data.dob!)
         cell.lbl_userName.text = data.first_name + ", " + String(age) + " ans"
-//         cell.btn_confirm.tag = indexPath.row
-//        cell.btn_confirm.addTarget(self, action: #selector(self.confirmRequest(_:)), for: .touchUpInside)
+        // cell.btn_confirm.tag = indexPath.row
+        // cell.btn_confirm.addTarget(self, action: #selector(self.confirmRequest(_:)), for: .touchUpInside)
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
         let placeholderImage = UIImage(named: "Male-driver")!
         cell.img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)
@@ -114,7 +142,16 @@ extension PassengerListRequestVC : UITableViewDataSource, UITableViewDelegate {
         }
         else
         {
-            let cell = tblVwPassengerList.dequeueReusableCell(withIdentifier: "PassengerListTableViiewCell", for: indexPath) as! PassengerListTableViiewCell
+            
+            let cell = tabVw_confirmed.dequeueReusableCell(withIdentifier: "ConfirmedPAssengerTableViewcell", for: indexPath) as! ConfirmedPAssengerTableViewcell
+            cell.btn_confirmed.isHidden = false
+           let data = self.arr_passenger[indexPath.row]
+            let age = self.getAge(dob:data.dob!)
+            cell.lbl_name.text = data.first_name + ", " + String(age) + " ans"
+            
+            let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
+            let placeholderImage = UIImage(named: "Male-driver")!
+            cell.img_userProfile.af_setImage(withURL: url, placeholderImage: placeholderImage)
             return cell
         }
         // }
@@ -124,14 +161,40 @@ extension PassengerListRequestVC : UITableViewDataSource, UITableViewDelegate {
             return 100
         }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let vc:BookingDetailVC = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as! BookingDetailVC
-        //        // self.present(vc, animated: true, completion: nil)
-        //       // vc.rideDetail = self.arr_rides[indexPath.row]
-        //  self.navigationController?.pushViewController(vc, animated: true)
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+       
+       
+    if let cell = tableView.cellForRow(at: indexPath) {
+    cell.accessoryType = .none
+        let ids = self.arr_passenger[indexPath.row]
+    arr_selectedPassenger =   arr_selectedPassenger.filter { $0 != ids.ride_passenger_id }
         
+            }
+        if arr_selectedPassenger.count == 0
+        {
+            self.btnConfirmed.borderColor = UIColor.gray
+            self.btnConfirmed.isEnabled = false
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let data = self.arr_passenger[indexPath.row]
+        if arr_selectedPassenger.count < Int(data.seats!)!
+        {
+            self.btnConfirmed.borderColor = UIColor.green
+            self.btnConfirmed.titleLabel?.textColor = UIColor.green
+            self.btnConfirmed.isEnabled = true
+           if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .checkmark
+            
+            let ids = self.arr_passenger[indexPath.row]
+            arr_selectedPassenger.append(ids.ride_passenger_id)
+            
+            
+            }
+            
+        }
         
     }
+    
     
 }

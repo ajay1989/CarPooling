@@ -40,7 +40,7 @@ class DriverRequestDetailsVC: BaseViewController {
         
         // Do any additional setup after loading the view.
     }
-    
+    //MARK: Action method
     @IBAction func goToBack(sender: UIButton)
     {
         

@@ -81,6 +81,7 @@
 		D0FAA83921D005100075C875 /* ResearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA83721D005100075C875 /* ResearchResultVC.swift */; };
 		D0FAA83B21D0058E0075C875 /* SearchGoogleMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAA83A21D0058E0075C875 /* SearchGoogleMapVC.swift */; };
 		D0FD58C2220C4C2F00883EC0 /* MultipleCityCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD58C1220C4C2F00883EC0 /* MultipleCityCellCollectionViewCell.swift */; };
+		D0FD58C4220CB45000883EC0 /* ConfirmedPAssengerTableViewcellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD58C3220CB45000883EC0 /* ConfirmedPAssengerTableViewcellTableViewCell.swift */; };
 		DC02515B21D54545005B6038 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02515921D54545005B6038 /* ListTableViewCell.swift */; };
 		DC02515C21D54545005B6038 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC02515A21D54545005B6038 /* ListTableViewCell.xib */; };
 		DC1EAA1D21985D600099FE98 /* Registration2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EAA1C21985D600099FE98 /* Registration2VC.swift */; };
@@ -219,6 +220,7 @@
 		D0FAA83721D005100075C875 /* ResearchResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResearchResultVC.swift; sourceTree = "<group>"; };
 		D0FAA83A21D0058E0075C875 /* SearchGoogleMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGoogleMapVC.swift; sourceTree = "<group>"; };
 		D0FD58C1220C4C2F00883EC0 /* MultipleCityCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCityCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0FD58C3220CB45000883EC0 /* ConfirmedPAssengerTableViewcellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedPAssengerTableViewcellTableViewCell.swift; sourceTree = "<group>"; };
 		DC02515921D54545005B6038 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		DC02515A21D54545005B6038 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		DC1EAA1C21985D600099FE98 /* Registration2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration2VC.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				D0A8AEF02204E20200DC6864 /* PassengerListRequestVC.swift */,
 				D0A8AEF22204E21D00DC6864 /* PassengerListTableViiewCell.swift */,
 				D0FD58C1220C4C2F00883EC0 /* MultipleCityCellCollectionViewCell.swift */,
+				D0FD58C3220CB45000883EC0 /* ConfirmedPAssengerTableViewcellTableViewCell.swift */,
 			);
 			path = MessOffers;
 			sourceTree = "<group>";
@@ -1070,6 +1073,7 @@
 				D08C535B21C6D29E006A6729 /* DriverStep5VC.swift in Sources */,
 				D009A61F21BFC39C00764B60 /* NSDate+Timepiece.swift in Sources */,
 				D08C535921C6D29E006A6729 /* DriverStep6VC.swift in Sources */,
+				D0FD58C4220CB45000883EC0 /* ConfirmedPAssengerTableViewcellTableViewCell.swift in Sources */,
 				D009A62521BFC39C00764B60 /* NSDateComponents+Timepiece.swift in Sources */,
 				D0166C9721B05664005952B8 /* InfoVC.swift in Sources */,
 				D05B738C21F1DE5600207067 /* PassengerMode5.swift in Sources */,

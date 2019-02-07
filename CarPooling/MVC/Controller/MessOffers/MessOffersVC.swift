@@ -46,6 +46,105 @@ class MessOffersVC: BaseViewController {
         self.loadRideDetails()
         // Do any additional setup after loading the view.
     }
+    //MARK: Action method
+    
+    @IBAction func btn_cancel_tap(_ sender: Any) {
+        
+        let otherAlert = UIAlertController(title: "", message: "Tu es sur le point d'annuler une demande validée.La place est automatiquement libérée pour les autres membres et il ne sera plus possible de faire marche arrière.", preferredStyle: UIAlertController.Style.actionSheet)
+        
+        let printSomething = UIAlertAction(title: "Confimer", style: UIAlertAction.Style.default) { _ in
+            print("run code for cancel ride" )
+            self.cancelRequest()
+        }
+        
+        // let callFunction = UIAlertAction(title: "Call Function", style: UIAlertAction.Style.Destructive, handler: myHandler)
+        
+        let dismiss = UIAlertAction(title: "Retour", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        // relate actions to controllers
+        otherAlert.addAction(printSomething)
+        // otherAlert.addAction(callFunction)
+        otherAlert.addAction(dismiss)
+        
+        present(otherAlert, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    func cancelRequest() {
+        let ride = self.arr_rides[0]
+        let params = ["note":"Cancel ride from driver",
+                      "ride":ride.ride_id!,
+                      "status":"2",
+                      "user":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        self.hudShow()
+        
+        ServiceClass.sharedInstance.hitServiceUpdateRideFromDriver(params as [String : Any], id:ride.user_id) { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                self.makeToast("success!")
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            else {
+                self.makeToast("failed!")
+            }
+        }
+    }
+    
+    
+    @IBAction func btn_changeStatus_tap(_ sender: Any) {
+        //Cancel  show alert
+        let ride = self.arr_rides[0]
+        let params = ["note":"Update ride from driver",
+                      "ride":ride.ride_id!,
+                      "status":"2",
+                      "user":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        self.hudShow()
+        
+        ServiceClass.sharedInstance.hitServiceUpdateRideFromDriver(params as [String : Any], id:ride.user_id) { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                self.makeToast("success!")
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            else {
+                self.makeToast("failed!")
+            }
+        }
+    }
+    @IBAction func hideContactView()
+    {
+        hideView(view: vw_contactPassenger, hidden: true)
+    }
+    @objc   func showContactView(_ sender: UIButton)
+    {
+        
+        //set passngr data
+        let data = self.arr_confirmedPassenger[sender.tag]
+        let age = self.getAge(dob:data.dob!)
+        lbl_passegerName.text = data.first_name + ", " + String(age) + " ans"
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
+        let placeholderImage = UIImage(named: "Male-driver")!
+        img_pasenger.af_setImage(withURL: url, placeholderImage: placeholderImage)
+        setView(view: vw_contactPassenger, hidden: false)
+    }
+    
+    @IBAction func actionGoBack()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    //PassengerListRequestVC
+    @IBAction func actionGoToPassengerList()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc:PassengerListRequestVC = storyboard.instantiateViewController(withIdentifier: "PassengerListRequestVC") as! PassengerListRequestVC
+        vc.arr_passenger = self.arr_passenger
+        vc.arr_confirmedPassenger = self.arr_confirmedPassenger
+        // self.present(vc, animated: true, completion: nil)
+        // vc.rideDetail = self.arr_rides[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     //MARK: view setup
     func setValuesToView()
     {
@@ -116,39 +215,8 @@ class MessOffersVC: BaseViewController {
         
     }
    
-    // MARK: - ActionMethod
-    @IBAction func hideContactView()
-    {
-        hideView(view: vw_contactPassenger, hidden: true)
-    }
- @objc   func showContactView(_ sender: UIButton)
-    {
-        
-        //set passngr data
-        let data = self.arr_confirmedPassenger[sender.tag]
-        let age = self.getAge(dob:data.dob!)
-        lbl_passegerName.text = data.first_name + ", " + String(age) + " ans"
-        let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
-        let placeholderImage = UIImage(named: "Male-driver")!
-        img_pasenger.af_setImage(withURL: url, placeholderImage: placeholderImage)
-        setView(view: vw_contactPassenger, hidden: false)
-    }
-
-   @IBAction func actionGoBack()
-   {
-    self.navigationController?.popViewController(animated: true)
-    }
-    //PassengerListRequestVC
-    @IBAction func actionGoToPassengerList()
-    {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc:PassengerListRequestVC = storyboard.instantiateViewController(withIdentifier: "PassengerListRequestVC") as! PassengerListRequestVC
-        vc.arr_passenger = self.arr_passenger
-        vc.arr_confirmedPassenger = self.arr_confirmedPassenger
-                // self.present(vc, animated: true, completion: nil)
-               // vc.rideDetail = self.arr_rides[indexPath.row]
-          self.navigationController?.pushViewController(vc, animated: true)
-    }
+    
+  
     func setView(view: UIView, hidden: Bool) {
         
         vw_contactPassenger.isHidden = false
@@ -186,7 +254,8 @@ class MessOffersVC: BaseViewController {
                 for ride in data["ride"]! {
                     self.arr_rides.append(Ride.init(fromJson: ride.1))
                 }
-                if data["passenger"] != nil {
+               print(data["passenger"])
+                if data["passenger"]?.stringValue == "" {
                 for passenger in data["passenger"]! {
                     self.arr_passenger.append(Passenger.init(fromJson: passenger.1))
                 }
@@ -205,72 +274,7 @@ class MessOffersVC: BaseViewController {
         })
         
     }
-    
-    @IBAction func btn_cancel_tap(_ sender: Any) {
-        
-        let otherAlert = UIAlertController(title: "", message: "Tu es sur le point d'annuler une demande validée.La place est automatiquement libérée pour les autres membres et il ne sera plus possible de faire marche arrière.", preferredStyle: UIAlertController.Style.actionSheet)
-        
-        let printSomething = UIAlertAction(title: "Confimer", style: UIAlertAction.Style.default) { _ in
-            print("run code for cancel ride" )
-            self.cancelRequest()
-        }
-        
-        // let callFunction = UIAlertAction(title: "Call Function", style: UIAlertAction.Style.Destructive, handler: myHandler)
-        
-        let dismiss = UIAlertAction(title: "Retour", style: UIAlertAction.Style.cancel, handler: nil)
-        
-        // relate actions to controllers
-        otherAlert.addAction(printSomething)
-        // otherAlert.addAction(callFunction)
-        otherAlert.addAction(dismiss)
-        
-        present(otherAlert, animated: true, completion: nil)
-        
-        
-        
-    }
-    
-    func cancelRequest() {
-        let ride = self.arr_rides[0]
-        let params = ["note":"Cancel ride from driver",
-                      "ride":ride.ride_id!,
-                      "status":"2",
-                      "user":AppHelper.getStringForKey(ServiceKeys.user_id)]
-        self.hudShow()
-        
-        ServiceClass.sharedInstance.hitServiceUpdateRideFromDriver(params as [String : Any], id:ride.user_id) { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
-            self.hudHide()
-            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                self.makeToast("success!")
-                self.navigationController?.popToRootViewController(animated: true)
-            }
-            else {
-                self.makeToast("failed!")
-            }
-        }
-    }
-    
-    
-    @IBAction func btn_changeStatus_tap(_ sender: Any) {
-        //Cancel  show alert
-        let ride = self.arr_rides[0]
-        let params = ["note":"Update ride from driver",
-                      "ride":ride.ride_id!,
-                      "status":"2",
-                      "user":AppHelper.getStringForKey(ServiceKeys.user_id)]
-        self.hudShow()
-        
-        ServiceClass.sharedInstance.hitServiceUpdateRideFromDriver(params as [String : Any], id:ride.user_id) { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
-            self.hudHide()
-            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
-                self.makeToast("success!")
-                self.navigationController?.popToRootViewController(animated: true)
-            }
-            else {
-                self.makeToast("failed!")
-            }
-        }
-    }
+  
     
 }
 

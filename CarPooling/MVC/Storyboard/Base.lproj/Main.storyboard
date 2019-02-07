@@ -2956,15 +2956,14 @@ en 3h30</string>
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="actionConfirmButton" destination="lEW-Wo-jh3" eventType="touchUpInside" id="DJN-aL-2dy"/>
-                                    <action selector="btn_changeStatus_tap:" destination="fif-nd-bcC" eventType="touchUpInside" id="w0w-Nh-t9R"/>
+                                    <action selector="actionConfirmButton" destination="lEW-Wo-jh3" eventType="touchUpInside" id="D4W-9I-VQ4"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cES-1x-Krc">
@@ -2974,7 +2973,7 @@ en 3h30</string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PassengerListTableViiewCell" rowHeight="98" id="ihy-xM-Qzq" customClass="PassengerListTableViiewCell" customModule="CarPooling" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ConfirmedPAssengerTableViewcell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConfirmedPAssengerTableViewcell" rowHeight="98" id="ihy-xM-Qzq" customClass="ConfirmedPAssengerTableViewcell" customModule="CarPooling" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="98"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ihy-xM-Qzq" id="azK-24-ne1">
@@ -3104,10 +3103,10 @@ en 3h30</string>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="btn_confirm" destination="gBG-Um-4qp" id="rSA-sB-3iO"/>
-                                                    <outlet property="img_user" destination="Dw2-R0-XHZ" id="KRq-PP-N6i"/>
-                                                    <outlet property="lbl_description" destination="2pE-LG-TW9" id="zdb-U7-fcc"/>
-                                                    <outlet property="lbl_userName" destination="JZO-nR-9E3" id="xh3-zh-cUg"/>
+                                                    <outlet property="btn_confirmed" destination="gBG-Um-4qp" id="HnO-Mv-xcY"/>
+                                                    <outlet property="img_userProfile" destination="Dw2-R0-XHZ" id="Xpm-mm-h7w"/>
+                                                    <outlet property="lbl_description" destination="2pE-LG-TW9" id="hdT-X6-Dyc"/>
+                                                    <outlet property="lbl_name" destination="JZO-nR-9E3" id="gAg-f1-LFa"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -3169,7 +3168,7 @@ en 3h30</string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ueT-sO-uTv">
-                                <rect key="frame" x="0.0" y="320" width="414" height="506"/>
+                                <rect key="frame" x="0.0" y="320" width="414" height="328"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PassengerListTableViiewCell" rowHeight="98" id="8DB-2c-Rtp" customClass="PassengerListTableViiewCell" customModule="CarPooling" customModuleProvider="target">
@@ -3320,7 +3319,6 @@ en 3h30</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="S8t-sd-VPZ" firstAttribute="centerX" secondItem="t6N-lz-e8u" secondAttribute="centerX" id="5vt-Wz-mo6"/>
-                            <constraint firstItem="ueT-sO-uTv" firstAttribute="bottom" secondItem="vuZ-vf-are" secondAttribute="bottom" constant="90" id="8wk-i1-YXm"/>
                             <constraint firstItem="ueT-sO-uTv" firstAttribute="top" secondItem="cES-1x-Krc" secondAttribute="bottom" id="9sL-GD-jGJ"/>
                             <constraint firstItem="fRn-Xe-CoQ" firstAttribute="top" secondItem="t6N-lz-e8u" secondAttribute="top" constant="40" id="GG9-IN-Gi2"/>
                             <constraint firstItem="cES-1x-Krc" firstAttribute="trailing" secondItem="vuZ-vf-are" secondAttribute="trailing" id="JRb-WU-8s1"/>
@@ -3332,10 +3330,12 @@ en 3h30</string>
                             <constraint firstItem="ueT-sO-uTv" firstAttribute="trailing" secondItem="vuZ-vf-are" secondAttribute="trailing" id="YSm-Hr-09i"/>
                             <constraint firstItem="ueT-sO-uTv" firstAttribute="leading" secondItem="vuZ-vf-are" secondAttribute="leading" id="jGZ-Fd-lOR"/>
                             <constraint firstItem="cES-1x-Krc" firstAttribute="top" secondItem="epY-ik-rvn" secondAttribute="bottom" constant="2" id="keC-iH-e1i"/>
+                            <constraint firstItem="S8t-sd-VPZ" firstAttribute="top" secondItem="ueT-sO-uTv" secondAttribute="bottom" constant="38" id="wmq-Ra-nQr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vuZ-vf-are"/>
                     </view>
                     <connections>
+                        <outlet property="btnConfirmed" destination="S8t-sd-VPZ" id="HCq-vg-EHt"/>
                         <outlet property="ct_vwTop" destination="Yqz-us-iTq" id="sag-39-WAZ"/>
                         <outlet property="lbl_seatLeft" destination="GQa-Nq-6JT" id="1wL-xJ-zNI"/>
                         <outlet property="tabVw_confirmed" destination="HJe-NU-W0q" id="5I3-Fh-mhs"/>
@@ -3345,7 +3345,7 @@ en 3h30</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vcz-Wd-wg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7595.652173913044" y="2037.2282608695655"/>
+            <point key="canvasLocation" x="7987" y="2044"/>
         </scene>
         <!--DriverVC-->
         <scene sceneID="Bfo-96-fWM">
