@@ -25,8 +25,20 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     @IBOutlet weak var vw_Noresult: UIView!
     
     //Alert
+    
     @IBOutlet weak var txt_Alertdate: UITextField!
      @IBOutlet weak var btn_TimePeriod: UIButton!
+    
+    @IBOutlet weak var ct_alertViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var lbl_alertFromCity: UILabel!
+    
+    
+    @IBOutlet weak var lbl_alertTocity: UILabel!
+    
+    @IBOutlet weak var vw_alert: UIView!
+    
+    
+    
     var arr_Period = ["Accune préférence","Matin(6h à 12h)","Après-midi(12h à 18h)","Soir(18h à 00h)"]
     let selectedColor = UIColor.init(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0)
     var arr_rides:Array = [Ride]()
@@ -54,10 +66,42 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
         // Do any additional setup after loading the view.
         lbl_toCity.text = self.toCityName
         lbl_fromCity.text = self.fromCityName
+        lbl_alertTocity.text = self.toCityName
+        lbl_alertFromCity.text = self.toCityName
     }
     
     
     //MARK: Action method
+    @IBAction func showPeriodAlert(sender: AnyObject) {
+      
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Accune préférence", style: .default , handler:{ (UIAlertAction)in
+            print("User click Approve button")
+            self.btn_TimePeriod.titleLabel?.text = "Accune préférence"
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Matin(6h à 12h)", style: .default , handler:{ (UIAlertAction)in
+            print("User click Edit button")
+             self.btn_TimePeriod.titleLabel?.text = "Matin(6h à 12h)"
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Après-midi(12h à 18h)", style: .default , handler:{ (UIAlertAction)in
+            print("User click Delete button")
+            self.btn_TimePeriod.titleLabel?.text = "Après-midi(12h à 18h)"
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Soir(18h à 00h)", style: .default, handler:{ (UIAlertAction)in
+            print("User click Dismiss button")
+            self.btn_TimePeriod.titleLabel?.text = "Soir(18h à 00h)"
+        }))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
+
+    
     @IBAction func alertCreate()
     {
        /*
@@ -81,6 +125,7 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
 //                            self.tableView.reloadData()
 //                        }
 //                    }
+                    self.navigationController?.popViewController(animated: true)
                 }
                 else {
                     self.hudHide()
@@ -113,37 +158,45 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
         self.btn_female.isSelected = true
         self.btn_male.isSelected = false
     }
+    @IBAction func hideAlertView()
+    {
+        hideView(view: vw_alert, hidden: true , contrants: self.ct_alertViewHeight)
+    }
+    @IBAction func showAlertView()
+    {
+        setView(view: vw_alert, hidden: false ,contrants: self.ct_alertViewHeight)
+    }
     @IBAction func hideFilterView()
     {
-       hideView(view: view_Filter, hidden: true)
+       hideView(view: view_Filter, hidden: true , contrants: self.ct_bottomVw)
     }
     @IBAction func showFilterView()
     {
-        setView(view: view_Filter, hidden: false)
+        setView(view: view_Filter, hidden: false ,contrants: self.ct_bottomVw)
     }
     @IBAction func actionGoToBack()
     {
         self.navigationController?.popViewController(animated: true)
     }
-    func setView(view: UIView, hidden: Bool) {
+    func setView(view: UIView, hidden: Bool ,contrants:NSLayoutConstraint) {
 
-        view_Filter.isHidden = false
+        view.isHidden = false
         UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseIn],
                        animations: {
-                       self.view_Filter.center.y -= self.view_Filter.bounds.height
-                       self.ct_bottomVw.constant = 0
-                        self.view_Filter.layoutIfNeeded()
+                       view.center.y -= view.bounds.height
+                       contrants.constant = 0
+                        view.layoutIfNeeded()
         }, completion: nil)
 
    }
-    func hideView(view: UIView, hidden: Bool) {
+    func hideView(view: UIView, hidden: Bool , contrants:NSLayoutConstraint) {
         
         
         UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseIn],
                        animations: {
-                        self.view_Filter.center.y += self.view_Filter.bounds.height
-                        self.ct_bottomVw.constant = -self.view_Filter.bounds.height
-                        self.view_Filter.layoutIfNeeded()
+                        view.center.y += view.bounds.height
+                        contrants.constant = -view.bounds.height
+                        view.layoutIfNeeded()
         }, completion: nil)
         
     }
@@ -164,6 +217,9 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
         
         txt_date.inputAccessoryView = toolbar
         txt_date.inputView = datePicker
+        
+        txt_Alertdate.inputAccessoryView = toolbar
+        txt_Alertdate.inputView = datePicker
         
     }
     
@@ -224,7 +280,8 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
             }
             else {
                 self.hudHide()
-             self.makeToast(errorDict!["message"] as! String)
+                self.vw_Noresult.isHidden = false
+            // self.makeToast(errorDict!["message"] as! String)
             }
             
         })
