@@ -394,7 +394,14 @@ class ServiceClass: NSObject {
     let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
     let base64Credentials = credentialData.base64EncodedString(options: [])
     let str:String = (params["keyword"]! as! String)
-    let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.change_ride_statusPassenger)/\(str)"
+    var   baseUrl = ""
+    if str.count > 0 {
+     baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.change_ride_statusPassenger)/\(str)"
+    }
+    else
+    {
+        baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.change_ride_statusPassenger)"
+    }
     print(baseUrl)
     let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
         "X-API-KEY":"CYLPIUnVia7UUl"]
@@ -737,7 +744,20 @@ class ServiceClass: NSObject {
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
-    
+    func hitServiceConfirmPassengerRequest(_ params:[String : Any],id:String, completion:@escaping completionBlockType)
+    {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.change_passenger_status)"
+        print(baseUrl)
+        let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
+        print_debug(params)
+        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+    }
     func hitServiceUpdateRideFromDriver(_ params:[String : Any],id:String, completion:@escaping completionBlockType)
     {
         let user = "admin"

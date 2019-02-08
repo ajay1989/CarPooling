@@ -22,7 +22,12 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     @IBOutlet weak var btn_female: UIButton!
     
     @IBOutlet weak var txt_date: UITextField!
+    @IBOutlet weak var vw_Noresult: UIView!
     
+    //Alert
+    @IBOutlet weak var txt_Alertdate: UITextField!
+     @IBOutlet weak var btn_TimePeriod: UIButton!
+    var arr_Period = ["Accune préférence","Matin(6h à 12h)","Après-midi(12h à 18h)","Soir(18h à 00h)"]
     let selectedColor = UIColor.init(red: 88.0/255.0, green: 182.0/255.0, blue: 157.0/255.0, alpha: 1.0)
     var arr_rides:Array = [Ride]()
     var gender = "0"
@@ -41,7 +46,7 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
         view_Filter.isHidden = true
         tblVw.delegate = self
         tblVw.dataSource = self
-        
+        self.vw_Noresult.isHidden = true
         
         self.btn_female.isSelected = false
         self.btn_male.isSelected = true
@@ -55,7 +60,11 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     //MARK: Action method
     @IBAction func alertCreate()
     {
-       
+       /*
+ create_alert
+         user, departure_date, departure_time, gender, from_city, to_city
+         
+         */
         //Archit
             let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
             self.hudShow()
@@ -82,7 +91,14 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
             
         }
         
-   
+   @IBAction func actionCreateAlert()
+   {
+    self.alertCreate()
+    }
+    @IBAction func actionBack()
+    {
+     self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func btn_male_tap(_ sender: Any) {
         self.gender = "Male"
         self.btn_male.borderColor = selectedColor
@@ -198,6 +214,11 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
                     }
                     if self.arr_rides.count>0 {
                         self.tblVw.reloadData()
+                        self.vw_Noresult.isHidden = true
+                    }
+                    else
+                    {
+                        self.vw_Noresult.isHidden = false
                     }
                 }
             }

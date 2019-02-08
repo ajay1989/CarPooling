@@ -16,11 +16,15 @@ class PassengerListRequestVC: BaseViewController {
     
     @IBOutlet weak var lbl_seatLeft: UILabel!
     @IBOutlet weak var tabVw_confirmed: UITableView!
+    var rideDetails: Ride!
     var arr_passenger = [Passenger]()
     var arr_confirmedPassenger = [Passenger]()
     var arr_selectedPassenger = [String]()
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        arr_passenger = self.arr_passenger.filter({$0.status == "0"  || $0.status == "2" })
         if arr_confirmedPassenger.count == 0
         {
            ct_vwTop.constant = 0
@@ -87,11 +91,49 @@ class PassengerListRequestVC: BaseViewController {
     {
         //change_passenger_status  multiple ,POST      user, ride, status, note, passenger_id (, comma separated)
         // single , change_passenger_status/”ride passenger id”  - POST      user, ride, status, note 
+        print(self.arr_selectedPassenger)
+        var passengerIds = ""
+        var  params = [String : Any]()
+        if self.arr_selectedPassenger.count > 1
+        {
+            for str in self.arr_selectedPassenger
+            {
+              passengerIds =  passengerIds + "," + str
+            }
+            params = ["keyword":"", "user":AppHelper.getStringForKey(ServiceKeys.user_id),
+                      "ride":self.rideDetails.ride_id, "status":"1", "note":"" , "passenger_id" : passengerIds]
+        }
+        else
+        {
+            var passeger = self.arr_selectedPassenger[0]
+            params = ["keyword":self.arr_selectedPassenger[0], "user":AppHelper.getStringForKey(ServiceKeys.user_id),
+                      "status":"1", "note":"" , "ride" : self.rideDetails.ride_id]
+            
+        }
         self.hudShow()
-        self.hudHide()
+        ServiceClass.sharedInstance.hitServiceForChangeRideStatusPassenger(params as [String : Any], completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                // let data = parseData["data"].dictionary!
+                
+                // self.setValuesToView()
+                self.makeToast("Success")
+                self.navigationController?.popViewController(animated: true)
+                
+                
+            }
+            else {
+                self.hudHide()
+                
+            }
+            
+        })
+    }
+        
+        
     }
 
-}
+
 //MARK: Passenger Tableview delegates
 extension PassengerListRequestVC : UITableViewDataSource, UITableViewDelegate {
     

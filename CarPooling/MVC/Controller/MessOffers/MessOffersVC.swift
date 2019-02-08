@@ -13,6 +13,7 @@ class MessOffersVC: BaseViewController {
     
     
   
+    @IBOutlet weak var btn_passengerList: UIButton!
     @IBOutlet weak var vw_contactPassenger: UIView!
        @IBOutlet weak var ct_vwContactBottom: NSLayoutConstraint!
     
@@ -141,6 +142,7 @@ class MessOffersVC: BaseViewController {
         let vc:PassengerListRequestVC = storyboard.instantiateViewController(withIdentifier: "PassengerListRequestVC") as! PassengerListRequestVC
         vc.arr_passenger = self.arr_passenger
         vc.arr_confirmedPassenger = self.arr_confirmedPassenger
+        vc.rideDetails = self.rideDetail
         // self.present(vc, animated: true, completion: nil)
         // vc.rideDetail = self.arr_rides[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
@@ -197,10 +199,16 @@ class MessOffersVC: BaseViewController {
         
         lbl_tripname.text = ride.brand_name + "," + ride.model_name
       
-        self.arr_confirmedPassenger = self.arr_passenger.filter({$0.status == "2" || $0.status == "3"})
+        self.arr_confirmedPassenger = self.arr_passenger.filter({$0.status == "1" })
         if self.arr_rides.count > 0 {
+            self.btn_passengerList.isEnabled = true
             self.lbl_passengerCount.text = String(self.arr_passenger.count - self.arr_confirmedPassenger.count)
             
+        }
+        else
+        {
+            self.lbl_passengerCount.text = "0"
+            self.btn_passengerList.isEnabled = false
         }
         if arr_MultipleCity.count == 0
         {
@@ -263,7 +271,8 @@ class MessOffersVC: BaseViewController {
                 //[\"21\",\"68\",\"68\"]", set multiple cities
                 let ride = self.arr_rides[0]
                 self.arr_MultipleCity = ride.station?.components(separatedBy: ",") ?? [""]
-                
+                let dict = ride.station?.toJSON() as? [String:AnyObject]
+               print(dict)
                 self.setValuesToView()
             }
             else {
@@ -383,4 +392,11 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     // handle tap events
     print("You selected cell #\(indexPath.item)!")
 }
+}
+//
+extension String {
+    func toJSON() -> Any? {
+        guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }
+        return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+    }
 }
