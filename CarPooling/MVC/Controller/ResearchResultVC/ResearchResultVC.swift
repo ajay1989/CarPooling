@@ -14,6 +14,7 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     @IBOutlet weak var lbl_fromCity: UILabel!
     @IBOutlet weak var lbl_toCity: UILabel!
     
+    @IBOutlet weak var lbl_NoResult: UILabel!
     
     @IBOutlet weak var view_Filter: UIView!
     @IBOutlet weak var ct_bottomVw: NSLayoutConstraint!
@@ -48,26 +49,41 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     var fromCityName = ""
     var toCityName = ""
     var departureDate:String = ""
-    
+    var dateTextField:String = "0"
     var customDatePicker:ActionSheetStringPicker = ActionSheetStringPicker.init()
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
+        // 60 164 135
         super.viewDidLoad()
          showDatePicker()
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        
+        let myAttribute = [ NSAttributedString.Key.font: UIFont(name:
+            "Montserrat-regular", size: 17.0)! , NSAttributedString.Key.paragraphStyle: paragraph]
+       
+        let myString = NSMutableAttributedString(string: "Pas d'inquiétude ! En créant une alerte, tu recevras une notification dèqúun covoiturage est disponible avec tes critères.", attributes: myAttribute )
+        
+       
+        let myRange = NSRange(location: 22, length: 17)
+        myString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(red: (64.0/255.0), green: (164.0/255.0), blue: (135.0/255.0), alpha: 1.0), range: myRange)
+       // nameStr.append(attrString)
+        lbl_NoResult.attributedText = myString
+        
+        
         view_Filter.isHidden = true
         tblVw.delegate = self
         tblVw.dataSource = self
         self.vw_Noresult.isHidden = true
-        
         self.btn_female.isSelected = false
         self.btn_male.isSelected = true
-        self.loadData()
+        self.loadData(strDate: "")
         // Do any additional setup after loading the view.
         lbl_toCity.text = self.toCityName
         lbl_fromCity.text = self.fromCityName
         lbl_alertTocity.text = self.toCityName
-        lbl_alertFromCity.text = self.toCityName
+        lbl_alertFromCity.text = self.fromCityName
     }
     
     
@@ -110,9 +126,9 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
          
          */
         //Archit
-            let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
+        let params = ["user":AppHelper.getStringForKey(ServiceKeys.user_id), "departure_date" : self.txt_Alertdate.text! , "departure_time" : self.btn_TimePeriod.titleLabel?.text ,"gender" : "1" , "from_city" : self.from_City, "to_city" : self.to_city]
             self.hudShow()
-            ServiceClass.sharedInstance.hitServiceForGetCars(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+        ServiceClass.sharedInstance.hitServiceForCreateAlert(params as [String : Any], completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
                 self.hudHide()
                 if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
                     
@@ -138,25 +154,29 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
         
    @IBAction func actionCreateAlert()
    {
-    self.alertCreate()
+   // self.alertCreate()
+     setView(view: vw_alert, hidden: false ,contrants: self.ct_alertViewHeight)
     }
     @IBAction func actionBack()
     {
      self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btn_male_tap(_ sender: Any) {
-        self.gender = "Male"
+        self.gender = "1"
         self.btn_male.borderColor = selectedColor
         self.btn_female.borderColor = UIColor.darkGray
         self.btn_female.isSelected = false
         self.btn_male.isSelected = true
     }
     @IBAction func btn_female_tap(_ sender: Any) {
-        self.gender = "Female"
+        self.gender = "2"
         self.btn_male.borderColor = UIColor.darkGray
         self.btn_female.borderColor = selectedColor
         self.btn_female.isSelected = true
         self.btn_male.isSelected = false
+    }
+    @IBAction func actionFilterTap(_ sender: Any) {
+        self.loadData(strDate: self.txt_date.text!)
     }
     @IBAction func hideAlertView()
     {
@@ -204,7 +224,7 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
-        
+        datePicker.maximumDate  = Date()
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
@@ -222,17 +242,33 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
         txt_Alertdate.inputView = datePicker
         
     }
-    
-    @objc func donedatePicker(){
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == txt_Alertdate
+        { dateTextField = "1" }
+        else
+        {
+         dateTextField = "0"
+        }
+        
+    }
+    @objc func donedatePicker(sender:UITextField){
         
         let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy"
-        txt_date.text = formatter.string(from: datePicker.date)
+        if dateTextField == "1"
+        {
+            txt_Alertdate.text = formatter.string(from: datePicker.date)
+        }
+        else
+        {
+            txt_date.text = formatter.string(from: datePicker.date)
+        }
+        
         self.view.endEditing(true)
       //  self.continueEnable()
     }
     
-    @objc func cancelDatePicker(){
+    @objc func cancelDatePicker(sender:UITextField){
         self.view.endEditing(true)
         if (self.txt_date.text?.isEmpty)! {
            // self.continueDisable()
@@ -243,7 +279,7 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
     }
     
     //MARK: Web method
-    func loadData()
+    func loadData(strDate:String)
     {
         /*
        gender, departure_date, from_city, to_city, user
@@ -251,7 +287,7 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
         self.arr_rides.removeAll()
         //        self.tableView.reloadData()
         
-        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id), "gender":self.gender , "departure_date":self.txt_date.text ?? "" , "from_city":self.from_City , "to_city":self.to_city
+        let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id), "gender":self.gender , "departure_date":strDate , "from_city":self.from_City , "to_city":self.to_city
         
             ] as [String : Any]
         
@@ -271,6 +307,10 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
                     if self.arr_rides.count>0 {
                         self.tblVw.reloadData()
                         self.vw_Noresult.isHidden = true
+                        if strDate.count > 0
+                        {
+                            self.hideView(view: self.view_Filter, hidden: true , contrants: self.ct_bottomVw)
+                        }
                     }
                     else
                     {
@@ -280,7 +320,12 @@ class ResearchResultVC: BaseViewController,UITextFieldDelegate {
             }
             else {
                 self.hudHide()
+                if strDate.count > 0
+                {
+                     self.hideView(view: self.view_Filter, hidden: true , contrants: self.ct_bottomVw)
+                }
                 self.vw_Noresult.isHidden = false
+                
             // self.makeToast(errorDict!["message"] as! String)
             }
             

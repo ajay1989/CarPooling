@@ -120,9 +120,9 @@ class SearchGoogleMapVC: BaseViewController {
         
         researchResultVC.to_city = self.toCity
         researchResultVC.from_City = self.frmCity
-        researchResultVC.toCityName = self.txtFromPlace.text ?? " "
+        researchResultVC.toCityName = self.txtToPlace.text ?? " "
         
-        researchResultVC.fromCityName = self.txtToPlace.text ?? " "
+        researchResultVC.fromCityName = self.txtFromPlace.text ?? " "
         self.navigationController?.pushViewController(researchResultVC, animated: true)
 //        if fromLatLong != nil && toLatLong != nil {
 //            //self.btnBackAction()

@@ -56,9 +56,14 @@ class Registration7VC: BaseViewController {
                 self.makeToast("Success")
                 AppHelper.delay(1.0, closure: {
                     if AppHelper.getStringForKey(ServiceKeys.keyFacebookID).isEqualToString(find: "") {
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let vc: LoginEmailVC = storyboard.instantiateViewController(withIdentifier: "LoginEmailVC") as! LoginEmailVC
-                        self.navigationController?.pushViewController(vc, animated: true)
+                        let user = UserData.init(fromJson: parseData["data"])
+                        AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
+                        AppHelper.setStringForKey(user.profile_photo!, key: ServiceKeys.profile_image)
+                        AppHelper.setStringForKey(user.user_fname!, key: ServiceKeys.keyFirstName)
+                        appDelegate.loginUser()
+//                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                        let vc: LoginEmailVC = storyboard.instantiateViewController(withIdentifier: "LoginEmailVC") as! LoginEmailVC
+//                        self.navigationController?.pushViewController(vc, animated: true)
                     }
                     else {
                        self.navigationController?.popToRootViewController(animated: true)

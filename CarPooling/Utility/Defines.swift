@@ -119,6 +119,7 @@ struct ServiceUrls
     static let change_ride_statusPassenger = "change_passenger_status"
     static let driver_rides = "driver_rides"
     static let change_passenger_status = "change_passenger_status"
+    static let create_alert = "create_alert"
     //city_distance
     static let city_distance = "city_distance"
 }

@@ -213,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivC-U2-2K3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2541.5999999999999" y="1108.6956521739132"/>
+            <point key="canvasLocation" x="2486" y="828"/>
         </scene>
         <!--DashboardVC-->
         <scene sceneID="xLF-2F-30s">
@@ -4663,20 +4663,21 @@ Pour le moment.</string>
                                                 <color key="textColor" red="0.97552710769999995" green="0.79052698610000005" blue="0.33566367629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqQ-ix-v27">
-                                                <rect key="frame" x="20" y="237.66666666666671" width="374" height="51.333333333333343"/>
-                                                <string key="text">Pas d'inquiétude !
-En créant une alerte, tu recevras une notification
-dèqúun covoiturage est disponible avec tes critères.</string>
-                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
-                                                <color key="textColor" red="0.0081429957095546027" green="0.018182899746192915" blue="0.01542119633854592" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqQ-ix-v27">
+                                                <rect key="frame" x="20" y="237.66666666666669" width="374" height="0.0"/>
+                                                <attributedString key="attributedText"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZO-TJ-AR0">
-                                                <rect key="frame" x="112" y="319" width="190" height="40"/>
+                                                <rect key="frame" x="92" y="267.66666666666669" width="230" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="2dP-0k-rX9"/>
-                                                    <constraint firstAttribute="width" constant="190" id="pcy-QP-9bK"/>
+                                                    <constraint firstAttribute="width" constant="230" id="pcy-QP-9bK"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                 <state key="normal" title="Créer une alerte">
@@ -4698,23 +4699,23 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Notification" translatesAutoresizingMaskIntoConstraints="NO" id="bG9-Ly-hY1">
-                                                <rect key="frame" x="117" y="331.66666666666669" width="15" height="15"/>
+                                                <rect key="frame" x="102" y="280.33333333333331" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="ogw-A8-sFQ"/>
                                                     <constraint firstAttribute="width" constant="15" id="ubv-Tw-wzL"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyDark" translatesAutoresizingMaskIntoConstraints="NO" id="13h-RB-sxq">
-                                                <rect key="frame" x="117" y="401.66666666666663" width="15" height="15"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Floppy Icons" translatesAutoresizingMaskIntoConstraints="NO" id="13h-RB-sxq">
+                                                <rect key="frame" x="102" y="350.33333333333331" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="6zg-cI-2HX"/>
                                                     <constraint firstAttribute="width" constant="15" id="9B8-Y2-Bcp"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7n3-pe-WVP">
-                                                <rect key="frame" x="112" y="389" width="190" height="40"/>
+                                                <rect key="frame" x="92" y="337.66666666666669" width="230" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="190" id="52u-wz-lfN"/>
+                                                    <constraint firstAttribute="width" constant="230" id="52u-wz-lfN"/>
                                                     <constraint firstAttribute="height" constant="40" id="VDN-nG-1Xp"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
@@ -4741,13 +4742,13 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                         <constraints>
                                             <constraint firstItem="hZO-TJ-AR0" firstAttribute="centerX" secondItem="XnA-nm-d3n" secondAttribute="centerX" id="2Fu-mD-Pvf"/>
                                             <constraint firstItem="RgM-pL-9JL" firstAttribute="centerX" secondItem="xVJ-Ed-hrL" secondAttribute="centerX" id="7bV-Ae-Odl"/>
-                                            <constraint firstItem="7n3-pe-WVP" firstAttribute="leading" secondItem="13h-RB-sxq" secondAttribute="trailing" constant="-20" id="870-7e-Ny6"/>
+                                            <constraint firstItem="7n3-pe-WVP" firstAttribute="leading" secondItem="13h-RB-sxq" secondAttribute="trailing" constant="-25" id="870-7e-Ny6"/>
                                             <constraint firstItem="7n3-pe-WVP" firstAttribute="centerX" secondItem="hZO-TJ-AR0" secondAttribute="centerX" id="NZq-QE-itz"/>
                                             <constraint firstItem="bG9-Ly-hY1" firstAttribute="centerY" secondItem="hZO-TJ-AR0" secondAttribute="centerY" id="OsI-po-oxX"/>
                                             <constraint firstAttribute="trailing" secondItem="gqQ-ix-v27" secondAttribute="trailing" constant="20" id="QlT-xy-jBX"/>
                                             <constraint firstItem="RgM-pL-9JL" firstAttribute="top" secondItem="xVJ-Ed-hrL" secondAttribute="bottom" constant="18" id="RRH-aS-F9x"/>
                                             <constraint firstItem="7n3-pe-WVP" firstAttribute="top" secondItem="hZO-TJ-AR0" secondAttribute="bottom" constant="30" id="d0F-05-476"/>
-                                            <constraint firstItem="hZO-TJ-AR0" firstAttribute="leading" secondItem="bG9-Ly-hY1" secondAttribute="trailing" constant="-20" id="eb7-JS-NSR"/>
+                                            <constraint firstItem="hZO-TJ-AR0" firstAttribute="leading" secondItem="bG9-Ly-hY1" secondAttribute="trailing" constant="-25" id="eb7-JS-NSR"/>
                                             <constraint firstItem="hZO-TJ-AR0" firstAttribute="top" secondItem="gqQ-ix-v27" secondAttribute="bottom" constant="30" id="jYd-VN-CWH"/>
                                             <constraint firstItem="gqQ-ix-v27" firstAttribute="top" secondItem="RgM-pL-9JL" secondAttribute="bottom" constant="60" id="nHA-Yg-yWg"/>
                                             <constraint firstItem="xVJ-Ed-hrL" firstAttribute="top" secondItem="XnA-nm-d3n" secondAttribute="top" constant="8" id="nPb-rq-SH6"/>
@@ -4808,8 +4809,17 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                             <action selector="hideFilterView" destination="hXq-fb-EBH" eventType="touchUpInside" id="wne-ey-x3j"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je souhaite recevoir une notification pour toute nouvelle offre concernant" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LA-jg-Vpr">
+                                        <rect key="frame" x="15" y="109" width="384" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Jxs-MK-eqe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CN2-WG-ych">
-                                        <rect key="frame" x="20" y="121" width="374" height="72.666666666666686"/>
+                                        <rect key="frame" x="20" y="180" width="374" height="72.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casablanca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhN-Rs-Lld">
                                                 <rect key="frame" x="27" y="0.0" width="75" height="16"/>
@@ -4850,14 +4860,14 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="gvK-hz-e5V">
-                                                <rect key="frame" x="6" y="33" width="12" height="10"/>
+                                                <rect key="frame" x="6" y="38" width="12" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="6wX-mF-8II"/>
                                                     <constraint firstAttribute="width" constant="12" id="DCD-0P-lnt"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fés" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7b-8d-efE">
-                                                <rect key="frame" x="28" y="33" width="24" height="17.333333333333329"/>
+                                                <rect key="frame" x="28" y="38" width="24" height="17.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -4870,7 +4880,7 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                             <constraint firstItem="gvK-hz-e5V" firstAttribute="centerX" secondItem="0v7-PC-ozf" secondAttribute="centerX" id="AMR-dh-p7K"/>
                                             <constraint firstItem="V7b-8d-efE" firstAttribute="top" secondItem="gvK-hz-e5V" secondAttribute="top" id="Fr4-DJ-AvI"/>
                                             <constraint firstAttribute="height" constant="72.5" id="RBY-1Q-Fa7"/>
-                                            <constraint firstItem="gvK-hz-e5V" firstAttribute="top" secondItem="0v7-PC-ozf" secondAttribute="top" id="Tyb-rf-5Ew"/>
+                                            <constraint firstItem="gvK-hz-e5V" firstAttribute="top" secondItem="0v7-PC-ozf" secondAttribute="top" constant="5" id="Tyb-rf-5Ew"/>
                                             <constraint firstItem="0v7-PC-ozf" firstAttribute="centerX" secondItem="5tv-Fb-Uww" secondAttribute="centerX" id="UqW-32-WfA"/>
                                             <constraint firstItem="FhN-Rs-Lld" firstAttribute="leading" secondItem="v10-Oh-f1I" secondAttribute="trailing" constant="10" id="cbj-9E-fWg"/>
                                             <constraint firstItem="v10-Oh-f1I" firstAttribute="top" secondItem="FhN-Rs-Lld" secondAttribute="top" id="h8B-cg-1D2"/>
@@ -4882,10 +4892,10 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                         <viewLayoutGuide key="safeArea" id="lpU-eg-SSz"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dl-TB-dGj">
-                                        <rect key="frame" x="20" y="229" width="374" height="76"/>
+                                        <rect key="frame" x="20" y="288" width="374" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pour un départ le" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBK-bC-hQV">
-                                                <rect key="frame" x="8" y="27.333333333333371" width="151.33333333333334" height="21"/>
+                                                <rect key="frame" x="8" y="27.333333333333258" width="151.33333333333334" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                                 <color key="textColor" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -4897,7 +4907,7 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                                     <constraint firstAttribute="height" constant="40" id="ugD-of-SAu"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -4932,7 +4942,7 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1i-zQ-siU">
-                                        <rect key="frame" x="20" y="313" width="374" height="76"/>
+                                        <rect key="frame" x="20" y="372" width="374" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De préférence le" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDc-Y8-VQB">
                                                 <rect key="frame" x="8" y="27.333333333333258" width="142.66666666666666" height="21"/>
@@ -4941,12 +4951,12 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqc-e7-DLZ">
-                                                <rect key="frame" x="216" y="18" width="150" height="40"/>
+                                                <rect key="frame" x="224" y="18" width="150" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="36N-e0-uFE"/>
                                                     <constraint firstAttribute="width" constant="150" id="vSd-yF-3rJ"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                 <state key="normal" title="Aucune préférence">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -4958,7 +4968,7 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -4970,7 +4980,7 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                         <constraints>
                                             <constraint firstItem="DDc-Y8-VQB" firstAttribute="leading" secondItem="d1i-zQ-siU" secondAttribute="leading" constant="8" id="9xh-6f-N7a"/>
                                             <constraint firstItem="Tqc-e7-DLZ" firstAttribute="centerY" secondItem="d1i-zQ-siU" secondAttribute="centerY" id="FH5-kx-uPh"/>
-                                            <constraint firstAttribute="trailing" secondItem="Tqc-e7-DLZ" secondAttribute="trailing" constant="8" id="YE1-wk-A8P"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tqc-e7-DLZ" secondAttribute="trailing" id="YE1-wk-A8P"/>
                                             <constraint firstItem="DDc-Y8-VQB" firstAttribute="centerY" secondItem="d1i-zQ-siU" secondAttribute="centerY" id="sXS-o1-aib"/>
                                             <constraint firstAttribute="height" constant="76" id="sgj-ww-ymb"/>
                                         </constraints>
@@ -5011,6 +5021,7 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="6Ke-IJ-mBJ" firstAttribute="leading" secondItem="UC3-eL-O64" secondAttribute="trailing" constant="3" id="1mr-y5-Ix1"/>
+                                    <constraint firstItem="2LA-jg-Vpr" firstAttribute="top" secondItem="6Ke-IJ-mBJ" secondAttribute="bottom" constant="29" id="8z9-8U-i3a"/>
                                     <constraint firstAttribute="trailing" secondItem="CN2-WG-ych" secondAttribute="trailing" constant="20" id="A9X-0w-jk2"/>
                                     <constraint firstItem="pGn-6a-IZN" firstAttribute="leading" secondItem="33c-zH-JHm" secondAttribute="trailing" constant="-21" id="JYz-79-oFJ"/>
                                     <constraint firstItem="1dl-TB-dGj" firstAttribute="top" secondItem="CN2-WG-ych" secondAttribute="bottom" constant="35.333333333333314" id="MXk-Rq-DOW"/>
@@ -5022,14 +5033,16 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                     <constraint firstItem="33c-zH-JHm" firstAttribute="centerY" secondItem="pGn-6a-IZN" secondAttribute="centerY" id="UIS-Aa-HwD"/>
                                     <constraint firstAttribute="bottom" secondItem="pGn-6a-IZN" secondAttribute="bottom" constant="87" id="YaZ-VG-elN"/>
                                     <constraint firstItem="pGn-6a-IZN" firstAttribute="centerX" secondItem="vdX-5S-tY8" secondAttribute="centerX" id="ZP5-LX-HcL"/>
+                                    <constraint firstItem="2LA-jg-Vpr" firstAttribute="leading" secondItem="vdX-5S-tY8" secondAttribute="leading" constant="15" id="aNn-Hv-ivR"/>
                                     <constraint firstItem="6mJ-wL-cZF" firstAttribute="centerX" secondItem="vdX-5S-tY8" secondAttribute="centerX" id="aoV-p1-BDg"/>
                                     <constraint firstItem="1dl-TB-dGj" firstAttribute="leading" secondItem="vdX-5S-tY8" secondAttribute="leading" constant="20" id="bUN-GZ-VIX"/>
                                     <constraint firstAttribute="trailing" secondItem="d1i-zQ-siU" secondAttribute="trailing" constant="20" id="fVh-ow-33Q"/>
                                     <constraint firstItem="d1i-zQ-siU" firstAttribute="top" secondItem="1dl-TB-dGj" secondAttribute="bottom" constant="8" id="hNX-nZ-DIR"/>
-                                    <constraint firstItem="CN2-WG-ych" firstAttribute="top" secondItem="6Ke-IJ-mBJ" secondAttribute="bottom" constant="41" id="haE-Me-uZq"/>
+                                    <constraint firstItem="CN2-WG-ych" firstAttribute="top" secondItem="6Ke-IJ-mBJ" secondAttribute="bottom" constant="100" id="haE-Me-uZq"/>
                                     <constraint firstItem="6Ke-IJ-mBJ" firstAttribute="centerX" secondItem="vdX-5S-tY8" secondAttribute="centerX" id="ike-hl-UFY"/>
                                     <constraint firstAttribute="height" constant="605" id="nzM-3r-iy2"/>
                                     <constraint firstItem="d1i-zQ-siU" firstAttribute="leading" secondItem="vdX-5S-tY8" secondAttribute="leading" constant="20" id="qPB-2R-4fV"/>
+                                    <constraint firstAttribute="trailing" secondItem="2LA-jg-Vpr" secondAttribute="trailing" constant="15" id="ta1-pT-vLB"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAj-hq-cnn">
@@ -5219,7 +5232,7 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="hideFilterView" destination="hXq-fb-EBH" eventType="touchUpInside" id="vMM-9s-R9K"/>
+                                            <action selector="actionFilterTap:" destination="hXq-fb-EBH" eventType="touchUpInside" id="Vl4-Ja-Ld3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -5266,6 +5279,7 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                         <outlet property="btn_male" destination="aHb-XY-kOC" id="2NW-x0-YKJ"/>
                         <outlet property="ct_alertViewHeight" destination="yIV-tJ-h9b" id="n6q-Te-D9Z"/>
                         <outlet property="ct_bottomVw" destination="KAN-iP-1of" id="c3l-qU-Ana"/>
+                        <outlet property="lbl_NoResult" destination="gqQ-ix-v27" id="wfT-bp-wLH"/>
                         <outlet property="lbl_alertFromCity" destination="FhN-Rs-Lld" id="yJk-Sv-Efd"/>
                         <outlet property="lbl_alertTocity" destination="V7b-8d-efE" id="E43-oA-mLt"/>
                         <outlet property="lbl_fromCity" destination="Q9b-bl-VBP" id="owm-vs-UFq"/>
@@ -5910,7 +5924,7 @@ dèqúun covoiturage est disponible avec tes critères.</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Résérvation envoyée" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9V-ho-rfS">
-                                <rect key="frame" x="127.66666666666667" y="144" width="158.66666666666663" height="20"/>
+                                <rect key="frame" x="117.66666666666669" y="143" width="179" height="21"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                 <color key="textColor" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -10464,6 +10478,7 @@ nous Otman 🎉</string>
         <image name="Destination Arrow" width="13.824000358581543" height="13.824000358581543"/>
         <image name="Dh" width="28.511999130249023" height="28.511999130249023"/>
         <image name="Filter" width="15.119999885559082" height="15.552000045776367"/>
+        <image name="Floppy Icons" width="16.416000366210938" height="16.416000366210938"/>
         <image name="Male-driver" width="156.38400268554688" height="136.08000183105469"/>
         <image name="Notification" width="16.416000366210938" height="19.871999740600586"/>
         <image name="both" width="74" height="56.666667938232422"/>
@@ -10496,7 +10511,7 @@ nous Otman 🎉</string>
         <image name="img_logout" width="76.800003051757812" height="76.800003051757812"/>
         <image name="img_star" width="69" height="69"/>
         <image name="ios-car" width="14" height="11"/>
-        <image name="like" width="24.624000549316406" height="25.488000869750977"/>
+        <image name="like" width="16.416000366210938" height="16.416000366210938"/>
         <image name="loginBg" width="191.66400146484375" height="340.84799194335938"/>
         <image name="logo" width="131.27999877929688" height="104.40000152587891"/>
         <image name="magnifyDark" width="18.333333969116211" height="18.333333969116211"/>
