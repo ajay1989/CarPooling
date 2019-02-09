@@ -44,8 +44,11 @@ class MessOffersVC: BaseViewController {
     var arr_MultipleCity = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadRideDetails()
+       // self.loadRideDetails()
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.loadRideDetails()
     }
     //MARK: Action method
     
@@ -250,6 +253,9 @@ class MessOffersVC: BaseViewController {
     //MARK: Web method
     func loadRideDetails()
     {
+         self.arr_passenger.removeAll()
+        self.arr_MultipleCity.removeAll()
+        self.arr_confirmedPassenger.removeAll()
         let params = ["keyword":self.rideDetail.ride_id!]
         self.hudShow()
  ServiceClass.sharedInstance.hitServiceForGetRideDetails(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in

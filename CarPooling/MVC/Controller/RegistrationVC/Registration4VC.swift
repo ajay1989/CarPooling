@@ -11,6 +11,11 @@ import UIKit
 class Registration4VC: BaseViewController,UITextFieldDelegate {
     // Merci de nous indiquer le mail sur lequel tu souhaites recevoir toutes les informations pratiques concernant tes convoiturages 🚗
     // Merci de saisir le mail qui te servira d'identifiant pour ta prochaine connexion. Tu y recevras égalements toutes les informations pratiques concernant tes covoiturages (car icon)
+    
+    @IBOutlet weak var vw_password: UIView!
+    
+    @IBOutlet weak var lbl_mot: UILabel!
+    
     @IBOutlet weak var lbl_textDetail: UILabel!
     
     @IBOutlet weak var scrollView:UIScrollView!
@@ -36,13 +41,14 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
             automaticallyAdjustsScrollViewInsets = false
         }
         
-        if !AppHelper.getStringForKey(ServiceKeys.keyEmail).isEqualToString(find: "") {
+        if !AppHelper.getStringForKey(ServiceKeys.keyFirstName).isEqualToString(find: "") {
             self.txt_email.text = AppHelper.getStringForKey(ServiceKeys.keyEmail)
             btn_continue.isEnabled = true
             btn_continue.setTitle("Continuer👉", for: .normal)
             btn_continue.setTitleColor(UIColor.black, for: .normal)
             lbl_textDetail.text = "Merci de nous indiquer le mail sur lequel tu souhaites recevoir toutes les informations pratiques concernant tes convoiturages 🚗"
-            
+            self.vw_password.isHidden = true
+            self.lbl_mot.isHidden = true
         }
         else {
             btn_continue.isEnabled = false
@@ -99,14 +105,17 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
         var isPasswordEnable = false
         if (txt_email.text?.count)! > 0 {
             if (txt_email.text?.isEmail)! {
+                self.img_email.image = UIImage.init(named: "checkcircle")
                 isEmailEnable = true 
             }
             else {
+                self.img_email.image = UIImage.init(named: "cross")
                 isEmailEnable = false
             }
             
         }
         else {
+            self.img_email.image = UIImage.init(named: "cross")
             isEmailEnable = false
             
         }

@@ -66,7 +66,12 @@ class Registration7VC: BaseViewController {
 //                        self.navigationController?.pushViewController(vc, animated: true)
                     }
                     else {
-                       self.navigationController?.popToRootViewController(animated: true)
+                        let user = UserData.init(fromJson: parseData["data"])
+                        AppHelper.setStringForKey(user.user_id!, key: ServiceKeys.user_id)
+                        AppHelper.setStringForKey(user.profile_photo!, key: ServiceKeys.profile_image)
+                        AppHelper.setStringForKey(user.user_fname!, key: ServiceKeys.keyFirstName)
+                        appDelegate.loginUser()
+                      // self.navigationController?.popToRootViewController(animated: true)
                     }
                     
                 })

@@ -637,9 +637,11 @@ class ServiceClass: NSObject {
         let user = "admin"
         let password = "1234"
         let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let userId = params["keyword"] as! String
         let base64Credentials = credentialData.base64EncodedString(options: [])
         
-        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.ride)"
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.ride)" + "?user_id=" + userId
+    
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
             "X-API-KEY":"CYLPIUnVia7UUl"]

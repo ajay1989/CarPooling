@@ -37,6 +37,7 @@ class BookingStatusVC: BaseViewController {
     @IBOutlet weak var lbl_luggage: UILabel!
     @IBOutlet weak var lbl_distance: UILabel!
     
+    @IBOutlet weak var lbl_address: UILabel!
     @IBOutlet weak var btn_demande: UIButton!
     @IBOutlet weak var img_user: UIImageView!
     @IBOutlet weak var lbl_tripName: UILabel!
@@ -54,13 +55,15 @@ class BookingStatusVC: BaseViewController {
     var passenger: Passenger!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadRideDetail()
-        vw_contact.isHidden = true
-        vw_contactShadow.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.black, radius: 0, opacity: 0.35)
+      
         // Do any additional setup after loading the view.
     } 
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.loadRideDetail()
+        vw_contact.isHidden = true
+        vw_contactShadow.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.black, radius: 0, opacity: 0.35)
+    }
   
     // MARK: - ActionMethod
     
@@ -143,6 +146,7 @@ class BookingStatusVC: BaseViewController {
          lbl_toCity.text = data1[0].city_name
          lblSeats.text = "\(ride.available_seats!) place(s) restante(s)"
          lbl_price.text = "\(ride.price!)DH per passager"
+         self.lbl_address.text = ride.from_city_address
         //status
       //  0-wating,1-approve,2-cancel,3-completed
         print(self.passenger.status)
@@ -153,6 +157,7 @@ class BookingStatusVC: BaseViewController {
             self.btn_recherche.isHidden = true
             self.btn_contact.isHidden = true
             self.btn_demade.isHidden = false  // cancel
+           
         }
         else if self.passenger.status == "1" {
             self.lbl_status.text = "Demande acceptée"
@@ -238,6 +243,7 @@ class BookingStatusVC: BaseViewController {
     //MARK: API method
     func loadRideDetail()
     {
+        self.arr_rides.removeAll()
         let params = ["keyword":self.rideDetail.ride_id!]
         self.hudShow()
         ServiceClass.sharedInstance.hitServiceForGetRideDetails(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in

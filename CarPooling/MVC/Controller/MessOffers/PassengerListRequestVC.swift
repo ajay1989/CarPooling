@@ -142,7 +142,7 @@ extension PassengerListRequestVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if tableView == tblVwPassengerList{
-        if self.arr_passenger.count>0 {
+        if self.arr_passenger.count > 0 {
                     return self.arr_passenger.count
             }
             else
@@ -187,7 +187,7 @@ extension PassengerListRequestVC : UITableViewDataSource, UITableViewDelegate {
             
             let cell = tabVw_confirmed.dequeueReusableCell(withIdentifier: "ConfirmedPAssengerTableViewcell", for: indexPath) as! ConfirmedPAssengerTableViewcell
             cell.btn_confirmed.isHidden = false
-           let data = self.arr_passenger[indexPath.row]
+           let data = self.arr_confirmedPassenger[indexPath.row]
             let age = self.getAge(dob:data.dob!)
             cell.lbl_name.text = data.first_name + ", " + String(age) + " ans"
             
