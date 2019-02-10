@@ -30,7 +30,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irB-dr-2Iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-606" y="-107"/>
+            <point key="canvasLocation" x="-1102" y="-90"/>
         </scene>
         <!--Driver Mode1-->
         <scene sceneID="mNA-Wn-8CJ">
@@ -71,6 +71,9 @@ ca et que ton voyage śest passé à merveille !</string>
                                         <color key="value" red="0.29782846569999999" green="0.65995007750000001" blue="0.55685323480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="UDn-zG-9Xa" kind="show" id="qLJ-Bi-jEq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vij-Me-Y5X">
                                 <rect key="frame" x="62.5" y="550" width="250" height="40"/>
@@ -126,7 +129,7 @@ ca et que ton voyage śest passé à merveille !</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jj2-ev-SNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="-105"/>
+            <point key="canvasLocation" x="-268" y="-90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n5n-Vl-lXT">
@@ -173,7 +176,7 @@ ca et que ton voyage śest passé à merveille !</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="UDn-zG-9Xa" kind="show" id="Tx8-HO-c40"/>
+                                    <action selector="actionGoToDashboard" destination="uGb-Kt-fY8" eventType="touchUpInside" id="LqH-G4-LjO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3h-Uh-qpk">
@@ -184,6 +187,9 @@ ca et que ton voyage śest passé à merveille !</string>
                                 <state key="normal" title="👈🏻">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionGoToBack" destination="uGb-Kt-fY8" eventType="touchUpInside" id="qOe-DD-7lr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pour quelle raison ńas tu pas pu faire ce voyage?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKD-v4-Mc5">
                                 <rect key="frame" x="18" y="280" width="339" height="16"/>
@@ -231,7 +237,7 @@ ca et que ton voyage śest passé à merveille !</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbu-L8-Hrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="-90"/>
+            <point key="canvasLocation" x="522" y="-69"/>
         </scene>
         <!--Driver Mode3-->
         <scene sceneID="NsD-BU-Svx">
@@ -591,7 +597,7 @@ ca et que ton voyage śest passé à merveille !</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4R6-U7-vEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1458" y="81"/>
+            <point key="canvasLocation" x="1274" y="-69"/>
         </scene>
         <!--Driver Mode4-->
         <scene sceneID="Wse-Qv-etG">
@@ -1196,7 +1202,7 @@ ca et que ton voyage śest passé à merveille !</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Youness, 24ans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15X-jc-cAQ">
-                                                <rect key="frame" x="43" y="15" width="122" height="20"/>
+                                                <rect key="frame" x="43" y="15.5" width="112.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <nil key="highlightedColor"/>
                                             </label>

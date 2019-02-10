@@ -649,7 +649,22 @@ class ServiceClass: NSObject {
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
     }
-    
+   // 280714
+    func hitServiceForGetFinalPassenger(_ params:[String : Any], completion:@escaping completionBlockType)
+    {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.ride_approved_passenger)/\(params["keyword"] as! String)"
+        print(baseUrl)
+        let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
+        print_debug(headers)
+        //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+        self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
+    }
     func hitServiceForGetSearchRides(_ params:[String : Any], completion:@escaping completionBlockType)
     {
         let user = "admin"
@@ -682,9 +697,26 @@ class ServiceClass: NSObject {
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
     }
-    
+    //
+    func hitServiceForGetReviewStatus(_ params:[String : Any], completion:@escaping completionBlockType)
+    {
+        let user = "admin"
+        let password = "1234"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.user_check_pending_review)/\(params["keyword"] as! String)"
+        print(baseUrl)
+        let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
+            "X-API-KEY":"CYLPIUnVia7UUl"]
+        print_debug(headers)
+        //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+        self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
+    }
     func hitServiceForUpdateUserDetail(_ params:[String : Any], completion:@escaping completionBlockType)
     {
+        if AppHelper.getStringForKey(ServiceKeys.user_id).count != 0
+        {
         let user = "admin"
         let password = "1234"
         let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
@@ -697,7 +729,8 @@ class ServiceClass: NSObject {
             "X-API-KEY":"CYLPIUnVia7UUl"]
         print_debug(headers)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
-        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
+        self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
+        }
     }
     
     

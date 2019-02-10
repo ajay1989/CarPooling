@@ -15,16 +15,22 @@ class DriverMode2: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction  func actionGoToBack()
+    {
+        // self.dismiss(animated: true, completion: nil)
+       self.navigationController?.popViewController(animated: true)
     }
-    */
 
+  @IBAction  func actionGoToDashboard()
+    {
+     // self.dismiss(animated: true, completion: nil)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
+  func postComment()
+   {
+    //passenger_attendance post with only comment
+    //Post
+    
+    
+    }
 }

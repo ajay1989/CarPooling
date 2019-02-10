@@ -47,9 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = nav
             self.window?.makeKeyAndVisible()
         }
+       
+        print_debug("app first launch")
         return true
     }
     
+    
+   
     
     func loadColor() {
         let params = ["":""]
@@ -126,6 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        self.checkUserReviewStatus()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -224,6 +229,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
         
     }
-
+ func checkUserReviewStatus()
+ {
+     if let controller = UIStoryboard(name: "RideRating", bundle: nil).instantiateViewController(withIdentifier: "DriverMode1") as? DriverMode1 {
+         if let window = self.window, let rootViewController = window.rootViewController {
+             var currentController = rootViewController
+             while let presentedController = currentController.presentedViewController {
+                 currentController = presentedController
+             }
+             currentController.present(controller, animated: true, completion: nil)
+         }
+     }
+     
+     //
+     
+     
+     let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
+    // self.hudShow()
+     ServiceClass.sharedInstance.hitServiceForGetReviewStatus(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+       //  self.hudHide()
+         print_debug(parseData)
+         if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+            // "type": "driver" OR  "type": "passenger"
+             if (parseData["message"] != "No result found" ) {
+                 var type = parseData["type"]
+                 if type == "driver"{
+                     print_debug("show Passenger reviews")
+                     
+                 }
+                 else
+                 {
+                 print_debug("show driver reviews")
+                 }
+             }
+         }
+         else {
+           //  self.hudHide()
+             
+         }
+         
+     })
+ }
 }
 
