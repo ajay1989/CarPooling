@@ -14,7 +14,8 @@ class PublicProfileVC: BaseViewController {
     @IBOutlet weak var lbl_email: UILabel!
     @IBOutlet weak var lbl_phone: UILabel!
     @IBOutlet weak var lbl_name: UILabel!
-   
+   var str_profile = ""
+    @IBOutlet weak var lbl_commentCount: UILabel!
     @IBOutlet weak var btn_memberSince: UIButton!
     @IBOutlet weak var img_profilePic: UIImageView!
     @IBOutlet weak var RatingView: FloatRatingView!
@@ -42,20 +43,23 @@ class PublicProfileVC: BaseViewController {
                     let user = User.init(fromJson: data)
                     let url = URL(string: "\(ServiceUrls.profilePicURL)\(user.profile_photo!)")!
                     let placeholderImage = UIImage(named: "Male-driver")!
-                    
+                    self.str_profile = user.profile_photo!
                     self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
                     let age = self.getAge(dob: user.dob!)
                     self.lbl_name.text = "\(user.first_name!), \(age) \(" ans")"
-                    self.lbl_phone.text = user.mobile_number
-                    self.lbl_email.text = user.user_email
+//                    self.lbl_phone.text = user.mobile_number
+//                    self.lbl_email.text = user.user_email
                     
-                    self.lbl_dob.text = ""
+                    self.lbl_phone.text = "Numèro de tèlèphone vèrifiè"
+                    self.lbl_email.text = "Adresse mail vèrifiè"
+                    
+                    self.lbl_dob.text = "Pièce d'identitè non vèrifièe"
                     let dateformatter = DateFormatter()
                     dateformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                     let date = dateformatter.date(from: user.created_date!)
                     dateformatter.dateFormat = "dd/MM/yyyy"
                     self.btn_memberSince.setTitle("membre depuis le \(dateformatter.string(from: date!))", for: .normal)
-                    
+                    self.lbl_commentCount.text = "Aucun avis reçu"
                     if(user.mobile_number == ""){
                         self.lbl_phone.text = ""
                     }
@@ -116,21 +120,31 @@ extension PublicProfileVC : UITableViewDataSource, UITableViewDelegate {
         //            return 0
         //
         //        }
-        return self.arr_comments.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // if placeArray.count > 0 {
-        let data = self.arr_comments[indexPath.row]
+//        let data = self.arr_comments[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComentsTableViewCell", for: indexPath) as! ComentsTableViewCell
-        //  cell.carColorPickerView.delegate = self
-       // cell.lblUserName.text = "\(data.first_name!) \(data.last_name!)"
-        cell.lblDate.text = "\(data.first_name!) \(data.last_name!)  \(data.created_date!)"
-        cell.txtDescription.text = data.comment!
-        let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
+        
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(self.str_profile)")!
+        
         let placeholderImage = UIImage(named: "Male-driver")!
         
         cell.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
+        cell.lblDate.text = ""
+//        cell.lblUserName.text = ""
+        cell.txtDescription.text = "\(AppHelper.getStringForKey(ServiceKeys.name)) n'a toujours pas ècrit d'avis.\n Met le tien pour l'encourager à te laisser un mot"
+        cell.txtDescription.textColor = UIColor.darkGray
+        //  cell.carColorPickerView.delegate = self
+       // cell.lblUserName.text = "\(data.first_name!) \(data.last_name!)"
+//        cell.lblDate.text = "\(data.first_name!) \(data.last_name!)  \(data.created_date!)"
+//        cell.txtDescription.text = data.comment!
+//        let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
+//        let placeholderImage = UIImage(named: "Male-driver")!
+//
+//        cell.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
         cell.selectionStyle = .none
         return cell
         // }

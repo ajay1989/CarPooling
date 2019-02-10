@@ -122,6 +122,7 @@ struct ServiceUrls
     static let create_alert = "create_alert"
     //city_distance
     static let city_distance = "city_distance"
+    static let delete_vehicle = "delete_vehicle"
 }
 struct ErrorCodes
 {
