@@ -118,7 +118,7 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
                     let placeholderImage = UIImage(named: "Male-driver")!
                     
                     self.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
-                    self.lbl_name.text = "\(user.first_name!) \(user.last_name!)"
+//                    self.lbl_name.text = "\(user.first_name!) \(user.last_name!)"
                     self.txt_mobile.text = user.mobile_number
                     self.txt_email.text = user.user_email
                     self.txt_dob.text = user.dob
@@ -142,6 +142,7 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
     
     func loadCars() {
         self.arr_cars.removeAll()
+        self.tblvw_CarDetail.reloadData()
         //        self.tableView.reloadData()
        
         let params = ["keyword":AppHelper.getStringForKey(ServiceKeys.user_id)]
@@ -288,9 +289,27 @@ class EditUserProfileVC: BaseViewController,UIImagePickerControllerDelegate, UIN
     }
     
     @objc func btn_delete_tap(_ sender: UIButton) {
-        let id = sender.tag
+        let id = self.arr_cars[sender.tag].vehicle_id!
         
         //        self.tableView.reloadData()
+        
+        let params = ["keyword":"\(id)"]
+        self.hudShow()
+        ServiceClass.sharedInstance.hitServiceForDeleteCars(params, completion: { (type:ServiceClass.ResponseType, parseData:JSON, errorDict:AnyObject?) in
+            self.hudHide()
+            if (ServiceClass.ResponseType.kresponseTypeSuccess==type){
+                
+                self.makeToast("Vehicle deleted")
+                AppHelper.delay(1.0, closure: {
+                    self.loadCars()
+                })
+            }
+            else {
+                self.hudHide()
+                
+            }
+            
+        })
         
         
     }
@@ -360,7 +379,7 @@ extension EditUserProfileVC : UITableViewDataSource, UITableViewDelegate {
         cell.txt_number2.text = data.vehicle_number_two
         cell.txt_number3.text = data.vehicle_number_three
         cell.lbl_carName.text = "\(data.brand_name!) \(data.model_name!)"
-        cell.txt_date.text = data.insurance_expire_date
+        cell.txt_date.text = Utilities.convertToString(dateString: data.insurance_expire_date, formatIn: "yyyy-MM-dd", formatOut: "dd/MM/yyyy") 
         cell.btn_Delete.addTarget(self, action: #selector(btn_delete_tap(_:)), for: .touchUpInside)
         cell.btn_Delete.tag = indexPath.row
         

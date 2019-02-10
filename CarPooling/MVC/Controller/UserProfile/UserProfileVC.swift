@@ -10,6 +10,7 @@ import UIKit
 
 class UserProfileVC: BaseViewController {
 
+    @IBOutlet weak var lbl_commentCount: UILabel!
     @IBOutlet weak var lbl_joinedDate: UIButton!
     @IBOutlet weak var lbl_email: UILabel!
     @IBOutlet weak var lbl_mobile: UILabel!
@@ -63,7 +64,8 @@ class UserProfileVC: BaseViewController {
                     self.lbl_joinedDate.setTitle("Membre depuis le \(str)", for: .normal)
                     self.img_profile.af_setImage(withURL: url, placeholderImage: placeholderImage)
                     let age = self.getAge(dob: user.dob!)
-                    self.lbl_name.text = "\(user.first_name!) \(user.last_name!), \(age) ans"
+                    self.lbl_name.text = "\(user.first_name!),  \(age) ans"
+                    self.lbl_commentCount.text = "Aucun avis reçu"
                     self.lbl_mobile.text = user.mobile_number
                     self.lbl_email.text = user.user_email
                     
@@ -116,22 +118,34 @@ extension UserProfileVC : UITableViewDataSource, UITableViewDelegate {
         //            return 0
         //
         //        }
-        return self.arr_comments.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // if placeArray.count > 0 {
-        let data = self.arr_comments[indexPath.row]
+//        let data = self.arr_comments[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComentsTableViewCell", for: indexPath) as! ComentsTableViewCell
-        //  cell.carColorPickerView.delegate = self
-        cell.lblUserName.text = "\(data.first_name!) \(data.last_name!)"
-        cell.lblDate.text = data.created_date!
-        cell.txtDescription.text = data.comment!
-        let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
+        
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
+        
         let placeholderImage = UIImage(named: "Male-driver")!
         
         cell.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
+        cell.lblDate.text = ""
+        cell.lblUserName.text = ""
+        cell.txtDescription.text = "\(AppHelper.getStringForKey(ServiceKeys.name)) n'a toujours pas ècrit d'avis.\n Met le tien pour l'encourager à te laisser un mot"
+        cell.txtDescription.textColor = UIColor.darkGray
+        
+        //  cell.carColorPickerView.delegate = self
+//        cell.lblUserName.text = "\(data.first_name!) \(data.last_name!)"
+//        cell.lblDate.text = data.created_date!
+//        cell.txtDescription.text = data.comment!
+//        let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
+//        let placeholderImage = UIImage(named: "Male-driver")!
+//
+//        cell.imgUser.af_setImage(withURL: url, placeholderImage: placeholderImage)
         cell.selectionStyle = .none
+        
         return cell
         // }
         //p;return UITableViewCell()

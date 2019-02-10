@@ -19,9 +19,15 @@ class InfoVC: UIViewController {
             btnMessanger.backgroundColor = UIColor.white
         }
     }
+    
+    @IBOutlet weak var img_profilePic: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let url = URL(string: "\(ServiceUrls.profilePicURL)\(AppHelper.getValueForKey(ServiceKeys.profile_image)!)")!
+        
+        let placeholderImage = UIImage(named: "Male-driver")!
+        
+        self.img_profilePic.af_setImage(withURL: url, placeholderImage: placeholderImage)
         // Do any additional setup after loading the view.
     }
     

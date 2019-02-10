@@ -124,6 +124,7 @@ struct ServiceUrls
    static let user_check_pending_review = "user_check_pending_review"
     //city_distance
     static let city_distance = "city_distance"
+    static let delete_vehicle = "delete_vehicle"
 }
 struct ErrorCodes
 {
