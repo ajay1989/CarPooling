@@ -41,7 +41,7 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
             automaticallyAdjustsScrollViewInsets = false
         }
         
-        if !AppHelper.getStringForKey(ServiceKeys.keyFirstName).isEqualToString(find: "") {
+        if !AppHelper.getStringForKey(ServiceKeys.keyFacebookID).isEqualToString(find: "") {
             self.txt_email.text = AppHelper.getStringForKey(ServiceKeys.keyEmail)
             btn_continue.isEnabled = true
             btn_continue.setTitle("Continuer👉", for: .normal)
@@ -101,6 +101,32 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if !AppHelper.getStringForKey(ServiceKeys.keyFacebookID).isEqualToString(find: ""){
+            btn_continue.isEnabled = true
+            btn_continue.setTitle("Continuer👉", for: .normal)
+            btn_continue.setTitleColor(UIColor.black, for: .normal)
+            if (txt_email.text?.count)! > 0 {
+                if (txt_email.text?.isEmail)! {
+                    self.img_email.image = UIImage.init(named: "checkcircle")
+                   
+                }
+                else {
+                    self.img_email.image = UIImage.init(named: "cross")
+                    
+                }
+                
+            }
+            else {
+                self.img_email.image = UIImage.init(named: "cross")
+               
+                
+            }
+             return true
+        }
+        else
+        {
+        
         var isEmailEnable = false
         var isPasswordEnable = false
         if (txt_email.text?.count)! > 0 {
@@ -140,4 +166,5 @@ class Registration4VC: BaseViewController,UITextFieldDelegate {
         return true
     }
     
+}
 }

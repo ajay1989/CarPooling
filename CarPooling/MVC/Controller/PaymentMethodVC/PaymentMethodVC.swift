@@ -11,11 +11,17 @@ import UIKit
 class PaymentMethodVC: UIViewController {
     @IBOutlet weak var lbl_price: UILabel!
     @IBOutlet weak var lbl_totalPrice: UILabel!
+    
+    @IBOutlet weak var lbl_discount: UILabel!
+        @IBOutlet weak var lbl_minusDiscount: UILabel!
+    
     var rideDetail: Ride!
     var arr_station: [Station]!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.lbl_price.text = "\(rideDetail.price!) Dh"
+        self.lbl_discount.text = "\(rideDetail.discount!) Dh"
+        self.lbl_minusDiscount.text = "-" + "\(rideDetail.discount!) Dh"
         self.lbl_totalPrice.text = "\(rideDetail.price!) Dh"
         // Do any additional setup after loading the view.
     }

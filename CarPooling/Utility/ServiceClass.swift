@@ -308,7 +308,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.checknumber)"
         print(baseUrl)
            let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -323,7 +323,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.checkemail)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -338,7 +338,7 @@ class ServiceClass: NSObject {
         let baseUrlr = "\(ServiceUrls.baseUrl)\(ServiceUrls.register)"
         print(baseUrlr)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3" ]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrlr, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         
@@ -404,7 +404,7 @@ class ServiceClass: NSObject {
     }
     print(baseUrl)
     let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-        "X-API-KEY":"CYLPIUnVia7UUl"]
+        "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
     print_debug(params)
     self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     
@@ -420,7 +420,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.register)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.imageUpload(baseUrl, params: params, data: data!, imageKey: "profile_photo", headers: headers, completion: completion)
     }
@@ -435,7 +435,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.login)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -450,7 +450,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.user)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -465,7 +465,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.logout)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -480,7 +480,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.fblogin)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -494,7 +494,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.search_model)/\(params["keyword"]!)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
 //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -510,7 +510,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.user_vehicle)/\(params["keyword"]!)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" , "device_type": "3"]
         print_debug(params)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -527,7 +527,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.delete_vehicle)/\(params["keyword"]!)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -544,7 +544,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.create_alert)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" , "device_type" : "3"]
         print_debug(params)
             self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
        // self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -566,7 +566,7 @@ class ServiceClass: NSObject {
         let baseUrl = "http://echofounder.com/demo/carpoll/v1/api/city_distance" + "?from_city=" + fromCity + "&to_city=" + toCity + "&seats=" + seats
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: params, headers: headers, completion: completion)
@@ -581,7 +581,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.ride)/\(params["keyword"]!)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -597,7 +597,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.passenger_rides)/\(params["keyword"]!)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -613,7 +613,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.driver_rides)/\(params["keyword"]!)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -629,7 +629,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.color)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -646,7 +646,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.city)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -663,7 +663,7 @@ class ServiceClass: NSObject {
     
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(headers)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -679,7 +679,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.ride_approved_passenger)/\(params["keyword"] as! String)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(headers)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -694,7 +694,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.search_Ride)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(headers)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
   self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject], headers: headers, completion: completion)
@@ -711,7 +711,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.user)/\(params["keyword"] as! String)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(headers)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -727,7 +727,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.user_check_pending_review)/\(params["keyword"] as! String)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(headers)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -745,7 +745,7 @@ class ServiceClass: NSObject {
         print(baseUrl)
         print(params)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(headers)
         //        self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
         self.hitGetServiceWithUrlString(urlString: baseUrl, parameters: ["":""], headers: headers, completion: completion)
@@ -764,7 +764,7 @@ class ServiceClass: NSObject {
         print(baseUrl)
         print(params)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(headers)
         self.imageUpload(baseUrl, params: params, data: data!, imageKey: "profile_photo", headers: headers, completion: completion)
     }
@@ -779,7 +779,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.create_vehicle)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -794,7 +794,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.create_vehicle)/\(id)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -809,7 +809,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.create_passenger)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -823,7 +823,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.change_passenger_status)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -834,10 +834,11 @@ class ServiceClass: NSObject {
         let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString(options: [])
         
-        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.change_passenger_status)/\(id)"
+//        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.change_passenger_status)/\(id)"
+        let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.change_ride_status)/\(id)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }
@@ -851,7 +852,7 @@ class ServiceClass: NSObject {
         let baseUrl = "\(ServiceUrls.baseUrl)\(ServiceUrls.create_ride)"
         print(baseUrl)
         let headers: HTTPHeaders = ["Authorization": "Basic \(base64Credentials)",
-            "X-API-KEY":"CYLPIUnVia7UUl"]
+            "X-API-KEY":"CYLPIUnVia7UUl" ,"device_type" : "3"]
         print_debug(params)
         self.hitServiceWithUrlString(urlString: baseUrl, parameters: params as [String : AnyObject] , headers: headers, completion: completion)
     }

@@ -217,10 +217,11 @@ class BookingStatusVC: BaseViewController {
        // btn_demande.text = ""
     
         lbl_tripName.text = ride.brand_name + "," + ride.model_name
-        let age = self.getAge(dob:ride.dob!)
-        lbl_nameAge.text  = "\(ride.first_name!), \(age) ans"
+      //  let age = self.getAge(dob:ride.dob!)
+      //  lbl_nameAge.text  = "\(ride.first_name!), \(age) ans"
+        lbl_nameAge.text  = "\(ride.first_name!), \(ride.age!) ans"
        //  btn_contact.text = ""
-        lbl_nameAge2.text  = "\(ride.first_name!), \(age) ans"
+        lbl_nameAge2.text  = "\(ride.first_name!), \(ride.age!) ans"
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(ride.profile_photo!)")!
          let placeholderImage = UIImage(named: "Male-driver")!
          img_user.af_setImage(withURL: url, placeholderImage: placeholderImage)

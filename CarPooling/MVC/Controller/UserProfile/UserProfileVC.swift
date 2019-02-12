@@ -63,8 +63,8 @@ class UserProfileVC: BaseViewController {
                     
                     self.lbl_joinedDate.setTitle("Membre depuis le \(str)", for: .normal)
                     self.img_profile.af_setImage(withURL: url, placeholderImage: placeholderImage)
-                    let age = self.getAge(dob: user.dob!)
-                    self.lbl_name.text = "\(user.first_name!),  \(age) ans"
+                  //  let age = self.getAge(dob: user.dob!)
+                    self.lbl_name.text = "\(user.first_name!),  \(user.age!) ans"
                     self.lbl_commentCount.text = "Aucun avis reçu"
                     self.lbl_mobile.text = user.mobile_number
                     self.lbl_email.text = user.user_email

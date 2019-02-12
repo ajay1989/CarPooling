@@ -10,6 +10,7 @@ import UIKit
 
 class BookingDetailVC: BaseViewController {
     
+    @IBOutlet weak var vw_rating: FloatRatingView!
     @IBOutlet weak var lbl_From: UILabel!
     var ride_id = ""
     @IBOutlet weak var lbl_To: UILabel!
@@ -51,6 +52,14 @@ class BookingDetailVC: BaseViewController {
     }
     
     //MARK: Action method
+    @IBAction func openPublicProfile()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc:PublicProfileVC = storyboard.instantiateViewController(withIdentifier: "PublicProfileVC") as! PublicProfileVC
+        // self.present(vc, animated: true, completion: nil)
+        vc.id = self.rideDetail.user_id!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     @IBAction func actionBack()
     {
         self.navigationController?.popViewController(animated: true)
@@ -103,13 +112,15 @@ class BookingDetailVC: BaseViewController {
                     }
                     let age = self.getAge(dob:ride.dob!)
                     
-                    self.lbl_userNAmeAge.text = ride.first_name + ", " + String(age) + " ans"
+                    self.lbl_userNAmeAge.text = ride.first_name + ", " + ride.age + " ans"
                     let url = URL(string: "\(ServiceUrls.profilePicURL)\(ride.profile_photo!)")!
                     
                     let placeholderImage = UIImage(named: "Male-driver")!
                     
                     self.img_User.af_setImage(withURL: url, placeholderImage: placeholderImage)
                     self.lbl_tripName.text = ride.brand_name + "," + ride.model_name
+                    self.vw_rating.rating = Double(ride.rate!) ?? 0 // rate from server
+                    self.vw_rating.editable = false
                 }
                 
             }

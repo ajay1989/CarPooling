@@ -185,7 +185,7 @@ class DashboardVC: BaseViewController {
                 cell.llbl_TimeTo.text = self.dateTimeFormateAccordingToUI(date: data.arrival_date, time: data.arrival_time)
                 // cell.lbl_userName.text = data.first_name + data.last_name
                 let age = self.getAge(dob:data.dob!)
-                cell.lbl_userName.text = data.first_name + ", " + String(age) + " ans"
+                cell.lbl_userName.text = data.first_name + ", " + data.age! + " ans"
                 
                 cell.lbl_seats.text = data.available_seats
                 cell.lbl_Price.text = data.price

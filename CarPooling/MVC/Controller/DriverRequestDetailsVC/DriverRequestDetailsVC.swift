@@ -216,8 +216,9 @@ extension DriverRequestDetailsVC : UITableViewDataSource, UITableViewDelegate {
       //  cell.lbl_ToDestination.text = data.to_city
         cell.lbl_timeFrom.text =  self.dateTimeFormateAccordingToUI(date: data.departure_date, time: data.departure_time)//data.departure_time
         cell.llbl_TimeTo.text = self.dateTimeFormateAccordingToUI(date: data.arrival_date, time: data.arrival_time)
-        let age = self.getAge(dob:data.dob!)
-        cell.lbl_userName.text = data.first_name + ", " + String(age) + " ans"
+       // let age = self.getAge(dob:data.dob!)
+//        cell.lbl_userName.text = data.first_name + ", " + String(age) + " ans"
+        cell.lbl_userName.text = data.first_name + ", " + data.age + " ans"
         cell.lbl_seats.text = data.available_seats
         cell.lbl_Price.text = data.price
         

@@ -33,7 +33,7 @@ class User {
     var first_name : String!
     var last_name : String!
     var gender : String!
-    
+    var age: String!
     var profile_photo : String!
     var dob : String!
     var address : String!
@@ -61,6 +61,7 @@ class User {
         doc_id_photo = parseData!["doc_id_photo"].stringValue
         is_approved = parseData!["is_approved"].stringValue
         created_date = parseData!["created_date"].stringValue
+        age = parseData!["age"].stringValue
         
     }
 }
@@ -170,6 +171,9 @@ class Ride {
     var brand_name : String!
      var model_name : String!
     var passenger_status : String!
+    var age : String!
+    var discount : String!
+    var rate : String!
     init(fromJson parseData: JSON!){
         if parseData.isEmpty{
             return
@@ -206,6 +210,9 @@ class Ride {
         brand_name = parseData!["brand_name"].string
         model_name = parseData!["model_name"].string
         passenger_status = parseData!["passenger_status"].string
+        age = parseData!["age"].string
+        discount = parseData!["discount"].string
+        rate = parseData!["rate"].string
     }
     
 }
@@ -219,6 +226,7 @@ class Passenger {
     var created_date : String!
     var to_city : String!
     var dob : String!
+    var age : String!
      var last_name : String!
       var seats : String!
     init(fromJson parseData: JSON!){
@@ -235,6 +243,7 @@ class Passenger {
           dob = parseData!["dob"].stringValue
           last_name = parseData!["last_name"].stringValue
           seats = parseData!["seats"].stringValue
+         age = parseData!["age"].stringValue
         }
 }
 class Distances {

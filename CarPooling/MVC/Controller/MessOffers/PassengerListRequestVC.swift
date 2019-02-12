@@ -173,8 +173,9 @@ extension PassengerListRequestVC : UITableViewDataSource, UITableViewDelegate {
         {
         let cell = tblVwPassengerList.dequeueReusableCell(withIdentifier: "PassengerListTableViiewCell", for: indexPath) as! PassengerListTableViiewCell
         let data = self.arr_passenger[indexPath.row]
-        let age = self.getAge(dob:data.dob!)
-        cell.lbl_userName.text = data.first_name + ", " + String(age) + " ans"
+       // let age = self.getAge(dob:data.dob!)
+       // cell.lbl_userName.text = data.first_name + ", " + String(age) + " ans"
+            cell.lbl_userName.text = data.first_name + ", " + data.age + " ans"
         // cell.btn_confirm.tag = indexPath.row
         // cell.btn_confirm.addTarget(self, action: #selector(self.confirmRequest(_:)), for: .touchUpInside)
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
@@ -188,9 +189,9 @@ extension PassengerListRequestVC : UITableViewDataSource, UITableViewDelegate {
             let cell = tabVw_confirmed.dequeueReusableCell(withIdentifier: "ConfirmedPAssengerTableViewcell", for: indexPath) as! ConfirmedPAssengerTableViewcell
             cell.btn_confirmed.isHidden = false
            let data = self.arr_confirmedPassenger[indexPath.row]
-            let age = self.getAge(dob:data.dob!)
-            cell.lbl_name.text = data.first_name + ", " + String(age) + " ans"
-            
+           // let age = self.getAge(dob:data.dob!)
+           // cell.lbl_name.text = data.first_name + ", " + String(age) + " ans"
+           cell.lbl_name.text = data.first_name + ", " + data.age + " ans"
             let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
             let placeholderImage = UIImage(named: "Male-driver")!
             cell.img_userProfile.af_setImage(withURL: url, placeholderImage: placeholderImage)

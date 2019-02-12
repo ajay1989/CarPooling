@@ -126,8 +126,9 @@ class MessOffersVC: BaseViewController {
         
         //set passngr data
         let data = self.arr_confirmedPassenger[sender.tag]
-        let age = self.getAge(dob:data.dob!)
-        lbl_passegerName.text = data.first_name + ", " + String(age) + " ans"
+       // let age = self.getAge(dob:data.dob!)
+      //  lbl_passegerName.text = data.first_name + ", " + String(age) + " ans"
+         lbl_passegerName.text = data.first_name + ", " + data.age + " ans"
         let url = URL(string: "\(ServiceUrls.profilePicURL)\(data.profile_photo!)")!
         let placeholderImage = UIImage(named: "Male-driver")!
         img_pasenger.af_setImage(withURL: url, placeholderImage: placeholderImage)
@@ -337,9 +338,9 @@ extension MessOffersVC : UITableViewDataSource, UITableViewDelegate {
         else {
        
         let data = self.arr_confirmedPassenger[indexPath.row]
-            let age = self.getAge(dob:data.dob!)
-            cell.lbl_name.text = data.first_name + ", " + String(age) + " ans"
-            
+          //  let age = self.getAge(dob:data.dob!)
+          //  cell.lbl_name.text = data.first_name + ", " + String(age) + " ans"
+          cell.lbl_name.text = data.first_name + ", " + data.age + " ans"
         cell.btn_contact.tag = indexPath.row
         cell.btn_profile.tag = indexPath.row
         cell.btn_contact.addTarget(self, action: #selector(self.showContactView(_:)), for: .touchUpInside)

@@ -39,7 +39,8 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
         colorPickerView.isSelectedColorTappable = false
         colorPickerView.style = .circle //.square
         colorPickerView.selectionStyle = .check
-        colorPickerView.backgroundColor = .clear
+        //colorPickerView.backgroundColor = .gray
+        colorPickerView.backgroundColor = UIColor.init(red: (173/255.0), green: (191/255.0), blue: (192.0/255.0), alpha: 1.0)
         var tempColor = [UIColor]()
         for data in appDelegate.arr_color {
             let col = hexStringToUIColor(hex: data.color_code!)
@@ -173,7 +174,7 @@ class CarInfoVC: BaseViewController, ColorPickerViewDelegate, ColorPickerViewDel
         if textField == txt_number2
         {
             if (string != ""){
-            if ( CharacterSet.uppercaseLetters.isSuperset(of: CharacterSet(charactersIn: string)) && (textField.text?.count ?? 0 <= 0 ) ) {
+            if ( CharacterSet.letters.isSuperset(of: CharacterSet(charactersIn: string)) && (textField.text?.count ?? 0 <= 0 ) ) {
                 return true
             }
             
