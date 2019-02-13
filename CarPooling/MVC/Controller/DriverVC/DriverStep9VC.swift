@@ -110,7 +110,7 @@ class DriverStep9VC: BaseViewController {
 //
 //                   self.decrement = price - factor
                     print(self.increment)
-                    self.self.lbl_Price.text = self.distance.price_fare
+                    self.self.lbl_Price.text = self.distance.price_fare + " DH"
                     self.setIncrementDec()
                 }
             }
