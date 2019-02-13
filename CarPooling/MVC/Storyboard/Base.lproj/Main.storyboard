@@ -71,7 +71,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GP-bf-iSY">
-                                        <rect key="frame" x="271.5" y="19" width="95.5" height="17.5"/>
+                                        <rect key="frame" x="288.5" y="19.5" width="78.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -835,7 +835,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes demandes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lS-ge-l9Z">
-                                <rect key="frame" x="117.5" y="44" width="140" height="22"/>
+                                <rect key="frame" x="125.5" y="44" width="124.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1709,7 +1709,7 @@ en 3h30</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deepika, 29 ans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwo-yQ-tv9">
-                                <rect key="frame" x="125" y="506" width="125" height="20"/>
+                                <rect key="frame" x="125" y="506" width="125.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1845,7 +1845,7 @@ en 3h30</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deepika, 29 ans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1J-LV-DMs">
-                                        <rect key="frame" x="125" y="192" width="125" height="20"/>
+                                        <rect key="frame" x="125" y="192" width="125.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2762,7 +2762,7 @@ en 3h30</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deepika, 29 ans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xr8-tX-eeB">
-                                        <rect key="frame" x="125" y="192" width="125" height="20"/>
+                                        <rect key="frame" x="125" y="192" width="125.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -4194,7 +4194,7 @@ en 3h30</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deepika, 29 ans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsu-Fs-kxq">
-                                <rect key="frame" x="125" y="494" width="125" height="20"/>
+                                <rect key="frame" x="125" y="494" width="125.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -5760,7 +5760,7 @@ Pour le moment.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voir le détail du prix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBl-xK-Uge">
-                                <rect key="frame" x="101.5" y="342" width="172" height="21"/>
+                                <rect key="frame" x="102" y="342" width="171.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="2If-E3-W8V"/>
                                 </constraints>
@@ -7961,7 +7961,7 @@ Si celle-ci fait l'affaire,appuie sur continuer😎 Sinon, nous te recommandons 
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALAM!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jn-6f-KH9">
-                                            <rect key="frame" x="129" y="160" width="117" height="37"/>
+                                            <rect key="frame" x="129" y="160" width="117.5" height="37"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -9340,7 +9340,7 @@ nous Otman 🎉</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ3-f1-YrG">
-                                                            <rect key="frame" x="33.5" y="50" width="30" height="13"/>
+                                                            <rect key="frame" x="33.5" y="50" width="30.5" height="13"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
