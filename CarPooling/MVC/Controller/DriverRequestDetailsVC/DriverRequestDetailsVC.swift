@@ -32,10 +32,16 @@ class DriverRequestDetailsVC: BaseViewController {
         if self.isFromDashboard {
             self.loadRidePassenger()  //passenger
             self.lbl_title.text = "Mes demandes"
+           self.btn_waitingApproval.setTitle("En attente", for: .normal)
+            self.btn_refused.setTitle("Refusé", for: .normal)
+            self.btn_completed.setTitle("Validé", for: .normal)
         }
         else {
             self.loadRideDriver() //Driver
             self.lbl_title.text = "Mes offres"
+            self.btn_waitingApproval.setTitle("En cours", for: .normal)
+            self.btn_refused.setTitle("Annulé", for: .normal)
+            self.btn_completed.setTitle("Terminé", for: .normal)
         }
         
         // Do any additional setup after loading the view.
